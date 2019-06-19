@@ -73,8 +73,12 @@ namespace AmpGen
         EventList mc( m_eventType );
         t_phsp.start();
         fillEventListPhaseSpace( mc, m_generatorBlock, pdf.size(), cut );
+
         t_phsp.stop();
         t_eval.start();
+
+
+
         pdf.setEvents( mc );
         pdf.prepare();
         t_eval.stop();
@@ -94,10 +98,12 @@ namespace AmpGen
         #endif
         for ( size_t i=0;i< mc.size(); ++i ) mc[i].setGenPdf(pdf.prob_unnormalised(mc[i]));
 
+
         for( auto& evt : mc ){
           if ( evt.genPdf() > normalisationConstant ) {
             std::cout << std::endl; 
             WARNING( "PDF value exceeds norm value: " << evt.genPdf() << " > " << normalisationConstant );
+
           }
           if ( evt.genPdf() > normalisationConstant * m_rnd->Rndm() ) list.push_back( evt );
           if ( list.size() - size0 == N ) break;

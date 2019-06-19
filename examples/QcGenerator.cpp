@@ -9,6 +9,7 @@
 #include "AmpGen/MinuitParameterSet.h"
 
 #include <TFile.h>
+#include <TGraph2D.h>
 #include <TRandom3.h>
 #include <TRandom.h>
 #ifdef _OPENMP
@@ -182,6 +183,13 @@ template <class T1, class T2> class Psi3770 {
     complex_t operator()(const Event& signal, const Event& tag) const { return m_signal(signal)*m_tagBar(tag) - m_signalBar(signal) * m_tag(tag); }
     double P(const DTEvent& event)                              const { return m_ignoreQc ? prob_noQC(event) : std::norm(operator()(event)); }
     double prob_noQC (const DTEvent& event)                     const { return std::norm(m_signal(event.signal)*m_tagBar(event.tag)) + std::norm(m_signalBar(event.signal)*m_tag(event.tag)); } 
+    std::complex<double> fSig(const DTEvent& event)             const {return m_signal(event.signal);}
+    std::complex<double> fSigCC(const DTEvent& event)             const {return m_signalBar(event.signal);}
+    std::complex<double> fTag(const DTEvent& event)             const {return m_tag(event.tag);}
+    std::complex<double> fTagCC(const DTEvent& event)             const {return m_tagBar(event.tag);}
+    double sigS (const DTEvent& event, std::vector<size_t> ind)  const {return event.signal.s(ind);}
+    double tagS (const DTEvent& event, std::vector<size_t> ind)  const {return event.tag.s(ind);}
+
     DTEvent generatePhaseSpace()                                      { return DTEvent( m_signalPhsp.makeEvent(), m_tagPhsp.makeEvent() ); }
     DTEventList generate( const size_t& N )
     {
@@ -258,6 +266,8 @@ int main( int argc, char** argv )
       , "EventType to generate, in the format: \033[3m parent daughter1 daughter2 ... \033[0m" ).getVector(); 
   auto tags           = NamedParameter<std::string>("TagTypes" , std::string(), "Vector of opposite side tags to generate, in the format \033[3m outputTreeName decayDescriptor \033[0m.").getVector();
 
+
+
   gRandom = new TRandom3(seed);
 #ifdef _OPENMP
   omp_set_num_threads( nThreads );
@@ -279,25 +289,72 @@ int main( int argc, char** argv )
     auto tagParticle  = Particle(tokens[1], {}, false);
     EventType    type = tagParticle.eventType();
     double yield_noQC = yc(luminosity,signalType,type,true);
-    std::string flib         = NamedParameter<std::string>( type.decayDescriptor() +"::lib", "");
-    if( flib == "" ){
-      auto generator    = Psi3770<CoherentSum,CoherentSum>(models, signalType, type); 
-      double rho        = generator.rho();
-      double yield = nEvents; 
-      if( nEvents == 0 && poissonYield  ) yield = gRandom->Poisson(yield_noQC*rho);
-      if( nEvents == 0 && !poissonYield ) yield = yield_noQC*rho;
-      INFO( "Tag = " << type << " Expected Yield [incoherent] = " << yield_noQC << " rho = " << rho << " requested = " << yield );
-      generator.generate(yield).tree(tokens[0])->Write();
+    auto generator    = Psi3770<CoherentSum,CoherentSum>(models, signalType, type) ; 
+    double rho        = generator.rho();
+//    std::complex<double> fSig = generator.fSig()
+    double yield = nEvents; 
+    if( nEvents == 0 && poissonYield  )  yield = gRandom->Poisson(yield_noQC*rho); 
+    if( nEvents == 0 && !poissonYield ) yield = yield_noQC*rho;  
+    INFO( "Tag = " << type << " Expected Yield [incoherent] = " << yield_noQC << " rho = " << rho << " requested = " << yield );
+    DTEventList evtlist = generator.generate(yield);
+    int n_evtList = evtlist.size();
+    TFile * fsigVal = TFile::Open("sigVal.root", "RECREATE");
+    TGraph2D * gSigMag = new TGraph2D(nEvents);
+    TGraph2D * gSigPh = new TGraph2D(nEvents);
+    TGraph2D * gSigCCMag = new TGraph2D(nEvents);
+    TGraph2D * gSigCCPh = new TGraph2D(nEvents);
+    TGraph2D * gSigDelta = new TGraph2D(nEvents);
+
+
+    for (int i =0; i < n_evtList; i++){
+
+      std::complex<double> sigVal = generator.fSig(evtlist[i]);
+      std::complex<double> sigCCVal = generator.fSigCC(evtlist[i]);
+      std::complex<double> tagVal = generator.fTag(evtlist[i]);
+      std::complex<double> tagCCVal = generator.fTagCC(evtlist[i]);
+      std::vector<size_t> xind = {0,1};
+      std::vector<size_t> yind = {0,2};
+      double sigx = generator.sigS(evtlist[i], xind);
+      double sigy = generator.sigS(evtlist[i], yind);
+      double sigMag = std::abs(sigVal);
+      double sigPh = std::arg(sigVal); 
+      double sigCCMag = std::abs(sigCCVal);
+      double sigCCPh = std::arg(sigCCVal);
+      double sigDelta = sigPh - sigCCPh;
+      double tagMag = std::abs(tagVal);
+      double tagPh = std::arg(tagVal); 
+      double tagCCMag = std::abs(tagCCVal);
+      double tagCCPh = std::arg(tagCCVal);
+      double tagDelta = tagPh - tagCCPh;
+      gSigMag->SetPoint(i, sigx, sigy, sigMag);
+      gSigPh->SetPoint(i, sigx, sigy, sigPh);
+      gSigCCMag->SetPoint(i, sigx, sigy, sigCCMag);
+      gSigCCPh->SetPoint(i, sigx, sigy, sigCCPh);
+      gSigDelta->SetPoint(i, sigx, sigy, sigDelta);
+      if (i % (int)n_evtList/100 ){
+        std::cout<<"Event "<<i<<"out of "<<n_evtList<<"\n";
+        std::cout<<"Dalitz Coordinates = ("<<sigx<<","<<sigy<<")\n";
+        std::cout<<"Signal |A| = "<<sigMag<<"\n";
+        std::cout<<"SignalCC |A| = "<<sigCCMag<<"\n";
+        std::cout<<"Signal ẟ = "<<sigPh<<"\n";
+        std::cout<<"SignalCC ẟ = "<<sigCCPh<<"\n";
+        std::cout<<"Signal Δẟ ="<<sigDelta<<"\n";
+        std::cout<<"Tag |A| = "<<tagMag<<"\n";
+        std::cout<<"TagCC |A| = "<<tagCCMag<<"\n";
+        std::cout<<"Tag ẟ = "<<tagPh<<"\n";
+        std::cout<<"TagCC ẟ = "<<tagCCPh<<"\n";
+        std::cout<<"Tag Δẟ ="<<tagDelta<<"\n";
+//        std::cout<<"Value of event "<<i<<" = "<<generator.fSig(evtlist[i])<<"\n";
+      }
     }
-    else {
-      auto generator    = Psi3770<CoherentSum,FixedLibPdf>(models, signalType, type); 
-      double rho        = generator.rho();
-      double yield = nEvents; 
-      if( nEvents == 0 && poissonYield  ) yield = gRandom->Poisson(yield_noQC*rho); 
-      if( nEvents == 0 && !poissonYield ) yield = yield_noQC*rho;  
-      INFO( "Tag = " << type << " Expected Yield [incoherent] = " << yield_noQC << " rho = " << rho << " requested = " << yield );
-      generator.generate(yield).tree(tokens[0])->Write();
-    }
+    gSigMag->Write("mag");
+    gSigPh->Write("phase");
+    gSigDelta->Write("deltaPhase");
+    gSigCCMag->Write("magCC");
+    gSigCCPh->Write("phaseCC");
+    fsigVal->Close();
+    f->cd();
+ generator.generate(yield).tree(tokens[0])->Write();
   }
   f->Close(); 
   auto twall_end  = std::chrono::high_resolution_clock::now();

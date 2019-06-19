@@ -1,0 +1,38 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+..//AmpGen/ArgumentPack.h
+AmpGen/MetaUtils.h
+../AmpGen/AmpGen/MetaUtils.h
+iostream
+-
+memory
+-
+string
+-
+vector
+-
+
+..//AmpGen/MetaUtils.h
+memory
+-
+tuple
+-
+vector
+-
+string
+-
+cxxabi.h
+-
+
+/home/jlane/Documents/ampGen/test/test_ArgumentPack.cpp
+boost/test/included/unit_test.hpp
+-
+AmpGen/ArgumentPack.h
+/home/jlane/Documents/ampGen/test/AmpGen/ArgumentPack.h
+

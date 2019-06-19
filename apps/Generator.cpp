@@ -7,7 +7,7 @@
 #include "TFile.h"
 #include "TRandom3.h"
 #include "TTree.h"
-
+#include "TGraph2D.h"
 #ifdef _OPENMP
 #include <omp.h>
 #include <thread>
@@ -100,11 +100,23 @@ int main( int argc, char** argv )
   EventList accepted( eventType );
 
   INFO("Generating events with type = " << eventType );
-
+   TGraph2D * grAbs = new TGraph2D(nEvents);
+    TGraph2D * grArg = new TGraph2D(nEvents);
+    std::vector<size_t> i1 = {0,1};
+    std::vector<size_t> i2 = {0,2};
   if ( gen_type == "CoherentSum" ) {
     CoherentSum sig( eventType, MPS );
     PhaseSpace phsp(eventType,&rand);
     GenerateEvents( accepted, sig, phsp , nEvents, blockSize, &rand );
+     for (size_t i =0 ; i < nEvents; i++){
+        std::complex<double> z = sig.getVal(accepted[i]);
+//        accepted[i].print();
+        double x = accepted[i].s(i1);
+        double y = accepted[i].s(i2);
+//        std::cout<<"value = "<<sig.getVal(accepted[i])<<"\n";    
+        grAbs->SetPoint(i,x,y,std::norm(z));
+        grArg->SetPoint(i,x,y,std::arg(z));
+    }
   } 
   else if ( gen_type == "PolarisedSum" ){
     PolarisedSum sig( eventType, MPS ); 
@@ -130,6 +142,8 @@ int main( int argc, char** argv )
   }
   if( accepted.size() == 0 ) return -1;
   TFile* f = TFile::Open( outfile.c_str(), "RECREATE" );
+  grArg->Write("gArg");
+  grAbs->Write("gAbs");
   accepted.tree( "DalitzEventList" )->Write();
   auto plots = accepted.makeDefaultProjections(Bins(nBins), LineColor(kBlack));
   for ( auto& plot : plots ) plot->Write();
@@ -143,7 +157,7 @@ int main( int argc, char** argv )
       }
     }
   } 
-  
+   
   INFO( "Writing output file " );
 
   f->Close();
