@@ -125,7 +125,7 @@ D0{K(1)(1270)+,pi-}                         0     1      0.1       0     0      
 K(1)(1270)+{rho(770)0{pi+,pi-},K+}          2     1      0         2     0      0
 K(1)(1270)+{K*(892)0{K+,pi-},pi+}           0     1      0.1       0     0      0.1
 ```
-The production/decay couplings of the  <img src="doc/figs/tex/fig0.png" style="margin-bottom:-5px" />  resonance are now defined in terms of the coupling to the  <img src="doc/figs/tex/fig1.png" style="margin-bottom:-5px" />  channel,
+The production/decay couplings of the @f$K_1(1270)^+@f$ resonance are now defined in terms of the coupling to the @f$\rho(770)^0 K^+@f$ channel,
 which can be useful in making comparisons between different production modes of a resonance.
 Additional care must be taken in such a case to not introduce redundant degrees of freedom.
 
@@ -156,10 +156,12 @@ Generator MyOpts.opt --nEvents=10000 --Output=output.root
 Which generates 10000 events of the model described in MyOpts.opt and saves them to output.root.
 The output should include a tree (DalitzEventList) of candidates with the full four-vectors, as well as one- and two-dimensional projections, an example of which is shown below:
 
-![s01](doc/figs/s01.png)
+<p align="center">
+  <img src="https://github.com/GooFit/AmpGen/raw/master/doc/figs/s01.png">
+</p>
 
 In particular, the tree indicates the way in which data is by default loaded into the _Event_ / _EventList_ class.
-Several models for different  <img src="doc/figs/tex/fig2.png" style="margin-bottom:0px" />  decays published by the LHCb collaboration are included in the options directory. These options do not include EventTypes so as they can be included as part of a larger decay chain if required. For example, to generate  <img src="doc/figs/tex/fig3.png" style="margin-bottom:0px" />  toy  <img src="doc/figs/tex/fig4.png" style="margin-bottom:0px" />  events:
+Several models for different @f$D^0@f$ decays published by the LHCb collaboration are included in the options directory. These options do not include EventTypes so as they can be included as part of a larger decay chain if required. For example, to generate @f$10^6@f$ toy @f$D^{0}\to K^{-} \pi^+ \pi^+ \pi^- @f$ events:
 
 ```
 ./Generator options/D02Kpipipi.opt --EventType "D0 K- pi+ pi+ pi-" --nEvents 1000000
@@ -243,7 +245,7 @@ fcn2 = data.apply(model.FCN, axis=1)
 ```
 
 ### Particle Properties and Lineshape parameters
-The particles available and their default properties can be found in *options/mass\_width.csv* using the MC format of the 2008 PDG. Additional pseudoparticles, such as nonresonant states and terms for use in conjunction with K-matrices are defined by *options/MintDalitzSpecialParticles.csv*. Any additional user defined particles should be added here. For the default lineshape (the relavistic Breit-Wigner or BW), there are three parameters: The mass, the width and the Blatt-Weisskopf radius. These default to their PDG values, but can be overridden in the options file with parameters: *particleName*\_mass, *particleName*\_width, *particleName*\_radius. To vary the mass of the   <img src="doc/figs/tex/fig5.png" style="margin-bottom:-5px" />  meson, the line:
+The particles available and their default properties can be found in *options/mass\_width.csv* using the MC format of the 2008 PDG. Additional pseudoparticles, such as nonresonant states and terms for use in conjunction with K-matrices are defined by *options/MintDalitzSpecialParticles.csv*. Any additional user defined particles should be added here. For the default lineshape (the relavistic Breit-Wigner or BW), there are three parameters: The mass, the width and the Blatt-Weisskopf radius. These default to their PDG values, but can be overridden in the options file with parameters: *particleName*\_mass, *particleName*\_width, *particleName*\_radius. To vary the mass of the  @f$K_1(1270)^+@f$ meson, the line:
 ```
 K(1)(1270)+_mass 0 1.270 0.01
 ```
@@ -254,20 +256,20 @@ Other lineshapes may define other parameters, for example channel couplings or p
 
 Parameters can either be specified by three parameters, in the case of a scalar parameter such as a mass or a width, or with six parameters in the case of a complex parameter such as a coupling.
 Upper and lower bounds on parameters can also be set by specifying a parameter with five parameters or ten parameters for a scalar or complex, respectively.
-For example, if we wished to vary the mass of the  <img src="doc/figs/tex/fig6.png" style="margin-bottom:-5px" />  meson in the above example, but restricting the allowed values in the range  <img src="doc/figs/tex/fig7.png" style="margin-bottom:-5px" /> :
+For example, if we wished to vary the mass of the @f$K_1(1270)^+@f$ meson in the above example, but restricting the allowed values in the range @f$[0.0,2.0]\,\mathrm{GeV}@f$:
 ```
 K(1)(1270)+_mass 0 1.27 0.01 0.0 2.0
 ```
 
 Parameters can also be related to each other via expressions,
-Suppose for example we have  <img src="doc/figs/tex/fig8.png" style="margin-bottom:-5px" />  and  <img src="doc/figs/tex/fig9.png" style="margin-bottom:-5px" />  in the same fit (for example, for  <img src="doc/figs/tex/fig10.png" style="margin-bottom:0px" /> )
-The properties of one can be allowed to vary, for example the  <img src="doc/figs/tex/fig11.png" style="margin-bottom:-5px" /> , and the other fixed to the same value, using:
+Suppose for example we have @f$K_1(1270)^+@f$ and @f$K_1(1270)^-@f$ in the same fit (for example, in @f$D^0 \to K^- K^+ \pi^- \pi^+@f$)
+The properties of one can be allowed to vary, for example the @f$K_1(1270)^+@f$, and the other fixed to the same value, using:
 ```
 K(1)(1270)+_mass 0 1.27 0.01 0.0 2.0
 K(1)(1270)bar-_mass = K(1)(1270)+_mass
 ```
 Parameter expressions are whitespace delimited due to the abundance of **odd** glyphs such as brackets and +/- in the names of parameters.
-Expressions support the binary operations  <img src="doc/figs/tex/fig12.png" style="margin-bottom:-5px" /> , as well as common unary functions such as sqrt, trigonometric functions etc.
+Expressions support the binary operations @f$(+,-,/,* )@f$, as well as common unary functions such as sqrt, trigonometric functions etc.
 
 ### Spin Formalisms
 
@@ -282,7 +284,7 @@ The spin formalism for an individual decay chain can be specified by changing th
 ```
 D0[SpinFormalism=Canonical]{K*(892)bar0,rho(770)0}
 ```
-selects the S-wave of the  <img src="doc/figs/tex/fig13.png" style="margin-bottom:0px" />  system. The user can also specify systems of helicity couplings in the canonical formalism, using the attribute _helAmp_. For example, suppose the transversity amplitudes were used rather than the canonical, then the user can specify
+selects the S-wave of the @f$K^* \rho@f$ system. The user can also specify systems of helicity couplings in the canonical formalism, using the attribute _helAmp_. For example, suppose the transversity amplitudes were used rather than the canonical, then the user can specify
 ```
 D0[SpinFormalism=Canonical;helAmp=Long]{K*(892)bar0,rho(770)0}
 D0[SpinFormalism=Canonical;helAmp=t1]{K*(892)bar0,rho(770)0}
@@ -304,7 +306,7 @@ t2 {
   -0.707106781 -1 -1
 }
 ```
-That is specified as sets of three numbers, firstly the coupling, and then the two particle helicities. So in this example, the longitudinal amplitude is the  <img src="doc/figs/tex/fig14.png" style="margin-bottom:0px" />  helicity state, while the two transverse amplitudes and the sum and difference of the two other helicity amplitudes.
+That is specified as sets of three numbers, firstly the coupling, and then the two particle helicities. So in this example, the longitudinal amplitude is the $00$ helicity state, while the two transverse amplitudes and the sum and difference of the two other helicity amplitudes.
 
 ### Quasi-Particles
 
@@ -324,4 +326,3 @@ The development of this software has been  supported by the National Science Fou
 [travis-badge]:      https://travis-ci.org/GooFit/AmpGen.svg?branch=master
 [license-badge]:     https://img.shields.io/badge/License-GPL%20v2-blue.svg
 [travis-link]:       https://travis-ci.org/GooFit/AmpGen
-
