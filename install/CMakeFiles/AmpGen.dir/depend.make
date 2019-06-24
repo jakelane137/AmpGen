@@ -1824,6 +1824,18 @@ CMakeFiles/AmpGen.dir/src/Lineshapes/LASS.cpp.o: ../AmpGen/Units.h
 CMakeFiles/AmpGen.dir/src/Lineshapes/LASS.cpp.o: ../AmpGen/Utilities.h
 CMakeFiles/AmpGen.dir/src/Lineshapes/LASS.cpp.o: ../src/Lineshapes/LASS.cpp
 
+CMakeFiles/AmpGen.dir/src/Lineshapes/MagPoly.cpp.o: ../AmpGen/Expression.h
+CMakeFiles/AmpGen.dir/src/Lineshapes/MagPoly.cpp.o: ../AmpGen/Factory.h
+CMakeFiles/AmpGen.dir/src/Lineshapes/MagPoly.cpp.o: ../AmpGen/Lineshapes.h
+CMakeFiles/AmpGen.dir/src/Lineshapes/MagPoly.cpp.o: ../AmpGen/MetaUtils.h
+CMakeFiles/AmpGen.dir/src/Lineshapes/MagPoly.cpp.o: ../AmpGen/MsgService.h
+CMakeFiles/AmpGen.dir/src/Lineshapes/MagPoly.cpp.o: ../AmpGen/NamedParameter.h
+CMakeFiles/AmpGen.dir/src/Lineshapes/MagPoly.cpp.o: ../AmpGen/OptionsParser.h
+CMakeFiles/AmpGen.dir/src/Lineshapes/MagPoly.cpp.o: ../AmpGen/Tensor.h
+CMakeFiles/AmpGen.dir/src/Lineshapes/MagPoly.cpp.o: ../AmpGen/Types.h
+CMakeFiles/AmpGen.dir/src/Lineshapes/MagPoly.cpp.o: ../AmpGen/Utilities.h
+CMakeFiles/AmpGen.dir/src/Lineshapes/MagPoly.cpp.o: ../src/Lineshapes/MagPoly.cpp
+
 CMakeFiles/AmpGen.dir/src/Lineshapes/NonRelBW.cpp.o: ../AmpGen/Expression.h
 CMakeFiles/AmpGen.dir/src/Lineshapes/NonRelBW.cpp.o: ../AmpGen/Factory.h
 CMakeFiles/AmpGen.dir/src/Lineshapes/NonRelBW.cpp.o: ../AmpGen/Lineshapes.h
@@ -1852,6 +1864,18 @@ CMakeFiles/AmpGen.dir/src/Lineshapes/PALANO.cpp.o: ../AmpGen/Units.h
 CMakeFiles/AmpGen.dir/src/Lineshapes/PALANO.cpp.o: ../AmpGen/Utilities.h
 CMakeFiles/AmpGen.dir/src/Lineshapes/PALANO.cpp.o: ../AmpGen/kMatrix.h
 CMakeFiles/AmpGen.dir/src/Lineshapes/PALANO.cpp.o: ../src/Lineshapes/PALANO.cpp
+
+CMakeFiles/AmpGen.dir/src/Lineshapes/PhasePoly.cpp.o: ../AmpGen/Expression.h
+CMakeFiles/AmpGen.dir/src/Lineshapes/PhasePoly.cpp.o: ../AmpGen/Factory.h
+CMakeFiles/AmpGen.dir/src/Lineshapes/PhasePoly.cpp.o: ../AmpGen/Lineshapes.h
+CMakeFiles/AmpGen.dir/src/Lineshapes/PhasePoly.cpp.o: ../AmpGen/MetaUtils.h
+CMakeFiles/AmpGen.dir/src/Lineshapes/PhasePoly.cpp.o: ../AmpGen/MsgService.h
+CMakeFiles/AmpGen.dir/src/Lineshapes/PhasePoly.cpp.o: ../AmpGen/NamedParameter.h
+CMakeFiles/AmpGen.dir/src/Lineshapes/PhasePoly.cpp.o: ../AmpGen/OptionsParser.h
+CMakeFiles/AmpGen.dir/src/Lineshapes/PhasePoly.cpp.o: ../AmpGen/Tensor.h
+CMakeFiles/AmpGen.dir/src/Lineshapes/PhasePoly.cpp.o: ../AmpGen/Types.h
+CMakeFiles/AmpGen.dir/src/Lineshapes/PhasePoly.cpp.o: ../AmpGen/Utilities.h
+CMakeFiles/AmpGen.dir/src/Lineshapes/PhasePoly.cpp.o: ../src/Lineshapes/PhasePoly.cpp
 
 CMakeFiles/AmpGen.dir/src/Lineshapes/Photon.cpp.o: ../AmpGen/Expression.h
 CMakeFiles/AmpGen.dir/src/Lineshapes/Photon.cpp.o: ../AmpGen/Factory.h

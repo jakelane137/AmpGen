@@ -314,7 +314,7 @@ namespace AmpGen
      *  @brief Polynominal shape \f$ \mathcal{A}(s) = \sum^n_i c_i s^{i} \f$ where the sum is to lineshapeModifier::Degree, and the free parameters of the shape are lineshapeModifier_ci 
      */
     DECLARE_LINESHAPE( Poly );
-
+   
     /** @ingroup Lineshapes class FOCUS
      *  @brief K matrix amplitudes used for I=1/2 and I=3/2 in the description of the \f$ K\pi \f$ S-wave in the analysis of @f$ D^{+}\rightarrow K^{-}\pi^{+}\pi^{+}@f$ https://arxiv.org/abs/0705.2248
      */
@@ -373,7 +373,8 @@ namespace AmpGen
         Multiplied by an arbitrary gaussian lineshape to account for the mass distribution in @f$s_{\pi^{+}\pi^{-}\pi^{0}}@f$.
       */   
     DECLARE_LINESHAPE( EtaDalitz );
-
+    DECLARE_LINESHAPE( PhasePoly );
+    DECLARE_LINESHAPE( MagPoly );
     DECLARE_LINESHAPE( Photon );
   } // namespace Lineshape
   

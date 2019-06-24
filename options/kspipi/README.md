@@ -26,5 +26,24 @@ The analysis in this folder is designed to model the phase space of the $D \to K
   
  These intermediate states contribute to $A(m^2_+, m^2_-)$ and occur when the combined mass of their daughter particles approaches the mass of the intermediate state. These intermediate states enhance the parts of the Dalitz plot where they occur. 
 
- 
-  
+ The decay amplitude, $A_{D^0}(m^2_+, m^2_-)$, is calculated by the addition of sub-amplitudes, $A^n_{D^0}(m^2_+, m^2_-)$ which take the form
+
+$$A^n_{D^0} (m^2_+, m^2_-) = A_n e^{i\phi_n} f_n(m^2_+, m^2_-), $$ (4)
+
+where $A_n e^{i\phi_n$ make up the amplitude and phase of the individual amplitude. The phase space dependent $f_n(m^2_+, m^2_-)$ is called the ''lineshape''.
+The sub amplitudes are arranged in the following categories
+1. A single relativistic particle, of mass $m_r$ and width $\Gamma_r(s)$ decaying into the two final states of the resonance, note that the width is dependent on the invariant mass of the two final states. The lineshape for such a sub-amplitude is given as a ''Breit Wigner'' function
+
+The function $f_r(m^2_+, m^2_-)$ can be factorized as
+
+$$ f_r(m^2_+, m^2_-) = F_D \times F_r \times T_r \times W_r $$
+
+where $F_{D,r}$ is the ''Blatt-Weisskopf'' barrier factor for the $D,r$ decay, $T_r$ is the ''resonance'' propagator, which is either a ''Breit-Wiger'' function or a Gounaris-Sakurai function and $W_r$ is the angular distribution of the decay, described by ''Zemach Tensors''.
+
+
+
+
+
+ 2. In the case of resonances of $\pi^+ \pi%-$ with spin zero, there are overlapping scalar resonances, therefore the previous approximation of a single resonance is no longer accurate. The use of the ''K-Matrix'' from nuclear physics is used instead. The value of $A_n e^{i\phi_n}$ are set to one in this case, for the $\pi^+ \pi^-$ case the function $f_n(m^2_+, m^2_-)$ is given by
+
+ $$ f_n(m^2_+, m^2_-) = \sum_l (I - iK(s(m^2_+, m^2_-))\rho(s(m^2_+, m^2_-)))_{ij} 

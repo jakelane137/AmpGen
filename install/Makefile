@@ -1730,6 +1730,33 @@ src/Lineshapes/LASS.cpp.s:
 	$(MAKE) -f CMakeFiles/AmpGen.dir/build.make CMakeFiles/AmpGen.dir/src/Lineshapes/LASS.cpp.s
 .PHONY : src/Lineshapes/LASS.cpp.s
 
+src/Lineshapes/MagPoly.o: src/Lineshapes/MagPoly.cpp.o
+
+.PHONY : src/Lineshapes/MagPoly.o
+
+# target to build an object file
+src/Lineshapes/MagPoly.cpp.o:
+	$(MAKE) -f CMakeFiles/AmpGen.dir/build.make CMakeFiles/AmpGen.dir/src/Lineshapes/MagPoly.cpp.o
+.PHONY : src/Lineshapes/MagPoly.cpp.o
+
+src/Lineshapes/MagPoly.i: src/Lineshapes/MagPoly.cpp.i
+
+.PHONY : src/Lineshapes/MagPoly.i
+
+# target to preprocess a source file
+src/Lineshapes/MagPoly.cpp.i:
+	$(MAKE) -f CMakeFiles/AmpGen.dir/build.make CMakeFiles/AmpGen.dir/src/Lineshapes/MagPoly.cpp.i
+.PHONY : src/Lineshapes/MagPoly.cpp.i
+
+src/Lineshapes/MagPoly.s: src/Lineshapes/MagPoly.cpp.s
+
+.PHONY : src/Lineshapes/MagPoly.s
+
+# target to generate assembly for a file
+src/Lineshapes/MagPoly.cpp.s:
+	$(MAKE) -f CMakeFiles/AmpGen.dir/build.make CMakeFiles/AmpGen.dir/src/Lineshapes/MagPoly.cpp.s
+.PHONY : src/Lineshapes/MagPoly.cpp.s
+
 src/Lineshapes/NonRelBW.o: src/Lineshapes/NonRelBW.cpp.o
 
 .PHONY : src/Lineshapes/NonRelBW.o
@@ -1783,6 +1810,33 @@ src/Lineshapes/PALANO.s: src/Lineshapes/PALANO.cpp.s
 src/Lineshapes/PALANO.cpp.s:
 	$(MAKE) -f CMakeFiles/AmpGen.dir/build.make CMakeFiles/AmpGen.dir/src/Lineshapes/PALANO.cpp.s
 .PHONY : src/Lineshapes/PALANO.cpp.s
+
+src/Lineshapes/PhasePoly.o: src/Lineshapes/PhasePoly.cpp.o
+
+.PHONY : src/Lineshapes/PhasePoly.o
+
+# target to build an object file
+src/Lineshapes/PhasePoly.cpp.o:
+	$(MAKE) -f CMakeFiles/AmpGen.dir/build.make CMakeFiles/AmpGen.dir/src/Lineshapes/PhasePoly.cpp.o
+.PHONY : src/Lineshapes/PhasePoly.cpp.o
+
+src/Lineshapes/PhasePoly.i: src/Lineshapes/PhasePoly.cpp.i
+
+.PHONY : src/Lineshapes/PhasePoly.i
+
+# target to preprocess a source file
+src/Lineshapes/PhasePoly.cpp.i:
+	$(MAKE) -f CMakeFiles/AmpGen.dir/build.make CMakeFiles/AmpGen.dir/src/Lineshapes/PhasePoly.cpp.i
+.PHONY : src/Lineshapes/PhasePoly.cpp.i
+
+src/Lineshapes/PhasePoly.s: src/Lineshapes/PhasePoly.cpp.s
+
+.PHONY : src/Lineshapes/PhasePoly.s
+
+# target to generate assembly for a file
+src/Lineshapes/PhasePoly.cpp.s:
+	$(MAKE) -f CMakeFiles/AmpGen.dir/build.make CMakeFiles/AmpGen.dir/src/Lineshapes/PhasePoly.cpp.s
+.PHONY : src/Lineshapes/PhasePoly.cpp.s
 
 src/Lineshapes/Photon.o: src/Lineshapes/Photon.cpp.o
 
@@ -3150,12 +3204,18 @@ help:
 	@echo "... src/Lineshapes/LASS.o"
 	@echo "... src/Lineshapes/LASS.i"
 	@echo "... src/Lineshapes/LASS.s"
+	@echo "... src/Lineshapes/MagPoly.o"
+	@echo "... src/Lineshapes/MagPoly.i"
+	@echo "... src/Lineshapes/MagPoly.s"
 	@echo "... src/Lineshapes/NonRelBW.o"
 	@echo "... src/Lineshapes/NonRelBW.i"
 	@echo "... src/Lineshapes/NonRelBW.s"
 	@echo "... src/Lineshapes/PALANO.o"
 	@echo "... src/Lineshapes/PALANO.i"
 	@echo "... src/Lineshapes/PALANO.s"
+	@echo "... src/Lineshapes/PhasePoly.o"
+	@echo "... src/Lineshapes/PhasePoly.i"
+	@echo "... src/Lineshapes/PhasePoly.s"
 	@echo "... src/Lineshapes/Photon.o"
 	@echo "... src/Lineshapes/Photon.i"
 	@echo "... src/Lineshapes/Photon.s"

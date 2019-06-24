@@ -577,9 +577,22 @@ CMakeFiles/AmpGen.dir/src/Lineshapes/LASS.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AmpGen.dir/src/Lineshapes/LASS.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jlane/Documents/ampGen/src/Lineshapes/LASS.cpp -o CMakeFiles/AmpGen.dir/src/Lineshapes/LASS.cpp.s
 
+CMakeFiles/AmpGen.dir/src/Lineshapes/MagPoly.cpp.o: CMakeFiles/AmpGen.dir/flags.make
+CMakeFiles/AmpGen.dir/src/Lineshapes/MagPoly.cpp.o: ../src/Lineshapes/MagPoly.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jlane/Documents/ampGen/install/CMakeFiles --progress-num=$(CMAKE_PROGRESS_41) "Building CXX object CMakeFiles/AmpGen.dir/src/Lineshapes/MagPoly.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AmpGen.dir/src/Lineshapes/MagPoly.cpp.o -c /home/jlane/Documents/ampGen/src/Lineshapes/MagPoly.cpp
+
+CMakeFiles/AmpGen.dir/src/Lineshapes/MagPoly.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/AmpGen.dir/src/Lineshapes/MagPoly.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jlane/Documents/ampGen/src/Lineshapes/MagPoly.cpp > CMakeFiles/AmpGen.dir/src/Lineshapes/MagPoly.cpp.i
+
+CMakeFiles/AmpGen.dir/src/Lineshapes/MagPoly.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AmpGen.dir/src/Lineshapes/MagPoly.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jlane/Documents/ampGen/src/Lineshapes/MagPoly.cpp -o CMakeFiles/AmpGen.dir/src/Lineshapes/MagPoly.cpp.s
+
 CMakeFiles/AmpGen.dir/src/Lineshapes/NonRelBW.cpp.o: CMakeFiles/AmpGen.dir/flags.make
 CMakeFiles/AmpGen.dir/src/Lineshapes/NonRelBW.cpp.o: ../src/Lineshapes/NonRelBW.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jlane/Documents/ampGen/install/CMakeFiles --progress-num=$(CMAKE_PROGRESS_41) "Building CXX object CMakeFiles/AmpGen.dir/src/Lineshapes/NonRelBW.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jlane/Documents/ampGen/install/CMakeFiles --progress-num=$(CMAKE_PROGRESS_42) "Building CXX object CMakeFiles/AmpGen.dir/src/Lineshapes/NonRelBW.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AmpGen.dir/src/Lineshapes/NonRelBW.cpp.o -c /home/jlane/Documents/ampGen/src/Lineshapes/NonRelBW.cpp
 
 CMakeFiles/AmpGen.dir/src/Lineshapes/NonRelBW.cpp.i: cmake_force
@@ -592,7 +605,7 @@ CMakeFiles/AmpGen.dir/src/Lineshapes/NonRelBW.cpp.s: cmake_force
 
 CMakeFiles/AmpGen.dir/src/Lineshapes/PALANO.cpp.o: CMakeFiles/AmpGen.dir/flags.make
 CMakeFiles/AmpGen.dir/src/Lineshapes/PALANO.cpp.o: ../src/Lineshapes/PALANO.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jlane/Documents/ampGen/install/CMakeFiles --progress-num=$(CMAKE_PROGRESS_42) "Building CXX object CMakeFiles/AmpGen.dir/src/Lineshapes/PALANO.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jlane/Documents/ampGen/install/CMakeFiles --progress-num=$(CMAKE_PROGRESS_43) "Building CXX object CMakeFiles/AmpGen.dir/src/Lineshapes/PALANO.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AmpGen.dir/src/Lineshapes/PALANO.cpp.o -c /home/jlane/Documents/ampGen/src/Lineshapes/PALANO.cpp
 
 CMakeFiles/AmpGen.dir/src/Lineshapes/PALANO.cpp.i: cmake_force
@@ -603,9 +616,22 @@ CMakeFiles/AmpGen.dir/src/Lineshapes/PALANO.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AmpGen.dir/src/Lineshapes/PALANO.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jlane/Documents/ampGen/src/Lineshapes/PALANO.cpp -o CMakeFiles/AmpGen.dir/src/Lineshapes/PALANO.cpp.s
 
+CMakeFiles/AmpGen.dir/src/Lineshapes/PhasePoly.cpp.o: CMakeFiles/AmpGen.dir/flags.make
+CMakeFiles/AmpGen.dir/src/Lineshapes/PhasePoly.cpp.o: ../src/Lineshapes/PhasePoly.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jlane/Documents/ampGen/install/CMakeFiles --progress-num=$(CMAKE_PROGRESS_44) "Building CXX object CMakeFiles/AmpGen.dir/src/Lineshapes/PhasePoly.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AmpGen.dir/src/Lineshapes/PhasePoly.cpp.o -c /home/jlane/Documents/ampGen/src/Lineshapes/PhasePoly.cpp
+
+CMakeFiles/AmpGen.dir/src/Lineshapes/PhasePoly.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/AmpGen.dir/src/Lineshapes/PhasePoly.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jlane/Documents/ampGen/src/Lineshapes/PhasePoly.cpp > CMakeFiles/AmpGen.dir/src/Lineshapes/PhasePoly.cpp.i
+
+CMakeFiles/AmpGen.dir/src/Lineshapes/PhasePoly.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AmpGen.dir/src/Lineshapes/PhasePoly.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jlane/Documents/ampGen/src/Lineshapes/PhasePoly.cpp -o CMakeFiles/AmpGen.dir/src/Lineshapes/PhasePoly.cpp.s
+
 CMakeFiles/AmpGen.dir/src/Lineshapes/Photon.cpp.o: CMakeFiles/AmpGen.dir/flags.make
 CMakeFiles/AmpGen.dir/src/Lineshapes/Photon.cpp.o: ../src/Lineshapes/Photon.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jlane/Documents/ampGen/install/CMakeFiles --progress-num=$(CMAKE_PROGRESS_43) "Building CXX object CMakeFiles/AmpGen.dir/src/Lineshapes/Photon.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jlane/Documents/ampGen/install/CMakeFiles --progress-num=$(CMAKE_PROGRESS_45) "Building CXX object CMakeFiles/AmpGen.dir/src/Lineshapes/Photon.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AmpGen.dir/src/Lineshapes/Photon.cpp.o -c /home/jlane/Documents/ampGen/src/Lineshapes/Photon.cpp
 
 CMakeFiles/AmpGen.dir/src/Lineshapes/Photon.cpp.i: cmake_force
@@ -618,7 +644,7 @@ CMakeFiles/AmpGen.dir/src/Lineshapes/Photon.cpp.s: cmake_force
 
 CMakeFiles/AmpGen.dir/src/Lineshapes/Poly.cpp.o: CMakeFiles/AmpGen.dir/flags.make
 CMakeFiles/AmpGen.dir/src/Lineshapes/Poly.cpp.o: ../src/Lineshapes/Poly.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jlane/Documents/ampGen/install/CMakeFiles --progress-num=$(CMAKE_PROGRESS_44) "Building CXX object CMakeFiles/AmpGen.dir/src/Lineshapes/Poly.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jlane/Documents/ampGen/install/CMakeFiles --progress-num=$(CMAKE_PROGRESS_46) "Building CXX object CMakeFiles/AmpGen.dir/src/Lineshapes/Poly.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AmpGen.dir/src/Lineshapes/Poly.cpp.o -c /home/jlane/Documents/ampGen/src/Lineshapes/Poly.cpp
 
 CMakeFiles/AmpGen.dir/src/Lineshapes/Poly.cpp.i: cmake_force
@@ -631,7 +657,7 @@ CMakeFiles/AmpGen.dir/src/Lineshapes/Poly.cpp.s: cmake_force
 
 CMakeFiles/AmpGen.dir/src/Lineshapes/SplineShapes.cpp.o: CMakeFiles/AmpGen.dir/flags.make
 CMakeFiles/AmpGen.dir/src/Lineshapes/SplineShapes.cpp.o: ../src/Lineshapes/SplineShapes.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jlane/Documents/ampGen/install/CMakeFiles --progress-num=$(CMAKE_PROGRESS_45) "Building CXX object CMakeFiles/AmpGen.dir/src/Lineshapes/SplineShapes.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jlane/Documents/ampGen/install/CMakeFiles --progress-num=$(CMAKE_PROGRESS_47) "Building CXX object CMakeFiles/AmpGen.dir/src/Lineshapes/SplineShapes.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AmpGen.dir/src/Lineshapes/SplineShapes.cpp.o -c /home/jlane/Documents/ampGen/src/Lineshapes/SplineShapes.cpp
 
 CMakeFiles/AmpGen.dir/src/Lineshapes/SplineShapes.cpp.i: cmake_force
@@ -644,7 +670,7 @@ CMakeFiles/AmpGen.dir/src/Lineshapes/SplineShapes.cpp.s: cmake_force
 
 CMakeFiles/AmpGen.dir/src/Lineshapes/kMatrix.cpp.o: CMakeFiles/AmpGen.dir/flags.make
 CMakeFiles/AmpGen.dir/src/Lineshapes/kMatrix.cpp.o: ../src/Lineshapes/kMatrix.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jlane/Documents/ampGen/install/CMakeFiles --progress-num=$(CMAKE_PROGRESS_46) "Building CXX object CMakeFiles/AmpGen.dir/src/Lineshapes/kMatrix.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jlane/Documents/ampGen/install/CMakeFiles --progress-num=$(CMAKE_PROGRESS_48) "Building CXX object CMakeFiles/AmpGen.dir/src/Lineshapes/kMatrix.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AmpGen.dir/src/Lineshapes/kMatrix.cpp.o -c /home/jlane/Documents/ampGen/src/Lineshapes/kMatrix.cpp
 
 CMakeFiles/AmpGen.dir/src/Lineshapes/kMatrix.cpp.i: cmake_force
@@ -657,7 +683,7 @@ CMakeFiles/AmpGen.dir/src/Lineshapes/kMatrix.cpp.s: cmake_force
 
 CMakeFiles/AmpGen.dir/src/Lineshapes/kMatrixSimple.cpp.o: CMakeFiles/AmpGen.dir/flags.make
 CMakeFiles/AmpGen.dir/src/Lineshapes/kMatrixSimple.cpp.o: ../src/Lineshapes/kMatrixSimple.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jlane/Documents/ampGen/install/CMakeFiles --progress-num=$(CMAKE_PROGRESS_47) "Building CXX object CMakeFiles/AmpGen.dir/src/Lineshapes/kMatrixSimple.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jlane/Documents/ampGen/install/CMakeFiles --progress-num=$(CMAKE_PROGRESS_49) "Building CXX object CMakeFiles/AmpGen.dir/src/Lineshapes/kMatrixSimple.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AmpGen.dir/src/Lineshapes/kMatrixSimple.cpp.o -c /home/jlane/Documents/ampGen/src/Lineshapes/kMatrixSimple.cpp
 
 CMakeFiles/AmpGen.dir/src/Lineshapes/kMatrixSimple.cpp.i: cmake_force
@@ -670,7 +696,7 @@ CMakeFiles/AmpGen.dir/src/Lineshapes/kMatrixSimple.cpp.s: cmake_force
 
 CMakeFiles/AmpGen.dir/src/Minimiser.cpp.o: CMakeFiles/AmpGen.dir/flags.make
 CMakeFiles/AmpGen.dir/src/Minimiser.cpp.o: ../src/Minimiser.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jlane/Documents/ampGen/install/CMakeFiles --progress-num=$(CMAKE_PROGRESS_48) "Building CXX object CMakeFiles/AmpGen.dir/src/Minimiser.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jlane/Documents/ampGen/install/CMakeFiles --progress-num=$(CMAKE_PROGRESS_50) "Building CXX object CMakeFiles/AmpGen.dir/src/Minimiser.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AmpGen.dir/src/Minimiser.cpp.o -c /home/jlane/Documents/ampGen/src/Minimiser.cpp
 
 CMakeFiles/AmpGen.dir/src/Minimiser.cpp.i: cmake_force
@@ -683,7 +709,7 @@ CMakeFiles/AmpGen.dir/src/Minimiser.cpp.s: cmake_force
 
 CMakeFiles/AmpGen.dir/src/MinuitExpression.cpp.o: CMakeFiles/AmpGen.dir/flags.make
 CMakeFiles/AmpGen.dir/src/MinuitExpression.cpp.o: ../src/MinuitExpression.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jlane/Documents/ampGen/install/CMakeFiles --progress-num=$(CMAKE_PROGRESS_49) "Building CXX object CMakeFiles/AmpGen.dir/src/MinuitExpression.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jlane/Documents/ampGen/install/CMakeFiles --progress-num=$(CMAKE_PROGRESS_51) "Building CXX object CMakeFiles/AmpGen.dir/src/MinuitExpression.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AmpGen.dir/src/MinuitExpression.cpp.o -c /home/jlane/Documents/ampGen/src/MinuitExpression.cpp
 
 CMakeFiles/AmpGen.dir/src/MinuitExpression.cpp.i: cmake_force
@@ -696,7 +722,7 @@ CMakeFiles/AmpGen.dir/src/MinuitExpression.cpp.s: cmake_force
 
 CMakeFiles/AmpGen.dir/src/MinuitParameter.cpp.o: CMakeFiles/AmpGen.dir/flags.make
 CMakeFiles/AmpGen.dir/src/MinuitParameter.cpp.o: ../src/MinuitParameter.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jlane/Documents/ampGen/install/CMakeFiles --progress-num=$(CMAKE_PROGRESS_50) "Building CXX object CMakeFiles/AmpGen.dir/src/MinuitParameter.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jlane/Documents/ampGen/install/CMakeFiles --progress-num=$(CMAKE_PROGRESS_52) "Building CXX object CMakeFiles/AmpGen.dir/src/MinuitParameter.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AmpGen.dir/src/MinuitParameter.cpp.o -c /home/jlane/Documents/ampGen/src/MinuitParameter.cpp
 
 CMakeFiles/AmpGen.dir/src/MinuitParameter.cpp.i: cmake_force
@@ -709,7 +735,7 @@ CMakeFiles/AmpGen.dir/src/MinuitParameter.cpp.s: cmake_force
 
 CMakeFiles/AmpGen.dir/src/MinuitParameterSet.cpp.o: CMakeFiles/AmpGen.dir/flags.make
 CMakeFiles/AmpGen.dir/src/MinuitParameterSet.cpp.o: ../src/MinuitParameterSet.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jlane/Documents/ampGen/install/CMakeFiles --progress-num=$(CMAKE_PROGRESS_51) "Building CXX object CMakeFiles/AmpGen.dir/src/MinuitParameterSet.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jlane/Documents/ampGen/install/CMakeFiles --progress-num=$(CMAKE_PROGRESS_53) "Building CXX object CMakeFiles/AmpGen.dir/src/MinuitParameterSet.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AmpGen.dir/src/MinuitParameterSet.cpp.o -c /home/jlane/Documents/ampGen/src/MinuitParameterSet.cpp
 
 CMakeFiles/AmpGen.dir/src/MinuitParameterSet.cpp.i: cmake_force
@@ -722,7 +748,7 @@ CMakeFiles/AmpGen.dir/src/MinuitParameterSet.cpp.s: cmake_force
 
 CMakeFiles/AmpGen.dir/src/NamedParameter.cpp.o: CMakeFiles/AmpGen.dir/flags.make
 CMakeFiles/AmpGen.dir/src/NamedParameter.cpp.o: ../src/NamedParameter.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jlane/Documents/ampGen/install/CMakeFiles --progress-num=$(CMAKE_PROGRESS_52) "Building CXX object CMakeFiles/AmpGen.dir/src/NamedParameter.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jlane/Documents/ampGen/install/CMakeFiles --progress-num=$(CMAKE_PROGRESS_54) "Building CXX object CMakeFiles/AmpGen.dir/src/NamedParameter.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AmpGen.dir/src/NamedParameter.cpp.o -c /home/jlane/Documents/ampGen/src/NamedParameter.cpp
 
 CMakeFiles/AmpGen.dir/src/NamedParameter.cpp.i: cmake_force
@@ -735,7 +761,7 @@ CMakeFiles/AmpGen.dir/src/NamedParameter.cpp.s: cmake_force
 
 CMakeFiles/AmpGen.dir/src/OptionsParser.cpp.o: CMakeFiles/AmpGen.dir/flags.make
 CMakeFiles/AmpGen.dir/src/OptionsParser.cpp.o: ../src/OptionsParser.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jlane/Documents/ampGen/install/CMakeFiles --progress-num=$(CMAKE_PROGRESS_53) "Building CXX object CMakeFiles/AmpGen.dir/src/OptionsParser.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jlane/Documents/ampGen/install/CMakeFiles --progress-num=$(CMAKE_PROGRESS_55) "Building CXX object CMakeFiles/AmpGen.dir/src/OptionsParser.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AmpGen.dir/src/OptionsParser.cpp.o -c /home/jlane/Documents/ampGen/src/OptionsParser.cpp
 
 CMakeFiles/AmpGen.dir/src/OptionsParser.cpp.i: cmake_force
@@ -748,7 +774,7 @@ CMakeFiles/AmpGen.dir/src/OptionsParser.cpp.s: cmake_force
 
 CMakeFiles/AmpGen.dir/src/PartialWidthConstraint.cpp.o: CMakeFiles/AmpGen.dir/flags.make
 CMakeFiles/AmpGen.dir/src/PartialWidthConstraint.cpp.o: ../src/PartialWidthConstraint.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jlane/Documents/ampGen/install/CMakeFiles --progress-num=$(CMAKE_PROGRESS_54) "Building CXX object CMakeFiles/AmpGen.dir/src/PartialWidthConstraint.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jlane/Documents/ampGen/install/CMakeFiles --progress-num=$(CMAKE_PROGRESS_56) "Building CXX object CMakeFiles/AmpGen.dir/src/PartialWidthConstraint.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AmpGen.dir/src/PartialWidthConstraint.cpp.o -c /home/jlane/Documents/ampGen/src/PartialWidthConstraint.cpp
 
 CMakeFiles/AmpGen.dir/src/PartialWidthConstraint.cpp.i: cmake_force
@@ -761,7 +787,7 @@ CMakeFiles/AmpGen.dir/src/PartialWidthConstraint.cpp.s: cmake_force
 
 CMakeFiles/AmpGen.dir/src/Particle.cpp.o: CMakeFiles/AmpGen.dir/flags.make
 CMakeFiles/AmpGen.dir/src/Particle.cpp.o: ../src/Particle.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jlane/Documents/ampGen/install/CMakeFiles --progress-num=$(CMAKE_PROGRESS_55) "Building CXX object CMakeFiles/AmpGen.dir/src/Particle.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jlane/Documents/ampGen/install/CMakeFiles --progress-num=$(CMAKE_PROGRESS_57) "Building CXX object CMakeFiles/AmpGen.dir/src/Particle.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AmpGen.dir/src/Particle.cpp.o -c /home/jlane/Documents/ampGen/src/Particle.cpp
 
 CMakeFiles/AmpGen.dir/src/Particle.cpp.i: cmake_force
@@ -774,7 +800,7 @@ CMakeFiles/AmpGen.dir/src/Particle.cpp.s: cmake_force
 
 CMakeFiles/AmpGen.dir/src/ParticleProperties.cpp.o: CMakeFiles/AmpGen.dir/flags.make
 CMakeFiles/AmpGen.dir/src/ParticleProperties.cpp.o: ../src/ParticleProperties.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jlane/Documents/ampGen/install/CMakeFiles --progress-num=$(CMAKE_PROGRESS_56) "Building CXX object CMakeFiles/AmpGen.dir/src/ParticleProperties.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jlane/Documents/ampGen/install/CMakeFiles --progress-num=$(CMAKE_PROGRESS_58) "Building CXX object CMakeFiles/AmpGen.dir/src/ParticleProperties.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AmpGen.dir/src/ParticleProperties.cpp.o -c /home/jlane/Documents/ampGen/src/ParticleProperties.cpp
 
 CMakeFiles/AmpGen.dir/src/ParticleProperties.cpp.i: cmake_force
@@ -787,7 +813,7 @@ CMakeFiles/AmpGen.dir/src/ParticleProperties.cpp.s: cmake_force
 
 CMakeFiles/AmpGen.dir/src/ParticlePropertiesList.cpp.o: CMakeFiles/AmpGen.dir/flags.make
 CMakeFiles/AmpGen.dir/src/ParticlePropertiesList.cpp.o: ../src/ParticlePropertiesList.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jlane/Documents/ampGen/install/CMakeFiles --progress-num=$(CMAKE_PROGRESS_57) "Building CXX object CMakeFiles/AmpGen.dir/src/ParticlePropertiesList.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jlane/Documents/ampGen/install/CMakeFiles --progress-num=$(CMAKE_PROGRESS_59) "Building CXX object CMakeFiles/AmpGen.dir/src/ParticlePropertiesList.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AmpGen.dir/src/ParticlePropertiesList.cpp.o -c /home/jlane/Documents/ampGen/src/ParticlePropertiesList.cpp
 
 CMakeFiles/AmpGen.dir/src/ParticlePropertiesList.cpp.i: cmake_force
@@ -800,7 +826,7 @@ CMakeFiles/AmpGen.dir/src/ParticlePropertiesList.cpp.s: cmake_force
 
 CMakeFiles/AmpGen.dir/src/PhaseSpace.cpp.o: CMakeFiles/AmpGen.dir/flags.make
 CMakeFiles/AmpGen.dir/src/PhaseSpace.cpp.o: ../src/PhaseSpace.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jlane/Documents/ampGen/install/CMakeFiles --progress-num=$(CMAKE_PROGRESS_58) "Building CXX object CMakeFiles/AmpGen.dir/src/PhaseSpace.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jlane/Documents/ampGen/install/CMakeFiles --progress-num=$(CMAKE_PROGRESS_60) "Building CXX object CMakeFiles/AmpGen.dir/src/PhaseSpace.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AmpGen.dir/src/PhaseSpace.cpp.o -c /home/jlane/Documents/ampGen/src/PhaseSpace.cpp
 
 CMakeFiles/AmpGen.dir/src/PhaseSpace.cpp.i: cmake_force
@@ -813,7 +839,7 @@ CMakeFiles/AmpGen.dir/src/PhaseSpace.cpp.s: cmake_force
 
 CMakeFiles/AmpGen.dir/src/Plots.cpp.o: CMakeFiles/AmpGen.dir/flags.make
 CMakeFiles/AmpGen.dir/src/Plots.cpp.o: ../src/Plots.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jlane/Documents/ampGen/install/CMakeFiles --progress-num=$(CMAKE_PROGRESS_59) "Building CXX object CMakeFiles/AmpGen.dir/src/Plots.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jlane/Documents/ampGen/install/CMakeFiles --progress-num=$(CMAKE_PROGRESS_61) "Building CXX object CMakeFiles/AmpGen.dir/src/Plots.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AmpGen.dir/src/Plots.cpp.o -c /home/jlane/Documents/ampGen/src/Plots.cpp
 
 CMakeFiles/AmpGen.dir/src/Plots.cpp.i: cmake_force
@@ -826,7 +852,7 @@ CMakeFiles/AmpGen.dir/src/Plots.cpp.s: cmake_force
 
 CMakeFiles/AmpGen.dir/src/PolarisedSum.cpp.o: CMakeFiles/AmpGen.dir/flags.make
 CMakeFiles/AmpGen.dir/src/PolarisedSum.cpp.o: ../src/PolarisedSum.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jlane/Documents/ampGen/install/CMakeFiles --progress-num=$(CMAKE_PROGRESS_60) "Building CXX object CMakeFiles/AmpGen.dir/src/PolarisedSum.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jlane/Documents/ampGen/install/CMakeFiles --progress-num=$(CMAKE_PROGRESS_62) "Building CXX object CMakeFiles/AmpGen.dir/src/PolarisedSum.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AmpGen.dir/src/PolarisedSum.cpp.o -c /home/jlane/Documents/ampGen/src/PolarisedSum.cpp
 
 CMakeFiles/AmpGen.dir/src/PolarisedSum.cpp.i: cmake_force
@@ -839,7 +865,7 @@ CMakeFiles/AmpGen.dir/src/PolarisedSum.cpp.s: cmake_force
 
 CMakeFiles/AmpGen.dir/src/ProgressBar.cpp.o: CMakeFiles/AmpGen.dir/flags.make
 CMakeFiles/AmpGen.dir/src/ProgressBar.cpp.o: ../src/ProgressBar.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jlane/Documents/ampGen/install/CMakeFiles --progress-num=$(CMAKE_PROGRESS_61) "Building CXX object CMakeFiles/AmpGen.dir/src/ProgressBar.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jlane/Documents/ampGen/install/CMakeFiles --progress-num=$(CMAKE_PROGRESS_63) "Building CXX object CMakeFiles/AmpGen.dir/src/ProgressBar.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AmpGen.dir/src/ProgressBar.cpp.o -c /home/jlane/Documents/ampGen/src/ProgressBar.cpp
 
 CMakeFiles/AmpGen.dir/src/ProgressBar.cpp.i: cmake_force
@@ -852,7 +878,7 @@ CMakeFiles/AmpGen.dir/src/ProgressBar.cpp.s: cmake_force
 
 CMakeFiles/AmpGen.dir/src/Projection.cpp.o: CMakeFiles/AmpGen.dir/flags.make
 CMakeFiles/AmpGen.dir/src/Projection.cpp.o: ../src/Projection.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jlane/Documents/ampGen/install/CMakeFiles --progress-num=$(CMAKE_PROGRESS_62) "Building CXX object CMakeFiles/AmpGen.dir/src/Projection.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jlane/Documents/ampGen/install/CMakeFiles --progress-num=$(CMAKE_PROGRESS_64) "Building CXX object CMakeFiles/AmpGen.dir/src/Projection.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AmpGen.dir/src/Projection.cpp.o -c /home/jlane/Documents/ampGen/src/Projection.cpp
 
 CMakeFiles/AmpGen.dir/src/Projection.cpp.i: cmake_force
@@ -865,7 +891,7 @@ CMakeFiles/AmpGen.dir/src/Projection.cpp.s: cmake_force
 
 CMakeFiles/AmpGen.dir/src/QuarkContent.cpp.o: CMakeFiles/AmpGen.dir/flags.make
 CMakeFiles/AmpGen.dir/src/QuarkContent.cpp.o: ../src/QuarkContent.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jlane/Documents/ampGen/install/CMakeFiles --progress-num=$(CMAKE_PROGRESS_63) "Building CXX object CMakeFiles/AmpGen.dir/src/QuarkContent.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jlane/Documents/ampGen/install/CMakeFiles --progress-num=$(CMAKE_PROGRESS_65) "Building CXX object CMakeFiles/AmpGen.dir/src/QuarkContent.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AmpGen.dir/src/QuarkContent.cpp.o -c /home/jlane/Documents/ampGen/src/QuarkContent.cpp
 
 CMakeFiles/AmpGen.dir/src/QuarkContent.cpp.i: cmake_force
@@ -878,7 +904,7 @@ CMakeFiles/AmpGen.dir/src/QuarkContent.cpp.s: cmake_force
 
 CMakeFiles/AmpGen.dir/src/RecursivePhaseSpace.cpp.o: CMakeFiles/AmpGen.dir/flags.make
 CMakeFiles/AmpGen.dir/src/RecursivePhaseSpace.cpp.o: ../src/RecursivePhaseSpace.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jlane/Documents/ampGen/install/CMakeFiles --progress-num=$(CMAKE_PROGRESS_64) "Building CXX object CMakeFiles/AmpGen.dir/src/RecursivePhaseSpace.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jlane/Documents/ampGen/install/CMakeFiles --progress-num=$(CMAKE_PROGRESS_66) "Building CXX object CMakeFiles/AmpGen.dir/src/RecursivePhaseSpace.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AmpGen.dir/src/RecursivePhaseSpace.cpp.o -c /home/jlane/Documents/ampGen/src/RecursivePhaseSpace.cpp
 
 CMakeFiles/AmpGen.dir/src/RecursivePhaseSpace.cpp.i: cmake_force
@@ -891,7 +917,7 @@ CMakeFiles/AmpGen.dir/src/RecursivePhaseSpace.cpp.s: cmake_force
 
 CMakeFiles/AmpGen.dir/src/Simplify.cpp.o: CMakeFiles/AmpGen.dir/flags.make
 CMakeFiles/AmpGen.dir/src/Simplify.cpp.o: ../src/Simplify.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jlane/Documents/ampGen/install/CMakeFiles --progress-num=$(CMAKE_PROGRESS_65) "Building CXX object CMakeFiles/AmpGen.dir/src/Simplify.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jlane/Documents/ampGen/install/CMakeFiles --progress-num=$(CMAKE_PROGRESS_67) "Building CXX object CMakeFiles/AmpGen.dir/src/Simplify.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AmpGen.dir/src/Simplify.cpp.o -c /home/jlane/Documents/ampGen/src/Simplify.cpp
 
 CMakeFiles/AmpGen.dir/src/Simplify.cpp.i: cmake_force
@@ -904,7 +930,7 @@ CMakeFiles/AmpGen.dir/src/Simplify.cpp.s: cmake_force
 
 CMakeFiles/AmpGen.dir/src/Spline.cpp.o: CMakeFiles/AmpGen.dir/flags.make
 CMakeFiles/AmpGen.dir/src/Spline.cpp.o: ../src/Spline.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jlane/Documents/ampGen/install/CMakeFiles --progress-num=$(CMAKE_PROGRESS_66) "Building CXX object CMakeFiles/AmpGen.dir/src/Spline.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jlane/Documents/ampGen/install/CMakeFiles --progress-num=$(CMAKE_PROGRESS_68) "Building CXX object CMakeFiles/AmpGen.dir/src/Spline.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AmpGen.dir/src/Spline.cpp.o -c /home/jlane/Documents/ampGen/src/Spline.cpp
 
 CMakeFiles/AmpGen.dir/src/Spline.cpp.i: cmake_force
@@ -917,7 +943,7 @@ CMakeFiles/AmpGen.dir/src/Spline.cpp.s: cmake_force
 
 CMakeFiles/AmpGen.dir/src/Tensor.cpp.o: CMakeFiles/AmpGen.dir/flags.make
 CMakeFiles/AmpGen.dir/src/Tensor.cpp.o: ../src/Tensor.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jlane/Documents/ampGen/install/CMakeFiles --progress-num=$(CMAKE_PROGRESS_67) "Building CXX object CMakeFiles/AmpGen.dir/src/Tensor.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jlane/Documents/ampGen/install/CMakeFiles --progress-num=$(CMAKE_PROGRESS_69) "Building CXX object CMakeFiles/AmpGen.dir/src/Tensor.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AmpGen.dir/src/Tensor.cpp.o -c /home/jlane/Documents/ampGen/src/Tensor.cpp
 
 CMakeFiles/AmpGen.dir/src/Tensor.cpp.i: cmake_force
@@ -930,7 +956,7 @@ CMakeFiles/AmpGen.dir/src/Tensor.cpp.s: cmake_force
 
 CMakeFiles/AmpGen.dir/src/ThreadPool.cpp.o: CMakeFiles/AmpGen.dir/flags.make
 CMakeFiles/AmpGen.dir/src/ThreadPool.cpp.o: ../src/ThreadPool.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jlane/Documents/ampGen/install/CMakeFiles --progress-num=$(CMAKE_PROGRESS_68) "Building CXX object CMakeFiles/AmpGen.dir/src/ThreadPool.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jlane/Documents/ampGen/install/CMakeFiles --progress-num=$(CMAKE_PROGRESS_70) "Building CXX object CMakeFiles/AmpGen.dir/src/ThreadPool.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AmpGen.dir/src/ThreadPool.cpp.o -c /home/jlane/Documents/ampGen/src/ThreadPool.cpp
 
 CMakeFiles/AmpGen.dir/src/ThreadPool.cpp.i: cmake_force
@@ -943,7 +969,7 @@ CMakeFiles/AmpGen.dir/src/ThreadPool.cpp.s: cmake_force
 
 CMakeFiles/AmpGen.dir/src/ThreeBodyCalculators.cpp.o: CMakeFiles/AmpGen.dir/flags.make
 CMakeFiles/AmpGen.dir/src/ThreeBodyCalculators.cpp.o: ../src/ThreeBodyCalculators.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jlane/Documents/ampGen/install/CMakeFiles --progress-num=$(CMAKE_PROGRESS_69) "Building CXX object CMakeFiles/AmpGen.dir/src/ThreeBodyCalculators.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jlane/Documents/ampGen/install/CMakeFiles --progress-num=$(CMAKE_PROGRESS_71) "Building CXX object CMakeFiles/AmpGen.dir/src/ThreeBodyCalculators.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AmpGen.dir/src/ThreeBodyCalculators.cpp.o -c /home/jlane/Documents/ampGen/src/ThreeBodyCalculators.cpp
 
 CMakeFiles/AmpGen.dir/src/ThreeBodyCalculators.cpp.i: cmake_force
@@ -956,7 +982,7 @@ CMakeFiles/AmpGen.dir/src/ThreeBodyCalculators.cpp.s: cmake_force
 
 CMakeFiles/AmpGen.dir/src/Transform.cpp.o: CMakeFiles/AmpGen.dir/flags.make
 CMakeFiles/AmpGen.dir/src/Transform.cpp.o: ../src/Transform.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jlane/Documents/ampGen/install/CMakeFiles --progress-num=$(CMAKE_PROGRESS_70) "Building CXX object CMakeFiles/AmpGen.dir/src/Transform.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jlane/Documents/ampGen/install/CMakeFiles --progress-num=$(CMAKE_PROGRESS_72) "Building CXX object CMakeFiles/AmpGen.dir/src/Transform.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AmpGen.dir/src/Transform.cpp.o -c /home/jlane/Documents/ampGen/src/Transform.cpp
 
 CMakeFiles/AmpGen.dir/src/Transform.cpp.i: cmake_force
@@ -969,7 +995,7 @@ CMakeFiles/AmpGen.dir/src/Transform.cpp.s: cmake_force
 
 CMakeFiles/AmpGen.dir/src/UnaryExpression.cpp.o: CMakeFiles/AmpGen.dir/flags.make
 CMakeFiles/AmpGen.dir/src/UnaryExpression.cpp.o: ../src/UnaryExpression.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jlane/Documents/ampGen/install/CMakeFiles --progress-num=$(CMAKE_PROGRESS_71) "Building CXX object CMakeFiles/AmpGen.dir/src/UnaryExpression.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jlane/Documents/ampGen/install/CMakeFiles --progress-num=$(CMAKE_PROGRESS_73) "Building CXX object CMakeFiles/AmpGen.dir/src/UnaryExpression.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AmpGen.dir/src/UnaryExpression.cpp.o -c /home/jlane/Documents/ampGen/src/UnaryExpression.cpp
 
 CMakeFiles/AmpGen.dir/src/UnaryExpression.cpp.i: cmake_force
@@ -982,7 +1008,7 @@ CMakeFiles/AmpGen.dir/src/UnaryExpression.cpp.s: cmake_force
 
 CMakeFiles/AmpGen.dir/src/Utilities.cpp.o: CMakeFiles/AmpGen.dir/flags.make
 CMakeFiles/AmpGen.dir/src/Utilities.cpp.o: ../src/Utilities.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jlane/Documents/ampGen/install/CMakeFiles --progress-num=$(CMAKE_PROGRESS_72) "Building CXX object CMakeFiles/AmpGen.dir/src/Utilities.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jlane/Documents/ampGen/install/CMakeFiles --progress-num=$(CMAKE_PROGRESS_74) "Building CXX object CMakeFiles/AmpGen.dir/src/Utilities.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AmpGen.dir/src/Utilities.cpp.o -c /home/jlane/Documents/ampGen/src/Utilities.cpp
 
 CMakeFiles/AmpGen.dir/src/Utilities.cpp.i: cmake_force
@@ -995,7 +1021,7 @@ CMakeFiles/AmpGen.dir/src/Utilities.cpp.s: cmake_force
 
 CMakeFiles/AmpGen.dir/src/Vertex.cpp.o: CMakeFiles/AmpGen.dir/flags.make
 CMakeFiles/AmpGen.dir/src/Vertex.cpp.o: ../src/Vertex.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jlane/Documents/ampGen/install/CMakeFiles --progress-num=$(CMAKE_PROGRESS_73) "Building CXX object CMakeFiles/AmpGen.dir/src/Vertex.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jlane/Documents/ampGen/install/CMakeFiles --progress-num=$(CMAKE_PROGRESS_75) "Building CXX object CMakeFiles/AmpGen.dir/src/Vertex.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AmpGen.dir/src/Vertex.cpp.o -c /home/jlane/Documents/ampGen/src/Vertex.cpp
 
 CMakeFiles/AmpGen.dir/src/Vertex.cpp.i: cmake_force
@@ -1008,7 +1034,7 @@ CMakeFiles/AmpGen.dir/src/Vertex.cpp.s: cmake_force
 
 CMakeFiles/AmpGen.dir/src/Wigner.cpp.o: CMakeFiles/AmpGen.dir/flags.make
 CMakeFiles/AmpGen.dir/src/Wigner.cpp.o: ../src/Wigner.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jlane/Documents/ampGen/install/CMakeFiles --progress-num=$(CMAKE_PROGRESS_74) "Building CXX object CMakeFiles/AmpGen.dir/src/Wigner.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jlane/Documents/ampGen/install/CMakeFiles --progress-num=$(CMAKE_PROGRESS_76) "Building CXX object CMakeFiles/AmpGen.dir/src/Wigner.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AmpGen.dir/src/Wigner.cpp.o -c /home/jlane/Documents/ampGen/src/Wigner.cpp
 
 CMakeFiles/AmpGen.dir/src/Wigner.cpp.i: cmake_force
@@ -1061,8 +1087,10 @@ AmpGen_OBJECTS = \
 "CMakeFiles/AmpGen.dir/src/Lineshapes/GounarisSakurai.cpp.o" \
 "CMakeFiles/AmpGen.dir/src/Lineshapes/Isotensor.cpp.o" \
 "CMakeFiles/AmpGen.dir/src/Lineshapes/LASS.cpp.o" \
+"CMakeFiles/AmpGen.dir/src/Lineshapes/MagPoly.cpp.o" \
 "CMakeFiles/AmpGen.dir/src/Lineshapes/NonRelBW.cpp.o" \
 "CMakeFiles/AmpGen.dir/src/Lineshapes/PALANO.cpp.o" \
+"CMakeFiles/AmpGen.dir/src/Lineshapes/PhasePoly.cpp.o" \
 "CMakeFiles/AmpGen.dir/src/Lineshapes/Photon.cpp.o" \
 "CMakeFiles/AmpGen.dir/src/Lineshapes/Poly.cpp.o" \
 "CMakeFiles/AmpGen.dir/src/Lineshapes/SplineShapes.cpp.o" \
@@ -1139,8 +1167,10 @@ lib/libAmpGen.so: CMakeFiles/AmpGen.dir/src/Lineshapes/GenericKmatrix.cpp.o
 lib/libAmpGen.so: CMakeFiles/AmpGen.dir/src/Lineshapes/GounarisSakurai.cpp.o
 lib/libAmpGen.so: CMakeFiles/AmpGen.dir/src/Lineshapes/Isotensor.cpp.o
 lib/libAmpGen.so: CMakeFiles/AmpGen.dir/src/Lineshapes/LASS.cpp.o
+lib/libAmpGen.so: CMakeFiles/AmpGen.dir/src/Lineshapes/MagPoly.cpp.o
 lib/libAmpGen.so: CMakeFiles/AmpGen.dir/src/Lineshapes/NonRelBW.cpp.o
 lib/libAmpGen.so: CMakeFiles/AmpGen.dir/src/Lineshapes/PALANO.cpp.o
+lib/libAmpGen.so: CMakeFiles/AmpGen.dir/src/Lineshapes/PhasePoly.cpp.o
 lib/libAmpGen.so: CMakeFiles/AmpGen.dir/src/Lineshapes/Photon.cpp.o
 lib/libAmpGen.so: CMakeFiles/AmpGen.dir/src/Lineshapes/Poly.cpp.o
 lib/libAmpGen.so: CMakeFiles/AmpGen.dir/src/Lineshapes/SplineShapes.cpp.o
@@ -1206,7 +1236,7 @@ lib/libAmpGen.so: /usr/lib64/root/libCore.so.6.16.00
 lib/libAmpGen.so: /usr/lib/gcc/x86_64-redhat-linux/9/libgomp.so
 lib/libAmpGen.so: /usr/lib64/libpthread.so
 lib/libAmpGen.so: CMakeFiles/AmpGen.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/jlane/Documents/ampGen/install/CMakeFiles --progress-num=$(CMAKE_PROGRESS_75) "Linking CXX shared library lib/libAmpGen.so"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/jlane/Documents/ampGen/install/CMakeFiles --progress-num=$(CMAKE_PROGRESS_77) "Linking CXX shared library lib/libAmpGen.so"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/AmpGen.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
