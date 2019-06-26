@@ -15,9 +15,9 @@ using namespace AmpGen::fcn;
 
 DEFINE_GENERIC_SHAPE( MagPoly )
 {
-    INFO("2D exponential Polynomial of the form e^(iP(x,y)), used to correct the fitted phase of D->KsPiPi decays ");
+    INFO("2D Polynomial of the form P(x,y), used to correct the fitted magnitude of D->KsPiPi decays ");
     //Degree for our 2D polynomial - N
-    std::cout<<"Starting to make Mag Poly\n";
+    INFO("Starting to make Mag Poly");
     unsigned int degree = NamedParameter<unsigned int>( lineshapeModifier + "::Degree" );
     //vector of vectors 
     std::vector<std::vector<Expression> > param;
@@ -27,7 +27,7 @@ DEFINE_GENERIC_SHAPE( MagPoly )
         i++;
         param.push_back(param_i);
     }
-
+    bool debug = false;
     //4D momentum tensor for 
 
     //Tensor P (Tensor::dim(4));
@@ -49,10 +49,12 @@ DEFINE_GENERIC_SHAPE( MagPoly )
         Expression sum_i=0;
         for (unsigned int j=0; j<param[i].size(); j++){
             sum_i = sum_i +  param[i][j] * pow(x, i) * pow(y, j);
+            if (debug){
             std::cout<<"x = "<<x<<"\n";
             std::cout<<"y = "<<y<<"\n";
             std::cout<<"param[i][j] = "<<param[i][j]<<"\n";
             std::cout<<"sum_i = "<<sum_i<<"\n";
+            }
         }
         i++;
         sum = sum + sum_i;
@@ -60,6 +62,6 @@ DEFINE_GENERIC_SHAPE( MagPoly )
    // Expression amp = exp(std::complex<double>(0,1) * sum);
     Expression amp = sum;
  //   Expression amp = Constant(0,1);
-    std::cout<<"amp = "<<amp<<"\n";
+   // std::cout<<"amp = "<<amp<<"\n";
     return amp;
 }

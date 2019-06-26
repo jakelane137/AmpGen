@@ -182,26 +182,6 @@ AmpGen/MsgService.h
 AmpGen/MetaUtils.h
 ../AmpGen/AmpGen/MetaUtils.h
 
-/home/jlane/Documents/ampGen/src/Lineshapes/MagPoly.cpp
-stddef.h
--
-string
--
-vector
--
-AmpGen/Expression.h
-/home/jlane/Documents/ampGen/src/Lineshapes/AmpGen/Expression.h
-AmpGen/Factory.h
-/home/jlane/Documents/ampGen/src/Lineshapes/AmpGen/Factory.h
-AmpGen/Lineshapes.h
-/home/jlane/Documents/ampGen/src/Lineshapes/AmpGen/Lineshapes.h
-AmpGen/Tensor.h
-/home/jlane/Documents/ampGen/src/Lineshapes/AmpGen/Tensor.h
-AmpGen/NamedParameter.h
-/home/jlane/Documents/ampGen/src/Lineshapes/AmpGen/NamedParameter.h
-cmath
--
-
 /home/jlane/Documents/ampGen/src/Lineshapes/PhasePoly.cpp
 stddef.h
 -

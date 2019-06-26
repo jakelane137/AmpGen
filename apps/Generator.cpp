@@ -93,10 +93,12 @@ int main( int argc, char** argv )
   MPS.loadFromStream();
   
   Particle p;
+  bool debug=false;
   
   EventType eventType( NamedParameter<std::string>( "EventType" , "", "EventType to generate, in the format: \033[3m parent daughter1 daughter2 ... \033[0m" ).getVector(),
                        NamedParameter<bool>( "GenerateTimeDependent", false , "Flag to include possible time dependence of the amplitude") );
-
+//  EventType eventType2( NamedParameter<std::string>( "EventType2" , "", "EventType to generate second lot of events, in the format: \033[3m parent daughter1 daughter2 ... \033[0m" ).getVector(),
+//                       NamedParameter<bool>( "GenerateTimeDependent", false , "Flag to include possible time dependence of the amplitude") );
   EventList accepted( eventType );
 
   INFO("Generating events with type = " << eventType );
@@ -106,6 +108,8 @@ int main( int argc, char** argv )
     std::vector<size_t> i2 = {0,2};
   if ( gen_type == "CoherentSum" ) {
     CoherentSum sig( eventType, MPS );
+//    CoherentSum sig2( eventType2, MPS );
+//    CoherentSum sigF = sig + sig2;
     PhaseSpace phsp(eventType,&rand);
     GenerateEvents( accepted, sig, phsp , nEvents, blockSize, &rand );
      for (size_t i =0 ; i < nEvents; i++){
@@ -113,8 +117,23 @@ int main( int argc, char** argv )
 //        accepted[i].print();
         double x = accepted[i].s(i1);
         double y = accepted[i].s(i2);
-//        std::cout<<"value = "<<sig.getVal(accepted[i])<<"\n";    
-        grAbs->SetPoint(i,x,y,std::norm(z));
+        double R = sqrt(std::norm(z));
+        double arg = std::arg(z);
+        int fr = 100*(double)i/(double)nEvents;
+        int gfr = fr % 10;
+        //INFO(Form("gfr = %i", gfr));
+        if (debug){
+          if (gfr==0){
+            INFO(Form("At %li out of %i events : %i", i, (int)nEvents, gfr));
+            //INFO(Form("value = %d",sig.getVal(accepted[i]));    
+            INFO(Form("R = %f",R));
+            INFO(Form("arg = %f",arg));
+
+          }
+        }
+        /* 
+               */
+        grAbs->SetPoint(i,x,y,sqrt(std::norm(z)));
         grArg->SetPoint(i,x,y,std::arg(z));
     }
   } 

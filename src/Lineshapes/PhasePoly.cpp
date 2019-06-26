@@ -27,9 +27,12 @@ DEFINE_GENERIC_SHAPE( PhasePoly )
         i++;
         param.push_back(param_i);
     }
-
+    bool debug = false;
     //4D momentum tensor for 
-
+    auto sizeP = p.size();
+    if (sizeP != 3){
+        return 1;
+    }
     //Tensor P (Tensor::dim(4));
     //for ( auto& ip : p ) P = P + ip;
     //For simplicity we will use x and y as the input for the polynomial not m^2_+, m^2_-!
@@ -50,18 +53,20 @@ DEFINE_GENERIC_SHAPE( PhasePoly )
     while (i!=degree+1){
         Expression sum_i=0;
         for (unsigned int j=0; j<param[i].size(); j++){
-            sum_i = sum_i +  param[i][j] * pow(x, i) * pow(y, j);
+            sum_i = sum_i + Constant(0,1) * param[i][j] * pow(x, i) * pow(y, j);
+            if (debug){
             std::cout<<"x = "<<x<<"\n";
             std::cout<<"y = "<<y<<"\n";
             std::cout<<"param[i][j] = "<<param[i][j]<<"\n";
             std::cout<<"sum_i = "<<sum_i<<"\n";
+            }
         }
         i++;
         sum = sum + sum_i;
     }
-    //Expression amp = exp(Constant(0,1) * sum);
-//    amp = sum;
-    Expression amp = Constant(0, 1);
-    std::cout<<"amp = "<<amp<<"\n";
+    Expression amp = exp(sum);
+    //amp = sum;
+//    Expression amp = Constant(0, 1);
+    //std::cout<<"amp = "<<amp<<"\n";
     return amp;
 }
