@@ -1,0 +1,56 @@
+#EventType D0 K0S0 pi+ pi- 
+CouplingConstant::Coordinates  polar
+CouplingConstant::AngularUnits deg
+#nEvents 10000
+#Output "testPhasePoly.root"
+
+
+ParticlePropertiesList::Alias D0 DA
+#ParticlePropertiesList::Alias D0 DB
+EventType DA K0S0 pi+ pi-
+
+DA[PhasePoly.MyPhasePoly]{D0}                2 1 0 2 0 0
+D0{pi+,pi-,K0S0}    2   0   0   2   0   0
+
+nBins 1000
+
+MyPhasePoly::Degree 2
+MyPhasePoly_c00 0 1 0.05  
+MyPhasePoly_c01 2 0 0  
+MyPhasePoly_c02 2 0 0 
+MyPhasePoly_c10 2 0 0 
+MyPhasePoly_c11 2 0 0 
+MyPhasePoly_c20 2 0 0 
+#DA{D0}    2   1   0   2   0   0
+#D0{K0S0,rho(770)0{pi+,pi-}}           2  1.00  0.00  2     0.0 0.0 
+#Import belle.opt
+
+#DA{DB}  2   1   0   2   0   0
+D0[MagPoly.MyMagPoly]{K0S0,pi+,pi-}     2   1   0   2   0   0
+MyMagPoly::Degree   2
+MyMagPoly_c00   0   1   0.05
+MyMagPoly_c01   2   0   0
+MyMagPoly_c02   2   0   0
+MyMagPoly_c10   2   0   0
+MyMagPoly_c11   2   0   0
+MyMagPoly_c20   2   0   0
+
+
+#D0{K0S0,NonResS0}              2 1 0 2 0 0.0
+#NonResS0[Poly.MyPoly]{pi+,pi-} 2 1 0 0 0 0.0
+MyPoly::Degree 5
+
+MyPoly_c0   2 1 0
+
+MyPoly_c1   2 0 0
+
+MyPoly_c2   2 0 0
+MyPoly_c3   2 0 0
+MyPoly_c4   2 0 0
+MyPoly_c5   2 0 0
+
+
+
+
+
+

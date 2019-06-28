@@ -60,7 +60,7 @@ int main( int argc, char* argv[] )
   [[maybe_unused]]
   size_t      nThreads = NamedParameter<size_t>     ("nCores"    , 8           , "Number of threads to use" );
   size_t      seed     = NamedParameter<size_t>     ("Seed"      , 0           , "Random seed used" );
-   
+  size_t      nEvents  = NamedParameter<size_t>     ("nEvents"   , 10000       , "Number of events to fill in") ;
   if( dataFile == "" ) FATAL("Must specify input with option " << italic_on << "DataSample" << italic_off );
   if( pNames.size() == 0 ) FATAL("Must specify event type with option " << italic_on << " EventType" << italic_off);
 
@@ -100,7 +100,7 @@ int main( int argc, char* argv[] )
   /* Generate events to normalise the PDF with. This can also be loaded from a file, 
      which will be the case when efficiency variations are included. Default number of normalisation events 
      is 5 million. */
-  EventList eventsMC = intFile == "" ? Generator<>(evtType, &rndm).generate(5e7) : EventList(intFile, evtType, GetGenPdf(true));
+  EventList eventsMC = intFile == "" ? Generator<>(evtType, &rndm).generate(nEvents) : EventList(intFile, evtType, GetGenPdf(true));
   
   sig.setMC( eventsMC );
 
@@ -139,6 +139,7 @@ FitResult* doFit( PDF&& pdf, EventList& data, EventList& mc, MinuitParameterSet&
      that is constructed from an object that defines an operator() that returns a double 
      (i.e. the likielihood, and a set of MinuitParameters. */
   Minimiser mini( pdf, &MPS );
+  INFO("Starting Fit");
   mini.doFit();
   FitResult* fr = new FitResult(mini);
 
