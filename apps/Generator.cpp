@@ -102,8 +102,10 @@ int main( int argc, char** argv )
   EventList accepted( eventType );
 
   INFO("Generating events with type = " << eventType );
-   TGraph2D * grAbs = new TGraph2D(nEvents);
-    TGraph2D * grArg = new TGraph2D(nEvents);
+   TGraph2D * grAbs = new TGraph2D((int)nEvents);
+ //  TH2D * hAbs = new TH2D("hAbs","Magnitude", nBins, 0, 3, nBins, 0, 3);
+//   TH2D * hArg = new TH2D("hArg","Phase", nBins, 0, 3, nBins, 0, 3);
+    TGraph2D * grArg = new TGraph2D((int)nEvents);
     std::vector<size_t> i1 = {0,1};
     std::vector<size_t> i2 = {0,2};
   if ( gen_type == "CoherentSum" ) {

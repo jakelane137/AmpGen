@@ -31,6 +31,7 @@ DEFINE_GENERIC_SHAPE( PhasePoly )
     //4D momentum tensor for 
     auto sizeP = p.size();
     if (sizeP != 3){
+        INFO("I expect 3 particles!");
         return 1;
     }
     //Tensor P (Tensor::dim(4));

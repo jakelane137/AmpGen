@@ -1,0 +1,52 @@
+
+[2;31m    █████╗ ███╗   ███╗██████╗  ██████╗ ███████╗███╗   ██╗
+   ██╔══██╗████╗ ████║██╔══██╗██╔════╝ ██╔════╝████╗  ██║
+   ███████║██╔████╔██║██████╔╝██║  ███╗█████╗  ██╔██╗ ██║
+   ██╔══██║██║╚██╔╝██║██╔═══╝ ██║   ██║██╔══╝  ██║╚██╗██║
+   ██║  ██║██║ ╚═╝ ██║██║     ╚██████╔╝███████╗██║ ╚████║
+   ╚═╝  ╚═╝╚═╝     ╚═╝╚═╝      ╚═════╝ ╚══════╝╚═╝  ╚═══╝
+[0m
+[1m                      version 1.2
+        build: gcc 9.1.1  Jun 21 2019 14:18:00[0m
+
+[2;34mvoid OptionsParser::import                     INFO         [0mImporting: testPhasePoly.opt
+[2;34mconst vector<std::__cxx11::basic_string<char>  INFO         [0mUsing built-in AMPGENROOT (set env variable if incorrect): /home/jlane/Documents/ampGen/install/bin
+[2;34mint main                                       INFO         [0mUsing: 4 / 4 threads
+[2;34mint main                                       INFO         [0mGenerating events with type = DA → [K0S0, pi+, pi-]
+[2;34mCoherentSum::CoherentSum                       INFO         [0mDA[PhasePoly.MyPhasePoly]{D0[MagPoly.MyMagPoly]{K0S0,pi+,pi-}}
+[2;34mExpression Lineshape::PhasePoly::get           INFO         [0m2D exponential Polynomial of the form e^(iP(x,y)), used to correct the fitted phase of D->KsPiPi decays 
+Starting to make Phase Poly
+[2;34mExpression Lineshape::MagPoly::get             INFO         [0m2D exponential Polynomial of the form e^(iP(x,y)), used to correct the fitted phase of D->KsPiPi decays 
+Starting to make Mag Poly
+x = (-1.)*(0_Pz + 1_Pz)*(0_Pz + 1_Pz) + (v1519114999 + v2683369444)*(v1519114999 + v2683369444) + (-1.)*(0_Py + 1_Py)*(0_Py + 1_Py) + (-1.)*(0_Px + 1_Px)*(0_Px + 1_Px)
+y = (-1.)*(0_Pz + 2_Pz)*(0_Pz + 2_Pz) + (v1519114999 + v604511646)*(v1519114999 + v604511646) + (-1.)*(0_Py + 2_Py)*(0_Py + 2_Py) + (-1.)*(0_Px + 2_Px)*(0_Px + 2_Px)
+param[i][j] = MyMagPoly_c00
+sum_i = MyMagPoly_c00
+x = (-1.)*(0_Pz + 1_Pz)*(0_Pz + 1_Pz) + (v1519114999 + v2683369444)*(v1519114999 + v2683369444) + (-1.)*(0_Py + 1_Py)*(0_Py + 1_Py) + (-1.)*(0_Px + 1_Px)*(0_Px + 1_Px)
+y = (-1.)*(0_Pz + 2_Pz)*(0_Pz + 2_Pz) + (v1519114999 + v604511646)*(v1519114999 + v604511646) + (-1.)*(0_Py + 2_Py)*(0_Py + 2_Py) + (-1.)*(0_Px + 2_Px)*(0_Px + 2_Px)
+param[i][j] = MyMagPoly_c01
+sum_i = MyMagPoly_c00 + MyMagPoly_c01*((-1.)*(0_Pz + 2_Pz)*(0_Pz + 2_Pz) + (v1519114999 + v604511646)*(v1519114999 + v604511646) + (-1.)*(0_Py + 2_Py)*(0_Py + 2_Py) + (-1.)*(0_Px + 2_Px)*(0_Px + 2_Px))
+x = (-1.)*(0_Pz + 1_Pz)*(0_Pz + 1_Pz) + (v1519114999 + v2683369444)*(v1519114999 + v2683369444) + (-1.)*(0_Py + 1_Py)*(0_Py + 1_Py) + (-1.)*(0_Px + 1_Px)*(0_Px + 1_Px)
+y = (-1.)*(0_Pz + 2_Pz)*(0_Pz + 2_Pz) + (v1519114999 + v604511646)*(v1519114999 + v604511646) + (-1.)*(0_Py + 2_Py)*(0_Py + 2_Py) + (-1.)*(0_Px + 2_Px)*(0_Px + 2_Px)
+param[i][j] = MyMagPoly_c02
+sum_i = MyMagPoly_c00 + MyMagPoly_c01*((-1.)*(0_Pz + 2_Pz)*(0_Pz + 2_Pz) + (v1519114999 + v604511646)*(v1519114999 + v604511646) + (-1.)*(0_Py + 2_Py)*(0_Py + 2_Py) + (-1.)*(0_Px + 2_Px)*(0_Px + 2_Px)) + MyMagPoly_c02*pow((-1.)*(0_Pz + 2_Pz)*(0_Pz + 2_Pz) + (v1519114999 + v604511646)*(v1519114999 + v604511646) + (-1.)*(0_Py + 2_Py)*(0_Py + 2_Py) + (-1.)*(0_Px + 2_Px)*(0_Px + 2_Px), (2.))
+x = (-1.)*(0_Pz + 1_Pz)*(0_Pz + 1_Pz) + (v1519114999 + v2683369444)*(v1519114999 + v2683369444) + (-1.)*(0_Py + 1_Py)*(0_Py + 1_Py) + (-1.)*(0_Px + 1_Px)*(0_Px + 1_Px)
+y = (-1.)*(0_Pz + 2_Pz)*(0_Pz + 2_Pz) + (v1519114999 + v604511646)*(v1519114999 + v604511646) + (-1.)*(0_Py + 2_Py)*(0_Py + 2_Py) + (-1.)*(0_Px + 2_Px)*(0_Px + 2_Px)
+param[i][j] = MyMagPoly_c10
+sum_i = MyMagPoly_c10*((-1.)*(0_Pz + 1_Pz)*(0_Pz + 1_Pz) + (v1519114999 + v2683369444)*(v1519114999 + v2683369444) + (-1.)*(0_Py + 1_Py)*(0_Py + 1_Py) + (-1.)*(0_Px + 1_Px)*(0_Px + 1_Px))
+x = (-1.)*(0_Pz + 1_Pz)*(0_Pz + 1_Pz) + (v1519114999 + v2683369444)*(v1519114999 + v2683369444) + (-1.)*(0_Py + 1_Py)*(0_Py + 1_Py) + (-1.)*(0_Px + 1_Px)*(0_Px + 1_Px)
+y = (-1.)*(0_Pz + 2_Pz)*(0_Pz + 2_Pz) + (v1519114999 + v604511646)*(v1519114999 + v604511646) + (-1.)*(0_Py + 2_Py)*(0_Py + 2_Py) + (-1.)*(0_Px + 2_Px)*(0_Px + 2_Px)
+param[i][j] = MyMagPoly_c11
+sum_i = MyMagPoly_c11*((-1.)*(0_Pz + 1_Pz)*(0_Pz + 1_Pz) + (v1519114999 + v2683369444)*(v1519114999 + v2683369444) + (-1.)*(0_Py + 1_Py)*(0_Py + 1_Py) + (-1.)*(0_Px + 1_Px)*(0_Px + 1_Px))*((-1.)*(0_Pz + 2_Pz)*(0_Pz + 2_Pz) + (v1519114999 + v604511646)*(v1519114999 + v604511646) + (-1.)*(0_Py + 2_Py)*(0_Py + 2_Py) + (-1.)*(0_Px + 2_Px)*(0_Px + 2_Px)) + MyMagPoly_c10*((-1.)*(0_Pz + 1_Pz)*(0_Pz + 1_Pz) + (v1519114999 + v2683369444)*(v1519114999 + v2683369444) + (-1.)*(0_Py + 1_Py)*(0_Py + 1_Py) + (-1.)*(0_Px + 1_Px)*(0_Px + 1_Px))
+x = (-1.)*(0_Pz + 1_Pz)*(0_Pz + 1_Pz) + (v1519114999 + v2683369444)*(v1519114999 + v2683369444) + (-1.)*(0_Py + 1_Py)*(0_Py + 1_Py) + (-1.)*(0_Px + 1_Px)*(0_Px + 1_Px)
+y = (-1.)*(0_Pz + 2_Pz)*(0_Pz + 2_Pz) + (v1519114999 + v604511646)*(v1519114999 + v604511646) + (-1.)*(0_Py + 2_Py)*(0_Py + 2_Py) + (-1.)*(0_Px + 2_Px)*(0_Px + 2_Px)
+param[i][j] = MyMagPoly_c20
+sum_i = MyMagPoly_c20*pow((-1.)*(0_Pz + 1_Pz)*(0_Pz + 1_Pz) + (v1519114999 + v2683369444)*(v1519114999 + v2683369444) + (-1.)*(0_Py + 1_Py)*(0_Py + 1_Py) + (-1.)*(0_Px + 1_Px)*(0_Px + 1_Px), (2.))
+[2;34mvoid Generator<PHASESPACE>::fillEventList      INFO         [0mSetting normalisation constant = 13.5
+[2;34mvoid Generator<PHASESPACE>::fillEventList      INFO         [0mCompleted: 100% [||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||] ε[gen] = 10.00% , 0 seconds
+[2;34mvoid Generator<PHASESPACE>::fillEventList      INFO         [0mGenerated 10000 events in 159.623 ms
+[2;34mvoid Generator<PHASESPACE>::fillEventList      INFO         [0mGenerating phase space : 99.9337 ms
+[2;34mvoid Generator<PHASESPACE>::fillEventList      INFO         [0mEvaluating PDF         : 14.0463 ms
+[2;34mvoid Generator<PHASESPACE>::fillEventList      INFO         [0mDoing accept/reject    : 7.46365 ms
+[2;34mint main                                       INFO         [0mMaking 2D projections...
+[2;34mint main                                       INFO         [0mWriting output file 
