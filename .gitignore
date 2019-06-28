@@ -1,4 +1,4 @@
-install/
+install/*
 *.png
 *.root
 /*build*/
