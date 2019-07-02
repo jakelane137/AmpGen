@@ -87,23 +87,24 @@ class ampplot:
                 obj.GetXaxis().SetTitle(xtitles[iname])
                 obj.GetXaxis().SetTitleOffset(1.1)
                 draw=draw1D
+                c = TCanvas("c_%s" % (iname), iname , 1500, 1000) 
+                c.cd()
+                obj.SetTitle(titles[iname])
                 if (type(obj)!=TH1D):
-
                     print(ytitles[iname])
                     obj.GetYaxis().SetTitle(ytitles[iname])
                     draw=draw2D
-                obj.SetTitle(titles[iname])
                 if (type(obj)==TGraph2D):
                     print("test")
                     print(ytitles[iname])
                     #obj.SetMarkerSize(1)
                     #obj.SetMarkerStyle(2)
                     obj.SetTitle(titles[iname] + ";" + xtitles[iname] + ";" + ytitles[iname])
-                    obj.GetXaxis().SetTitleOffset(1.4)
+                    obj.GetXaxis().SetTitleOffset(4.4)
+                    gPad.SetRightMargin(0.15)
+                    #palette = TPaletteAxos()
                     obj.GetYaxis().SetTitleOffset(4.4)
                     obj.SetMargin(0.15)
-                c = TCanvas("c_%s" % (iname), iname , 1500, 1000) 
-                c.cd()
   #              gStyle.SetMarkerSize(1)
  #               gStyle.SetMarkerStyle(1) 
 

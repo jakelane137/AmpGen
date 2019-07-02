@@ -2,6 +2,7 @@
 from ROOT import TGraph2D, TFile, TCanvas, gPad
 import numpy as np
 from matplotlib import pyplot as plt
+from math import pi
 from mpl_toolkits import mplot3d
 import os, argparse
 from ampplot import ampplot
@@ -10,7 +11,7 @@ parser = argparse.ArgumentParser(description="ampGen difference script")
 parser.add_argument("--nEvents", metavar="N", type=int, nargs='?', default=100, help="Number of events")
 parser.add_argument("--name", metavar="name", type=str, nargs='?', default="all", help="Variable to plot, options are: s01, s02, s12, s01_vs_s02, s01_vs_s12, s02_vs_s12")
 parser.add_argument("--draw1D", metavar="draw1D", type=str, nargs='?', default="C", help="Draw options for 1D plots")
-parser.add_argument("--draw2D", metavar="draw2D", type=str, nargs='?', default="PCOL", help="Draw options for 2D plots")
+parser.add_argument("--draw2D", metavar="draw2D", type=str, nargs='?', default="PCOLZ", help="Draw options for 2D plots")
 parser.add_argument("opt1", metavar="opt1", type=str, nargs='?', default="belle", help="options ")
 parser.add_argument("opt2", metavar="opt2", type=str, nargs='?', default="belle", help="options ")
 parser.add_argument("--output", metavar="out", type=str, nargs='?', default="output", help="location for the output png ")
@@ -98,11 +99,15 @@ for i in range(N):
     x1 = xD01[i]
     y1 = yD01[i]
     z1 = zD01[i] - gDbar01.Interpolate(y1,x1)
+    if (z1 < 0):
+        z1 += 2 * pi 
     #z1 = zDbar01[i] - gD01.Interpolate(y1,x1)
     gr1.SetPoint(i, x1, y1, z1)
     x2 = xD02[i]
     y2 = yD02[i]
     z2 = zD02[i] - gDbar02.Interpolate(y2,x2)
+    if (z2 < 0):
+        z2 += 2 * pi
     #z2 = zDbar02[i] - gD02.Interpolate(y2,x2)
     gr2.SetPoint(i, x2, y2, z2)
 
