@@ -15,6 +15,7 @@ class ampplot:
         self.generate = generate
         self.EventType = EventType
     def plot(self):
+        gROOT.SetBatch(1)
         N = self.nEvents
         name = self.name
         draw1D = self.draw1D
@@ -67,7 +68,7 @@ class ampplot:
         mymacroPath  = os.environ['AMPGEN'] + "/kspipi/macro/"
         gROOT.SetMacroPath(os.pathsep.join([gROOT.GetMacroPath(), mymacroPath]))
         #gROOT.LoadMacro("lhcbStyle.C")
-        gROOT.SetStyle("Plain")
+        #gROOT.SetStyle("Plain")
 
         os.system("mkdir %s" % (out))
         if (generate):
@@ -94,8 +95,8 @@ class ampplot:
                 if (type(obj)==TGraph2D):
                     print("test")
                     print(ytitles[iname])
-                    obj.SetMarkerSize(1)
-                    obj.SetMarkerStyle(2)
+                    #obj.SetMarkerSize(1)
+                    #obj.SetMarkerStyle(2)
                     obj.SetTitle(titles[iname] + ";" + xtitles[iname] + ";" + ytitles[iname])
                     obj.GetXaxis().SetTitleOffset(1.4)
                     obj.GetYaxis().SetTitleOffset(4.4)
@@ -105,7 +106,7 @@ class ampplot:
   #              gStyle.SetMarkerSize(1)
  #               gStyle.SetMarkerStyle(1) 
 
-                set_palette("myPalette", 1000);
+                set_palette();
                 gStyle.SetPalette(55)
                 gPad.SetLeftMargin(0.1)
                 gPad.SetTheta(90)
@@ -179,8 +180,10 @@ def makePlot(s):
         l = RooArgList(x,y);
         dh = RooDataHist("dh", "dh", l, s)
         t = TGraph2D(s)
+        s.SetMarkerSize(1.0)
+        s.SetMarkerStyle(1)
         #t.GetXaxis().SetTitle(s.GetXaxis().GetTitle())
-        return t
+        return s
         
 
     elif (type(s)==TGraph2D):
