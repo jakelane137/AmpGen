@@ -78,7 +78,7 @@ gDbar01 = fDbar01.Get("gArg")
 gDbar02 = fDbar02.Get("gArg")
 
 
-N = gD01.GetN()
+N = gD02.GetN()
 xD01 = gD01.GetX();
 yD01 = gD01.GetY();
 zD01 = gD01.GetZ();
@@ -98,10 +98,12 @@ for i in range(N):
     x1 = xD01[i]
     y1 = yD01[i]
     z1 = zD01[i] - gDbar01.Interpolate(y1,x1)
+    #z1 = zDbar01[i] - gD01.Interpolate(y1,x1)
     gr1.SetPoint(i, x1, y1, z1)
     x2 = xD02[i]
     y2 = yD02[i]
     z2 = zD02[i] - gDbar02.Interpolate(y2,x2)
+    #z2 = zDbar02[i] - gD02.Interpolate(y2,x2)
     gr2.SetPoint(i, x2, y2, z2)
 
 
