@@ -1,9 +1,10 @@
 #!/bin/bash
 N=${1:-10000}
-for i in *.opt
+for i in opts/*
 do
    
-    O=${i%.*}
+    f=${i%.*}
+    O=${f##*/}
     #echo $O
-    diff.py --generate --output $O --nEvents $N $O
+   diff.py --generate --output $O --nEvents $N $f $f
 done

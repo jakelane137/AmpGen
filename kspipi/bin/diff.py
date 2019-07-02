@@ -30,9 +30,10 @@ nEvents = args.nEvents
 opt1 = args.opt1
 opt2 = args.opt2
 output = args.output
-output1 = output + "/" +opt1
+output1 = output + "/" + "1"
+
 output1cc = output1+"CC"
-output2 = output + "/" + opt2 
+output2 = output + "/" + "2"
 output2cc = output2+"CC"
 imgtype = args.imgtype
 generate = args.generate
@@ -46,8 +47,13 @@ EventType2CCarr = EventType2.split(" ")
 EventType2CCarr[0] = "Dbar0"
 EventType2CC = " ".join(EventType2CCarr)
 
+print(output1)
+print(output2)
 
-os.system("mkdir %s" % (output))
+os.system("mkdir -p %s" % (output1))
+os.system("mkdir -p %s" % (output1cc))
+os.system("mkdir -p %s" % (output2))
+os.system("mkdir -p %s" % (output2cc))
 
 a1 = ampplot(nEvents, name, draw1D, draw2D, opt1, output1, imgtype, generate, EventType1)
 a1CC = ampplot(nEvents, name, draw1D, draw2D, opt1, output1cc, imgtype, generate, EventType1CC)
@@ -55,10 +61,12 @@ a1CC = ampplot(nEvents, name, draw1D, draw2D, opt1, output1cc, imgtype, generate
 a2 = ampplot(nEvents, name, draw1D, draw2D, opt2, output2, imgtype, generate, EventType2)
 a2CC = ampplot(nEvents, name, draw1D, draw2D, opt2, output2cc, imgtype, generate, EventType2CC)
 
+
 a1.plot()
 a1CC.plot()
 a2.plot()
 a2CC.plot()
+
 fD01 = TFile("%s.root" % (output1))
 fDbar01 = TFile("%s.root" % (output1cc))
 fD02 = TFile("%s.root" % (output2))
@@ -105,12 +113,12 @@ xD2 = gr2.GetX()
 yD2 = gr2.GetY()
 zD2 = gr2.GetZ()
 grD = TGraph2D(N)
-while i<N:
+for i in range(N):
     xD = xD1[i]
     yD = yD1[i]
     zD = zD1[i] - gr2.Interpolate(xD,yD)
     grD.SetPoint(i,xD,yD,zD)
-    i+=1
+
 
 #set_palette()
 gPad.SetLeftMargin(0.1)

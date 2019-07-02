@@ -28,7 +28,7 @@ class ampplot:
         print(N)
         print(name[1:])
         print(opt)
-
+        print(out)
         GeVc2 = "GeV ^{2}/#it{c} ^{4}"
         kspip = "s(K_{ S}^{ 0} #pi^{+})"
         kspim = "s(K_{ S}^{ 0} #pi^{-})"
@@ -70,7 +70,8 @@ class ampplot:
         #gROOT.LoadMacro("lhcbStyle.C")
         #gROOT.SetStyle("Plain")
 
-        os.system("mkdir %s" % (out))
+        os.system("mkdir -p %s" % (out))
+        
         if (generate):
             os.system("Generator --nEvents %i --Output %s.root --EventType '%s' %s.opt" % (N, out,EventType, opt))
         f = TFile.Open("%s.root" % (out))
