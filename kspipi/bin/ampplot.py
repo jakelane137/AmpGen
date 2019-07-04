@@ -2,7 +2,7 @@
 from ROOT import TFile, TH1D, TCanvas,TGraph2D, TH2D, gStyle, RooFit, RooRealVar, RooDataHist, RooArgList, gPad, gROOT, RooPlot, TColor
 from array import array
 #import LHCbStyle
-import os, argparse
+import os, argparse, subprocess
 class ampplot:
     def __init__(self, nEvents, name, draw1D, draw2D, opt, out, imgtype, generate, EventType):
         self.nEvents = nEvents
@@ -71,9 +71,10 @@ class ampplot:
         #gROOT.SetStyle("Plain")
 
         os.system("mkdir -p %s" % (out))
+#        subsystem.call(["mkdir", "-p","%s" % (out)])
         
         if (generate):
-            os.system("Generator --nEvents %i --Output %s.root --EventType '%s' %s.opt" % (N, out,EventType, opt))
+            os.system("Generator --nEvents %i --Output %s --EventType '%s' %s" % (N, out,EventType, opt))
         f = TFile.Open("%s.root" % (out))
         if (name=="gArg" or name=="gAbs" or name == "s01_vs_s02"):
             title = name[1:] + "(A(m^{2}_{K_{S}^{0}#pi^{+}},m^{2}_{K_{S}^{0}#pi^{-}})); m^{2}_{K_{S}^{0}#pi^{+}}(GeV); m^{2}_{K_{S}^{0}#pi^{-}} (GeV)"
@@ -255,7 +256,7 @@ def main():
     parser.add_argument("--nEvents", metavar="nEvents", type=int, nargs='?', default=100, help="Number of events")
     parser.add_argument("--name", metavar="name", type=str, nargs='?', default="all", help="Variable to plot, options are: s01, s02, s12, s01_vs_s02, s01_vs_s12, s02_vs_s12")
     parser.add_argument("--draw1D", metavar="draw1D", type=str, nargs='?', default="C", help="Draw options for 1D plots")
-    parser.add_argument("--draw2D", metavar="draw2D", type=str, nargs='?', default="PCOL", help="Draw options for 2D plots")
+    parser.add_argument("--draw2D", metavar="draw2D", type=str, nargs='?', default="PCOLZ", help="Draw options for 2D plots")
     parser.add_argument("opt", metavar="opt", type=str, nargs='?', default="testPhasePoly", help="options ")
     parser.add_argument("--output", metavar="out", type=str, nargs='?', default="output", help="location for the output png ")
     parser.add_argument("--imgtype", metavar="imgtype", type=str, nargs='?', default="eps", help="plot output picture type (eps) ")

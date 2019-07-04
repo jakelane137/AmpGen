@@ -1,0 +1,29 @@
+#LASS Parameters
+
+
+K(0)*(1430)bar-_mass                  0  1.441  0.002
+K(0)*(1430)bar-_width                 0  0.193  0.004
+
+K*(892)+_mass                           0   0.8937  0.0001
+K*(892)+_width                          0   0.0472  0.0001
+
+# enforce CP symmetry in mass and width of K(0)
+K(0)*(1430)+_mass                     = K(0)*(1430)bar-_mass   
+K(0)*(1430)+_width                    = K(0)*(1430)bar-_widtth
+
+K(0)*(1430)bar-::GLASS::F                         0              0.95532        0.01              
+K(0)*(1430)bar-::GLASS::R                         3              1              0              
+K(0)*(1430)bar-::GLASS::a                         0              0.11267        0.01              
+K(0)*(1430)bar-::GLASS::phiF                      0              0.00173        0.01             
+K(0)*(1430)bar-::GLASS::phiR                      0              -1.9145        0.01              
+K(0)*(1430)bar-::GLASS::r                         0              -33.799        0.01              
+K(0)*(1430)bar-_mass                              2              1.44055        0.002          
+K(0)*(1430)bar-_width                             2              0.19261        0.005          
+K(2)*(1430)0_mass                                 2              1.4256         0              
+K(2)*(1430)0_width                                2              0.0985         0              
+K*(1410)bar-_mass                                 2              1.414          0              
+K*(1410)bar-_width                                2              0.232          0              
+K*(1680)bar-_mass                                 2              1.717          0              
+K*(1680)bar-_width                                2              0.322          0              
+K*(892)bar-_mass                                  2              0.89371        5e-05          
+K*(892)bar-_width                                 2              0.04719        0.00011        
