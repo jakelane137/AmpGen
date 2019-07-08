@@ -1,9 +1,9 @@
-#!/usr/bin/python3
+
 import multiprocessing
 from ROOT import TGraph2D, TFile, TCanvas, gPad, TH1D, gStyle, TLegend
 import numpy as np
-from matplotlib import pyplot as plt
-from mpl_toolkits import mplot3d
+#from matplotlib import pyplot as plt
+#from mpl_toolkits import mplot3d
 import os, argparse, pickle
 from ampplot import ampplot
 from ampplot import set_palette, subprocess
@@ -30,18 +30,22 @@ class toyFit:
         if (self.DataSample == "NONE"):
             self.DataSample = self.opt.split(".")[0].split("/")
             self.DataSample = self.output + "/" + self.DataSample[len(self.DataSample) - 1] + ".root"
-           
+
             #print(self.EventType)
             runGen = "Generator --EventType='%s' --Output=%s --nEvents %i %s | tee %s/gen.log" % (self.EventType, self.DataSample, self.nEvents, self.opt, self.output)
-            #print(runGen.split(","))
+                   #print(runGen.split(","))
             #subprocess.call(runGen.split(","))
-            os.system(runGen)
+            
         if (self.IntegrationSample == "NONE"):
             runFit = "SignalOnlyFitter --DataSample %s --EventType \"%s\" --Plots %s/plots.root --nEvents %i --nCores %i --LogFile %s/fit.log %s" % (self.DataSample, self.EventType, self.output, self.nEvents * self.mcMult, self.nCores, self.output, self.opt)
         else:
             runFit = "SignalOnlyFitter --DataSample %s --EventType \"%s\" --Plots %s/plots.root --IntegrationSample %s --nCores %i --LogFile %s/fit.log %s" % (self.DataSample, self.EventType, self.output, self.IntegrationSample, self.nCores, self.output, self.opt)
-
+	host = os.environ['HOSTNAME']
+	if "lxplus" in host:
+		runGen = "lb-run -c x86_64-centos7-gcc62-opt ROOT " + runGen
+		runFit = "lb-run -c x86_64-centos7-gcc62-opt ROOT " + runFit
         #subprocess.call(runFit.split())
+	os.system(runGen)
         os.system(runFit)
         #print(runFit)
         fittedOpt = self.opt.split("/")
