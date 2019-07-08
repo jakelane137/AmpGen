@@ -29,16 +29,22 @@ DEFINE_GENERIC_SHAPE( PhasePoly )
     }
     bool debug = false;
     //4D momentum tensor for 
-    auto sizeP = p.size();
-    if (sizeP != 3){
-        INFO("I expect 3 particles!");
-        return 1;
-    }
+    //auto sizeP = p.size();
+    //if (sizeP != 3){
+     //   INFO("I expect 3 particles!");
+     //   return 1;
+   // }
+   auto pp = *p.daughter("pi+");
+   auto pm = *p.daughter("pi+");
+   auto ks = *p.daughter("K0S0");
+
+
     //Tensor P (Tensor::dim(4));
     //for ( auto& ip : p ) P = P + ip;
     //For simplicity we will use x and y as the input for the polynomial not m^2_+, m^2_-!
-    Expression x = dot(p[0] + p[1], p[0] + p[1]);
-    Expression y = dot(p[0] + p[2], p[0] + p[2]);
+
+    Expression x = dot(ks.P() + pp.P(), ks.P() + pp.P());
+    Expression y = dot(ks.P() + pm.P(), ks.P() + pm.P());
   //      Expression x = dot(p[0], p[0]);
 //        Expression y = dot(p[0], p[0]);
 //    Expression x = dot(p[0], p[0]);

@@ -1,0 +1,28 @@
+
+[2;31m    █████╗ ███╗   ███╗██████╗  ██████╗ ███████╗███╗   ██╗
+   ██╔══██╗████╗ ████║██╔══██╗██╔════╝ ██╔════╝████╗  ██║
+   ███████║██╔████╔██║██████╔╝██║  ███╗█████╗  ██╔██╗ ██║
+   ██╔══██║██║╚██╔╝██║██╔═══╝ ██║   ██║██╔══╝  ██║╚██╗██║
+   ██║  ██║██║ ╚═╝ ██║██║     ╚██████╔╝███████╗██║ ╚████║
+   ╚═╝  ╚═╝╚═╝     ╚═╝╚═╝      ╚═════╝ ╚══════╝╚═╝  ╚═══╝
+[0m
+[1m                      version 1.2
+        build: gcc 9.1.1  Jun 28 2019 10:01:04[0m
+
+[1m Release notes (v1r2)[0m
+ - Improved thread support for CoherentSum
+ - Add examples/QcGenerator for Ψ(3770) decays 
+ - Updated ExpressionParser with improved stability.
+ - Removed unused / untested lineshapes AxialKaon and ObelixRho 
+
+[2;34mvoid OptionsParser::import                     INFO         [0mImporting: opts/babarCartFrac.opt
+[1;31mvoid OptionsParser::import                     ERROR        [0mCannot find file: opts/babarCartFrac.opt
+[2;34mint main                                       INFO         [0mUsing: 4 / 4 threads
+[2;34mint main                                       INFO         [0mGenerating events with type = D0 → [K0S0, pi+, pi-]
+[2;34mvoid Generator<PHASESPACE>::fillEventList      INFO         [0mSetting normalisation constant = 0
+[2;34mvoid Generator<PHASESPACE>::fillEventList      INFO         [0mCompleted:   0% [                                                            ] ε[gen] = 0.00% , 0 seconds[1;31mvoid Generator<PHASESPACE>::fillEventList      ERROR        [0mNo events generated, PDF: AmpGen::CoherentSum is likely to be malformed
+[2;34mvoid Generator<PHASESPACE>::fillEventList      INFO         [0mCompleted: 100% [||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||] ε[gen] = 0.00% , 0 seconds
+[2;34mvoid Generator<PHASESPACE>::fillEventList      INFO         [0mGenerated 10000 events in 49.6758 ms
+[2;34mvoid Generator<PHASESPACE>::fillEventList      INFO         [0mGenerating phase space : 45.282 ms
+[2;34mvoid Generator<PHASESPACE>::fillEventList      INFO         [0mEvaluating PDF         : 0.01285 ms
+[2;34mvoid Generator<PHASESPACE>::fillEventList      INFO         [0mDoing accept/reject    : 1.48676 ms

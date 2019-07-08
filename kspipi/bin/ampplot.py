@@ -70,12 +70,19 @@ class ampplot:
         #gROOT.LoadMacro("lhcbStyle.C")
         #gROOT.SetStyle("Plain")
 
-        os.system("mkdir -p %s" % (out))
+
+
+
+
+        outFolder = out.replace(".root", "/")
+        print(outFolder)        
+        os.system("mkdir -p %s" % (outFolder))
+
 #        subsystem.call(["mkdir", "-p","%s" % (out)])
-        
+
         if (generate):
             os.system("Generator --nEvents %i --Output %s --EventType '%s' %s" % (N, out,EventType, opt))
-        f = TFile.Open("%s.root" % (out))
+        f = TFile.Open("%s" % (out))
         if (name=="gArg" or name=="gAbs" or name == "s01_vs_s02"):
             title = name[1:] + "(A(m^{2}_{K_{S}^{0}#pi^{+}},m^{2}_{K_{S}^{0}#pi^{-}})); m^{2}_{K_{S}^{0}#pi^{+}}(GeV); m^{2}_{K_{S}^{0}#pi^{-}} (GeV)"
 
@@ -116,7 +123,7 @@ class ampplot:
                 gPad.SetPhi(0)
                 gPad.Update()
                 obj.Draw(draw)
-                c.SaveAs("%s/%s.%s" % (out, iname,imgtype))
+                c.SaveAs("%s/%s.%s" % (outFolder, iname,imgtype))
 
 
 
@@ -154,7 +161,7 @@ class ampplot:
         # gStyle.SetTitleX("testTitle")
         #    obj.SetTitleOffset(0.1)
             obj.Draw(draw)
-            c.SaveAs("%s/%s.%s" % (out, name, imgtype))
+            c.SaveAs("%s/%s.%s" % (outFolder, name, imgtype))
 
 
 def makePlot(s):

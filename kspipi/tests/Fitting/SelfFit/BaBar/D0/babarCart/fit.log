@@ -1,0 +1,134 @@
+Parameter D0{K(0)*(1430)+[GLASS]{K0S0,pi+},pi-}_Re 0 -0.250208 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+Parameter D0{K(0)*(1430)+[GLASS]{K0S0,pi+},pi-}_Im 0 -23.7584 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+Parameter D0{K(0)*(1430)bar-[GLASS]{K0S0,pi-},pi+}_Re 0 -3.48317 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+Parameter D0{K(0)*(1430)bar-[GLASS]{K0S0,pi-},pi+}_Im 0 -16.9538 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+Parameter D0{K(2)*(1430)+{K0S0,pi+},pi-}_Re 0 1.28064 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+Parameter D0{K(2)*(1430)+{K0S0,pi+},pi-}_Im 0 -67.3128 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+Parameter D0{K(2)*(1430)bar-{K0S0,pi-},pi+}_Re 0 -1.33077 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+Parameter D0{K(2)*(1430)bar-{K0S0,pi-},pi+}_Im 0 -90.168 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+Parameter D0{K*(1680)bar-{K0S0,pi-},pi+}_Re 0 0.857762 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+Parameter D0{K*(1680)bar-{K0S0,pi-},pi+}_Im 0 -21.1321 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+Parameter D0{K*(892)+{K0S0,pi+},pi-}_Re 0 1.01804 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+Parameter D0{K*(892)+{K0S0,pi+},pi-}_Im 0 111.367 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+Parameter D0{K*(892)bar-{K0S0,pi-},pi+}_Re 0 -0.801536 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+Parameter D0{K*(892)bar-{K0S0,pi-},pi+}_Im 0 -1.04168 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+Parameter D0{K0S0,PiPi00}_Re 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+Parameter D0{K0S0,PiPi00}_Im 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+Parameter D0{K0S0,f(2)(1270)0{pi+,pi-}}_Re 0 -2.11055 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+Parameter D0{K0S0,f(2)(1270)0{pi+,pi-}}_Im 0 -1046.83 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+Parameter D0{K0S0,omega(782)0{pi+,pi-}}_Re 0 -0.908258 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+Parameter D0{K0S0,omega(782)0{pi+,pi-}}_Im 0 18.9321 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+Parameter D0{K0S0,rho(770)0{pi+,pi-}}_Re 2 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+Parameter D0{K0S0,rho(770)0{pi+,pi-}}_Im 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+Parameter K(0)*(1430)+::GLASS::F_Re 0 0.8 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+Parameter K(0)*(1430)+::GLASS::F_Im 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+Parameter K(0)*(1430)+::GLASS::R_Re 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+Parameter K(0)*(1430)+::GLASS::R_Im 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+Parameter K(0)*(1430)+::GLASS::a_Re 0 -26.3943 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+Parameter K(0)*(1430)+::GLASS::a_Im 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+Parameter K(0)*(1430)+::GLASS::phiF_Re 0 2.33 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+Parameter K(0)*(1430)+::GLASS::phiF_Im 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+Parameter K(0)*(1430)+::GLASS::phiR_Re 0 -5.31 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+Parameter K(0)*(1430)+::GLASS::phiR_Im 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+Parameter K(0)*(1430)+::GLASS::r_Re 0 -1.8 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+Parameter K(0)*(1430)+::GLASS::r_Im 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+Parameter K(0)*(1430)bar-_mass_Re 0 1.463 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+Parameter K(0)*(1430)bar-_mass_Im 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+Parameter K(0)*(1430)bar-_width_Re 0 0.291508 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+Parameter K(0)*(1430)bar-_width_Im 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+Parameter PiPi00[kMatrix.pole.0]{pi+,pi-}_Re 0 1.8223 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+Parameter PiPi00[kMatrix.pole.0]{pi+,pi-}_Im 0 -9.11972 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+Parameter PiPi00[kMatrix.pole.1]{pi+,pi-}_Re 0 -10.1735 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+Parameter PiPi00[kMatrix.pole.1]{pi+,pi-}_Im 0 -3.88488 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+Parameter PiPi00[kMatrix.pole.2]{pi+,pi-}_Re 0 -23.6712 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+Parameter PiPi00[kMatrix.pole.2]{pi+,pi-}_Im 0 5.03146 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+Parameter PiPi00[kMatrix.pole.3]{pi+,pi-}_Re 0 -0.0799351 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+Parameter PiPi00[kMatrix.pole.3]{pi+,pi-}_Im 0 9.15965 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+Parameter PiPi00[kMatrix.prod.0]{pi+,pi-}_Re 0 1.14243 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+Parameter PiPi00[kMatrix.prod.0]{pi+,pi-}_Im 0 -15.7082 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+Parameter PiPi00[kMatrix.prod.1]{pi+,pi-}_Re 0 1.90211 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+Parameter PiPi00[kMatrix.prod.1]{pi+,pi-}_Im 0 -0.618034 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+Parameter PiPi00[kMatrix.prod.2]{pi+,pi-}_Re 0 4.27722 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+Parameter PiPi00[kMatrix.prod.2]{pi+,pi-}_Im 0 2.77766 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+Parameter PiPi00[kMatrix.prod.3]{pi+,pi-}_Re 0 3.21867 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+Parameter PiPi00[kMatrix.prod.3]{pi+,pi-}_Im 0 0.270279 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+Parameter K(0)*(1430)+_width 2 0.291508 5.09025e-317 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+FitQuality 450.74104 512 52 -2391.221 2
+FitFraction D0{K(0)*(1430)bar-[GLASS]{K0S0,pi-},pi+} 0.96890633 0
+FitFraction D0{K0S0,PiPi00} 0.13021098 0
+FitFraction D0{K(0)*(1430)+[GLASS]{K0S0,pi+},pi-} 0.0051692371 0
+FitFraction D0{K0S0,rho(770)0{pi+,pi-}} 0.00077649578 0
+FitFraction D0{K0S0,omega(782)0{pi+,pi-}} 0.00072485369 0
+FitFraction D0{K0S0,f(2)(1270)0{pi+,pi-}} 0.00070734275 0
+FitFraction D0{K(2)*(1430)bar-{K0S0,pi-},pi+} 0.00051517663 0
+FitFraction D0{K(2)*(1430)+{K0S0,pi+},pi-} 0.00046985097 0
+FitFraction D0{K*(892)+{K0S0,pi+},pi-} 0.00045222469 0
+FitFraction D0{K*(892)bar-{K0S0,pi-},pi+} 0.00028770299 0
+FitFraction D0{K*(1680)bar-{K0S0,pi-},pi+} 0.00021077873 0
+FitFraction Sum_D0 1.108431 0
+FitFraction PiPi00[kMatrix.prod.0]{pi+,pi-} 1 0
+FitFraction PiPi00[kMatrix.prod.3]{pi+,pi-} 0 0
+FitFraction PiPi00[kMatrix.prod.2]{pi+,pi-} 0 0
+FitFraction PiPi00[kMatrix.prod.1]{pi+,pi-} 0 0
+FitFraction PiPi00[kMatrix.pole.3]{pi+,pi-} 0 0
+FitFraction PiPi00[kMatrix.pole.2]{pi+,pi-} 0 0
+FitFraction PiPi00[kMatrix.pole.1]{pi+,pi-} 0 0
+FitFraction PiPi00[kMatrix.pole.0]{pi+,pi-} 0 0
+FitFraction Sum_PiPi00 1 0
+FitFraction D0{K(0)*(1430)bar-[GLASS]{K0S0,pi-},pi+}xD0{K0S0,PiPi00} -0.078679501 0
+FitFraction D0{K(0)*(1430)+[GLASS]{K0S0,pi+},pi-}xD0{K(0)*(1430)bar-[GLASS]{K0S0,pi-},pi+} 0.036814988 0
+FitFraction D0{K(0)*(1430)+[GLASS]{K0S0,pi+},pi-}xD0{K0S0,PiPi00} -0.0070449859 0
+FitFraction D0{K(0)*(1430)bar-[GLASS]{K0S0,pi-},pi+}xD0{K0S0,f(2)(1270)0{pi+,pi-}} -0.0026996307 0
+FitFraction D0{K*(1680)bar-{K0S0,pi-},pi+}xD0{K0S0,PiPi00} -0.0020643414 0
+FitFraction D0{K(2)*(1430)+{K0S0,pi+},pi-}xD0{K0S0,PiPi00} 0.0010067387 0
+FitFraction D0{K(0)*(1430)bar-[GLASS]{K0S0,pi-},pi+}xD0{K*(892)+{K0S0,pi+},pi-} 0.00098713286 0
+FitFraction D0{K(2)*(1430)bar-{K0S0,pi-},pi+}xD0{K0S0,PiPi00} -0.00095735983 0
+FitFraction D0{K*(892)bar-{K0S0,pi-},pi+}xD0{K0S0,PiPi00} -0.00073262289 0
+FitFraction D0{K0S0,omega(782)0{pi+,pi-}}xD0{K0S0,rho(770)0{pi+,pi-}} -0.00033171879 0
+FitFraction D0{K*(892)+{K0S0,pi+},pi-}xD0{K0S0,PiPi00} 0.00026883479 0
+FitFraction D0{K(0)*(1430)+[GLASS]{K0S0,pi+},pi-}xD0{K0S0,f(2)(1270)0{pi+,pi-}} -0.00020210036 0
+FitFraction D0{K(0)*(1430)bar-[GLASS]{K0S0,pi-},pi+}xD0{K0S0,rho(770)0{pi+,pi-}} -0.0001747219 0
+FitFraction D0{K(0)*(1430)+[GLASS]{K0S0,pi+},pi-}xD0{K*(1680)bar-{K0S0,pi-},pi+} -0.00016950663 0
+FitFraction D0{K(0)*(1430)bar-[GLASS]{K0S0,pi-},pi+}xD0{K0S0,omega(782)0{pi+,pi-}} 0.00011128276 0
+FitFraction D0{K(0)*(1430)bar-[GLASS]{K0S0,pi-},pi+}xD0{K(2)*(1430)+{K0S0,pi+},pi-} -9.91423e-05 0
+FitFraction D0{K*(892)+{K0S0,pi+},pi-}xD0{K0S0,f(2)(1270)0{pi+,pi-}} -8.7582213e-05 0
+FitFraction D0{K0S0,PiPi00}xD0{K0S0,omega(782)0{pi+,pi-}} 8.2529871e-05 0
+FitFraction D0{K*(892)+{K0S0,pi+},pi-}xD0{K0S0,rho(770)0{pi+,pi-}} 7.7562262e-05 0
+FitFraction D0{K0S0,PiPi00}xD0{K0S0,rho(770)0{pi+,pi-}} -7.1116933e-05 0
+FitFraction D0{K(0)*(1430)bar-[GLASS]{K0S0,pi-},pi+}xD0{K*(892)bar-{K0S0,pi-},pi+} -6.8464658e-05 0
+FitFraction D0{K(2)*(1430)+{K0S0,pi+},pi-}xD0{K(2)*(1430)bar-{K0S0,pi-},pi+} -6.8440264e-05 0
+FitFraction D0{K*(1680)bar-{K0S0,pi-},pi+}xD0{K0S0,f(2)(1270)0{pi+,pi-}} -6.5504304e-05 0
+FitFraction D0{K(0)*(1430)+[GLASS]{K0S0,pi+},pi-}xD0{K0S0,rho(770)0{pi+,pi-}} 6.1601176e-05 0
+FitFraction D0{K*(892)bar-{K0S0,pi-},pi+}xD0{K0S0,rho(770)0{pi+,pi-}} -5.4522844e-05 0
+FitFraction D0{K*(1680)bar-{K0S0,pi-},pi+}xD0{K*(892)bar-{K0S0,pi-},pi+} 5.4402051e-05 0
+FitFraction D0{K(2)*(1430)+{K0S0,pi+},pi-}xD0{K0S0,rho(770)0{pi+,pi-}} 4.8215005e-05 0
+FitFraction D0{K*(1680)bar-{K0S0,pi-},pi+}xD0{K*(892)+{K0S0,pi+},pi-} -4.8046662e-05 0
+FitFraction D0{K(0)*(1430)+[GLASS]{K0S0,pi+},pi-}xD0{K0S0,omega(782)0{pi+,pi-}} -4.501553e-05 0
+FitFraction D0{K(0)*(1430)+[GLASS]{K0S0,pi+},pi-}xD0{K*(892)bar-{K0S0,pi-},pi+} -3.9213697e-05 0
+FitFraction D0{K(2)*(1430)bar-{K0S0,pi-},pi+}xD0{K*(892)+{K0S0,pi+},pi-} 3.6432051e-05 0
+FitFraction D0{K*(892)bar-{K0S0,pi-},pi+}xD0{K0S0,f(2)(1270)0{pi+,pi-}} -3.2042658e-05 0
+FitFraction D0{K*(1680)bar-{K0S0,pi-},pi+}xD0{K0S0,rho(770)0{pi+,pi-}} -2.6208044e-05 0
+FitFraction D0{K(2)*(1430)bar-{K0S0,pi-},pi+}xD0{K0S0,rho(770)0{pi+,pi-}} 2.5298983e-05 0
+FitFraction D0{K(2)*(1430)+{K0S0,pi+},pi-}xD0{K0S0,f(2)(1270)0{pi+,pi-}} -2.4323624e-05 0
+FitFraction D0{K(2)*(1430)bar-{K0S0,pi-},pi+}xD0{K0S0,f(2)(1270)0{pi+,pi-}} -2.3647454e-05 0
+FitFraction D0{K*(892)bar-{K0S0,pi-},pi+}xD0{K0S0,omega(782)0{pi+,pi-}} 2.0213394e-05 0
+FitFraction D0{K(0)*(1430)bar-[GLASS]{K0S0,pi-},pi+}xD0{K*(1680)bar-{K0S0,pi-},pi+} 1.9878432e-05 0
+FitFraction D0{K0S0,PiPi00}xD0{K0S0,f(2)(1270)0{pi+,pi-}} -1.970545e-05 0
+FitFraction D0{K*(1680)bar-{K0S0,pi-},pi+}xD0{K0S0,omega(782)0{pi+,pi-}} 1.6066906e-05 0
+FitFraction D0{K(0)*(1430)+[GLASS]{K0S0,pi+},pi-}xD0{K(2)*(1430)bar-{K0S0,pi-},pi+} 1.5063964e-05 0
+FitFraction D0{K*(892)+{K0S0,pi+},pi-}xD0{K0S0,omega(782)0{pi+,pi-}} -1.3948316e-05 0
+FitFraction D0{K(2)*(1430)+{K0S0,pi+},pi-}xD0{K*(1680)bar-{K0S0,pi-},pi+} -1.2709522e-05 0
+FitFraction D0{K*(892)+{K0S0,pi+},pi-}xD0{K*(892)bar-{K0S0,pi-},pi+} 1.2185788e-05 0
+FitFraction D0{K(0)*(1430)bar-[GLASS]{K0S0,pi-},pi+}xD0{K(2)*(1430)bar-{K0S0,pi-},pi+} 1.1677682e-05 0
+FitFraction D0{K(2)*(1430)+{K0S0,pi+},pi-}xD0{K*(892)bar-{K0S0,pi-},pi+} -1.0363754e-05 0
+FitFraction D0{K(2)*(1430)+{K0S0,pi+},pi-}xD0{K0S0,omega(782)0{pi+,pi-}} -9.8650576e-06 0
+FitFraction D0{K0S0,f(2)(1270)0{pi+,pi-}}xD0{K0S0,omega(782)0{pi+,pi-}} -6.3809585e-06 0
+FitFraction D0{K(0)*(1430)+[GLASS]{K0S0,pi+},pi-}xD0{K*(892)+{K0S0,pi+},pi-} -4.6685939e-06 0
+FitFraction D0{K(0)*(1430)+[GLASS]{K0S0,pi+},pi-}xD0{K(2)*(1430)+{K0S0,pi+},pi-} -2.5867136e-06 0
+FitFraction D0{K0S0,f(2)(1270)0{pi+,pi-}}xD0{K0S0,rho(770)0{pi+,pi-}} 1.8107956e-06 0
+FitFraction D0{K(2)*(1430)bar-{K0S0,pi-},pi+}xD0{K0S0,omega(782)0{pi+,pi-}} 1.1047426e-06 0
+FitFraction D0{K(2)*(1430)bar-{K0S0,pi-},pi+}xD0{K*(1680)bar-{K0S0,pi-},pi+} 9.5139295e-07 0
+FitFraction D0{K(2)*(1430)bar-{K0S0,pi-},pi+}xD0{K*(892)bar-{K0S0,pi-},pi+} 4.778344e-07 0
+FitFraction D0{K(2)*(1430)+{K0S0,pi+},pi-}xD0{K*(892)+{K0S0,pi+},pi-} 5.4751169e-08 0
+FitFraction Sum_D0_interference -0.054215485 0
+End Log

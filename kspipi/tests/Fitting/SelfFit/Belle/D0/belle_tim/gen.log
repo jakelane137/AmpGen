@@ -41,10 +41,10 @@
 [2;34mCoherentSum::CoherentSum                       INFO         [0mD0{rho(1450)0{pi+,pi-},K0S0}
 [2;34mCoherentSum::CoherentSum                       INFO         [0mD0{rho(770)0{pi+,pi-},K0S0}
 [2;34mvoid Generator<PHASESPACE>::fillEventList      INFO         [0mSetting normalisation constant = 51.7941
-[2;34mvoid Generator<PHASESPACE>::fillEventList      INFO         [0mCompleted:  24% [||||||||||||||                                              ] ε[gen] = 2.44% , 0 seconds[2;34mvoid Generator<PHASESPACE>::fillEventList      INFO         [0mCompleted:  47% [||||||||||||||||||||||||||||                                ] ε[gen] = 2.36% , 0 seconds[2;34mvoid Generator<PHASESPACE>::fillEventList      INFO         [0mCompleted:  71% [||||||||||||||||||||||||||||||||||||||||||                  ] ε[gen] = 2.34% , 0 seconds[2;34mvoid Generator<PHASESPACE>::fillEventList      INFO         [0mCompleted:  96% [|||||||||||||||||||||||||||||||||||||||||||||||||||||||||   ] ε[gen] = 2.48% , 0 seconds[2;34mvoid Generator<PHASESPACE>::fillEventList      INFO         [0mCompleted: 100% [||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||] ε[gen] = 0.39% , 1 seconds
-[2;34mvoid Generator<PHASESPACE>::fillEventList      INFO         [0mGenerated 10000 events in 1094.65 ms
-[2;34mvoid Generator<PHASESPACE>::fillEventList      INFO         [0mGenerating phase space : 267.15 ms
-[2;34mvoid Generator<PHASESPACE>::fillEventList      INFO         [0mEvaluating PDF         : 716.865 ms
-[2;34mvoid Generator<PHASESPACE>::fillEventList      INFO         [0mDoing accept/reject    : 31.0372 ms
+[2;34mvoid Generator<PHASESPACE>::fillEventList      INFO         [0mCompleted:  24% [||||||||||||||                                              ] ε[gen] = 2.44% , 0 seconds[2;34mvoid Generator<PHASESPACE>::fillEventList      INFO         [0mCompleted:  47% [||||||||||||||||||||||||||||                                ] ε[gen] = 2.36% , 0 seconds[2;34mvoid Generator<PHASESPACE>::fillEventList      INFO         [0mCompleted:  71% [||||||||||||||||||||||||||||||||||||||||||                  ] ε[gen] = 2.34% , 0 seconds[2;34mvoid Generator<PHASESPACE>::fillEventList      INFO         [0mCompleted:  96% [|||||||||||||||||||||||||||||||||||||||||||||||||||||||||   ] ε[gen] = 2.48% , 1 seconds[2;34mvoid Generator<PHASESPACE>::fillEventList      INFO         [0mCompleted: 100% [||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||] ε[gen] = 0.39% , 1 seconds
+[2;34mvoid Generator<PHASESPACE>::fillEventList      INFO         [0mGenerated 10000 events in 1281.48 ms
+[2;34mvoid Generator<PHASESPACE>::fillEventList      INFO         [0mGenerating phase space : 288.441 ms
+[2;34mvoid Generator<PHASESPACE>::fillEventList      INFO         [0mEvaluating PDF         : 882.584 ms
+[2;34mvoid Generator<PHASESPACE>::fillEventList      INFO         [0mDoing accept/reject    : 29.2243 ms
 [2;34mint main                                       INFO         [0mMaking 2D projections...
 [2;34mint main                                       INFO         [0mWriting output file 

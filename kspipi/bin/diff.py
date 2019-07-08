@@ -37,23 +37,29 @@ class diff:
         print(self.input1)
 
     def difference(self):       
-        if self.generate:
+        if (self.generate or self.input1=="input1" or self.input1cc=="input1CC"):
+            generate = True
             self.input1 = self.output + "/" + "1"
             self.input1cc = self.input1+"CC"
-            self.input2 = self.output + "/" + "2"
-            self.input2cc = self.input2+"CC"
             os.system("mkdir -p %s" % (self.input1))
             os.system("mkdir -p %s" % (self.input1cc))
-            os.system("mkdir -p %s" % (self.input2))
-            os.system("mkdir -p %s" % (self.input2cc))
-            a1 = ampplot(self.nEvents, self.name, self.draw1D, self.draw2D, self.opt1, self.input1, self.imgtype, self.generate, self.EventType1)
-            a1CC = ampplot(self.nEvents, self.name, self.draw1D, self.draw2D, self.opt1, self.input1cc, self.imgtype, self.generate, self.EventType1CC)
-            a2 = ampplot(self.nEvents, self.name, self.draw1D, self.draw2D, self.opt2, self.input2, self.imgtype, self.generate, self.EventType2)
-            a2CC = ampplot(self.nEvents, self.name, self.draw1D, self.draw2D, self.opt2, self.input2cc, self.imgtype, self.generate, self.EventType2CC)
+            self.input1 += "D0.root"
+            self.input1cc += "Dbar0.root"
+            a1 = ampplot(self.nEvents, self.name, self.draw1D, self.draw2D, self.opt1, self.input1, self.imgtype, generate, self.EventType1)
+            a1CC = ampplot(self.nEvents, self.name, self.draw1D, self.draw2D, self.opt1, self.input1cc, self.imgtype, generate, self.EventType1CC)
             a1.plot()
             a1CC.plot()
-            a2.plot()
-            a2CC.plot()
+            if (self.repeat):
+                self.input2 = self.output + "/" + "2"
+                self.input2cc = self.input2+"CC"
+                os.system("mkdir -p %s" % (self.input2))
+                os.system("mkdir -p %s" % (self.input2cc))
+                self.input2 += "D0.root"
+                self.input2cc += "Dbar0.root"
+                a2 = ampplot(self.nEvents, self.name, self.draw1D, self.draw2D, self.opt2, self.input2, self.imgtype, generate, self.EventType2)
+                a2CC = ampplot(self.nEvents, self.name, self.draw1D, self.draw2D, self.opt2, self.input2cc, self.imgtype, generate, self.EventType2CC)
+                a2.plot()
+                a2CC.plot()
         print("Opening %s" % self.input1)
         fD01 = TFile("%s" % (self.input1))
         print("Opening %s" % self.input1cc)
@@ -84,9 +90,12 @@ class diff:
         for i in range(N):
             x1 = xD01[i]
             y1 = yD01[i]
-            z1 = zD01[i] - gDbar01.Interpolate(y1,x1)
-            if (z1 < 0):
-                z1 += 2 * pi 
+            if self.obj=="gAbs":
+                z1 =  gDbar01.Interpolate(y1,x1) / zD01[i] * 100
+            else:
+                z1 = gDbar01.Interpolate(y1, x1) - zD01[i] * 100
+                if (z1 < 0):
+                    z1 += 2 * pi 
             #z1 *= 1/(2*pi)
             #z1 = zDbar01[i] - gD01.Interpolate(y1,x1)
             gr1.SetPoint(i, x1, y1, z1)
@@ -107,7 +116,7 @@ class diff:
         
         titles = {
             "gArg":"#delta_{D}",
-            "gAbs": "|A|"
+            "gAbs": "|A_{#bar{D}^{0}}|/|A_{D^{0}}|"
         }
         title = titles[self.obj]
         if (repeat):
@@ -127,13 +136,14 @@ class diff:
         return gr1
 
 def main():
+    defaultOpt= os.environ['AMPGEN'] + "/kspipi/opts/belle.opt"
     parser = argparse.ArgumentParser(description="ampGen difference script")
-    parser.add_argument("--nEvents", metavar="N", type=int, nargs='?', default=100, help="Number of events")
+    parser.add_argument("--nEvents", metavar="N", type=int, nargs='?', default=10000, help="Number of events")
     parser.add_argument("--name", metavar="name", type=str, nargs='?', default="all", help="Variable to plot, options are: s01, s02, s12, s01_vs_s02, s01_vs_s12, s02_vs_s12")
     parser.add_argument("--draw1D", metavar="draw1D", type=str, nargs='?', default="C", help="Draw options for 1D plots")
-    parser.add_argument("--draw2D", metavar="draw2D", type=str, nargs='?', default="PCOLZ", help="Draw options for 2D plots")
-    parser.add_argument("opt1", metavar="opt1", type=str, nargs='?', default="belle", help="options ")
-    parser.add_argument("opt2", metavar="opt2", type=str, nargs='?', default="belle", help="options ")
+    parser.add_argument("--draw2D", metavar="draw2D", type=str, nargs='?', default="COLZ", help="Draw options for 2D plots")
+    parser.add_argument("--opt1", metavar="opt1", type=str, nargs='?', default="%s"% defaultOpt, help="options ")
+    parser.add_argument("--opt2", metavar="opt2", type=str, nargs='?', default="%s"% defaultOpt, help="options ")
     parser.add_argument("--output", metavar="out", type=str, nargs='?', default="output", help="location for the output png ")
     parser.add_argument("--input1", metavar="in1", type=str, nargs='?', default="input1", help="location for the input png ")
     parser.add_argument("--input1cc", metavar="in1", type=str, nargs='?', default="input1", help="location for the input png ")
@@ -164,13 +174,19 @@ def main():
     QC = args.QC
     EventType1 = args.EventType1
     EventType1CCarr = EventType1.split(" ")
-    EventType1CCarr[0] = "Dbar0"
+    if EventType1CCarr[0]=="D0":
+        EventType1CCarr[0] = "Dbar0"
+    elif EventType1CCarr[0]=="Dbar0":
+        EventType1CCarr[0] = "D0"
     EventType1CC = " ".join(EventType1CCarr)
     EventType2 = args.EventType2
     EventType2CCarr = EventType2.split(" ")
-    EventType2CCarr[0] = "Dbar0"
-    EventType2CC = " ".join(EventType2CCarr)
+    if EventType2CCarr[0]=="D0":
+        EventType2CCarr[0] = "Dbar0"
+    elif EventType2CCarr[0]=="Dbar0":
+        EventType2CCarr[0] = "D0"
 
+    EventType2CC = " ".join(EventType2CCarr)
     print(input1)
     print(input2)
     objects = ["gArg", "gAbs"]

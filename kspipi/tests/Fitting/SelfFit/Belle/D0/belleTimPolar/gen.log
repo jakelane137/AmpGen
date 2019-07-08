@@ -1,0 +1,29 @@
+
+[2;31m    █████╗ ███╗   ███╗██████╗  ██████╗ ███████╗███╗   ██╗
+   ██╔══██╗████╗ ████║██╔══██╗██╔════╝ ██╔════╝████╗  ██║
+   ███████║██╔████╔██║██████╔╝██║  ███╗█████╗  ██╔██╗ ██║
+   ██╔══██║██║╚██╔╝██║██╔═══╝ ██║   ██║██╔══╝  ██║╚██╗██║
+   ██║  ██║██║ ╚═╝ ██║██║     ╚██████╔╝███████╗██║ ╚████║
+   ╚═╝  ╚═╝╚═╝     ╚═╝╚═╝      ╚═════╝ ╚══════╝╚═╝  ╚═══╝
+[0m
+[1m                      version 1.2
+        build: gcc 9.1.1  Jun 28 2019 10:01:04[0m
+
+[1m Release notes (v1r2)[0m
+ - Improved thread support for CoherentSum
+ - Add examples/QcGenerator for Ψ(3770) decays 
+ - Updated ExpressionParser with improved stability.
+ - Removed unused / untested lineshapes AxialKaon and ObelixRho 
+
+[2;34mvoid OptionsParser::import                     INFO         [0mImporting: opts/belleTim_polar.opt
+[2;34mint main                                       INFO         [0mUsing: 4 / 4 threads
+[2;34mint main                                       INFO         [0mGenerating events with type = D0 → [K0S0, pi+, pi-]
+[2;34mCoherentSum::CoherentSum                       INFO         [0mD0{rho(770)0{pi+,pi-},K0S0}
+[2;34mvoid Generator<PHASESPACE>::fillEventList      INFO         [0mSetting normalisation constant = 0.692198
+[2;34mvoid Generator<PHASESPACE>::fillEventList      INFO         [0mCompleted:  50% [||||||||||||||||||||||||||||||                              ] ε[gen] = 5.07% , 0 seconds[2;34mvoid Generator<PHASESPACE>::fillEventList      INFO         [0mCompleted: 100% [||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||] ε[gen] = 4.93% , 0 seconds
+[2;34mvoid Generator<PHASESPACE>::fillEventList      INFO         [0mGenerated 10000 events in 159.97 ms
+[2;34mvoid Generator<PHASESPACE>::fillEventList      INFO         [0mGenerating phase space : 109.317 ms
+[2;34mvoid Generator<PHASESPACE>::fillEventList      INFO         [0mEvaluating PDF         : 4.04068 ms
+[2;34mvoid Generator<PHASESPACE>::fillEventList      INFO         [0mDoing accept/reject    : 21.555 ms
+[2;34mint main                                       INFO         [0mMaking 2D projections...
+[2;34mint main                                       INFO         [0mWriting output file 

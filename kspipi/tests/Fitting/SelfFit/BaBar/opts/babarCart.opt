@@ -1,0 +1,55 @@
+#BaBar Model from https://arxiv.org/pdf/1804.06153v1.pdf
+
+#EventType D0 K0S0 pi+ pi- 
+CouplingConstant::Coordinates  polar
+CouplingConstant::AngularUnits deg 
+Import "$AMPGEN"/kspipi/kMatrix.opt
+D0{K*(892)bar-{K0S0,pi-},pi+}	0	-1.25	.01	0	1.18	0.01
+D0{K(0)*(1430)bar-[GLASS]{K0S0,pi-},pi+}	0	-.39	.07	0	2.33	0.06
+D0{K(2)*(1430)bar-{K0S0,pi-},pi+}	0	.91	.02	0	-0.88	0.02
+D0{K*(1410)bar-{K0S0,pi-},pi+}	0	-.05	.03	0	0.29	0.03
+D0{K*(1680)bar-{K0S0,pi-},pi+}	0	-1.56	.18	0	-2.92	0.20
+D0{K*(892)+{K0S0,pi+},pi-}	0	.12	.00	0	-0.11	0.00
+D0{K*(1410)+{K0S0,pi+},pi-}	0	-.18	.02	0	0.10	0.02
+D0{K(0)*(1430)+[GLASS]{K0S0,pi+},pi-}	0	-.10	.01	0	0.03	0.01
+D0{K(2)*(1430)+{K0S0,pi+},pi-}	0	.00	.01	0	-0.10	0.01
+D0{K0S0,rho(770)0{pi+,pi-}}	2	1.00	.00	2	0.00	0.00
+D0{K0S0,omega(782)0{pi+,pi-}}	0	-.02	.00	0	0.03	0.00
+D0{K0S0,f(2)(1270)0{pi+,pi-}}	0	1.15	.03	0	-0.85	0.03
+D0{K0S0,rho(1450)0{pi+,pi-}}	0	-.60	.09	0	2.79	0.10
+D0{K0S0,PiPi00}	0	1.00	.00	0	0.00	0.00
+PiPi00[kMatrix.pole.0]{pi+,pi-}	0	3.12	.50	0	7.91	0.50
+PiPi00[kMatrix.pole.1]{pi+,pi-}	0	11.15	.30	0	4.96	0.30
+PiPi00[kMatrix.pole.2]{pi+,pi-}	0	29.20	1.60	0	-0.05	1.27
+PiPi00[kMatrix.pole.3]{pi+,pi-}	0	6.66	.47	0	-8.50	0.48
+PiPi00[kMatrix.prod.0]{pi+,pi-}	0	-4.70	.37	0	-6.47	0.38
+PiPi00[kMatrix.prod.1]{pi+,pi-}	0	-23.29	1.55	0	-12.23	1.43
+PiPi00[kMatrix.prod.2]{pi+,pi-}	0	-1.84	1.79	0	-32.95	1.80
+PiPi00[kMatrix.prod.3]{pi+,pi-}	0	-13.65	1.25	0	-22.36	1.28
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+Dbar0{K*(892)+{K0S0,pi+},pi-}	0	-1.25	.01	0	1.18	0.01
+Dbar0{K(0)*(1430)+[GLASS]{K0S0,pi+},pi-}	0	-.39	.07	0	2.33	0.06
+Dbar0{K(2)*(1430)+{K0S0,pi+},pi-}	0	.91	.02	0	-0.88	0.02
+Dbar0{K*(1410)+{K0S0,pi+},pi-}	0	-.05	.03	0	0.29	0.03
+Dbar0{K*(1680)+{K0S0,pi+},pi-}	0	-1.56	.18	0	-2.92	0.20
+Dbar0{K*(892)bar-{K0S0,pi-},pi+}	0	.12	.00	0	-0.11	0.00
+Dbar0{K*(1410)bar-{K0S0,pi-},pi+}	0	-.18	.02	0	0.10	0.02
+Dbar0{K(0)*(1430)bar-[GLASS]{K0S0,pi-},pi+}	0	-.10	.01	0	0.03	0.01
+Dbar0{K(2)*(1430)bar-{K0S0,pi-},pi+}	0	.00	.01	0	-0.10	0.01
+Dbar0{K0S0,rho(770)0{pi+,pi-}}	2	1.00	.00	2	0.00	0.00
+Dbar0{K0S0,omega(782)0{pi+,pi-}}	0	-.02	.00	0	0.03	0.00
+Dbar0{K0S0,f(2)(1270)0{pi+,pi-}}	0	1.15	.03	0	-0.85	0.03
+Dbar0{K0S0,rho(1450)0{pi+,pi-}}	0	-.60	.09	0	2.79	0.10
+Dbar0{K0S0,PiPi00}	0	1.00	.00	0	0.00	0.00
+
