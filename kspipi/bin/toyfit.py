@@ -45,7 +45,7 @@ class toyFit:
             runGen = "lb-run -c x86_64-centos7-gcc62-opt ROOT " + runGen
             runFit = "lb-run -c x86_64-centos7-gcc62-opt ROOT " + runFit
         #subprocess.call(runFit.split())
-	os.system(runGen)
+        os.system(runGen)
         os.system(runFit)
         #print(runFit)
         fittedOpt = self.opt.split("/")
