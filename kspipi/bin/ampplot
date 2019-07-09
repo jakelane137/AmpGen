@@ -1,0 +1,2 @@
+#!/bin/sh
+exec python $AMPGEN/kspipi/bin/ampplot.py "$@"

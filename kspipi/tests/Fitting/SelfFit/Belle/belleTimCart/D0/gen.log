@@ -15,7 +15,8 @@
  - Updated ExpressionParser with improved stability.
  - Removed unused / untested lineshapes AxialKaon and ObelixRho 
 
-[2;34mvoid OptionsParser::import                     INFO         [0mImporting: /home/jlane/Documents/ampGen/kspipi/opts/belle.opt
+[2;34mvoid OptionsParser::import                     INFO         [0mImporting: opts/belleTimCart.opt
+[2;34mvoid OptionsParser::import                     INFO         [0mImporting: /home/jlane/Documents/ampGen/options/kMatrix.opt
 [2;34mint main                                       INFO         [0mUsing: 4 / 4 threads
 [2;34mbool ParticlePropertiesList::readFile          INFO         [0mReading file: /home/jlane/Documents/ampGen//options/mass_width.csv
 [2;34mbool ParticlePropertiesList::readFile          INFO         [0mReading file: /home/jlane/Documents/ampGen//options/MintDalitzSpecialParticles.csv
@@ -41,3 +42,11 @@
 [2;34mCoherentSum::CoherentSum                       INFO         [0mD0{omega(782)0{pi+,pi-},K0S0}
 [2;34mCoherentSum::CoherentSum                       INFO         [0mD0{rho(1450)0{pi+,pi-},K0S0}
 [2;34mCoherentSum::CoherentSum                       INFO         [0mD0{rho(770)0{pi+,pi-},K0S0}
+[2;34mvoid Generator<PHASESPACE>::fillEventList      INFO         [0mSetting normalisation constant = 51.7941
+[2;34mvoid Generator<PHASESPACE>::fillEventList      INFO         [0mCompleted: 100% [||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||] ε[gen] = 0.10% , 0 seconds
+[2;34mvoid Generator<PHASESPACE>::fillEventList      INFO         [0mGenerated 100 events in 492.76 ms
+[2;34mvoid Generator<PHASESPACE>::fillEventList      INFO         [0mGenerating phase space : 62.2636 ms
+[2;34mvoid Generator<PHASESPACE>::fillEventList      INFO         [0mEvaluating PDF         : 395.502 ms
+[2;34mvoid Generator<PHASESPACE>::fillEventList      INFO         [0mDoing accept/reject    : 10.8278 ms
+[2;34mint main                                       INFO         [0mMaking 2D projections...
+[2;34mint main                                       INFO         [0mWriting output file 

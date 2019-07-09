@@ -1,0 +1,5 @@
+Parameter D0{K0S0,rho(770)0{pi+,pi-}}_Re 1 0 0 0 0 
+Parameter D0{K0S0,rho(770)0{pi+,pi-}}_Im 0 1 0 0 0 
+FitQuality 2.4891539 4 1 -187.62936 0
+FitFraction Sum_D0_interference 0 0
+End Log

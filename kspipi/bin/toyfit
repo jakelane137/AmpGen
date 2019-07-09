@@ -1,2 +1,2 @@
 #!/bin/sh
-lb-run -c x86_64-centos7-gcc62-opt ROOT python "$AMPGEN/kspipi/bin/toyfit.py" "$@"
+exec python "$AMPGEN/kspipi/bin/toyfit.py" "$@"

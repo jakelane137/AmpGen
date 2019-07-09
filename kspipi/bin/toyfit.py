@@ -23,7 +23,7 @@ class toyFit:
         self.IntegrationSample = IntegrationSample
         self.mcMult = mcMult
         self.nCores = nCores
-        self.output = self.EventType.split()[0] + "/" + self.output
+        self.output = self.output + "/" +  self.EventType.split()[0] 
 
     def fit(self):
         subprocess.call(("mkdir -p %s" % (self.output)).split())

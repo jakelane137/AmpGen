@@ -15,7 +15,7 @@
  - Updated ExpressionParser with improved stability.
  - Removed unused / untested lineshapes AxialKaon and ObelixRho 
 
-[2;34mvoid OptionsParser::import                     INFO         [0mImporting: opts/belle.opt
+[2;34mvoid OptionsParser::import                     INFO         [0mImporting: /home/jlane/Documents/ampGen/kspipi/opts/belle.opt
 [2;34mint main                                       INFO         [0mUsing: 4 / 4 threads
 [2;34mbool ParticlePropertiesList::readFile          INFO         [0mReading file: /home/jlane/Documents/ampGen//options/mass_width.csv
 [2;34mbool ParticlePropertiesList::readFile          INFO         [0mReading file: /home/jlane/Documents/ampGen//options/MintDalitzSpecialParticles.csv
@@ -41,11 +41,3 @@
 [2;34mCoherentSum::CoherentSum                       INFO         [0mD0{omega(782)0{pi+,pi-},K0S0}
 [2;34mCoherentSum::CoherentSum                       INFO         [0mD0{rho(1450)0{pi+,pi-},K0S0}
 [2;34mCoherentSum::CoherentSum                       INFO         [0mD0{rho(770)0{pi+,pi-},K0S0}
-[2;34mvoid Generator<PHASESPACE>::fillEventList      INFO         [0mSetting normalisation constant = 148.534
-[2;34mvoid Generator<PHASESPACE>::fillEventList      INFO         [0mCompleted: 100% [||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||] ε[gen] = 10.00% , 0 seconds
-[2;34mvoid Generator<PHASESPACE>::fillEventList      INFO         [0mGenerated 10000 events in 299.619 ms
-[2;34mvoid Generator<PHASESPACE>::fillEventList      INFO         [0mGenerating phase space : 67.4212 ms
-[2;34mvoid Generator<PHASESPACE>::fillEventList      INFO         [0mEvaluating PDF         : 196.814 ms
-[2;34mvoid Generator<PHASESPACE>::fillEventList      INFO         [0mDoing accept/reject    : 15.0443 ms
-[2;34mint main                                       INFO         [0mMaking 2D projections...
-[2;34mint main                                       INFO         [0mWriting output file 

@@ -1,0 +1,6 @@
+CouplingConstant::Coordinates  cartesian
+Import $AMPGENROOT/options/kMatrix.opt
+Particle::DefaultModifier BL
+Particle::SpinFormalism   Canonical
+D0{K0S0,rho(770)0{pi+,pi-}}_Re 1 0 0 
+D0{K0S0,rho(770)0{pi+,pi-}}_Im 0 1 0 
