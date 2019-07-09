@@ -42,8 +42,8 @@ class toyFit:
             runFit = "SignalOnlyFitter --DataSample %s --EventType \"%s\" --Plots %s/plots.root --IntegrationSample %s --nCores %i --LogFile %s/fit.log %s" % (self.DataSample, self.EventType, self.output, self.IntegrationSample, self.nCores, self.output, self.opt)
         host = os.environ['HOSTNAME']
         if "lxplus" in host:
-		runGen = "lb-run -c x86_64-centos7-gcc62-opt ROOT " + runGen
-		runFit = "lb-run -c x86_64-centos7-gcc62-opt ROOT " + runFit
+            runGen = "lb-run -c x86_64-centos7-gcc62-opt ROOT " + runGen
+            runFit = "lb-run -c x86_64-centos7-gcc62-opt ROOT " + runFit
         #subprocess.call(runFit.split())
 	os.system(runGen)
         os.system(runFit)
