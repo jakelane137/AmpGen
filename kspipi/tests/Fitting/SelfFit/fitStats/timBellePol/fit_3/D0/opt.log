@@ -1,0 +1,243 @@
+D0{K(0)*(1430)+[GLASS]{K0S0,pi+},pi-}_Re
+Fitted Value = 0.0209104 ± 0.0160305 
+Initial Value = 0.01 ± 0.05 
+D0{K(0)*(1430)+[GLASS]{K0S0,pi+},pi-}_Im
+Fitted Value = 134.284 ± 31.0897 
+Initial Value = 32.15 ± 10.36 
+D0{K(0)*(1430)bar-[GLASS]{K0S0,pi-},pi+}_Re
+Fitted Value = 0.201892 ± 0.0143962 
+Initial Value = 0.2 ± 0.05 
+D0{K(0)*(1430)bar-[GLASS]{K0S0,pi-},pi+}_Im
+Fitted Value = -77.0609 ± 7.26816 
+Initial Value = -82.5 ± 0.36 
+D0{K(2)*(1430)+{K0S0,pi+},pi-}_Re
+Fitted Value = 0.0236149 ± 0.0131981 
+Initial Value = 0.02 ± 0.05 
+D0{K(2)*(1430)+{K0S0,pi+},pi-}_Im
+Fitted Value = 46.7607 ± 29.7091 
+Initial Value = 52.09 ± 5.26 
+D0{K(2)*(1430)bar-{K0S0,pi-},pi+}_Re
+Fitted Value = 0.159564 ± 0.0140185 
+Initial Value = 0.15 ± 0.05 
+D0{K(2)*(1430)bar-{K0S0,pi-},pi+}_Im
+Fitted Value = 132.508 ± 6.07002 
+Initial Value = 135.59 ± 1.0 
+D0{K*(1410)+{K0S0,pi+},pi-}_Re
+Fitted Value = 0.0590811 ± 0.0227328 
+Initial Value = 0.01 ± 0.05 
+D0{K*(1410)+{K0S0,pi+},pi-}_Im
+Fitted Value = 80.3248 ± 20.7731 
+Initial Value = 78.19 ± 9.33 
+D0{K*(1410)bar-{K0S0,pi-},pi+}_Re
+Fitted Value = 0.0416688 ± 0.0332347 
+Initial Value = 0.07 ± 0.05 
+D0{K*(1410)bar-{K0S0,pi-},pi+}_Im
+Fitted Value = 208.187 ± 40.9533 
+Initial Value = 118.94 ± 3.31 
+D0{K*(1680)bar-{K0S0,pi-},pi+}_Re
+Fitted Value = 0.215832 ± 0.0595509 
+Initial Value = 0.06 ± 0.01 
+D0{K*(1680)bar-{K0S0,pi-},pi+}_Im
+Fitted Value = 183.865 ± 21.1269 
+Initial Value = 153.04 ± 18.58 
+D0{K*(892)+{K0S0,pi+},pi-}_Re
+Fitted Value = 0.191543 ± 0.0261756 
+Initial Value = 0.19 ± 0.05 
+D0{K*(892)+{K0S0,pi+},pi-}_Im
+Fitted Value = -50.2579 ± 7.12974 
+Initial Value = -48.12 ± 1.19 
+D0{K*(892)bar-{K0S0,pi-},pi+}_Re
+Fitted Value = 2.07653 ± 0.0519269 
+Initial Value = 2.03 ± 0.01 
+D0{K*(892)bar-{K0S0,pi-},pi+}_Im
+Fitted Value = 130.945 ± 2.58797 
+Initial Value = 132.73 ± 0.36 
+D0{K0S0,PiPi00}_Re
+Fitted Value = 1.0 ± 0.05 
+Initial Value = 1.0 ± 0.05 
+D0{K0S0,PiPi00}_Im
+Fitted Value = 0.0 ± 0.05 
+Initial Value = 0.0 ± 0.05 
+D0{K0S0,f(2)(1270)0{pi+,pi-}}_Re
+Fitted Value = 0.13697 ± 0.0233041 
+Initial Value = 0.16 ± 0.05 
+D0{K0S0,f(2)(1270)0{pi+,pi-}}_Im
+Fitted Value = 137.278 ± 10.5404 
+Initial Value = 143.07 ± 1.8 
+D0{K0S0,omega(782)0{pi+,pi-}}_Re
+Fitted Value = 0.149655 ± 0.0201102 
+Initial Value = 0.14 ± 0.05 
+D0{K0S0,omega(782)0{pi+,pi-}}_Im
+Fitted Value = 134.338 ± 6.99149 
+Initial Value = 116.54 ± 0.94 
+D0{K0S0,rho(1450)0{pi+,pi-}}_Re
+Fitted Value = 0.211365 ± 0.0492215 
+Initial Value = 0.18 ± 0.01 
+D0{K0S0,rho(1450)0{pi+,pi-}}_Im
+Fitted Value = 49.5329 ± 16.8615 
+Initial Value = 28.9 ± 4.15 
+D0{K0S0,rho(770)0{pi+,pi-}}_Re
+Fitted Value = 1.0 ± 0.05 
+Initial Value = 1.0 ± 0.05 
+D0{K0S0,rho(770)0{pi+,pi-}}_Im
+Fitted Value = 0.0 ± 0.05 
+Initial Value = 0.0 ± 0.05 
+K(0)*(1430)+::GLASS::F
+Fitted Value = 5.85162 ± 7.15389 
+Initial Value = 0.95532 ± 0.01 
+K(0)*(1430)+::GLASS::R
+Fitted Value = 1.0 ± 0.0 
+Initial Value = 1.0 ± 0.0 
+K(0)*(1430)+::GLASS::a
+Fitted Value = 0.00532416 ± 7.47054e-05 
+Initial Value = 0.11267 ± 0.01 
+K(0)*(1430)+::GLASS::phiF
+Fitted Value = 0.134784 ± 0.125867 
+Initial Value = 0.00173 ± 0.01 
+K(0)*(1430)+::GLASS::phiR
+Fitted Value = -4.12065 ± 0.7732 
+Initial Value = -1.9145 ± 0.01 
+K(0)*(1430)+::GLASS::r
+Fitted Value = -643.534 ± 9.07727 
+Initial Value = -33.799 ± 0.01 
+K(0)*(1430)+_mass
+Fitted Value = 1.44055 ± 0.002 
+Initial Value = 1.44055 ± 0.002 
+K(0)*(1430)+_width
+Fitted Value = 0.19261 ± 0.005 
+Initial Value = 0.19261 ± 0.005 
+K(0)*(1430)bar-::GLASS::F
+Fitted Value = 1.40349 ± 0.215555 
+Initial Value = 0.95532 ± 0.01 
+K(0)*(1430)bar-::GLASS::R
+Fitted Value = 1.0 ± 0.0 
+Initial Value = 1.0 ± 0.0 
+K(0)*(1430)bar-::GLASS::a
+Fitted Value = 0.100491 ± 0.00373508 
+Initial Value = 0.11267 ± 0.01 
+K(0)*(1430)bar-::GLASS::phiF
+Fitted Value = -0.00534116 ± 0.0285211 
+Initial Value = 0.00173 ± 0.01 
+K(0)*(1430)bar-::GLASS::phiR
+Fitted Value = -1.80077 ± 0.123944 
+Initial Value = -1.9145 ± 0.01 
+K(0)*(1430)bar-::GLASS::r
+Fitted Value = -38.6926 ± 1.43465 
+Initial Value = -33.799 ± 0.01 
+K(0)*(1430)bar-_mass
+Fitted Value = 1.44055 ± 0.002 
+Initial Value = 1.44055 ± 0.002 
+K(0)*(1430)bar-_width
+Fitted Value = 0.19261 ± 0.005 
+Initial Value = 0.19261 ± 0.005 
+K(2)*(1430)0_mass
+Fitted Value = 1.4256 ± 0.0 
+Initial Value = 1.4256 ± 0.0 
+K(2)*(1430)0_width
+Fitted Value = 0.0985 ± 0.0 
+Initial Value = 0.0985 ± 0.0 
+K*(1410)+_mass
+Fitted Value = 1.414 ± 0.0 
+Initial Value = 1.414 ± 0.0 
+K*(1410)+_width
+Fitted Value = 0.232 ± 0.0 
+Initial Value = 0.232 ± 0.0 
+K*(1410)bar-_mass
+Fitted Value = 1.414 ± 0.0 
+Initial Value = 1.414 ± 0.0 
+K*(1410)bar-_width
+Fitted Value = 0.232 ± 0.0 
+Initial Value = 0.232 ± 0.0 
+K*(1680)+_mass
+Fitted Value = 1.717 ± 0.0 
+Initial Value = 1.717 ± 0.0 
+K*(1680)bar-_width
+Fitted Value = 0.322 ± 0.0 
+Initial Value = 0.322 ± 0.0 
+K*(892)+_mass
+Fitted Value = 0.89371 ± 5e-05 
+Initial Value = 0.89371 ± 5e-05 
+K*(892)+_width
+Fitted Value = 0.04719 ± 0.00011 
+Initial Value = 0.04719 ± 0.00011 
+K*(892)bar-_mass
+Fitted Value = 0.89371 ± 5e-05 
+Initial Value = 0.89371 ± 5e-05 
+K*(892)bar-_width
+Fitted Value = 0.04719 ± 0.00011 
+Initial Value = 0.04719 ± 0.00011 
+PiPi00[kMatrix.pole.0]{pi+,pi-}_Re
+Fitted Value = 0.883171 ± 0.0438727 
+Initial Value = 0.9 ± 0.02 
+PiPi00[kMatrix.pole.0]{pi+,pi-}_Im
+Fitted Value = -111.483 ± 2.78969 
+Initial Value = -140.98 ± 3.05 
+PiPi00[kMatrix.pole.1]{pi+,pi-}_Re
+Fitted Value = 1.08307 ± 0.0549487 
+Initial Value = 1.24 ± 0.02 
+PiPi00[kMatrix.pole.1]{pi+,pi-}_Im
+Fitted Value = -152.906 ± 3.63662 
+Initial Value = -161.79 ± 3.3 
+PiPi00[kMatrix.pole.2]{pi+,pi-}_Re
+Fitted Value = 3.76772 ± 0.490095 
+Initial Value = 3.58 ± 0.1 
+PiPi00[kMatrix.pole.2]{pi+,pi-}_Im
+Fitted Value = -166.248 ± 8.81038 
+Initial Value = -175.14 ± 26.9 
+PiPi00[kMatrix.pole.3]{pi+,pi-}_Re
+Fitted Value = 0.836519 ± 0.187591 
+Initial Value = 1.02 ± 0.03 
+PiPi00[kMatrix.pole.3]{pi+,pi-}_Im
+Fitted Value = 110.307 ± 12.6167 
+Initial Value = 130.01 ± 2.73 
+PiPi00[kMatrix.prod.0]{pi+,pi-}_Re
+Fitted Value = 0.720262 ± 0.0324223 
+Initial Value = 0.91 ± 0.02 
+PiPi00[kMatrix.prod.0]{pi+,pi-}_Im
+Fitted Value = 71.6644 ± 3.04611 
+Initial Value = 37.57 ± 2.28 
+PiPi00[kMatrix.prod.1]{pi+,pi-}_Re
+Fitted Value = 3.2572 ± 0.192859 
+Initial Value = 3.3 ± 0.09 
+PiPi00[kMatrix.prod.1]{pi+,pi-}_Im
+Fitted Value = 26.9817 ± 3.13145 
+Initial Value = 10.75 ± 11.37 
+PiPi00[kMatrix.prod.2]{pi+,pi-}_Re
+Fitted Value = 5.00348 ± 0.503803 
+Initial Value = 3.22 ± 0.09 
+PiPi00[kMatrix.prod.2]{pi+,pi-}_Im
+Fitted Value = 81.1054 ± 5.80222 
+Initial Value = 58.7 ± 2.15 
+PiPi00[kMatrix.prod.3]{pi+,pi-}_Re
+Fitted Value = 2.59075 ± 0.102481 
+Initial Value = 2.98 ± 0.06 
+PiPi00[kMatrix.prod.3]{pi+,pi-}_Im
+Fitted Value = 70.6266 ± 2.59591 
+Initial Value = 37.47 ± 2.59 
+PiPi00_s0_prod
+Fitted Value = -0.07 ± 0.03 
+Initial Value = -0.07 ± 0.03 
+f(2)(1270)_mass
+Fitted Value = 1.2751 ± 0.0 
+Initial Value = 1.2751 ± 0.0 
+f(2)(1270)_width
+Fitted Value = 0.1842 ± 0.0 
+Initial Value = 0.1842 ± 0.0 
+omega(782)0_mass
+Fitted Value = 0.78265 ± 0.0 
+Initial Value = 0.78265 ± 0.0 
+omega(782)0_width
+Fitted Value = 0.00849 ± 0.0 
+Initial Value = 0.00849 ± 0.0 
+rho(1450)0_mass
+Fitted Value = 1.465 ± 0.0 
+Initial Value = 1.465 ± 0.0 
+rho(1450)0_width
+Fitted Value = 0.4 ± 0.0 
+Initial Value = 0.4 ± 0.0 
+rho(770)0_mass
+Fitted Value = 0.768546 ± 0.00318224 
+Initial Value = 0.769374 ± 0.000335341 
+rho(770)0_width
+Fitted Value = 0.133909 ± 0.00610145 
+Initial Value = 0.141979 ± 0.000700587 

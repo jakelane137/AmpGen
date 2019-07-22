@@ -1,0 +1,4 @@
+CouplingConstant::Coordinates  cartesian
+Import $AMPGENROOT/options/kMatrix.opt
+Particle::DefaultModifier BL
+Particle::SpinFormalism   Canonical

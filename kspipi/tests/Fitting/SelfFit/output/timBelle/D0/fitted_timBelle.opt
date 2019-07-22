@@ -1,0 +1,6 @@
+CouplingConstant::Coordinates  cartesian
+Import $AMPGENROOT/options/kMatrix.opt
+Particle::DefaultModifier BL
+Particle::SpinFormalism   Canonical
+D0_radius 0 2.41838 0.510803
+D0{K(0)*(1430)+[GLASS]{K0S0,pi+},pi-}_Re 0 0.0296311 0.00964538

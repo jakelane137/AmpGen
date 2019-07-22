@@ -1,0 +1,51 @@
+
+[2;31m    █████╗ ███╗   ███╗██████╗  ██████╗ ███████╗███╗   ██╗
+   ██╔══██╗████╗ ████║██╔══██╗██╔════╝ ██╔════╝████╗  ██║
+   ███████║██╔████╔██║██████╔╝██║  ███╗█████╗  ██╔██╗ ██║
+   ██╔══██║██║╚██╔╝██║██╔═══╝ ██║   ██║██╔══╝  ██║╚██╗██║
+   ██║  ██║██║ ╚═╝ ██║██║     ╚██████╔╝███████╗██║ ╚████║
+   ╚═╝  ╚═╝╚═╝     ╚═╝╚═╝      ╚═════╝ ╚══════╝╚═╝  ╚═══╝
+[0m
+[1m                      version 1.2
+        build: gcc 8.2.0  Jul 11 2019 12:28:01[0m
+
+[1m Release notes (v1r2)[0m
+ - Improved thread support for CoherentSum
+ - Add examples/QcGenerator for Ψ(3770) decays 
+ - Updated ExpressionParser with improved stability.
+ - Removed unused / untested lineshapes AxialKaon and ObelixRho 
+
+[2;34mvoid OptionsParser::import                     INFO         [0mImporting: opts/myBellePol.opt
+[2;34mint main                                       INFO         [0mUsing: 10 / 10 threads
+[2;34mbool ParticlePropertiesList::readFile          INFO         [0mReading file: /afs/cern.ch/user/j/jolane/work/ampGen//options/mass_width.csv
+[2;34mbool ParticlePropertiesList::readFile          INFO         [0mReading file: /afs/cern.ch/user/j/jolane/work/ampGen//options/MintDalitzSpecialParticles.csv
+[2;34mint main                                       INFO         [0mGenerating events with type = D0 → [K0S0, pi+, pi-]
+[2;34mCoherentSum::CoherentSum                       INFO         [0mD0{K(0)*(1430)+[GLASS.BL]{K0S0,pi+},pi-}
+[2;34mCoherentSum::CoherentSum                       INFO         [0mD0{K(0)*(1430)bar-[GLASS.BL]{K0S0,pi-},pi+}
+[2;34mCoherentSum::CoherentSum                       INFO         [0mD0{K(2)*(1430)+{K0S0,pi+},pi-}
+[2;34mCoherentSum::CoherentSum                       INFO         [0mD0{K(2)*(1430)bar-{K0S0,pi-},pi+}
+[2;34mCoherentSum::CoherentSum                       INFO         [0mD0{K*(1410)+{K0S0,pi+},pi-}
+[2;34mCoherentSum::CoherentSum                       INFO         [0mD0{K*(1410)bar-{K0S0,pi-},pi+}
+[2;34mCoherentSum::CoherentSum                       INFO         [0mD0{K*(1680)bar-{K0S0,pi-},pi+}
+[2;34mCoherentSum::CoherentSum                       INFO         [0mD0{K*(892)+{K0S0,pi+},pi-}
+[2;34mCoherentSum::CoherentSum                       INFO         [0mD0{K*(892)bar-{K0S0,pi-},pi+}
+[2;34mCoherentSum::CoherentSum                       INFO         [0mD0{PiPi00[kMatrix.pole.0]{pi+,pi-},K0S0}
+[2;34mCoherentSum::CoherentSum                       INFO         [0mD0{PiPi00[kMatrix.pole.1]{pi+,pi-},K0S0}
+[2;34mCoherentSum::CoherentSum                       INFO         [0mD0{PiPi00[kMatrix.pole.2]{pi+,pi-},K0S0}
+[2;34mCoherentSum::CoherentSum                       INFO         [0mD0{PiPi00[kMatrix.pole.3]{pi+,pi-},K0S0}
+[2;34mCoherentSum::CoherentSum                       INFO         [0mD0{PiPi00[kMatrix.prod.0]{pi+,pi-},K0S0}
+[2;34mCoherentSum::CoherentSum                       INFO         [0mD0{PiPi00[kMatrix.prod.1]{pi+,pi-},K0S0}
+[2;34mCoherentSum::CoherentSum                       INFO         [0mD0{PiPi00[kMatrix.prod.2]{pi+,pi-},K0S0}
+[2;34mCoherentSum::CoherentSum                       INFO         [0mD0{PiPi00[kMatrix.prod.3]{pi+,pi-},K0S0}
+[2;34mCoherentSum::CoherentSum                       INFO         [0mD0{f(2)(1270)0{pi+,pi-},K0S0}
+[2;34mCoherentSum::CoherentSum                       INFO         [0mD0{omega(782)0{pi+,pi-},K0S0}
+[2;34mCoherentSum::CoherentSum                       INFO         [0mD0{rho(1450)0{pi+,pi-},K0S0}
+[2;34mCoherentSum::CoherentSum                       INFO         [0mD0{rho(770)0{pi+,pi-},K0S0}
+[2;34mvoid Generator<PHASESPACE>::fillEventList      INFO         [0mSetting normalisation constant = 148.534
+[2;34mvoid Generator<PHASESPACE>::fillEventList      INFO         [0mCompleted: 100% [||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||] ε[gen] = 10.00% , 1 seconds
+[2;34mvoid Generator<PHASESPACE>::fillEventList      INFO         [0mGenerated 10000 events in 1046.5 ms
+[2;34mvoid Generator<PHASESPACE>::fillEventList      INFO         [0mGenerating phase space : 142.185 ms
+[2;34mvoid Generator<PHASESPACE>::fillEventList      INFO         [0mEvaluating PDF         : 841.534 ms
+[2;34mvoid Generator<PHASESPACE>::fillEventList      INFO         [0mDoing accept/reject    : 41.7485 ms
+[2;34mint main                                       INFO         [0mMaking 2D projections...
+[2;34mint main                                       INFO         [0mWriting output file 

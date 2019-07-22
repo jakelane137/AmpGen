@@ -21,14 +21,14 @@ class ampplot:
         draw1D = self.draw1D
         draw2D = self.draw2D
         opt = self.opt
-        out = self.output
+        outFolder = self.output
         generate = self.generate
         imgtype = self.imgtype
         EventType = self.EventType
         print(N)
         print(name[1:])
         print(opt)
-        print(out)
+
         GeVc2 = "GeV ^{2}/#it{c} ^{4}"
         kspip = "s(K_{ S}^{ 0} #pi^{+})"
         kspim = "s(K_{ S}^{ 0} #pi^{-})"
@@ -74,14 +74,17 @@ class ampplot:
 
 
 
-        outFolder = out.replace(".root", "/")
+
         print(outFolder)        
         os.system("mkdir -p %s" % (outFolder))
+        out = f"{outFolder}/Generated_Output.root"
 
 #        subsystem.call(["mkdir", "-p","%s" % (out)])
 
         if (generate):
             os.system("Generator --nEvents %i --Output %s --EventType '%s' %s" % (N, out,EventType, opt))
+        else:
+            out = f"{self.opt}"
         f = TFile.Open("%s" % (out))
         if (name=="gArg" or name=="gAbs" or name == "s01_vs_s02"):
             title = name[1:] + "(A(m^{2}_{K_{S}^{0}#pi^{+}},m^{2}_{K_{S}^{0}#pi^{-}})); m^{2}_{K_{S}^{0}#pi^{+}}(GeV); m^{2}_{K_{S}^{0}#pi^{-}} (GeV)"
@@ -162,6 +165,9 @@ class ampplot:
         #    obj.SetTitleOffset(0.1)
             obj.Draw(draw)
             c.SaveAs("%s/%s.%s" % (outFolder, name, imgtype))
+        cmd = f"cd {self.output} ; rm -rf *.tar.gz ;tar cvfz plots.tar.gz *.eps; mogrify -format png *.eps; cd -"
+        print(cmd)
+        os.system(cmd)
 
 
 def makePlot(s):
@@ -264,7 +270,7 @@ def main():
     parser.add_argument("--name", metavar="name", type=str, nargs='?', default="all", help="Variable to plot, options are: s01, s02, s12, s01_vs_s02, s01_vs_s12, s02_vs_s12")
     parser.add_argument("--draw1D", metavar="draw1D", type=str, nargs='?', default="C", help="Draw options for 1D plots")
     parser.add_argument("--draw2D", metavar="draw2D", type=str, nargs='?', default="PCOLZ", help="Draw options for 2D plots")
-    parser.add_argument("opt", metavar="opt", type=str, nargs='?', default="testPhasePoly", help="options ")
+    parser.add_argument("--opt", metavar="opt", type=str, nargs='?', default="testPhasePoly", help="options ")
     parser.add_argument("--output", metavar="out", type=str, nargs='?', default="output", help="location for the output png ")
     parser.add_argument("--imgtype", metavar="imgtype", type=str, nargs='?', default="eps", help="plot output picture type (eps) ")
     parser.add_argument("--generate", action='store_true') 
@@ -281,6 +287,8 @@ def main():
     EventType = args.EventType
     a = ampplot(N, name, draw1D, draw2D, opt, out, imgtype, generate, EventType)
     a.plot()
+
+
 
 
 if __name__=='__main__':

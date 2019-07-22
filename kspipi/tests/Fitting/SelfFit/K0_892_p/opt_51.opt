@@ -1,0 +1,80 @@
+CouplingConstant::Coordinates "cartesian" 
+                        CouplingConstant::AngularUnits "rad" 
+                        Particle::DefaultModifier BL 
+                        Particle::SpinFormalism Canonical 
+                        Import $AMPGENROOT/options/kMatrix.opt 
+                        Import $AMPGENROOT/kspipi/opts/LASS.opt 
+                        Import $AMPGENROOT/kspipi/opts/particleProperties.opt
+
+                        D0{K*(892)bar-{K0S0,pi-},pi+}_Re 0 -1.25 0.01 
+ D0{K*(892)bar-{K0S0,pi-},pi+}_Im 0 1.18 0.01 
+D0{K(0)*(1430)bar-[GLASS]{K0S0,pi-},pi+}_Re 0 -0.39 0.07 
+ D0{K(0)*(1430)bar-[GLASS]{K0S0,pi-},pi+}_Im 0 2.33 0.06 
+D0{K(2)*(1430)bar-{K0S0,pi-},pi+}_Re 0 0.91 0.02 
+ D0{K(2)*(1430)bar-{K0S0,pi-},pi+}_Im 0 -0.88 0.02 
+D0{K*(1410)bar-{K0S0,pi-},pi+}_Re 0 -0.05 0.03 
+ D0{K*(1410)bar-{K0S0,pi-},pi+}_Im 0 0.29 0.03 
+D0{K*(1680)bar-{K0S0,pi-},pi+}_Re 0 -1.56 0.18 
+ D0{K*(1680)bar-{K0S0,pi-},pi+}_Im 0 -2.92 0.20 
+D0{K*(892)+{K0S0,pi+},pi-}_Re 0 0.006179328553972491 0.0 
+ D0{K*(892)+{K0S0,pi+},pi-}_Im 0 0.01272068782032089 0.0 
+D0{K*(1410)+{K0S0,pi+},pi-}_Re 0 -0.18 0.02 
+ D0{K*(1410)+{K0S0,pi+},pi-}_Im 0 0.10 0.02 
+D0{K(0)*(1430)+[GLASS]{K0S0,pi+},pi-}_Re 0 -0.10 0.01 
+ D0{K(0)*(1430)+[GLASS]{K0S0,pi+},pi-}_Im 0 0.03 0.01 
+D0{K(2)*(1430)+{K0S0,pi+},pi-}_Re 0 0.00 0.01 
+ D0{K(2)*(1430)+{K0S0,pi+},pi-}_Im 0 -0.10 0.01 
+D0{K0S0,rho(770)0{pi+,pi-}}_Re 2 1.00 0.00 
+ D0{K0S0,rho(770)0{pi+,pi-}}_Im 2 0.00 0.00 
+D0{K0S0,omega(782)0{pi+,pi-}}_Re 0 -0.02 0.00 
+ D0{K0S0,omega(782)0{pi+,pi-}}_Im 0 0.03 0.00 
+D0{K0S0,f(2)(1270)0{pi+,pi-}}_Re 0 1.15 0.03 
+ D0{K0S0,f(2)(1270)0{pi+,pi-}}_Im 0 -0.85 0.03 
+D0{K0S0,rho(1450)0{pi+,pi-}}_Re 0 -0.60 0.10 
+ D0{K0S0,rho(1450)0{pi+,pi-}}_Im 0 2.79 0.10 
+D0{K0S0,PiPi00}_Re 0 0.10 0.00 
+ D0{K0S0,PiPi00}_Im 0 0.00 0.00 
+Dbar0{K*(892)+{K0S0,pi+},pi-}_Re 0 -1.25 0.01 
+ Dbar0{K*(892)+{K0S0,pi+},pi-}_Im 0 1.18 0.01 
+Dbar0{K(0)*(1430)+[GLASS]{K0S0,pi+},pi-}_Re 0 -0.39 0.07 
+ Dbar0{K(0)*(1430)+[GLASS]{K0S0,pi+},pi-}_Im 0 2.33 0.06 
+Dbar0{K(2)*(1430)+{K0S0,pi+},pi-}_Re 0 0.91 0.02 
+ Dbar0{K(2)*(1430)+{K0S0,pi+},pi-}_Im 0 -0.88 0.02 
+Dbar0{K*(1410)+{K0S0,pi+},pi-}_Re 0 -0.05 0.03 
+ Dbar0{K*(1410)+{K0S0,pi+},pi-}_Im 0 0.29 0.03 
+Dbar0{K*(1680)+{K0S0,pi+},pi-}_Re 0 -1.56 0.18 
+ Dbar0{K*(1680)+{K0S0,pi+},pi-}_Im 0 -2.92 0.20 
+Dbar0{K*(892)bar-{K0S0,pi-},pi+}_Re 0 0.12 0.00 
+ Dbar0{K*(892)bar-{K0S0,pi-},pi+}_Im 0 -0.11 0.00 
+Dbar0{K*(1410)bar-{K0S0,pi-},pi+}_Re 0 -0.18 0.02 
+ Dbar0{K*(1410)bar-{K0S0,pi-},pi+}_Im 0 0.10 0.02 
+Dbar0{K(0)*(1430)bar-[GLASS]{K0S0,pi-},pi+}_Re 0 -0.10 0.01 
+ Dbar0{K(0)*(1430)bar-[GLASS]{K0S0,pi-},pi+}_Im 0 0.03 0.01 
+Dbar0{K(2)*(1430)bar-{K0S0,pi-},pi+}_Re 0 0.00 0.01 
+ Dbar0{K(2)*(1430)bar-{K0S0,pi-},pi+}_Im 0 -0.10 0.01 
+Dbar0{K0S0,rho(770)0{pi+,pi-}}_Re 2 1.00 0.00 
+ Dbar0{K0S0,rho(770)0{pi+,pi-}}_Im 2 0.00 0.00 
+Dbar0{K0S0,omega(782)0{pi+,pi-}}_Re 0 -0.02 0.00 
+ Dbar0{K0S0,omega(782)0{pi+,pi-}}_Im 0 0.03 0.00 
+Dbar0{K0S0,f(2)(1270)0{pi+,pi-}}_Re 0 1.15 0.03 
+ Dbar0{K0S0,f(2)(1270)0{pi+,pi-}}_Im 0 -0.85 0.03 
+Dbar0{K0S0,rho(1450)0{pi+,pi-}}_Re 0 -0.60 0.10 
+ Dbar0{K0S0,rho(1450)0{pi+,pi-}}_Im 0 2.79 0.10 
+Dbar0{K0S0,PiPi00}_Re 0 0.00 0.00 
+ Dbar0{K0S0,PiPi00}_Im 0 0.00 0.00 
+PiPi00[kMatrix.pole.0]{pi+,pi-}_Re 0 -0.70 0.02 
+ PiPi00[kMatrix.pole.0]{pi+,pi-}_Im 0 -0.56 0.02 
+PiPi00[kMatrix.pole.1]{pi+,pi-}_Re 0 -1.18 0.02 
+ PiPi00[kMatrix.pole.1]{pi+,pi-}_Im 0 -0.39 0.01 
+PiPi00[kMatrix.pole.2]{pi+,pi-}_Re 0 -3.56 0.10 
+ PiPi00[kMatrix.pole.2]{pi+,pi-}_Im 0 -0.30 0.08 
+PiPi00[kMatrix.pole.3]{pi+,pi-}_Re 0 -0.65 0.03 
+ PiPi00[kMatrix.pole.3]{pi+,pi-}_Im 0 0.78 0.03 
+PiPi00[kMatrix.prod.0]{pi+,pi-}_Re 0 0.72 0.02 
+ PiPi00[kMatrix.prod.0]{pi+,pi-}_Im 0 0.56 0.01 
+PiPi00[kMatrix.prod.1]{pi+,pi-}_Re 0 3.24 0.09 
+ PiPi00[kMatrix.prod.1]{pi+,pi-}_Im 0 0.61 0.05 
+PiPi00[kMatrix.prod.2]{pi+,pi-}_Re 0 1.67 0.09 
+ PiPi00[kMatrix.prod.2]{pi+,pi-}_Im 0 2.75 0.09 
+PiPi00[kMatrix.prod.3]{pi+,pi-}_Re 0 2.37 0.07 
+ PiPi00[kMatrix.prod.3]{pi+,pi-}_Im 0 1.82 0.04 

@@ -1,0 +1,1094 @@
+
+[1mRooFit v3.60 -- Developed by Wouter Verkerke and David Kirkby[0m 
+                Copyright (C) 2000-2013 NIKHEF, University of California & Stanford University
+                All rights reserved, please read http://roofit.sourceforge.net/license.txt
+
+
+[2;31m    █████╗ ███╗   ███╗██████╗  ██████╗ ███████╗███╗   ██╗
+   ██╔══██╗████╗ ████║██╔══██╗██╔════╝ ██╔════╝████╗  ██║
+   ███████║██╔████╔██║██████╔╝██║  ███╗█████╗  ██╔██╗ ██║
+   ██╔══██║██║╚██╔╝██║██╔═══╝ ██║   ██║██╔══╝  ██║╚██╗██║
+   ██║  ██║██║ ╚═╝ ██║██║     ╚██████╔╝███████╗██║ ╚████║
+   ╚═╝  ╚═╝╚═╝     ╚═╝╚═╝      ╚═════╝ ╚══════╝╚═╝  ╚═══╝
+[0m
+[1m                      version 1.2
+        build: gcc 8.2.0  Jul 11 2019 12:28:01[0m
+
+[1m Release notes (v1r2)[0m
+ - Improved thread support for CoherentSum
+ - Add examples/QcGenerator for Ψ(3770) decays 
+ - Updated ExpressionParser with improved stability.
+ - Removed unused / untested lineshapes AxialKaon and ObelixRho 
+
+[2;34mvoid OptionsParser::import                     INFO         [0mImporting: opts/belleTimCart.opt
+[2;34mvoid OptionsParser::import                     INFO         [0mImporting: /afs/cern.ch/user/j/jolane/work/ampGen/options/kMatrix.opt
+[2;34mint main                                       INFO         [0mUsing: 10 / 10 threads
+[2;34mbool ParticlePropertiesList::readFile          INFO         [0mReading file: /afs/cern.ch/user/j/jolane/work/ampGen//options/mass_width.csv
+[2;34mbool ParticlePropertiesList::readFile          INFO         [0mReading file: /afs/cern.ch/user/j/jolane/work/ampGen//options/MintDalitzSpecialParticles.csv
+[2;34mint main                                       INFO         [0mGenerating events with type = D0 → [K0S0, pi+, pi-]
+[2;34mCoherentSum::CoherentSum                       INFO         [0mD0{K(0)*(1430)+[GLASS.BL]{K0S0,pi+},pi-}
+[2;34mCoherentSum::CoherentSum                       INFO         [0mD0{K(0)*(1430)bar-[GLASS.BL]{K0S0,pi-},pi+}
+[2;34mCoherentSum::CoherentSum                       INFO         [0mD0{K(2)*(1430)+{K0S0,pi+},pi-}
+[2;34mCoherentSum::CoherentSum                       INFO         [0mD0{K(2)*(1430)bar-{K0S0,pi-},pi+}
+[2;34mCoherentSum::CoherentSum                       INFO         [0mD0{K*(1410)+{K0S0,pi+},pi-}
+[2;34mCoherentSum::CoherentSum                       INFO         [0mD0{K*(1410)bar-{K0S0,pi-},pi+}
+[2;34mCoherentSum::CoherentSum                       INFO         [0mD0{K*(1680)bar-{K0S0,pi-},pi+}
+[2;34mCoherentSum::CoherentSum                       INFO         [0mD0{K*(892)+{K0S0,pi+},pi-}
+[2;34mCoherentSum::CoherentSum                       INFO         [0mD0{K*(892)bar-{K0S0,pi-},pi+}
+[2;34mCoherentSum::CoherentSum                       INFO         [0mD0{PiPi00[kMatrix.pole.0]{pi+,pi-},K0S0}
+[2;34mCoherentSum::CoherentSum                       INFO         [0mD0{PiPi00[kMatrix.pole.1]{pi+,pi-},K0S0}
+[2;34mCoherentSum::CoherentSum                       INFO         [0mD0{PiPi00[kMatrix.pole.2]{pi+,pi-},K0S0}
+[2;34mCoherentSum::CoherentSum                       INFO         [0mD0{PiPi00[kMatrix.pole.3]{pi+,pi-},K0S0}
+[2;34mCoherentSum::CoherentSum                       INFO         [0mD0{PiPi00[kMatrix.prod.0]{pi+,pi-},K0S0}
+[2;34mCoherentSum::CoherentSum                       INFO         [0mD0{PiPi00[kMatrix.prod.1]{pi+,pi-},K0S0}
+[2;34mCoherentSum::CoherentSum                       INFO         [0mD0{PiPi00[kMatrix.prod.2]{pi+,pi-},K0S0}
+[2;34mCoherentSum::CoherentSum                       INFO         [0mD0{PiPi00[kMatrix.prod.3]{pi+,pi-},K0S0}
+[2;34mCoherentSum::CoherentSum                       INFO         [0mD0{f(2)(1270)0{pi+,pi-},K0S0}
+[2;34mCoherentSum::CoherentSum                       INFO         [0mD0{omega(782)0{pi+,pi-},K0S0}
+[2;34mCoherentSum::CoherentSum                       INFO         [0mD0{rho(1450)0{pi+,pi-},K0S0}
+[2;34mCoherentSum::CoherentSum                       INFO         [0mD0{rho(770)0{pi+,pi-},K0S0}
+[2;34mvoid Generator<PHASESPACE>::fillEventList      INFO         [0mSetting normalisation constant = 51.7941
+[2;34mvoid Generator<PHASESPACE>::fillEventList      INFO         [0mCompleted:  24% [||||||||||||||                                              ] ε[gen] = 2.44% , 0 seconds[2;34mvoid Generator<PHASESPACE>::fillEventList      INFO         [0mCompleted:  47% [||||||||||||||||||||||||||||                                ] ε[gen] = 2.36% , 0 seconds[2;34mvoid Generator<PHASESPACE>::fillEventList      INFO         [0mCompleted:  71% [||||||||||||||||||||||||||||||||||||||||||                  ] ε[gen] = 2.34% , 1 seconds[2;34mvoid Generator<PHASESPACE>::fillEventList      INFO         [0mCompleted:  96% [|||||||||||||||||||||||||||||||||||||||||||||||||||||||||   ] ε[gen] = 2.48% , 1 seconds[2;34mvoid Generator<PHASESPACE>::fillEventList      INFO         [0mCompleted: 100% [||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||] ε[gen] = 0.39% , 2 seconds
+[2;34mvoid Generator<PHASESPACE>::fillEventList      INFO         [0mGenerated 10000 events in 2167.08 ms
+[2;34mvoid Generator<PHASESPACE>::fillEventList      INFO         [0mGenerating phase space : 539.559 ms
+[2;34mvoid Generator<PHASESPACE>::fillEventList      INFO         [0mEvaluating PDF         : 1430.58 ms
+[2;34mvoid Generator<PHASESPACE>::fillEventList      INFO         [0mDoing accept/reject    : 69.0697 ms
+[2;34mint main                                       INFO         [0mMaking 2D projections...
+[2;34mint main                                       INFO         [0mWriting output file 
+
+[2;31m    █████╗ ███╗   ███╗██████╗  ██████╗ ███████╗███╗   ██╗
+   ██╔══██╗████╗ ████║██╔══██╗██╔════╝ ██╔════╝████╗  ██║
+   ███████║██╔████╔██║██████╔╝██║  ███╗█████╗  ██╔██╗ ██║
+   ██╔══██║██║╚██╔╝██║██╔═══╝ ██║   ██║██╔══╝  ██║╚██╗██║
+   ██║  ██║██║ ╚═╝ ██║██║     ╚██████╔╝███████╗██║ ╚████║
+   ╚═╝  ╚═╝╚═╝     ╚═╝╚═╝      ╚═════╝ ╚══════╝╚═╝  ╚═══╝
+[0m
+[1m                      version 1.2
+        build: gcc 8.2.0  Jul 11 2019 12:28:01[0m
+
+[1m Release notes (v1r2)[0m
+ - Improved thread support for CoherentSum
+ - Add examples/QcGenerator for Ψ(3770) decays 
+ - Updated ExpressionParser with improved stability.
+ - Removed unused / untested lineshapes AxialKaon and ObelixRho 
+
+[2;34mvoid OptionsParser::import                     INFO         [0mImporting: opts/belleTimCart.opt
+[2;34mvoid OptionsParser::import                     INFO         [0mImporting: /afs/cern.ch/user/j/jolane/work/ampGen/options/kMatrix.opt
+[2;34mint main                                       INFO         [0mLogFile: output/belleTim/Cart/D0/fit.log; Plots: output/belleTim/Cart/D0/plots.root
+[2;34mint main                                       INFO         [0mSetting 10 fixed threads for OpenMP
+[2;34mbool ParticlePropertiesList::readFile          INFO         [0mReading file: /afs/cern.ch/user/j/jolane/work/ampGen//options/mass_width.csv
+[2;34mbool ParticlePropertiesList::readFile          INFO         [0mReading file: /afs/cern.ch/user/j/jolane/work/ampGen//options/MintDalitzSpecialParticles.csv
+[2;34mCoherentSum::CoherentSum                       INFO         [0mD0{K(0)*(1430)+[GLASS.BL]{K0S0,pi+},pi-}
+[2;34mCoherentSum::CoherentSum                       INFO         [0mD0{K(0)*(1430)bar-[GLASS.BL]{K0S0,pi-},pi+}
+[2;34mCoherentSum::CoherentSum                       INFO         [0mD0{K(2)*(1430)+{K0S0,pi+},pi-}
+[2;34mCoherentSum::CoherentSum                       INFO         [0mD0{K(2)*(1430)bar-{K0S0,pi-},pi+}
+[2;34mCoherentSum::CoherentSum                       INFO         [0mD0{K*(1410)+{K0S0,pi+},pi-}
+[2;34mCoherentSum::CoherentSum                       INFO         [0mD0{K*(1410)bar-{K0S0,pi-},pi+}
+[2;34mCoherentSum::CoherentSum                       INFO         [0mD0{K*(1680)bar-{K0S0,pi-},pi+}
+[2;34mCoherentSum::CoherentSum                       INFO         [0mD0{K*(892)+{K0S0,pi+},pi-}
+[2;34mCoherentSum::CoherentSum                       INFO         [0mD0{K*(892)bar-{K0S0,pi-},pi+}
+[2;34mCoherentSum::CoherentSum                       INFO         [0mD0{PiPi00[kMatrix.pole.0]{pi+,pi-},K0S0}
+[2;34mCoherentSum::CoherentSum                       INFO         [0mD0{PiPi00[kMatrix.pole.1]{pi+,pi-},K0S0}
+[2;34mCoherentSum::CoherentSum                       INFO         [0mD0{PiPi00[kMatrix.pole.2]{pi+,pi-},K0S0}
+[2;34mCoherentSum::CoherentSum                       INFO         [0mD0{PiPi00[kMatrix.pole.3]{pi+,pi-},K0S0}
+[2;34mCoherentSum::CoherentSum                       INFO         [0mD0{PiPi00[kMatrix.prod.0]{pi+,pi-},K0S0}
+[2;34mCoherentSum::CoherentSum                       INFO         [0mD0{PiPi00[kMatrix.prod.1]{pi+,pi-},K0S0}
+[2;34mCoherentSum::CoherentSum                       INFO         [0mD0{PiPi00[kMatrix.prod.2]{pi+,pi-},K0S0}
+[2;34mCoherentSum::CoherentSum                       INFO         [0mD0{PiPi00[kMatrix.prod.3]{pi+,pi-},K0S0}
+[2;34mCoherentSum::CoherentSum                       INFO         [0mD0{f(2)(1270)0{pi+,pi-},K0S0}
+[2;34mCoherentSum::CoherentSum                       INFO         [0mD0{omega(782)0{pi+,pi-},K0S0}
+[2;34mCoherentSum::CoherentSum                       INFO         [0mD0{rho(1450)0{pi+,pi-},K0S0}
+[2;34mCoherentSum::CoherentSum                       INFO         [0mD0{rho(770)0{pi+,pi-},K0S0}
+[2;34mvoid EventList::loadFromTree                   INFO         [0mTime to read tree = 660.489[ms]; nEntries = 10000
+[2;34mvoid Minimiser::prepare                        INFO         [0mParameter: D0_radius                                                    =            5 ± 0.01        
+[2;34mvoid Minimiser::prepare                        INFO         [0mParameter: D0{K(0)*(1430)+[GLASS]{K0S0,pi+},pi-}_Re                     =    0.0095653 ± 0.000827718 
+[2;34mvoid Minimiser::prepare                        INFO         [0mParameter: D0{K(0)*(1430)+[GLASS]{K0S0,pi+},pi-}_Im                     =   0.00601207 ± 0.000843968 
+[2;34mvoid Minimiser::prepare                        INFO         [0mParameter: D0{K(0)*(1430)bar-[GLASS]{K0S0,pi-},pi+}_Re                  =    0.0255993 ± 0.00122597  
+[2;34mvoid Minimiser::prepare                        INFO         [0mParameter: D0{K(0)*(1430)bar-[GLASS]{K0S0,pi-},pi+}_Im                  =    -0.194327 ± 0.00105316  
+[2;34mvoid Minimiser::prepare                        INFO         [0mParameter: D0{K(2)*(1430)+{K0S0,pi+},pi-}_Re                            =    0.0133101 ± 0.00135651  
+[2;34mvoid Minimiser::prepare                        INFO         [0mParameter: D0{K(2)*(1430)+{K0S0,pi+},pi-}_Im                            =    0.0170886 ± 0.00123279  
+[2;34mvoid Minimiser::prepare                        INFO         [0mParameter: D0{K(2)*(1430)bar-{K0S0,pi-},pi+}_Re                         =    -0.107163 ± 0.00146194  
+[2;34mvoid Minimiser::prepare                        INFO         [0mParameter: D0{K(2)*(1430)bar-{K0S0,pi-},pi+}_Im                         =     0.104979 ± 0.00164431  
+[2;34mvoid Minimiser::prepare                        INFO         [0mParameter: D0{K*(1410)+{K0S0,pi+},pi-}_Re                               =   0.00296544 ± 0.00225542  
+[2;34mvoid Minimiser::prepare                        INFO         [0mParameter: D0{K*(1410)+{K0S0,pi+},pi-}_Im                               =     0.014186 ± 0.00247679  
+[2;34mvoid Minimiser::prepare                        INFO         [0mParameter: D0{K*(1410)bar-{K0S0,pi-},pi+}_Re                            =   -0.0339155 ± 0.00309512  
+[2;34mvoid Minimiser::prepare                        INFO         [0mParameter: D0{K*(1410)bar-{K0S0,pi-},pi+}_Im                            =    0.0613357 ± 0.0037167   
+[2;34mvoid Minimiser::prepare                        INFO         [0mParameter: D0{K*(1680)bar-{K0S0,pi-},pi+}_Re                            =   -0.0535469 ± 0.00651378  
+[2;34mvoid Minimiser::prepare                        INFO         [0mParameter: D0{K*(1680)bar-{K0S0,pi-},pi+}_Im                            =    0.0272353 ± 0.0073212   
+[2;34mvoid Minimiser::prepare                        INFO         [0mParameter: D0{K*(892)+{K0S0,pi+},pi-}_Re                                =     0.126313 ± 0.00245399  
+[2;34mvoid Minimiser::prepare                        INFO         [0mParameter: D0{K*(892)+{K0S0,pi+},pi-}_Im                                =    -0.140858 ± 0.00235595  
+[2;34mvoid Minimiser::prepare                        INFO         [0mParameter: D0{K*(892)bar-{K0S0,pi-},pi+}_Re                             =     -1.37962 ± 0.00769138  
+[2;34mvoid Minimiser::prepare                        INFO         [0mParameter: D0{K*(892)bar-{K0S0,pi-},pi+}_Im                             =      1.49371 ± 0.00800201  
+[2;34mvoid Minimiser::prepare                        INFO         [0mParameter: D0{K0S0,f(2)(1270)0{pi+,pi-}}_Re                             =    -0.125526 ± 0.00221442  
+[2;34mvoid Minimiser::prepare                        INFO         [0mParameter: D0{K0S0,f(2)(1270)0{pi+,pi-}}_Im                             =    0.0943573 ± 0.00286431  
+[2;34mvoid Minimiser::prepare                        INFO         [0mParameter: D0{K0S0,omega(782)0{pi+,pi-}}_Re                             =   -0.0640864 ± 0.00196373  
+[2;34mvoid Minimiser::prepare                        INFO         [0mParameter: D0{K0S0,omega(782)0{pi+,pi-}}_Im                             =      0.12832 ± 0.00170606  
+[2;34mvoid Minimiser::prepare                        INFO         [0mParameter: D0{K0S0,rho(1450)0{pi+,pi-}}_Re                              =     0.160532 ± 0.00460311  
+[2;34mvoid Minimiser::prepare                        INFO         [0mParameter: D0{K0S0,rho(1450)0{pi+,pi-}}_Im                              =    0.0886014 ± 0.00646564  
+[2;34mvoid Minimiser::prepare                        INFO         [0mParameter: K(0)*(1430)bar-::GLASS::F                                    =      0.95532 ± 0.01        
+[2;34mvoid Minimiser::prepare                        INFO         [0mParameter: K(0)*(1430)bar-::GLASS::a                                    =      0.11267 ± 0.01        
+[2;34mvoid Minimiser::prepare                        INFO         [0mParameter: K(0)*(1430)bar-::GLASS::phiF                                 =      0.00173 ± 0.01        
+[2;34mvoid Minimiser::prepare                        INFO         [0mParameter: K(0)*(1430)bar-::GLASS::phiR                                 =      -1.9145 ± 0.01        
+[2;34mvoid Minimiser::prepare                        INFO         [0mParameter: K(0)*(1430)bar-::GLASS::r                                    =      -33.799 ± 0.01        
+[2;34mvoid Minimiser::prepare                        INFO         [0mParameter: PiPi00[kMatrix.pole.0]{pi+,pi-}_Re                           =    -0.696212 ± 0.0249041   
+[2;34mvoid Minimiser::prepare                        INFO         [0mParameter: PiPi00[kMatrix.pole.0]{pi+,pi-}_Im                           =    -0.564193 ± 0.0150433   
+[2;34mvoid Minimiser::prepare                        INFO         [0mParameter: PiPi00[kMatrix.pole.1]{pi+,pi-}_Re                           =      -1.1781 ± 0.0163188   
+[2;34mvoid Minimiser::prepare                        INFO         [0mParameter: PiPi00[kMatrix.pole.1]{pi+,pi-}_Im                           =    -0.387498 ± 0.0128765   
+[2;34mvoid Minimiser::prepare                        INFO         [0mParameter: PiPi00[kMatrix.pole.2]{pi+,pi-}_Re                           =     -3.56439 ± 0.100848    
+[2;34mvoid Minimiser::prepare                        INFO         [0mParameter: PiPi00[kMatrix.pole.2]{pi+,pi-}_Im                           =    -0.302991 ± 0.0769034   
+[2;34mvoid Minimiser::prepare                        INFO         [0mParameter: PiPi00[kMatrix.pole.3]{pi+,pi-}_Re                           =    -0.654174 ± 0.0322988   
+[2;34mvoid Minimiser::prepare                        INFO         [0mParameter: PiPi00[kMatrix.pole.3]{pi+,pi-}_Im                           =     0.779454 ± 0.0257366   
+[2;34mvoid Minimiser::prepare                        INFO         [0mParameter: PiPi00[kMatrix.prod.0]{pi+,pi-}_Re                           =     0.722348 ± 0.0181052   
+[2;34mvoid Minimiser::prepare                        INFO         [0mParameter: PiPi00[kMatrix.prod.0]{pi+,pi-}_Im                           =     0.555636 ± 0.011945    
+[2;34mvoid Minimiser::prepare                        INFO         [0mParameter: PiPi00[kMatrix.prod.1]{pi+,pi-}_Re                           =      3.23771 ± 0.0874993   
+[2;34mvoid Minimiser::prepare                        INFO         [0mParameter: PiPi00[kMatrix.prod.1]{pi+,pi-}_Im                           =     0.614543 ± 0.0497138   
+[2;34mvoid Minimiser::prepare                        INFO         [0mParameter: PiPi00[kMatrix.prod.2]{pi+,pi-}_Re                           =      1.67044 ± 0.0909612   
+[2;34mvoid Minimiser::prepare                        INFO         [0mParameter: PiPi00[kMatrix.prod.2]{pi+,pi-}_Im                           =       2.7479 ± 0.0945962   
+[2;34mvoid Minimiser::prepare                        INFO         [0mParameter: PiPi00[kMatrix.prod.3]{pi+,pi-}_Re                           =      2.36804 ± 0.0672284   
+[2;34mvoid Minimiser::prepare                        INFO         [0mParameter: PiPi00[kMatrix.prod.3]{pi+,pi-}_Im                           =      1.81536 ± 0.0420283   
+[2;34mvoid Minimiser::prepare                        INFO         [0mParameter: rho(770)0_mass                                               =     0.769374 ± 0.000335341 
+[2;34mvoid Minimiser::prepare                        INFO         [0mParameter: rho(770)0_width                                              =     0.141979 ± 0.000700587 
+[2;34mFitResult* doFit                               INFO         [0mStarting Fit
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 1 strategy 1
+[1;35msize_t EventList::registerExpression           WARNING      [0mCache index 0 exceeds cache size = 0 resizing to 1
+[1;35msize_t EventList::registerExpression           WARNING      [0mCache index 1 exceeds cache size = 1 resizing to 2
+[1;35msize_t EventList::registerExpression           WARNING      [0mCache index 2 exceeds cache size = 2 resizing to 3
+[1;35msize_t EventList::registerExpression           WARNING      [0mCache index 3 exceeds cache size = 3 resizing to 4
+[1;35msize_t EventList::registerExpression           WARNING      [0mCache index 4 exceeds cache size = 4 resizing to 5
+[1;35msize_t EventList::registerExpression           WARNING      [0mCache index 5 exceeds cache size = 5 resizing to 6
+[1;35msize_t EventList::registerExpression           WARNING      [0mCache index 6 exceeds cache size = 6 resizing to 7
+[1;35msize_t EventList::registerExpression           WARNING      [0mCache index 7 exceeds cache size = 7 resizing to 8
+[1;35msize_t EventList::registerExpression           WARNING      [0mCache index 8 exceeds cache size = 8 resizing to 9
+[1;35msize_t EventList::registerExpression           WARNING      [0mCache index 9 exceeds cache size = 9 resizing to 10
+[1;35msize_t EventList::registerExpression           WARNING      [0mCache index 10 exceeds cache size = 10 resizing to 11
+[1;35msize_t EventList::registerExpression           WARNING      [0mCache index 11 exceeds cache size = 11 resizing to 12
+[1;35msize_t EventList::registerExpression           WARNING      [0mCache index 12 exceeds cache size = 12 resizing to 13
+[1;35msize_t EventList::registerExpression           WARNING      [0mCache index 13 exceeds cache size = 13 resizing to 14
+[1;35msize_t EventList::registerExpression           WARNING      [0mCache index 14 exceeds cache size = 14 resizing to 15
+[1;35msize_t EventList::registerExpression           WARNING      [0mCache index 15 exceeds cache size = 15 resizing to 16
+[1;35msize_t EventList::registerExpression           WARNING      [0mCache index 16 exceeds cache size = 16 resizing to 17
+[1;35msize_t EventList::registerExpression           WARNING      [0mCache index 17 exceeds cache size = 17 resizing to 18
+[1;35msize_t EventList::registerExpression           WARNING      [0mCache index 18 exceeds cache size = 18 resizing to 19
+[1;35msize_t EventList::registerExpression           WARNING      [0mCache index 19 exceeds cache size = 19 resizing to 20
+[1;35msize_t EventList::registerExpression           WARNING      [0mCache index 20 exceeds cache size = 20 resizing to 21
+[1;35msize_t EventList::registerExpression           WARNING      [0mCache index 0 exceeds cache size = 0 resizing to 1
+[1;35msize_t EventList::registerExpression           WARNING      [0mCache index 1 exceeds cache size = 1 resizing to 2
+[1;35msize_t EventList::registerExpression           WARNING      [0mCache index 2 exceeds cache size = 2 resizing to 3
+[1;35msize_t EventList::registerExpression           WARNING      [0mCache index 3 exceeds cache size = 3 resizing to 4
+[1;35msize_t EventList::registerExpression           WARNING      [0mCache index 4 exceeds cache size = 4 resizing to 5
+[1;35msize_t EventList::registerExpression           WARNING      [0mCache index 5 exceeds cache size = 5 resizing to 6
+[1;35msize_t EventList::registerExpression           WARNING      [0mCache index 6 exceeds cache size = 6 resizing to 7
+[1;35msize_t EventList::registerExpression           WARNING      [0mCache index 7 exceeds cache size = 7 resizing to 8
+[1;35msize_t EventList::registerExpression           WARNING      [0mCache index 8 exceeds cache size = 8 resizing to 9
+[1;35msize_t EventList::registerExpression           WARNING      [0mCache index 9 exceeds cache size = 9 resizing to 10
+[1;35msize_t EventList::registerExpression           WARNING      [0mCache index 10 exceeds cache size = 10 resizing to 11
+[1;35msize_t EventList::registerExpression           WARNING      [0mCache index 11 exceeds cache size = 11 resizing to 12
+[1;35msize_t EventList::registerExpression           WARNING      [0mCache index 12 exceeds cache size = 12 resizing to 13
+[1;35msize_t EventList::registerExpression           WARNING      [0mCache index 13 exceeds cache size = 13 resizing to 14
+[1;35msize_t EventList::registerExpression           WARNING      [0mCache index 14 exceeds cache size = 14 resizing to 15
+[1;35msize_t EventList::registerExpression           WARNING      [0mCache index 15 exceeds cache size = 15 resizing to 16
+[1;35msize_t EventList::registerExpression           WARNING      [0mCache index 16 exceeds cache size = 16 resizing to 17
+[1;35msize_t EventList::registerExpression           WARNING      [0mCache index 17 exceeds cache size = 17 resizing to 18
+[1;35msize_t EventList::registerExpression           WARNING      [0mCache index 18 exceeds cache size = 18 resizing to 19
+[1;35msize_t EventList::registerExpression           WARNING      [0mCache index 19 exceeds cache size = 19 resizing to 20
+[1;35msize_t EventList::registerExpression           WARNING      [0mCache index 20 exceeds cache size = 20 resizing to 21
+MnSeedGenerator: for initial parameters FCN = -19677.768469
+MnSeedGenerator: Initial state:   - FCN = -19677.768469    Edm = 49.9231      NCalls = 179   
+VariableMetric: start iterating until Edm is < 0.002
+VariableMetric: Initial state   - FCN = -19677.768469    Edm = 49.9231      NCalls = 179   
+VariableMetric: Iteration # 0   - FCN = -19677.768469    Edm = 49.9231      NCalls = 179   
+VariableMetric: Iteration # 1   - FCN = -19695.82174787  Edm = 31.2465      NCalls = 277   
+VariableMetric: Iteration # 2   - FCN = -19708.49098443  Edm = 22.4001      NCalls = 375   
+VariableMetric: Iteration # 3   - FCN = -19716.44827286  Edm = 11.1844      NCalls = 473   
+VariableMetric: Iteration # 4   - FCN = -19722.33429522  Edm = 6.30426      NCalls = 571   
+VariableMetric: Iteration # 5   - FCN = -19726.06296356  Edm = 3.73752      NCalls = 669   
+VariableMetric: Iteration # 6   - FCN = -19728.55604415  Edm = 2.55363      NCalls = 767   
+VariableMetric: Iteration # 7   - FCN = -19731.47433275  Edm = 1.29578      NCalls = 865   
+VariableMetric: Iteration # 8   - FCN = -19732.41286061  Edm = 0.692262     NCalls = 963   
+VariableMetric: Iteration # 9   - FCN = -19734.06715431  Edm = 1.26507      NCalls = 1061  
+VariableMetric: Iteration # 10  - FCN = -19734.98529641  Edm = 1.01295      NCalls = 1159  
+VariableMetric: Iteration # 11  - FCN = -19736.0380033   Edm = 0.78995      NCalls = 1257  
+VariableMetric: Iteration # 12  - FCN = -19736.67375641  Edm = 0.427076     NCalls = 1355  
+VariableMetric: Iteration # 13  - FCN = -19737.1268359   Edm = 0.361421     NCalls = 1453  
+VariableMetric: Iteration # 14  - FCN = -19737.53516377  Edm = 0.229467     NCalls = 1551  
+VariableMetric: Iteration # 15  - FCN = -19738.00623889  Edm = 0.324767     NCalls = 1649  
+VariableMetric: Iteration # 16  - FCN = -19738.49163818  Edm = 0.207925     NCalls = 1747  
+VariableMetric: Iteration # 17  - FCN = -19738.89896237  Edm = 0.194419     NCalls = 1845  
+VariableMetric: Iteration # 18  - FCN = -19739.19800773  Edm = 0.156337     NCalls = 1943  
+VariableMetric: Iteration # 19  - FCN = -19739.46262051  Edm = 0.166863     NCalls = 2041  
+VariableMetric: Iteration # 20  - FCN = -19739.58396618  Edm = 0.132746     NCalls = 2139  
+VariableMetric: Iteration # 21  - FCN = -19739.82541474  Edm = 0.133334     NCalls = 2237  
+VariableMetric: Iteration # 22  - FCN = -19740.168751    Edm = 0.150222     NCalls = 2335  
+VariableMetric: Iteration # 23  - FCN = -19740.40575342  Edm = 0.128161     NCalls = 2433  
+VariableMetric: Iteration # 24  - FCN = -19740.55610456  Edm = 0.0905504    NCalls = 2531  
+VariableMetric: Iteration # 25  - FCN = -19740.69980813  Edm = 0.078738     NCalls = 2630  
+VariableMetric: Iteration # 26  - FCN = -19740.83373554  Edm = 0.0738444    NCalls = 2728  
+VariableMetric: Iteration # 27  - FCN = -19741.02471694  Edm = 0.0637579    NCalls = 2826  
+VariableMetric: Iteration # 28  - FCN = -19741.21267528  Edm = 0.0517595    NCalls = 2924  
+VariableMetric: Iteration # 29  - FCN = -19741.29794385  Edm = 0.0438006    NCalls = 3022  
+VariableMetric: Iteration # 30  - FCN = -19741.34471376  Edm = 0.0333891    NCalls = 3120  
+VariableMetric: Iteration # 31  - FCN = -19741.43501549  Edm = 0.0401189    NCalls = 3219  
+VariableMetric: Iteration # 32  - FCN = -19741.52827968  Edm = 0.0251402    NCalls = 3317  
+VariableMetric: Iteration # 33  - FCN = -19741.61294439  Edm = 0.0398079    NCalls = 3415  
+VariableMetric: Iteration # 34  - FCN = -19741.71250527  Edm = 0.0621911    NCalls = 3514  
+VariableMetric: Iteration # 35  - FCN = -19741.7906205   Edm = 0.0223476    NCalls = 3612  
+VariableMetric: Iteration # 36  - FCN = -19741.84417454  Edm = 0.0273793    NCalls = 3710  
+VariableMetric: Iteration # 37  - FCN = -19741.92947006  Edm = 0.0344454    NCalls = 3808  
+VariableMetric: Iteration # 38  - FCN = -19742.03018577  Edm = 0.0316465    NCalls = 3906  
+VariableMetric: Iteration # 39  - FCN = -19742.15835228  Edm = 0.0556296    NCalls = 4004  
+VariableMetric: Iteration # 40  - FCN = -19742.28234859  Edm = 0.139046     NCalls = 4103  
+VariableMetric: Iteration # 41  - FCN = -19742.44192199  Edm = 0.0501166    NCalls = 4201  
+VariableMetric: Iteration # 42  - FCN = -19742.54891149  Edm = 0.0286941    NCalls = 4299  
+VariableMetric: Iteration # 43  - FCN = -19742.657992    Edm = 0.0360018    NCalls = 4397  
+VariableMetric: Iteration # 44  - FCN = -19742.76213793  Edm = 0.0234938    NCalls = 4495  
+VariableMetric: Iteration # 45  - FCN = -19742.83620856  Edm = 0.0308997    NCalls = 4593  
+VariableMetric: Iteration # 46  - FCN = -19742.96533458  Edm = 0.0519962    NCalls = 4691  
+VariableMetric: Iteration # 47  - FCN = -19743.07562715  Edm = 0.0647279    NCalls = 4790  
+VariableMetric: Iteration # 48  - FCN = -19743.19478638  Edm = 0.055448     NCalls = 4888  
+VariableMetric: Iteration # 49  - FCN = -19743.36087395  Edm = 0.0470036    NCalls = 4986  
+VariableMetric: Iteration # 50  - FCN = -19743.44158212  Edm = 0.0143117    NCalls = 5084  
+VariableMetric: Iteration # 51  - FCN = -19743.48197264  Edm = 0.0235671    NCalls = 5182  
+VariableMetric: Iteration # 52  - FCN = -19743.60265059  Edm = 0.0569052    NCalls = 5281  
+VariableMetric: Iteration # 53  - FCN = -19743.71490282  Edm = 0.0478193    NCalls = 5379  
+VariableMetric: Iteration # 54  - FCN = -19743.83861381  Edm = 0.059943     NCalls = 5477  
+VariableMetric: Iteration # 55  - FCN = -19744.03923107  Edm = 0.104598     NCalls = 5575  
+VariableMetric: Iteration # 56  - FCN = -19744.20708206  Edm = 0.0456301    NCalls = 5673  
+VariableMetric: Iteration # 57  - FCN = -19744.28638875  Edm = 0.0330398    NCalls = 5771  
+VariableMetric: Iteration # 58  - FCN = -19744.3429934   Edm = 0.0312507    NCalls = 5869  
+VariableMetric: Iteration # 59  - FCN = -19744.42752534  Edm = 0.0316346    NCalls = 5968  
+VariableMetric: Iteration # 60  - FCN = -19744.50196426  Edm = 0.0270005    NCalls = 6066  
+VariableMetric: Iteration # 61  - FCN = -19744.59955939  Edm = 0.0314301    NCalls = 6164  
+VariableMetric: Iteration # 62  - FCN = -19744.67007847  Edm = 0.0140181    NCalls = 6262  
+VariableMetric: Iteration # 63  - FCN = -19744.69802895  Edm = 0.0144947    NCalls = 6360  
+VariableMetric: Iteration # 64  - FCN = -19744.74029871  Edm = 0.0291827    NCalls = 6459  
+VariableMetric: Iteration # 65  - FCN = -19744.83326514  Edm = 0.0327113    NCalls = 6557  
+VariableMetric: Iteration # 66  - FCN = -19744.92500382  Edm = 0.0469124    NCalls = 6655  
+VariableMetric: Iteration # 67  - FCN = -19745.10121582  Edm = 0.0535596    NCalls = 6753  
+VariableMetric: Iteration # 68  - FCN = -19745.21314417  Edm = 0.0404171    NCalls = 6851  
+VariableMetric: Iteration # 69  - FCN = -19745.30285501  Edm = 0.0556978    NCalls = 6949  
+VariableMetric: Iteration # 70  - FCN = -19745.38631485  Edm = 0.0309438    NCalls = 7047  
+VariableMetric: Iteration # 71  - FCN = -19745.43920626  Edm = 0.0377832    NCalls = 7145  
+VariableMetric: Iteration # 72  - FCN = -19745.57216424  Edm = 0.0964736    NCalls = 7245  
+VariableMetric: Iteration # 73  - FCN = -19745.8607488   Edm = 0.178405     NCalls = 7344  
+VariableMetric: Iteration # 74  - FCN = -19746.09425921  Edm = 0.108405     NCalls = 7442  
+VariableMetric: Iteration # 75  - FCN = -19746.38564003  Edm = 0.177542     NCalls = 7540  
+VariableMetric: Iteration # 76  - FCN = -19746.69572461  Edm = 0.0813795    NCalls = 7638  
+VariableMetric: Iteration # 77  - FCN = -19746.79073266  Edm = 0.0332783    NCalls = 7736  
+VariableMetric: Iteration # 78  - FCN = -19746.84257932  Edm = 0.0314212    NCalls = 7834  
+VariableMetric: Iteration # 79  - FCN = -19746.94445339  Edm = 0.0609823    NCalls = 7933  
+VariableMetric: Iteration # 80  - FCN = -19747.16962972  Edm = 0.140426     NCalls = 8031  
+VariableMetric: Iteration # 81  - FCN = -19747.57137043  Edm = 0.296881     NCalls = 8129  
+VariableMetric: Iteration # 82  - FCN = -19748.20079177  Edm = 0.391413     NCalls = 8228  
+VariableMetric: Iteration # 83  - FCN = -19748.64833403  Edm = 0.38731      NCalls = 8326  
+VariableMetric: Iteration # 84  - FCN = -19748.8779235   Edm = 0.229904     NCalls = 8424  
+VariableMetric: Iteration # 85  - FCN = -19749.08527221  Edm = 0.0829903    NCalls = 8522  
+VariableMetric: Iteration # 86  - FCN = -19749.27155501  Edm = 0.114747     NCalls = 8620  
+VariableMetric: Iteration # 87  - FCN = -19749.6885026   Edm = 0.361297     NCalls = 8719  
+VariableMetric: Iteration # 88  - FCN = -19750.70409861  Edm = 0.489231     NCalls = 8818  
+VariableMetric: Iteration # 89  - FCN = -19751.06901608  Edm = 0.669126     NCalls = 8916  
+VariableMetric: Iteration # 90  - FCN = -19751.29608675  Edm = 0.0830623    NCalls = 9014  
+VariableMetric: Iteration # 91  - FCN = -19751.38007244  Edm = 0.0342277    NCalls = 9112  
+VariableMetric: Iteration # 92  - FCN = -19751.39946623  Edm = 0.0179722    NCalls = 9210  
+VariableMetric: Iteration # 93  - FCN = -19751.41318037  Edm = 0.0117714    NCalls = 9308  
+VariableMetric: Iteration # 94  - FCN = -19751.4282638   Edm = 0.0140546    NCalls = 9406  
+VariableMetric: Iteration # 95  - FCN = -19751.4613269   Edm = 0.0224874    NCalls = 9505  
+VariableMetric: Iteration # 96  - FCN = -19751.51698427  Edm = 0.0273605    NCalls = 9603  
+VariableMetric: Iteration # 97  - FCN = -19751.57211075  Edm = 0.021917     NCalls = 9701  
+VariableMetric: Iteration # 98  - FCN = -19751.64235404  Edm = 0.03567      NCalls = 9799  
+VariableMetric: Iteration # 99  - FCN = -19751.79483704  Edm = 0.145071     NCalls = 9898  
+VariableMetric: Iteration # 100 - FCN = -19751.89895452  Edm = 0.121066     NCalls = 9996  
+VariableMetric: Iteration # 101 - FCN = -19751.99481851  Edm = 0.0442678    NCalls = 10095 
+VariableMetric: Iteration # 102 - FCN = -19752.03880288  Edm = 0.0182489    NCalls = 10192 
+VariableMetric: Iteration # 103 - FCN = -19752.07824865  Edm = 0.0191313    NCalls = 10290 
+VariableMetric: Iteration # 104 - FCN = -19752.1258247   Edm = 0.0397307    NCalls = 10389 
+VariableMetric: Iteration # 105 - FCN = -19752.15965666  Edm = 0.0311986    NCalls = 10487 
+VariableMetric: Iteration # 106 - FCN = -19752.21319498  Edm = 0.0318803    NCalls = 10586 
+VariableMetric: Iteration # 107 - FCN = -19752.27124019  Edm = 0.0290204    NCalls = 10684 
+VariableMetric: Iteration # 108 - FCN = -19752.31447679  Edm = 0.0123871    NCalls = 10782 
+VariableMetric: Iteration # 109 - FCN = -19752.32943287  Edm = 0.0061526    NCalls = 10880 
+VariableMetric: Iteration # 110 - FCN = -19752.33523492  Edm = 0.00437181   NCalls = 10978 
+VariableMetric: Iteration # 111 - FCN = -19752.33796031  Edm = 0.00189262   NCalls = 11076 
+VariableMetric: Iteration # 112 - FCN = -19752.34015753  Edm = 0.00145294   NCalls = 11174 
+VariableMetric: After Hessian   - FCN = -19752.34015753  Edm = 0.017171     NCalls = 12499 
+VariableMetric: Iteration # 113 - FCN = -19752.34015753  Edm = 0.017171     NCalls = 12499 
+VariableMetric: Iteration # 114 - FCN = -19752.39041834  Edm = 0.0185151    NCalls = 12597 
+VariableMetric: Iteration # 115 - FCN = -19752.4697579   Edm = 0.0376751    NCalls = 12696 
+VariableMetric: Iteration # 116 - FCN = -19752.55481496  Edm = 0.0568347    NCalls = 12794 
+VariableMetric: Iteration # 117 - FCN = -19752.66547143  Edm = 0.0808558    NCalls = 12894 
+VariableMetric: Iteration # 118 - FCN = -19752.76833708  Edm = 0.0510178    NCalls = 12993 
+VariableMetric: Iteration # 119 - FCN = -19752.82489755  Edm = 0.0325403    NCalls = 13091 
+VariableMetric: Iteration # 120 - FCN = -19752.87097413  Edm = 0.0480626    NCalls = 13190 
+VariableMetric: Iteration # 121 - FCN = -19752.89953731  Edm = 0.0192768    NCalls = 13288 
+VariableMetric: Iteration # 122 - FCN = -19752.92147533  Edm = 0.00466516   NCalls = 13386 
+VariableMetric: Iteration # 123 - FCN = -19752.93139628  Edm = 0.00307509   NCalls = 13484 
+VariableMetric: Iteration # 124 - FCN = -19752.93708089  Edm = 0.00261802   NCalls = 13582 
+VariableMetric: Iteration # 125 - FCN = -19752.94301563  Edm = 0.00533296   NCalls = 13681 
+VariableMetric: Iteration # 126 - FCN = -19752.95085153  Edm = 0.00456316   NCalls = 13779 
+VariableMetric: Iteration # 127 - FCN = -19752.96165848  Edm = 0.00596445   NCalls = 13878 
+VariableMetric: Iteration # 128 - FCN = -19752.97502174  Edm = 0.00716942   NCalls = 13976 
+VariableMetric: Iteration # 129 - FCN = -19752.98312927  Edm = 0.0135216    NCalls = 14073 
+VariableMetric: Iteration # 130 - FCN = -19752.99595475  Edm = 0.00746406   NCalls = 14171 
+VariableMetric: Iteration # 131 - FCN = -19753.00702965  Edm = 0.00265157   NCalls = 14270 
+VariableMetric: Iteration # 132 - FCN = -19753.01061082  Edm = 0.000642339  NCalls = 14368 
+VariableMetric: After Hessian   - FCN = -19753.01061082  Edm = 0.000928603  NCalls = 15695 
+VariableMetric: Iteration # 133 - FCN = -19753.01061082  Edm = 0.000928603  NCalls = 15695 
+Number of iterations 134
+----------> Iteration 0
+            FVAL = -19677.768469 Edm = 49.9230559117 Nfcn = 179
+            Error matrix change = 1
+            Parameters :  p0 = 5 p1 = 0.0095653 p2 = 0.00601207 p3 = 0.0255993 p4 = -0.194327 p5 = 0.0133101 p6 = 0.0170886 p7 = -0.107163 p8 = 0.104979 p9 = 0.00296544 p10 = 0.014186 p11 = -0.0339155 p12 = 0.0613357 p13 = -0.0535469 p14 = 0.0272353 p15 = 0.126313 p16 = -0.140858 p17 = -1.37962 p18 = 1.49371 p19 = -0.125526 p20 = 0.0943573 p21 = -0.0640864 p22 = 0.12832 p23 = 0.160532 p24 = 0.0886014 p25 = 0.95532 p26 = 0.11267 p27 = 0.00173 p28 = -1.9145 p29 = -33.799 p30 = -0.696212 p31 = -0.564193 p32 = -1.1781 p33 = -0.387498 p34 = -3.56439 p35 = -0.302991 p36 = -0.654174 p37 = 0.779454 p38 = 0.722348 p39 = 0.555636 p40 = 3.23771 p41 = 0.614543 p42 = 1.67044 p43 = 2.7479 p44 = 2.36804 p45 = 1.81536 p46 = 0.769374 p47 = 0.141979
+----------> Iteration 1
+            FVAL = -19695.8217479 Edm = 31.2464825976 Nfcn = 277
+            Error matrix change = 0.540447
+            Parameters :  p0 = 4.97153 p1 = 0.0104566 p2 = 0.00520056 p3 = 0.0301294 p4 = -0.195904 p5 = 0.0141185 p6 = 0.0182013 p7 = -0.108398 p8 = 0.110004 p9 = 0.00650171 p10 = 0.014828 p11 = -0.0285202 p12 = 0.0525738 p13 = -0.0423131 p14 = 0.0371405 p15 = 0.121333 p16 = -0.137586 p17 = -1.36892 p18 = 1.49862 p19 = -0.122025 p20 = 0.100903 p21 = -0.081275 p22 = 0.123251 p23 = 0.161656 p24 = 0.0968597 p25 = 0.959809 p26 = 0.11307 p27 = 0.00662254 p28 = -1.89382 p29 = -33.9123 p30 = -0.697153 p31 = -0.565664 p32 = -1.17846 p33 = -0.392742 p34 = -3.57793 p35 = -0.316347 p36 = -0.654501 p37 = 0.792276 p38 = 0.720547 p39 = 0.555571 p40 = 3.23243 p41 = 0.611644 p42 = 1.71829 p43 = 2.71386 p44 = 2.37186 p45 = 1.81331 p46 = 0.769518 p47 = 0.142181
+----------> Iteration 2
+            FVAL = -19708.4909844 Edm = 22.4000809507 Nfcn = 375
+            Error matrix change = 0.298271
+            Parameters :  p0 = 4.9887 p1 = 0.0107256 p2 = 0.00527587 p3 = 0.0318578 p4 = -0.1976 p5 = 0.0152919 p6 = 0.0190313 p7 = -0.11317 p8 = 0.114866 p9 = 0.0094062 p10 = 0.0159634 p11 = -0.0259405 p12 = 0.0416565 p13 = -0.0351156 p14 = 0.0461596 p15 = 0.111396 p16 = -0.132964 p17 = -1.35669 p18 = 1.51324 p19 = -0.122308 p20 = 0.101579 p21 = -0.108103 p22 = 0.118287 p23 = 0.15701 p24 = 0.09916 p25 = 0.981589 p26 = 0.113011 p27 = 0.00439751 p28 = -1.8962 p29 = -33.8853 p30 = -0.695888 p31 = -0.563896 p32 = -1.1742 p33 = -0.389988 p34 = -3.57572 p35 = -0.291472 p36 = -0.646296 p37 = 0.83301 p38 = 0.719017 p39 = 0.55735 p40 = 3.23609 p41 = 0.619065 p42 = 1.78927 p43 = 2.60714 p44 = 2.37838 p45 = 1.80722 p46 = 0.769227 p47 = 0.141741
+----------> Iteration 3
+            FVAL = -19716.4482729 Edm = 11.1843816991 Nfcn = 473
+            Error matrix change = 0.190248
+            Parameters :  p0 = 4.98656 p1 = 0.0110928 p2 = 0.00422101 p3 = 0.0336187 p4 = -0.19874 p5 = 0.0155213 p6 = 0.018483 p7 = -0.118106 p8 = 0.116703 p9 = 0.013247 p10 = 0.0202608 p11 = -0.023904 p12 = 0.0389403 p13 = -0.0367665 p14 = 0.0647578 p15 = 0.106388 p16 = -0.130531 p17 = -1.34084 p18 = 1.52912 p19 = -0.124875 p20 = 0.0970401 p21 = -0.127706 p22 = 0.116618 p23 = 0.148806 p24 = 0.102627 p25 = 1.01374 p26 = 0.112865 p27 = 0.00315959 p28 = -1.90014 p29 = -33.831 p30 = -0.694667 p31 = -0.565818 p32 = -1.16654 p33 = -0.392802 p34 = -3.57835 p35 = -0.317577 p36 = -0.636811 p37 = 0.850763 p38 = 0.718759 p39 = 0.556596 p40 = 3.24307 p41 = 0.611209 p42 = 1.8308 p43 = 2.52882 p44 = 2.38068 p45 = 1.80915 p46 = 0.768958 p47 = 0.139588
+----------> Iteration 4
+            FVAL = -19722.3342952 Edm = 6.30426076845 Nfcn = 571
+            Error matrix change = 0.134308
+            Parameters :  p0 = 4.9059 p1 = 0.0108322 p2 = 0.00212906 p3 = 0.0346378 p4 = -0.196428 p5 = 0.0156002 p6 = 0.0174281 p7 = -0.119629 p8 = 0.117894 p9 = 0.0151841 p10 = 0.0238464 p11 = -0.0232224 p12 = 0.0342575 p13 = -0.0354845 p14 = 0.0829831 p15 = 0.104392 p16 = -0.130878 p17 = -1.32816 p18 = 1.5522 p19 = -0.126792 p20 = 0.0909375 p21 = -0.139675 p22 = 0.117367 p23 = 0.138138 p24 = 0.106351 p25 = 1.01786 p26 = 0.112697 p27 = 0.00213556 p28 = -1.90633 p29 = -33.7821 p30 = -0.696997 p31 = -0.566267 p32 = -1.16022 p33 = -0.391225 p34 = -3.63646 p35 = -0.323155 p36 = -0.646428 p37 = 0.877023 p38 = 0.716329 p39 = 0.556573 p40 = 3.23762 p41 = 0.605965 p42 = 1.85701 p43 = 2.51252 p44 = 2.38339 p45 = 1.81028 p46 = 0.769005 p47 = 0.134403
+----------> Iteration 5
+            FVAL = -19726.0629636 Edm = 3.737516772 Nfcn = 669
+            Error matrix change = 0.112401
+            Parameters :  p0 = 4.75818 p1 = 0.0106201 p2 = 0.0021106 p3 = 0.0373179 p4 = -0.19328 p5 = 0.0153834 p6 = 0.0163335 p7 = -0.117818 p8 = 0.11824 p9 = 0.00730518 p10 = 0.0252276 p11 = -0.0248629 p12 = 0.0287262 p13 = -0.0398128 p14 = 0.0968922 p15 = 0.104068 p16 = -0.127364 p17 = -1.31732 p18 = 1.57453 p19 = -0.127325 p20 = 0.090117 p21 = -0.144098 p22 = 0.116858 p23 = 0.132269 p24 = 0.106972 p25 = 1.02853 p26 = 0.112734 p27 = 0.00284008 p28 = -1.90592 p29 = -33.7961 p30 = -0.697521 p31 = -0.565191 p32 = -1.15186 p33 = -0.386733 p34 = -3.65389 p35 = -0.318528 p36 = -0.638129 p37 = 0.898131 p38 = 0.716404 p39 = 0.556948 p40 = 3.24158 p41 = 0.605289 p42 = 1.87075 p43 = 2.51276 p44 = 2.3816 p45 = 1.81129 p46 = 0.769218 p47 = 0.129958
+----------> Iteration 6
+            FVAL = -19728.5560442 Edm = 2.55362593313 Nfcn = 767
+            Error matrix change = 0.106273
+            Parameters :  p0 = 4.66223 p1 = 0.0104116 p2 = 0.00172758 p3 = 0.0397292 p4 = -0.192805 p5 = 0.013308 p6 = 0.0156696 p7 = -0.117996 p8 = 0.119256 p9 = -0.00175365 p10 = 0.0244674 p11 = -0.0299325 p12 = 0.0243141 p13 = -0.0485302 p14 = 0.103798 p15 = 0.102846 p16 = -0.12524 p17 = -1.30072 p18 = 1.58939 p19 = -0.129514 p20 = 0.0923243 p21 = -0.145812 p22 = 0.114336 p23 = 0.125793 p24 = 0.100642 p25 = 1.05923 p26 = 0.112693 p27 = 0.004775 p28 = -1.90792 p29 = -33.786 p30 = -0.698671 p31 = -0.563202 p32 = -1.14923 p33 = -0.382288 p34 = -3.67633 p35 = -0.31713 p36 = -0.639044 p37 = 0.91066 p38 = 0.714945 p39 = 0.556026 p40 = 3.23897 p41 = 0.606926 p42 = 1.91846 p43 = 2.53623 p44 = 2.38352 p45 = 1.81926 p46 = 0.769171 p47 = 0.128
+----------> Iteration 7
+            FVAL = -19731.4743327 Edm = 1.2957816511 Nfcn = 865
+            Error matrix change = 0.167938
+            Parameters :  p0 = 4.56173 p1 = 0.00961839 p2 = 0.00261451 p3 = 0.0430388 p4 = -0.189933 p5 = 0.00813948 p6 = 0.0129237 p7 = -0.121124 p8 = 0.120774 p9 = -0.0132077 p10 = 0.0195912 p11 = -0.0313393 p12 = 0.014821 p13 = -0.0533884 p14 = 0.116297 p15 = 0.103361 p16 = -0.127231 p17 = -1.28303 p18 = 1.61679 p19 = -0.132879 p20 = 0.0928872 p21 = -0.144823 p22 = 0.108022 p23 = 0.122123 p24 = 0.0971301 p25 = 1.10623 p26 = 0.112709 p27 = 0.00472506 p28 = -1.92053 p29 = -33.8044 p30 = -0.6997 p31 = -0.561393 p32 = -1.14055 p33 = -0.374623 p34 = -3.70604 p35 = -0.316786 p36 = -0.635663 p37 = 0.918617 p38 = 0.710678 p39 = 0.554412 p40 = 3.23797 p41 = 0.602792 p42 = 1.90922 p43 = 2.60653 p44 = 2.39648 p45 = 1.83274 p46 = 0.769066 p47 = 0.128741
+----------> Iteration 8
+            FVAL = -19732.4128606 Edm = 0.692261648927 Nfcn = 963
+            Error matrix change = 0.134486
+            Parameters :  p0 = 4.51793 p1 = 0.0103506 p2 = 0.00321752 p3 = 0.0446713 p4 = -0.188895 p5 = 0.00902375 p6 = 0.0130131 p7 = -0.122939 p8 = 0.123391 p9 = -0.0164216 p10 = 0.0179674 p11 = -0.0307899 p12 = 0.0117686 p13 = -0.0567149 p14 = 0.120946 p15 = 0.104777 p16 = -0.129069 p17 = -1.27128 p18 = 1.62217 p19 = -0.133844 p20 = 0.0911742 p21 = -0.141381 p22 = 0.108354 p23 = 0.12163 p24 = 0.0975401 p25 = 1.14147 p26 = 0.112718 p27 = 0.0043476 p28 = -1.92836 p29 = -33.8138 p30 = -0.700775 p31 = -0.560668 p32 = -1.13676 p33 = -0.372597 p34 = -3.72888 p35 = -0.303772 p36 = -0.635542 p37 = 0.926575 p38 = 0.709548 p39 = 0.554445 p40 = 3.23607 p41 = 0.601182 p42 = 1.89286 p43 = 2.65118 p44 = 2.39788 p45 = 1.83522 p46 = 0.768941 p47 = 0.129215
+----------> Iteration 9
+            FVAL = -19734.0671543 Edm = 1.26506922036 Nfcn = 1061
+            Error matrix change = 0.240258
+            Parameters :  p0 = 4.31719 p1 = 0.013004 p2 = 0.00173819 p3 = 0.0486196 p4 = -0.182489 p5 = 0.0124383 p6 = 0.0152273 p7 = -0.127969 p8 = 0.128604 p9 = -0.0168185 p10 = 0.0225782 p11 = -0.0332082 p12 = 0.00664696 p13 = -0.0706489 p14 = 0.125294 p15 = 0.109248 p16 = -0.135728 p17 = -1.25569 p18 = 1.6408 p19 = -0.137587 p20 = 0.0866766 p21 = -0.13428 p22 = 0.112609 p23 = 0.127701 p24 = 0.0908687 p25 = 1.21118 p26 = 0.112908 p27 = 0.00176375 p28 = -1.94699 p29 = -33.9069 p30 = -0.700882 p31 = -0.558483 p32 = -1.13332 p33 = -0.36615 p34 = -3.76344 p35 = -0.26674 p36 = -0.634915 p37 = 0.944359 p38 = 0.705765 p39 = 0.55343 p40 = 3.23545 p41 = 0.600486 p42 = 1.87218 p43 = 2.5999 p44 = 2.40644 p45 = 1.84799 p46 = 0.769349 p47 = 0.129716
+----------> Iteration 10
+            FVAL = -19734.9852964 Edm = 1.01295251848 Nfcn = 1159
+            Error matrix change = 0.186987
+            Parameters :  p0 = 4.18451 p1 = 0.0140096 p2 = 0.000801905 p3 = 0.0503095 p4 = -0.179063 p5 = 0.014075 p6 = 0.0153462 p7 = -0.129899 p8 = 0.131531 p9 = -0.0147618 p10 = 0.0235682 p11 = -0.0344633 p12 = 0.00415885 p13 = -0.0780577 p14 = 0.12067 p15 = 0.109629 p16 = -0.135548 p17 = -1.25378 p18 = 1.64996 p19 = -0.13771 p20 = 0.0844587 p21 = -0.134565 p22 = 0.113208 p23 = 0.133429 p24 = 0.0869528 p25 = 1.25613 p26 = 0.112848 p27 = 0.000890282 p28 = -1.95407 p29 = -33.9005 p30 = -0.701312 p31 = -0.558627 p32 = -1.13409 p33 = -0.364787 p34 = -3.7788 p35 = -0.249963 p36 = -0.634949 p37 = 0.947287 p38 = 0.704748 p39 = 0.553013 p40 = 3.23413 p41 = 0.598283 p42 = 1.83939 p43 = 2.58191 p44 = 2.40637 p45 = 1.85251 p46 = 0.769731 p47 = 0.130758
+----------> Iteration 11
+            FVAL = -19736.0380033 Edm = 0.789950320601 Nfcn = 1257
+            Error matrix change = 0.244534
+            Parameters :  p0 = 4.15672 p1 = 0.0133565 p2 = 0.000557308 p3 = 0.0525361 p4 = -0.175049 p5 = 0.0154566 p6 = 0.0142251 p7 = -0.134399 p8 = 0.137328 p9 = -0.0114091 p10 = 0.0249967 p11 = -0.0355032 p12 = 0.00229058 p13 = -0.0885358 p14 = 0.110696 p15 = 0.111095 p16 = -0.134966 p17 = -1.25039 p18 = 1.64589 p19 = -0.140229 p20 = 0.0812208 p21 = -0.135465 p22 = 0.113965 p23 = 0.143399 p24 = 0.0829684 p25 = 1.30969 p26 = 0.112911 p27 = -0.0010764 p28 = -1.96341 p29 = -33.9398 p30 = -0.70095 p31 = -0.559625 p32 = -1.13685 p33 = -0.363872 p34 = -3.79411 p35 = -0.222164 p36 = -0.63772 p37 = 0.95312 p38 = 0.703714 p39 = 0.552634 p40 = 3.23394 p41 = 0.594916 p42 = 1.7945 p43 = 2.54326 p44 = 2.40575 p45 = 1.85686 p46 = 0.770664 p47 = 0.131552
+----------> Iteration 12
+            FVAL = -19736.6737564 Edm = 0.427076497821 Nfcn = 1355
+            Error matrix change = 0.165266
+            Parameters :  p0 = 4.00756 p1 = 0.0130869 p2 = 0.000837818 p3 = 0.0544784 p4 = -0.171661 p5 = 0.0163203 p6 = 0.0120266 p7 = -0.137368 p8 = 0.141254 p9 = -0.00905322 p10 = 0.0248036 p11 = -0.0352866 p12 = -0.000461525 p13 = -0.0975366 p14 = 0.104536 p15 = 0.112598 p16 = -0.135887 p17 = -1.24237 p18 = 1.64477 p19 = -0.141582 p20 = 0.0807178 p21 = -0.136953 p22 = 0.116757 p23 = 0.149161 p24 = 0.0804522 p25 = 1.35656 p26 = 0.113016 p27 = -0.00389184 p28 = -1.97521 p29 = -33.9935 p30 = -0.699853 p31 = -0.560103 p32 = -1.13849 p33 = -0.364462 p34 = -3.8071 p35 = -0.191017 p36 = -0.643253 p37 = 0.96246 p38 = 0.702386 p39 = 0.551908 p40 = 3.23459 p41 = 0.591467 p42 = 1.77235 p43 = 2.53791 p44 = 2.40758 p45 = 1.86332 p46 = 0.771025 p47 = 0.131686
+----------> Iteration 13
+            FVAL = -19737.1268359 Edm = 0.361421454018 Nfcn = 1453
+            Error matrix change = 0.13008
+            Parameters :  p0 = 3.96442 p1 = 0.0138308 p2 = 0.00104592 p3 = 0.0553223 p4 = -0.168025 p5 = 0.0160228 p6 = 0.0105156 p7 = -0.139926 p8 = 0.144616 p9 = -0.00921897 p10 = 0.0241966 p11 = -0.0352895 p12 = -0.00283673 p13 = -0.105473 p14 = 0.096731 p15 = 0.113887 p16 = -0.138822 p17 = -1.23734 p18 = 1.64787 p19 = -0.14426 p20 = 0.0833292 p21 = -0.139977 p22 = 0.119614 p23 = 0.150494 p24 = 0.0793511 p25 = 1.37933 p26 = 0.11307 p27 = -0.0066347 p28 = -1.98201 p29 = -34.0266 p30 = -0.699041 p31 = -0.56138 p32 = -1.14003 p33 = -0.36771 p34 = -3.82063 p35 = -0.170193 p36 = -0.649562 p37 = 0.966835 p38 = 0.701836 p39 = 0.551498 p40 = 3.23517 p41 = 0.586662 p42 = 1.75336 p43 = 2.54871 p44 = 2.40614 p45 = 1.86617 p46 = 0.771138 p47 = 0.131536
+----------> Iteration 14
+            FVAL = -19737.5351638 Edm = 0.2294669853 Nfcn = 1551
+            Error matrix change = 0.14569
+            Parameters :  p0 = 3.89992 p1 = 0.0134861 p2 = 0.000285288 p3 = 0.0559246 p4 = -0.165233 p5 = 0.0146325 p6 = 0.00914957 p7 = -0.141918 p8 = 0.147233 p9 = -0.0118994 p10 = 0.0252538 p11 = -0.0325397 p12 = -0.00531228 p13 = -0.112026 p14 = 0.0910332 p15 = 0.114846 p16 = -0.141241 p17 = -1.23421 p18 = 1.64742 p19 = -0.148288 p20 = 0.0882524 p21 = -0.142314 p22 = 0.120433 p23 = 0.152829 p24 = 0.0839008 p25 = 1.39806 p26 = 0.113042 p27 = -0.00968635 p28 = -1.9879 p29 = -34.0303 p30 = -0.698415 p31 = -0.56212 p32 = -1.14126 p33 = -0.371065 p34 = -3.84254 p35 = -0.142047 p36 = -0.658238 p37 = 0.972052 p38 = 0.701869 p39 = 0.550935 p40 = 3.23635 p41 = 0.582382 p42 = 1.7378 p43 = 2.53941 p44 = 2.40086 p45 = 1.87069 p46 = 0.77125 p47 = 0.13139
+----------> Iteration 15
+            FVAL = -19738.0062389 Edm = 0.324767386895 Nfcn = 1649
+            Error matrix change = 0.149452
+            Parameters :  p0 = 3.83249 p1 = 0.0134985 p2 = -0.000225067 p3 = 0.0570318 p4 = -0.163928 p5 = 0.0128525 p6 = 0.00706597 p7 = -0.144281 p8 = 0.150706 p9 = -0.0151498 p10 = 0.0251701 p11 = -0.0299398 p12 = -0.0103828 p13 = -0.118372 p14 = 0.0788928 p15 = 0.110122 p16 = -0.140705 p17 = -1.23115 p18 = 1.64914 p19 = -0.154399 p20 = 0.0940635 p21 = -0.139563 p22 = 0.118491 p23 = 0.147741 p24 = 0.0925353 p25 = 1.41408 p26 = 0.113094 p27 = -0.0137095 p28 = -1.99394 p29 = -34.057 p30 = -0.697224 p31 = -0.56273 p32 = -1.14231 p33 = -0.37826 p34 = -3.86437 p35 = -0.102527 p36 = -0.66618 p37 = 0.967586 p38 = 0.701581 p39 = 0.550207 p40 = 3.23967 p41 = 0.577129 p42 = 1.71028 p43 = 2.49666 p44 = 2.39453 p45 = 1.87637 p46 = 0.771393 p47 = 0.130845
+----------> Iteration 16
+            FVAL = -19738.4916382 Edm = 0.207925075077 Nfcn = 1747
+            Error matrix change = 0.188133
+            Parameters :  p0 = 3.7568 p1 = 0.0137242 p2 = -0.000146504 p3 = 0.0584499 p4 = -0.163836 p5 = 0.0114137 p6 = 0.00594795 p7 = -0.145452 p8 = 0.156651 p9 = -0.0184408 p10 = 0.0289914 p11 = -0.0275814 p12 = -0.0146921 p13 = -0.124598 p14 = 0.0636707 p15 = 0.110487 p16 = -0.137708 p17 = -1.23447 p18 = 1.65379 p19 = -0.161667 p20 = 0.0993451 p21 = -0.137281 p22 = 0.116679 p23 = 0.145403 p24 = 0.100308 p25 = 1.42686 p26 = 0.113166 p27 = -0.0193749 p28 = -1.99789 p29 = -34.0861 p30 = -0.695511 p31 = -0.563526 p32 = -1.14178 p33 = -0.387027 p34 = -3.89738 p35 = -0.0592436 p36 = -0.682071 p37 = 0.958615 p38 = 0.700471 p39 = 0.549575 p40 = 3.2444 p41 = 0.570331 p42 = 1.68776 p43 = 2.44777 p44 = 2.38954 p45 = 1.88101 p46 = 0.771136 p47 = 0.13072
+----------> Iteration 17
+            FVAL = -19738.8989624 Edm = 0.194419268909 Nfcn = 1845
+            Error matrix change = 0.164785
+            Parameters :  p0 = 3.66474 p1 = 0.0141894 p2 = -0.000714484 p3 = 0.060455 p4 = -0.161973 p5 = 0.0123794 p6 = 0.00548453 p7 = -0.147856 p8 = 0.163461 p9 = -0.0169623 p10 = 0.0321334 p11 = -0.026882 p12 = -0.0173421 p13 = -0.131174 p14 = 0.0485266 p15 = 0.110114 p16 = -0.13657 p17 = -1.23909 p18 = 1.65569 p19 = -0.167577 p20 = 0.102359 p21 = -0.13467 p22 = 0.117009 p23 = 0.141523 p24 = 0.112995 p25 = 1.43265 p26 = 0.113145 p27 = -0.024305 p28 = -1.99492 p29 = -34.0799 p30 = -0.693471 p31 = -0.563291 p32 = -1.13998 p33 = -0.395434 p34 = -3.93274 p35 = 0.00406395 p36 = -0.700648 p37 = 0.950744 p38 = 0.698951 p39 = 0.548937 p40 = 3.25069 p41 = 0.565198 p42 = 1.66766 p43 = 2.39784 p44 = 2.38459 p45 = 1.88719 p46 = 0.771288 p47 = 0.131309
+----------> Iteration 18
+            FVAL = -19739.1980077 Edm = 0.156336722097 Nfcn = 1943
+            Error matrix change = 0.182173
+            Parameters :  p0 = 3.62029 p1 = 0.0142247 p2 = -0.00042112 p3 = 0.0624489 p4 = -0.162381 p5 = 0.0122098 p6 = 0.00526028 p7 = -0.150328 p8 = 0.167045 p9 = -0.0157569 p10 = 0.0335314 p11 = -0.0275436 p12 = -0.0190327 p13 = -0.13375 p14 = 0.0389921 p15 = 0.110145 p16 = -0.137552 p17 = -1.24505 p18 = 1.6533 p19 = -0.171025 p20 = 0.104304 p21 = -0.135264 p22 = 0.118862 p23 = 0.136635 p24 = 0.118405 p25 = 1.42727 p26 = 0.113121 p27 = -0.0262495 p28 = -1.98708 p29 = -34.0607 p30 = -0.692838 p31 = -0.563134 p32 = -1.13634 p33 = -0.397392 p34 = -3.96221 p35 = 0.0462744 p36 = -0.712082 p37 = 0.942554 p38 = 0.697976 p39 = 0.54856 p40 = 3.25684 p41 = 0.561824 p42 = 1.64028 p43 = 2.35337 p44 = 2.37843 p45 = 1.89104 p46 = 0.771232 p47 = 0.131429
+----------> Iteration 19
+            FVAL = -19739.4626205 Edm = 0.166862988898 Nfcn = 2041
+            Error matrix change = 0.173667
+            Parameters :  p0 = 3.5065 p1 = 0.0142208 p2 = -0.0004898 p3 = 0.0649701 p4 = -0.161931 p5 = 0.0112674 p6 = 0.00534823 p7 = -0.154864 p8 = 0.171409 p9 = -0.0186123 p10 = 0.033355 p11 = -0.029503 p12 = -0.0218614 p13 = -0.140939 p14 = 0.0284135 p15 = 0.11292 p16 = -0.137256 p17 = -1.24586 p18 = 1.65032 p19 = -0.174444 p20 = 0.106796 p21 = -0.13725 p22 = 0.119614 p23 = 0.13113 p24 = 0.126104 p25 = 1.42834 p26 = 0.11309 p27 = -0.0283229 p28 = -1.98476 p29 = -34.0434 p30 = -0.691263 p31 = -0.563739 p32 = -1.13135 p33 = -0.399677 p34 = -3.99602 p35 = 0.0920425 p36 = -0.7293 p37 = 0.933663 p38 = 0.695946 p39 = 0.548084 p40 = 3.2661 p41 = 0.556326 p42 = 1.62581 p43 = 2.32875 p44 = 2.37382 p45 = 1.89443 p46 = 0.771519 p47 = 0.131716
+----------> Iteration 20
+            FVAL = -19739.5839662 Edm = 0.132746454447 Nfcn = 2139
+            Error matrix change = 0.214423
+            Parameters :  p0 = 3.53466 p1 = 0.0142255 p2 = -0.000458389 p3 = 0.0647245 p4 = -0.163244 p5 = 0.0104152 p6 = 0.00590121 p7 = -0.155958 p8 = 0.170956 p9 = -0.0192846 p10 = 0.0324032 p11 = -0.0296265 p12 = -0.0212393 p13 = -0.139888 p14 = 0.0261327 p15 = 0.113333 p16 = -0.136398 p17 = -1.24943 p18 = 1.64606 p19 = -0.173483 p20 = 0.107837 p21 = -0.137578 p22 = 0.120016 p23 = 0.129469 p24 = 0.12919 p25 = 1.41003 p26 = 0.113031 p27 = -0.0276259 p28 = -1.98135 p29 = -34.0157 p30 = -0.690764 p31 = -0.5639 p32 = -1.12982 p33 = -0.400051 p34 = -3.99451 p35 = 0.0980595 p36 = -0.7331 p37 = 0.925359 p38 = 0.695537 p39 = 0.548171 p40 = 3.26979 p41 = 0.556565 p42 = 1.63472 p43 = 2.32723 p44 = 2.37239 p45 = 1.89266 p46 = 0.771462 p47 = 0.131555
+----------> Iteration 21
+            FVAL = -19739.8254147 Edm = 0.133334240696 Nfcn = 2237
+            Error matrix change = 0.238608
+            Parameters :  p0 = 3.42434 p1 = 0.0153422 p2 = -0.000831726 p3 = 0.0664848 p4 = -0.162354 p5 = 0.00819952 p6 = 0.00648819 p7 = -0.1638 p8 = 0.174695 p9 = -0.0210792 p10 = 0.0321355 p11 = -0.0282428 p12 = -0.0244693 p13 = -0.148354 p14 = 0.0140847 p15 = 0.113612 p16 = -0.137316 p17 = -1.25131 p18 = 1.64481 p19 = -0.175492 p20 = 0.110576 p21 = -0.137618 p22 = 0.121759 p23 = 0.130633 p24 = 0.135213 p25 = 1.41187 p26 = 0.112996 p27 = -0.0284032 p28 = -1.98721 p29 = -34.0057 p30 = -0.689461 p31 = -0.564314 p32 = -1.12562 p33 = -0.400664 p34 = -4.02148 p35 = 0.157389 p36 = -0.747934 p37 = 0.908994 p38 = 0.692362 p39 = 0.547685 p40 = 3.28015 p41 = 0.553744 p42 = 1.62248 p43 = 2.28252 p44 = 2.36715 p45 = 1.89553 p46 = 0.771549 p47 = 0.130963
+----------> Iteration 22
+            FVAL = -19740.168751 Edm = 0.150221509064 Nfcn = 2335
+            Error matrix change = 0.253317
+            Parameters :  p0 = 3.33908 p1 = 0.0159349 p2 = -0.000736408 p3 = 0.067913 p4 = -0.162824 p5 = 0.00588076 p6 = 0.00728862 p7 = -0.173464 p8 = 0.178077 p9 = -0.0212796 p10 = 0.0317666 p11 = -0.0260627 p12 = -0.0248187 p13 = -0.158546 p14 = 0.000813271 p15 = 0.112564 p16 = -0.140535 p17 = -1.25535 p18 = 1.64349 p19 = -0.17665 p20 = 0.111263 p21 = -0.140721 p22 = 0.120018 p23 = 0.132058 p24 = 0.145 p25 = 1.38955 p26 = 0.113015 p27 = -0.0253907 p28 = -1.99541 p29 = -34.0058 p30 = -0.688369 p31 = -0.565371 p32 = -1.11875 p33 = -0.402934 p34 = -4.05184 p35 = 0.234099 p36 = -0.768493 p37 = 0.880239 p38 = 0.688464 p39 = 0.547844 p40 = 3.29505 p41 = 0.552102 p42 = 1.637 p43 = 2.24312 p44 = 2.35534 p45 = 1.89137 p46 = 0.771464 p47 = 0.13066
+----------> Iteration 23
+            FVAL = -19740.4057534 Edm = 0.128160881709 Nfcn = 2433
+            Error matrix change = 0.171445
+            Parameters :  p0 = 3.23199 p1 = 0.0157399 p2 = -0.00132265 p3 = 0.0703188 p4 = -0.161963 p5 = 0.00404664 p6 = 0.00709867 p7 = -0.18155 p8 = 0.18416 p9 = -0.0192203 p10 = 0.0316701 p11 = -0.024857 p12 = -0.0264947 p13 = -0.17018 p14 = -0.0138037 p15 = 0.110546 p16 = -0.143808 p17 = -1.25671 p18 = 1.64398 p19 = -0.17994 p20 = 0.113931 p21 = -0.14044 p22 = 0.119612 p23 = 0.134644 p24 = 0.154394 p25 = 1.39181 p26 = 0.112963 p27 = -0.0242201 p28 = -2.00515 p29 = -33.9865 p30 = -0.686683 p31 = -0.566605 p32 = -1.11183 p33 = -0.406789 p34 = -4.08171 p35 = 0.31509 p36 = -0.785735 p37 = 0.856991 p38 = 0.684204 p39 = 0.547709 p40 = 3.31023 p41 = 0.548765 p42 = 1.65109 p43 = 2.19254 p44 = 2.3455 p45 = 1.88948 p46 = 0.771215 p47 = 0.130011
+----------> Iteration 24
+            FVAL = -19740.5561046 Edm = 0.0905504378357 Nfcn = 2531
+            Error matrix change = 0.206651
+            Parameters :  p0 = 3.25736 p1 = 0.0158676 p2 = -0.00154035 p3 = 0.0701731 p4 = -0.161946 p5 = 0.00394804 p6 = 0.00654158 p7 = -0.182197 p8 = 0.184157 p9 = -0.0162112 p10 = 0.0304993 p11 = -0.0249262 p12 = -0.0245911 p13 = -0.172317 p14 = -0.0113096 p15 = 0.111227 p16 = -0.14504 p17 = -1.25714 p18 = 1.64575 p19 = -0.179019 p20 = 0.114643 p21 = -0.138862 p22 = 0.118118 p23 = 0.136821 p24 = 0.150953 p25 = 1.3899 p26 = 0.112957 p27 = -0.0218791 p28 = -2.01116 p29 = -33.9863 p30 = -0.687153 p31 = -0.566685 p32 = -1.10996 p33 = -0.404276 p34 = -4.07598 p35 = 0.324087 p36 = -0.781778 p37 = 0.852947 p38 = 0.682851 p39 = 0.547857 p40 = 3.31274 p41 = 0.551308 p42 = 1.67686 p43 = 2.19313 p44 = 2.34379 p45 = 1.88657 p46 = 0.771073 p47 = 0.129931
+----------> Iteration 25
+            FVAL = -19740.6998081 Edm = 0.0787379689274 Nfcn = 2630
+            Error matrix change = 0.237451
+            Parameters :  p0 = 3.15238 p1 = 0.0161838 p2 = -0.00170496 p3 = 0.072043 p4 = -0.160332 p5 = 0.00253427 p6 = 0.00462444 p7 = -0.188158 p8 = 0.189822 p9 = -0.0146917 p10 = 0.0299539 p11 = -0.0243942 p12 = -0.0257383 p13 = -0.184209 p14 = -0.023701 p15 = 0.113123 p16 = -0.145982 p17 = -1.25964 p18 = 1.64514 p19 = -0.184075 p20 = 0.120717 p21 = -0.137493 p22 = 0.117224 p23 = 0.135589 p24 = 0.155117 p25 = 1.38955 p26 = 0.112932 p27 = -0.021753 p28 = -2.02048 p29 = -33.9803 p30 = -0.686289 p31 = -0.568006 p32 = -1.10496 p33 = -0.405587 p34 = -4.10636 p35 = 0.397093 p36 = -0.794582 p37 = 0.834565 p38 = 0.678643 p39 = 0.547357 p40 = 3.32482 p41 = 0.548416 p42 = 1.68773 p43 = 2.14674 p44 = 2.3334 p45 = 1.88675 p46 = 0.771008 p47 = 0.130085
+----------> Iteration 26
+            FVAL = -19740.8337355 Edm = 0.0738444229044 Nfcn = 2728
+            Error matrix change = 0.15772
+            Parameters :  p0 = 3.12856 p1 = 0.0156845 p2 = -0.00165325 p3 = 0.0726939 p4 = -0.158671 p5 = 0.00185085 p6 = 0.00242424 p7 = -0.190203 p8 = 0.192363 p9 = -0.0141086 p10 = 0.0291986 p11 = -0.0233479 p12 = -0.0263388 p13 = -0.189004 p14 = -0.0280047 p15 = 0.113525 p16 = -0.145611 p17 = -1.25993 p18 = 1.64176 p19 = -0.187949 p20 = 0.126416 p21 = -0.137495 p22 = 0.117231 p23 = 0.13493 p24 = 0.155854 p25 = 1.38799 p26 = 0.112904 p27 = -0.0199808 p28 = -2.02832 p29 = -33.9715 p30 = -0.686357 p31 = -0.569959 p32 = -1.10263 p33 = -0.404947 p34 = -4.11284 p35 = 0.430959 p36 = -0.793471 p37 = 0.823573 p38 = 0.675482 p39 = 0.547066 p40 = 3.33136 p41 = 0.547209 p42 = 1.71056 p43 = 2.12833 p44 = 2.32665 p45 = 1.88374 p46 = 0.770831 p47 = 0.130294
+----------> Iteration 27
+            FVAL = -19741.0247169 Edm = 0.0637578824429 Nfcn = 2826
+            Error matrix change = 0.185759
+            Parameters :  p0 = 3.04821 p1 = 0.0157174 p2 = -0.00157261 p3 = 0.0739462 p4 = -0.157792 p5 = 0.00133187 p6 = -0.000820357 p7 = -0.195285 p8 = 0.199046 p9 = -0.0139727 p10 = 0.0299404 p11 = -0.0186233 p12 = -0.0284317 p13 = -0.196158 p14 = -0.0417183 p15 = 0.112635 p16 = -0.145268 p17 = -1.26781 p18 = 1.63226 p19 = -0.197126 p20 = 0.137554 p21 = -0.13951 p22 = 0.116646 p23 = 0.129248 p24 = 0.162507 p25 = 1.37562 p26 = 0.112841 p27 = -0.0197821 p28 = -2.04185 p29 = -33.9459 p30 = -0.685344 p31 = -0.573194 p32 = -1.09664 p33 = -0.408478 p34 = -4.13145 p35 = 0.523971 p36 = -0.796795 p37 = 0.797713 p38 = 0.669696 p39 = 0.546078 p40 = 3.34723 p41 = 0.543345 p42 = 1.75396 p43 = 2.11194 p44 = 2.31008 p45 = 1.88125 p46 = 0.770799 p47 = 0.13027
+----------> Iteration 28
+            FVAL = -19741.2126753 Edm = 0.0517594693068 Nfcn = 2924
+            Error matrix change = 0.149838
+            Parameters :  p0 = 3.01068 p1 = 0.0158475 p2 = -0.00125743 p3 = 0.0737065 p4 = -0.157479 p5 = 0.00459748 p6 = -0.00106964 p7 = -0.196149 p8 = 0.201947 p9 = -0.0144065 p10 = 0.0315275 p11 = -0.0168813 p12 = -0.0287066 p13 = -0.194169 p14 = -0.0424735 p15 = 0.112808 p16 = -0.143363 p17 = -1.27399 p18 = 1.62729 p19 = -0.203137 p20 = 0.140357 p21 = -0.139147 p22 = 0.118074 p23 = 0.125439 p24 = 0.160113 p25 = 1.36291 p26 = 0.112815 p27 = -0.0171053 p28 = -2.05401 p29 = -33.9302 p30 = -0.686643 p31 = -0.575754 p32 = -1.0931 p33 = -0.405562 p34 = -4.12527 p35 = 0.561102 p36 = -0.776888 p37 = 0.781804 p38 = 0.664463 p39 = 0.544964 p40 = 3.35302 p41 = 0.544236 p42 = 1.8142 p43 = 2.12176 p44 = 2.3004 p45 = 1.8785 p46 = 0.770897 p47 = 0.130445
+----------> Iteration 29
+            FVAL = -19741.2979438 Edm = 0.0438005519294 Nfcn = 3022
+            Error matrix change = 0.181079
+            Parameters :  p0 = 2.9533 p1 = 0.0156712 p2 = -0.0010787 p3 = 0.074344 p4 = -0.156664 p5 = 0.00634738 p6 = -0.000216694 p7 = -0.199145 p8 = 0.20506 p9 = -0.0134849 p10 = 0.0312359 p11 = -0.0170271 p12 = -0.0288118 p13 = -0.197129 p14 = -0.0461374 p15 = 0.112828 p16 = -0.144403 p17 = -1.2737 p18 = 1.62632 p19 = -0.206162 p20 = 0.139853 p21 = -0.139564 p22 = 0.118669 p23 = 0.126802 p24 = 0.1606 p25 = 1.36378 p26 = 0.112793 p27 = -0.0157923 p28 = -2.06255 p29 = -33.9187 p30 = -0.686847 p31 = -0.577508 p32 = -1.09034 p33 = -0.403783 p34 = -4.13104 p35 = 0.596442 p36 = -0.770317 p37 = 0.772582 p38 = 0.661011 p39 = 0.544477 p40 = 3.35911 p41 = 0.543997 p42 = 1.84257 p43 = 2.12251 p44 = 2.2925 p45 = 1.87634 p46 = 0.770982 p47 = 0.130694
+----------> Iteration 30
+            FVAL = -19741.3447138 Edm = 0.033389088638 Nfcn = 3120
+            Error matrix change = 0.209099
+            Parameters :  p0 = 2.98598 p1 = 0.0154531 p2 = -0.00085724 p3 = 0.0736019 p4 = -0.156807 p5 = 0.00815159 p6 = 0.000847558 p7 = -0.196625 p8 = 0.203891 p9 = -0.0134691 p10 = 0.0307523 p11 = -0.0177174 p12 = -0.0279028 p13 = -0.192904 p14 = -0.0410367 p15 = 0.112822 p16 = -0.144044 p17 = -1.27095 p18 = 1.62754 p19 = -0.205377 p20 = 0.137174 p21 = -0.139676 p22 = 0.118816 p23 = 0.128158 p24 = 0.157474 p25 = 1.36601 p26 = 0.112802 p27 = -0.0165029 p28 = -2.06061 p29 = -33.9181 p30 = -0.687282 p31 = -0.577673 p32 = -1.0929 p33 = -0.402018 p34 = -4.12026 p35 = 0.571137 p36 = -0.760402 p37 = 0.780542 p38 = 0.661786 p39 = 0.544312 p40 = 3.35473 p41 = 0.545054 p42 = 1.84526 p43 = 2.15141 p44 = 2.29371 p45 = 1.87664 p46 = 0.771072 p47 = 0.130899
+----------> Iteration 31
+            FVAL = -19741.4350155 Edm = 0.0401188501324 Nfcn = 3219
+            Error matrix change = 0.230931
+            Parameters :  p0 = 2.93172 p1 = 0.0158025 p2 = -0.000899629 p3 = 0.0748241 p4 = -0.155264 p5 = 0.0101121 p6 = 0.00152474 p7 = -0.199876 p8 = 0.209809 p9 = -0.0142401 p10 = 0.0294629 p11 = -0.0166169 p12 = -0.029445 p13 = -0.196481 p14 = -0.04707 p15 = 0.113143 p16 = -0.143505 p17 = -1.26708 p18 = 1.63051 p19 = -0.211103 p20 = 0.139189 p21 = -0.139368 p22 = 0.118569 p23 = 0.129718 p24 = 0.159903 p25 = 1.36928 p26 = 0.112804 p27 = -0.0201036 p28 = -2.06478 p29 = -33.9043 p30 = -0.686194 p31 = -0.579997 p32 = -1.09232 p33 = -0.401158 p34 = -4.14155 p35 = 0.610507 p36 = -0.755509 p37 = 0.772328 p38 = 0.657658 p39 = 0.542866 p40 = 3.36213 p41 = 0.541751 p42 = 1.8546 p43 = 2.15965 p44 = 2.28226 p45 = 1.88001 p46 = 0.771232 p47 = 0.130863
+----------> Iteration 32
+            FVAL = -19741.5282797 Edm = 0.0251401558837 Nfcn = 3317
+            Error matrix change = 0.211748
+            Parameters :  p0 = 2.86949 p1 = 0.0163091 p2 = -0.000802377 p3 = 0.0757989 p4 = -0.155312 p5 = 0.0103835 p6 = 0.00129403 p7 = -0.205147 p8 = 0.215631 p9 = -0.0141527 p10 = 0.0281468 p11 = -0.0148383 p12 = -0.0293645 p13 = -0.199803 p14 = -0.0552986 p15 = 0.111749 p16 = -0.143746 p17 = -1.26582 p18 = 1.6293 p19 = -0.216261 p20 = 0.143043 p21 = -0.138867 p22 = 0.118051 p23 = 0.130911 p24 = 0.164308 p25 = 1.34554 p26 = 0.112787 p27 = -0.0211357 p28 = -2.06748 p29 = -33.8686 p30 = -0.684712 p31 = -0.582893 p32 = -1.0897 p33 = -0.398761 p34 = -4.16098 p35 = 0.666995 p36 = -0.749815 p37 = 0.75024 p38 = 0.651662 p39 = 0.542027 p40 = 3.3765 p41 = 0.541679 p42 = 1.88766 p43 = 2.14977 p44 = 2.26434 p45 = 1.87627 p46 = 0.771144 p47 = 0.130527
+----------> Iteration 33
+            FVAL = -19741.6129444 Edm = 0.039807916758 Nfcn = 3415
+            Error matrix change = 0.210298
+            Parameters :  p0 = 2.85153 p1 = 0.0160745 p2 = -0.000997199 p3 = 0.0762241 p4 = -0.155982 p5 = 0.0103886 p6 = 3.77347e-05 p7 = -0.207406 p8 = 0.219832 p9 = -0.0137671 p10 = 0.0273478 p11 = -0.0148032 p12 = -0.0279564 p13 = -0.198263 p14 = -0.0561268 p15 = 0.111903 p16 = -0.144821 p17 = -1.26153 p18 = 1.63166 p19 = -0.218081 p20 = 0.143576 p21 = -0.138538 p22 = 0.118284 p23 = 0.1328 p24 = 0.166519 p25 = 1.32682 p26 = 0.112822 p27 = -0.0216051 p28 = -2.06541 p29 = -33.8424 p30 = -0.683465 p31 = -0.584096 p32 = -1.08861 p33 = -0.39597 p34 = -4.17216 p35 = 0.684322 p36 = -0.734762 p37 = 0.737906 p38 = 0.647115 p39 = 0.541379 p40 = 3.38459 p41 = 0.544015 p42 = 1.91817 p43 = 2.19126 p44 = 2.25121 p45 = 1.87361 p46 = 0.771188 p47 = 0.130592
+----------> Iteration 34
+            FVAL = -19741.7125053 Edm = 0.0621910728965 Nfcn = 3514
+            Error matrix change = 0.296257
+            Parameters :  p0 = 2.77506 p1 = 0.0159784 p2 = -0.00107149 p3 = 0.0763633 p4 = -0.156166 p5 = 0.00997346 p6 = -0.00249715 p7 = -0.211431 p8 = 0.227664 p9 = -0.0126931 p10 = 0.0276194 p11 = -0.0142902 p12 = -0.0271645 p13 = -0.198578 p14 = -0.0615996 p15 = 0.112089 p16 = -0.145362 p17 = -1.25603 p18 = 1.63471 p19 = -0.22289 p20 = 0.146337 p21 = -0.138422 p22 = 0.119183 p23 = 0.134858 p24 = 0.170041 p25 = 1.30947 p26 = 0.112841 p27 = -0.0235158 p28 = -2.06914 p29 = -33.8024 p30 = -0.681552 p31 = -0.586524 p32 = -1.08809 p33 = -0.394148 p34 = -4.19543 p35 = 0.718273 p36 = -0.710773 p37 = 0.720379 p38 = 0.63983 p39 = 0.540177 p40 = 3.39616 p41 = 0.545405 p42 = 1.95301 p43 = 2.24038 p44 = 2.22959 p45 = 1.87082 p46 = 0.771467 p47 = 0.130826
+----------> Iteration 35
+            FVAL = -19741.7906205 Edm = 0.0223475567074 Nfcn = 3612
+            Error matrix change = 0.219288
+            Parameters :  p0 = 2.8114 p1 = 0.0159304 p2 = -0.0010702 p3 = 0.0748276 p4 = -0.15715 p5 = 0.00878448 p6 = -0.00319807 p7 = -0.207818 p8 = 0.226133 p9 = -0.0123771 p10 = 0.0291589 p11 = -0.0163864 p12 = -0.0258554 p13 = -0.19168 p14 = -0.0528014 p15 = 0.111926 p16 = -0.145023 p17 = -1.24861 p18 = 1.64068 p19 = -0.218683 p20 = 0.142718 p21 = -0.138298 p22 = 0.12037 p23 = 0.13765 p24 = 0.166984 p25 = 1.31493 p26 = 0.112905 p27 = -0.0251078 p28 = -2.06212 p29 = -33.8047 p30 = -0.680997 p31 = -0.584791 p32 = -1.09312 p33 = -0.392529 p34 = -4.19049 p35 = 0.655707 p36 = -0.691892 p37 = 0.736016 p38 = 0.641157 p39 = 0.540536 p40 = 3.38848 p41 = 0.549155 p42 = 1.93107 p43 = 2.29505 p44 = 2.23162 p45 = 1.87111 p46 = 0.771768 p47 = 0.131009
+----------> Iteration 36
+            FVAL = -19741.8441745 Edm = 0.0273792715531 Nfcn = 3710
+            Error matrix change = 0.169094
+            Parameters :  p0 = 2.77086 p1 = 0.0160172 p2 = -0.000816174 p3 = 0.0751412 p4 = -0.15675 p5 = 0.00709628 p6 = -0.00343419 p7 = -0.210143 p8 = 0.230293 p9 = -0.0127671 p10 = 0.0308764 p11 = -0.0174878 p12 = -0.0267954 p13 = -0.193884 p14 = -0.055156 p15 = 0.11119 p16 = -0.145224 p17 = -1.2425 p18 = 1.64454 p19 = -0.219951 p20 = 0.144312 p21 = -0.138173 p22 = 0.121746 p23 = 0.139532 p24 = 0.170193 p25 = 1.31787 p26 = 0.112963 p27 = -0.0267404 p28 = -2.06296 p29 = -33.7953 p30 = -0.678938 p31 = -0.584336 p32 = -1.09296 p33 = -0.392127 p34 = -4.2183 p35 = 0.659768 p36 = -0.680276 p37 = 0.733651 p38 = 0.637478 p39 = 0.54005 p40 = 3.39376 p41 = 0.54981 p42 = 1.92172 p43 = 2.3243 p44 = 2.22157 p45 = 1.87282 p46 = 0.772009 p47 = 0.13105
+----------> Iteration 37
+            FVAL = -19741.9294701 Edm = 0.0344454371952 Nfcn = 3808
+            Error matrix change = 0.179751
+            Parameters :  p0 = 2.74426 p1 = 0.0156835 p2 = -0.000280317 p3 = 0.0746749 p4 = -0.15701 p5 = 0.00540407 p6 = -0.00254396 p7 = -0.2127 p8 = 0.234906 p9 = -0.0119465 p10 = 0.032902 p11 = -0.0177347 p12 = -0.0274163 p13 = -0.197929 p14 = -0.0614904 p15 = 0.109244 p16 = -0.14498 p17 = -1.24277 p18 = 1.64305 p19 = -0.22249 p20 = 0.150236 p21 = -0.138573 p22 = 0.121984 p23 = 0.138822 p24 = 0.176296 p25 = 1.30367 p26 = 0.112998 p27 = -0.0265917 p28 = -2.06645 p29 = -33.7673 p30 = -0.675742 p31 = -0.584096 p32 = -1.09121 p33 = -0.395283 p34 = -4.25835 p35 = 0.674658 p36 = -0.670242 p37 = 0.721833 p38 = 0.631872 p39 = 0.53953 p40 = 3.40409 p41 = 0.549588 p42 = 1.9212 p43 = 2.35356 p44 = 2.20458 p45 = 1.87253 p46 = 0.772043 p47 = 0.131054
+----------> Iteration 38
+            FVAL = -19742.0301858 Edm = 0.0316465278568 Nfcn = 3906
+            Error matrix change = 0.19175
+            Parameters :  p0 = 2.67131 p1 = 0.0159201 p2 = -0.000556134 p3 = 0.0752686 p4 = -0.156015 p5 = 0.00615842 p6 = -0.00118906 p7 = -0.219546 p8 = 0.244705 p9 = -0.00875803 p10 = 0.0331963 p11 = -0.0174133 p12 = -0.0289809 p13 = -0.20624 p14 = -0.0720342 p15 = 0.109452 p16 = -0.145987 p17 = -1.24272 p18 = 1.6404 p19 = -0.228265 p20 = 0.158094 p21 = -0.139397 p22 = 0.122008 p23 = 0.141774 p24 = 0.18056 p25 = 1.29597 p26 = 0.113077 p27 = -0.0260646 p28 = -2.07711 p29 = -33.7275 p30 = -0.670911 p31 = -0.585179 p32 = -1.08759 p33 = -0.395156 p34 = -4.31667 p35 = 0.722587 p36 = -0.644631 p37 = 0.70456 p38 = 0.620242 p39 = 0.538348 p40 = 3.42413 p41 = 0.550283 p42 = 1.93694 p43 = 2.39317 p44 = 2.17419 p45 = 1.87103 p46 = 0.772257 p47 = 0.131412
+----------> Iteration 39
+            FVAL = -19742.1583523 Edm = 0.0556296494545 Nfcn = 4004
+            Error matrix change = 0.223671
+            Parameters :  p0 = 2.63529 p1 = 0.0155164 p2 = -0.000528549 p3 = 0.0742618 p4 = -0.156248 p5 = 0.00731503 p6 = -0.000959419 p7 = -0.223844 p8 = 0.252841 p9 = -0.00734643 p10 = 0.0336815 p11 = -0.0172968 p12 = -0.0305948 p13 = -0.210368 p14 = -0.0797812 p15 = 0.110686 p16 = -0.146289 p17 = -1.24095 p18 = 1.63946 p19 = -0.230748 p20 = 0.163715 p21 = -0.138244 p22 = 0.122792 p23 = 0.144819 p24 = 0.182663 p25 = 1.28733 p26 = 0.113242 p27 = -0.026681 p28 = -2.07428 p29 = -33.68 p30 = -0.663178 p31 = -0.583732 p32 = -1.09002 p33 = -0.398996 p34 = -4.38574 p35 = 0.705596 p36 = -0.606106 p37 = 0.706587 p38 = 0.609011 p39 = 0.537634 p40 = 3.43817 p41 = 0.552367 p42 = 1.90552 p43 = 2.49853 p44 = 2.14247 p45 = 1.87132 p46 = 0.772303 p47 = 0.131287
+----------> Iteration 40
+            FVAL = -19742.2823486 Edm = 0.139046072999 Nfcn = 4103
+            Error matrix change = 0.295007
+            Parameters :  p0 = 2.54467 p1 = 0.0152728 p2 = -0.000908423 p3 = 0.0739908 p4 = -0.156068 p5 = 0.00954507 p6 = -0.00198509 p7 = -0.231438 p8 = 0.263788 p9 = -0.00707553 p10 = 0.035444 p11 = -0.0159312 p12 = -0.0321817 p13 = -0.218432 p14 = -0.0896738 p15 = 0.110045 p16 = -0.146717 p17 = -1.24118 p18 = 1.63847 p19 = -0.237611 p20 = 0.170235 p21 = -0.137976 p22 = 0.122566 p23 = 0.145062 p24 = 0.187343 p25 = 1.2729 p26 = 0.113375 p27 = -0.0264236 p28 = -2.07694 p29 = -33.6113 p30 = -0.654777 p31 = -0.58367 p32 = -1.08884 p33 = -0.402042 p34 = -4.46737 p35 = 0.722639 p36 = -0.565245 p37 = 0.701411 p38 = 0.593898 p39 = 0.536482 p40 = 3.45997 p41 = 0.553157 p42 = 1.89604 p43 = 2.58554 p44 = 2.10281 p45 = 1.87023 p46 = 0.772335 p47 = 0.131314
+----------> Iteration 41
+            FVAL = -19742.441922 Edm = 0.0501165764859 Nfcn = 4201
+            Error matrix change = 0.218401
+            Parameters :  p0 = 2.58493 p1 = 0.0150442 p2 = -0.00158668 p3 = 0.0722877 p4 = -0.156536 p5 = 0.0134454 p6 = -0.00201867 p7 = -0.229863 p8 = 0.26011 p9 = -0.00847947 p10 = 0.0369822 p11 = -0.0155244 p12 = -0.0318774 p13 = -0.219159 p14 = -0.0816367 p15 = 0.10931 p16 = -0.145767 p17 = -1.24753 p18 = 1.63618 p19 = -0.235441 p20 = 0.166573 p21 = -0.138102 p22 = 0.120972 p23 = 0.142553 p24 = 0.18176 p25 = 1.28365 p26 = 0.113476 p27 = -0.023025 p28 = -2.06914 p29 = -33.5982 p30 = -0.650314 p31 = -0.579935 p32 = -1.09239 p33 = -0.405238 p34 = -4.48715 p35 = 0.648625 p36 = -0.547202 p37 = 0.735359 p38 = 0.591357 p39 = 0.537385 p40 = 3.45622 p41 = 0.554828 p42 = 1.84321 p43 = 2.63683 p44 = 2.10011 p45 = 1.87145 p46 = 0.772045 p47 = 0.131375
+----------> Iteration 42
+            FVAL = -19742.5489115 Edm = 0.0286941113583 Nfcn = 4299
+            Error matrix change = 0.158916
+            Parameters :  p0 = 2.54973 p1 = 0.0152337 p2 = -0.00150549 p3 = 0.0713607 p4 = -0.155745 p5 = 0.0163415 p6 = -0.00227436 p7 = -0.234083 p8 = 0.263107 p9 = -0.00769114 p10 = 0.0367877 p11 = -0.0149338 p12 = -0.030542 p13 = -0.224389 p14 = -0.0803193 p15 = 0.108192 p16 = -0.144522 p17 = -1.24887 p18 = 1.63457 p19 = -0.239509 p20 = 0.165066 p21 = -0.138097 p22 = 0.120897 p23 = 0.145112 p24 = 0.180455 p25 = 1.28781 p26 = 0.11363 p27 = -0.0202043 p28 = -2.07022 p29 = -33.5683 p30 = -0.64427 p31 = -0.578801 p32 = -1.0946 p33 = -0.404665 p34 = -4.52695 p35 = 0.631942 p36 = -0.514371 p37 = 0.749524 p38 = 0.581379 p39 = 0.536986 p40 = 3.46511 p41 = 0.557355 p42 = 1.81796 p43 = 2.74397 p44 = 2.07563 p45 = 1.87127 p46 = 0.77194 p47 = 0.1315
+----------> Iteration 43
+            FVAL = -19742.657992 Edm = 0.0360018184168 Nfcn = 4397
+            Error matrix change = 0.122633
+            Parameters :  p0 = 2.54046 p1 = 0.0153844 p2 = -0.00191948 p3 = 0.0706586 p4 = -0.157523 p5 = 0.0141442 p6 = -0.00132143 p7 = -0.237365 p8 = 0.263122 p9 = -0.0061573 p10 = 0.0350587 p11 = -0.016621 p12 = -0.0288276 p13 = -0.224442 p14 = -0.0798304 p15 = 0.109112 p16 = -0.144184 p17 = -1.25335 p18 = 1.63487 p19 = -0.242512 p20 = 0.163247 p21 = -0.138584 p22 = 0.120277 p23 = 0.146671 p24 = 0.187284 p25 = 1.27761 p26 = 0.113749 p27 = -0.0183492 p28 = -2.06546 p29 = -33.5338 p30 = -0.638929 p31 = -0.577918 p32 = -1.09505 p33 = -0.404995 p34 = -4.54664 p35 = 0.622887 p36 = -0.501519 p37 = 0.749176 p38 = 0.574037 p39 = 0.537149 p40 = 3.47501 p41 = 0.559903 p42 = 1.80266 p43 = 2.80713 p44 = 2.05545 p45 = 1.86812 p46 = 0.771719 p47 = 0.130725
+----------> Iteration 44
+            FVAL = -19742.7621379 Edm = 0.023493823354 Nfcn = 4495
+            Error matrix change = 0.097503
+            Parameters :  p0 = 2.53181 p1 = 0.0154732 p2 = -0.00192207 p3 = 0.069732 p4 = -0.157912 p5 = 0.0133259 p6 = -0.00122196 p7 = -0.238135 p8 = 0.263491 p9 = -0.00703566 p10 = 0.0354612 p11 = -0.0175477 p12 = -0.030332 p13 = -0.222867 p14 = -0.0793609 p15 = 0.110857 p16 = -0.144562 p17 = -1.25994 p18 = 1.63558 p19 = -0.249701 p20 = 0.16343 p21 = -0.13891 p22 = 0.119798 p23 = 0.144105 p24 = 0.193089 p25 = 1.28822 p26 = 0.113902 p27 = -0.0181532 p28 = -2.05717 p29 = -33.4959 p30 = -0.632332 p31 = -0.576016 p32 = -1.09915 p33 = -0.409835 p34 = -4.57401 p35 = 0.601437 p36 = -0.480522 p37 = 0.764337 p38 = 0.565628 p39 = 0.536999 p40 = 3.48023 p41 = 0.561754 p42 = 1.77355 p43 = 2.87638 p44 = 2.02955 p45 = 1.86924 p46 = 0.771669 p47 = 0.130588
+----------> Iteration 45
+            FVAL = -19742.8362086 Edm = 0.0308997206491 Nfcn = 4593
+            Error matrix change = 0.0608996
+            Parameters :  p0 = 2.51865 p1 = 0.0151729 p2 = -0.00174016 p3 = 0.070017 p4 = -0.1572 p5 = 0.0134001 p6 = -0.00147597 p7 = -0.23877 p8 = 0.26308 p9 = -0.00895728 p10 = 0.0355435 p11 = -0.0172154 p12 = -0.0329283 p13 = -0.225193 p14 = -0.0809594 p15 = 0.111804 p16 = -0.144455 p17 = -1.26823 p18 = 1.63463 p19 = -0.255087 p20 = 0.165387 p21 = -0.137788 p22 = 0.120112 p23 = 0.138261 p24 = 0.192729 p25 = 1.30994 p26 = 0.113992 p27 = -0.017585 p28 = -2.05713 p29 = -33.491 p30 = -0.628807 p31 = -0.575016 p32 = -1.09786 p33 = -0.414595 p34 = -4.58604 p35 = 0.611676 p36 = -0.486046 p37 = 0.767157 p38 = 0.560526 p39 = 0.537239 p40 = 3.48442 p41 = 0.56007 p42 = 1.75385 p43 = 2.87708 p44 = 2.01651 p45 = 1.86943 p46 = 0.771645 p47 = 0.130596
+----------> Iteration 46
+            FVAL = -19742.9653346 Edm = 0.0519961680527 Nfcn = 4691
+            Error matrix change = 0.0761711
+            Parameters :  p0 = 2.52893 p1 = 0.0149265 p2 = -0.00212138 p3 = 0.069434 p4 = -0.156293 p5 = 0.0136225 p6 = -0.00250374 p7 = -0.238719 p8 = 0.26197 p9 = -0.0106994 p10 = 0.0333372 p11 = -0.0176408 p12 = -0.032476 p13 = -0.221347 p14 = -0.073641 p15 = 0.112241 p16 = -0.143717 p17 = -1.26768 p18 = 1.6423 p19 = -0.25964 p20 = 0.160386 p21 = -0.137325 p22 = 0.122759 p23 = 0.137686 p24 = 0.186195 p25 = 1.34642 p26 = 0.114202 p27 = -0.0191574 p28 = -2.05181 p29 = -33.4776 p30 = -0.623169 p31 = -0.573368 p32 = -1.10082 p33 = -0.417593 p34 = -4.57985 p35 = 0.598462 p36 = -0.483191 p37 = 0.769802 p38 = 0.551443 p39 = 0.537252 p40 = 3.48666 p41 = 0.563132 p42 = 1.74442 p43 = 2.90193 p44 = 1.98744 p45 = 1.86898 p46 = 0.771905 p47 = 0.130755
+----------> Iteration 47
+            FVAL = -19743.0756271 Edm = 0.0647278791501 Nfcn = 4790
+            Error matrix change = 0.0913786
+            Parameters :  p0 = 2.45386 p1 = 0.0149998 p2 = -0.00209765 p3 = 0.0688014 p4 = -0.155413 p5 = 0.013816 p6 = -0.00256134 p7 = -0.247924 p8 = 0.271667 p9 = -0.00993097 p10 = 0.0326118 p11 = -0.016995 p12 = -0.0326078 p13 = -0.225554 p14 = -0.079955 p15 = 0.11221 p16 = -0.144305 p17 = -1.26743 p18 = 1.64176 p19 = -0.266584 p20 = 0.164217 p21 = -0.138422 p22 = 0.123468 p23 = 0.14026 p24 = 0.187304 p25 = 1.34923 p26 = 0.114454 p27 = -0.0182087 p28 = -2.05103 p29 = -33.3866 p30 = -0.611063 p31 = -0.571772 p32 = -1.09768 p33 = -0.422479 p34 = -4.65132 p35 = 0.627548 p36 = -0.451501 p37 = 0.752208 p38 = 0.529175 p39 = 0.536299 p40 = 3.51348 p41 = 0.567271 p42 = 1.74542 p43 = 2.99381 p44 = 1.92451 p45 = 1.86581 p46 = 0.772117 p47 = 0.130748
+----------> Iteration 48
+            FVAL = -19743.1947864 Edm = 0.05544796493 Nfcn = 4888
+            Error matrix change = 0.0823242
+            Parameters :  p0 = 2.48391 p1 = 0.0152673 p2 = -0.00160258 p3 = 0.0676764 p4 = -0.154878 p5 = 0.0131156 p6 = -0.00152773 p7 = -0.247227 p8 = 0.267494 p9 = -0.0115138 p10 = 0.0311464 p11 = -0.017663 p12 = -0.0315684 p13 = -0.217309 p14 = -0.0752939 p15 = 0.112637 p16 = -0.143791 p17 = -1.26945 p18 = 1.63626 p19 = -0.264759 p20 = 0.160206 p21 = -0.13927 p22 = 0.122749 p23 = 0.138894 p24 = 0.181366 p25 = 1.36447 p26 = 0.11456 p27 = -0.0172096 p28 = -2.04442 p29 = -33.3698 p30 = -0.608199 p31 = -0.570049 p32 = -1.09511 p33 = -0.425612 p34 = -4.62593 p35 = 0.620478 p36 = -0.464073 p37 = 0.746896 p38 = 0.524297 p39 = 0.536681 p40 = 3.51354 p41 = 0.568692 p42 = 1.74448 p43 = 2.96622 p44 = 1.90706 p45 = 1.86486 p46 = 0.772102 p47 = 0.1307
+----------> Iteration 49
+            FVAL = -19743.360874 Edm = 0.047003599831 Nfcn = 4986
+            Error matrix change = 0.10007
+            Parameters :  p0 = 2.44242 p1 = 0.0152836 p2 = -0.00215026 p3 = 0.064005 p4 = -0.153402 p5 = 0.0132807 p6 = -0.00125179 p7 = -0.251567 p8 = 0.271668 p9 = -0.0141639 p10 = 0.0314813 p11 = -0.0211282 p12 = -0.0324598 p13 = -0.208499 p14 = -0.0760573 p15 = 0.112898 p16 = -0.140626 p17 = -1.27106 p18 = 1.62702 p19 = -0.271275 p20 = 0.158093 p21 = -0.138186 p22 = 0.12175 p23 = 0.136639 p24 = 0.175725 p25 = 1.39544 p26 = 0.115087 p27 = -0.0173219 p28 = -2.03211 p29 = -33.2899 p30 = -0.590803 p31 = -0.565306 p32 = -1.09461 p33 = -0.435807 p34 = -4.67168 p35 = 0.582392 p36 = -0.423066 p37 = 0.753585 p38 = 0.496715 p39 = 0.535835 p40 = 3.53204 p41 = 0.572582 p42 = 1.69032 p43 = 3.08461 p44 = 1.82353 p45 = 1.86655 p46 = 0.771956 p47 = 0.130794
+----------> Iteration 50
+            FVAL = -19743.4415821 Edm = 0.0143117229308 Nfcn = 5084
+            Error matrix change = 0.0904276
+            Parameters :  p0 = 2.47977 p1 = 0.0154193 p2 = -0.00294511 p3 = 0.0635758 p4 = -0.15296 p5 = 0.0114955 p6 = -0.00149368 p7 = -0.247956 p8 = 0.265132 p9 = -0.0151037 p10 = 0.0311564 p11 = -0.0235204 p12 = -0.0319643 p13 = -0.202355 p14 = -0.070736 p15 = 0.112451 p16 = -0.139898 p17 = -1.27168 p18 = 1.62538 p19 = -0.266622 p20 = 0.151812 p21 = -0.138832 p22 = 0.120461 p23 = 0.134902 p24 = 0.170128 p25 = 1.41177 p26 = 0.115151 p27 = -0.0172044 p28 = -2.02338 p29 = -33.322 p30 = -0.591801 p31 = -0.56365 p32 = -1.09352 p33 = -0.436678 p34 = -4.62276 p35 = 0.563558 p36 = -0.449702 p37 = 0.762602 p38 = 0.500678 p39 = 0.536766 p40 = 3.52053 p41 = 0.571962 p42 = 1.67314 p43 = 3.06664 p44 = 1.83064 p45 = 1.86793 p46 = 0.771639 p47 = 0.130623
+----------> Iteration 51
+            FVAL = -19743.4819726 Edm = 0.0235670585584 Nfcn = 5182
+            Error matrix change = 0.0858097
+            Parameters :  p0 = 2.49953 p1 = 0.0152109 p2 = -0.00284444 p3 = 0.0631106 p4 = -0.153021 p5 = 0.0113737 p6 = -0.00175709 p7 = -0.243916 p8 = 0.262991 p9 = -0.0144933 p10 = 0.031988 p11 = -0.0236163 p12 = -0.031705 p13 = -0.198098 p14 = -0.0676757 p15 = 0.111918 p16 = -0.139017 p17 = -1.26909 p18 = 1.6244 p19 = -0.262157 p20 = 0.149347 p21 = -0.139096 p22 = 0.120517 p23 = 0.134845 p24 = 0.165507 p25 = 1.41395 p26 = 0.115121 p27 = -0.0183636 p28 = -2.0194 p29 = -33.3343 p30 = -0.594136 p31 = -0.564101 p32 = -1.09385 p33 = -0.434911 p34 = -4.57541 p35 = 0.552949 p36 = -0.461739 p37 = 0.763523 p38 = 0.504914 p39 = 0.536908 p40 = 3.51052 p41 = 0.571386 p42 = 1.67235 p43 = 3.04142 p44 = 1.83968 p45 = 1.86884 p46 = 0.771696 p47 = 0.130948
+----------> Iteration 52
+            FVAL = -19743.6026506 Edm = 0.0569052364479 Nfcn = 5281
+            Error matrix change = 0.132491
+            Parameters :  p0 = 2.55147 p1 = 0.0150105 p2 = -0.0030371 p3 = 0.0597117 p4 = -0.153729 p5 = 0.0110638 p6 = 0.00110468 p7 = -0.237177 p8 = 0.25625 p9 = -0.0147496 p10 = 0.0332966 p11 = -0.0237783 p12 = -0.0335021 p13 = -0.196156 p14 = -0.0530862 p15 = 0.113985 p16 = -0.138558 p17 = -1.27126 p18 = 1.62255 p19 = -0.255047 p20 = 0.142625 p21 = -0.138079 p22 = 0.119906 p23 = 0.132818 p24 = 0.159164 p25 = 1.44504 p26 = 0.115402 p27 = -0.0153226 p28 = -2.00358 p29 = -33.3088 p30 = -0.585833 p31 = -0.559498 p32 = -1.09614 p33 = -0.437845 p34 = -4.50666 p35 = 0.473365 p36 = -0.47106 p37 = 0.793837 p38 = 0.496706 p39 = 0.538029 p40 = 3.49537 p41 = 0.57382 p42 = 1.5958 p43 = 3.07083 p44 = 1.81354 p45 = 1.87111 p46 = 0.771549 p47 = 0.130857
+----------> Iteration 53
+            FVAL = -19743.7149028 Edm = 0.0478193261021 Nfcn = 5379
+            Error matrix change = 0.114805
+            Parameters :  p0 = 2.58423 p1 = 0.0151742 p2 = -0.00324212 p3 = 0.0582766 p4 = -0.155072 p5 = 0.0111169 p6 = 0.00402784 p7 = -0.23133 p8 = 0.253731 p9 = -0.014707 p10 = 0.0325206 p11 = -0.0239534 p12 = -0.0345495 p13 = -0.195066 p14 = -0.0433095 p15 = 0.114393 p16 = -0.140097 p17 = -1.2665 p18 = 1.62571 p19 = -0.249353 p20 = 0.13997 p21 = -0.138313 p22 = 0.119515 p23 = 0.133128 p24 = 0.160393 p25 = 1.43977 p26 = 0.115517 p27 = -0.0149095 p28 = -1.9957 p29 = -33.2935 p30 = -0.583867 p31 = -0.560074 p32 = -1.09535 p33 = -0.432263 p34 = -4.43607 p35 = 0.446013 p36 = -0.475344 p37 = 0.804736 p38 = 0.493889 p39 = 0.538045 p40 = 3.48416 p41 = 0.574121 p42 = 1.57542 p43 = 3.08118 p44 = 1.80106 p45 = 1.8711 p46 = 0.771498 p47 = 0.130469
+----------> Iteration 54
+            FVAL = -19743.8386138 Edm = 0.0599430490522 Nfcn = 5477
+            Error matrix change = 0.129339
+            Parameters :  p0 = 2.59039 p1 = 0.0146584 p2 = -0.00349425 p3 = 0.0542551 p4 = -0.156457 p5 = 0.0130902 p6 = 0.00555497 p7 = -0.229078 p8 = 0.256861 p9 = -0.0155242 p10 = 0.0334075 p11 = -0.0268745 p12 = -0.0355971 p13 = -0.195306 p14 = -0.0382034 p15 = 0.112333 p16 = -0.140344 p17 = -1.26879 p18 = 1.62305 p19 = -0.250572 p20 = 0.139503 p21 = -0.139375 p22 = 0.11932 p23 = 0.132702 p24 = 0.161937 p25 = 1.44463 p26 = 0.116022 p27 = -0.0131549 p28 = -1.98171 p29 = -33.2001 p30 = -0.567248 p31 = -0.557352 p32 = -1.09488 p33 = -0.433968 p34 = -4.42432 p35 = 0.39946 p36 = -0.434305 p37 = 0.823377 p38 = 0.467487 p39 = 0.537203 p40 = 3.49013 p41 = 0.577911 p42 = 1.51019 p43 = 3.25134 p44 = 1.72251 p45 = 1.87147 p46 = 0.77142 p47 = 0.130528
+----------> Iteration 55
+            FVAL = -19744.0392311 Edm = 0.104598287317 Nfcn = 5575
+            Error matrix change = 0.126523
+            Parameters :  p0 = 2.65743 p1 = 0.0149067 p2 = -0.00390312 p3 = 0.0521782 p4 = -0.15718 p5 = 0.015339 p6 = 0.00368313 p7 = -0.214588 p8 = 0.253864 p9 = -0.0154347 p10 = 0.0389658 p11 = -0.0284555 p12 = -0.038845 p13 = -0.20531 p14 = -0.0377083 p15 = 0.109393 p16 = -0.140344 p17 = -1.26988 p18 = 1.62002 p19 = -0.240095 p20 = 0.140933 p21 = -0.138041 p22 = 0.118887 p23 = 0.133541 p24 = 0.167816 p25 = 1.45924 p26 = 0.116295 p27 = -0.0140012 p28 = -1.97356 p29 = -33.1818 p30 = -0.561699 p31 = -0.559617 p32 = -1.09074 p33 = -0.430988 p34 = -4.26959 p35 = 0.398496 p36 = -0.461083 p37 = 0.850872 p38 = 0.458089 p39 = 0.53684 p40 = 3.45861 p41 = 0.570705 p42 = 1.43096 p43 = 3.23047 p44 = 1.69229 p45 = 1.87645 p46 = 0.771378 p47 = 0.130857
+----------> Iteration 56
+            FVAL = -19744.2070821 Edm = 0.0456300977683 Nfcn = 5673
+            Error matrix change = 0.112227
+            Parameters :  p0 = 2.6272 p1 = 0.0158849 p2 = -0.0039114 p3 = 0.0519938 p4 = -0.157349 p5 = 0.0154479 p6 = 0.00111694 p7 = -0.218756 p8 = 0.260123 p9 = -0.0174099 p10 = 0.0399962 p11 = -0.0303611 p12 = -0.0404473 p13 = -0.216076 p14 = -0.0481115 p15 = 0.109933 p16 = -0.141721 p17 = -1.26955 p18 = 1.62297 p19 = -0.245234 p20 = 0.144899 p21 = -0.138278 p22 = 0.120124 p23 = 0.138163 p24 = 0.180605 p25 = 1.47664 p26 = 0.116639 p27 = -0.0159337 p28 = -1.97072 p29 = -33.0847 p30 = -0.54765 p31 = -0.560169 p32 = -1.08652 p33 = -0.434971 p34 = -4.28362 p35 = 0.4441 p36 = -0.443017 p37 = 0.853942 p38 = 0.432666 p39 = 0.535316 p40 = 3.46946 p41 = 0.568726 p42 = 1.38426 p43 = 3.28957 p44 = 1.61844 p45 = 1.87875 p46 = 0.771716 p47 = 0.130377
+----------> Iteration 57
+            FVAL = -19744.2863887 Edm = 0.0330398178576 Nfcn = 5771
+            Error matrix change = 0.0888039
+            Parameters :  p0 = 2.66327 p1 = 0.0159859 p2 = -0.00423564 p3 = 0.0515938 p4 = -0.158143 p5 = 0.0142864 p6 = 0.00116853 p7 = -0.214819 p8 = 0.254476 p9 = -0.0190251 p10 = 0.0410977 p11 = -0.0323056 p12 = -0.0429363 p13 = -0.22147 p14 = -0.0470653 p15 = 0.110982 p16 = -0.14357 p17 = -1.26709 p18 = 1.62622 p19 = -0.237366 p20 = 0.1407 p21 = -0.139057 p22 = 0.120152 p23 = 0.139612 p24 = 0.183184 p25 = 1.49877 p26 = 0.116804 p27 = -0.0155556 p28 = -1.9632 p29 = -33.069 p30 = -0.543305 p31 = -0.559359 p32 = -1.0827 p33 = -0.434908 p34 = -4.20126 p35 = 0.443045 p36 = -0.468399 p37 = 0.873055 p38 = 0.42723 p39 = 0.535535 p40 = 3.45137 p41 = 0.565746 p42 = 1.32636 p43 = 3.27259 p44 = 1.6 p45 = 1.88375 p46 = 0.771736 p47 = 0.130153
+----------> Iteration 58
+            FVAL = -19744.3429934 Edm = 0.0312507069056 Nfcn = 5869
+            Error matrix change = 0.0973857
+            Parameters :  p0 = 2.64746 p1 = 0.0159931 p2 = -0.00450122 p3 = 0.053144 p4 = -0.157392 p5 = 0.0146832 p6 = 0.000921571 p7 = -0.218475 p8 = 0.2553 p9 = -0.0189824 p10 = 0.0415304 p11 = -0.0313429 p12 = -0.0449073 p13 = -0.229896 p14 = -0.0571982 p15 = 0.111005 p16 = -0.144789 p17 = -1.26596 p18 = 1.62798 p19 = -0.237695 p20 = 0.144578 p21 = -0.139008 p22 = 0.120489 p23 = 0.140653 p24 = 0.185849 p25 = 1.49682 p26 = 0.11678 p27 = -0.0160321 p28 = -1.97 p29 = -33.0616 p30 = -0.542607 p31 = -0.561001 p32 = -1.0787 p33 = -0.435843 p34 = -4.20499 p35 = 0.490093 p36 = -0.475031 p37 = 0.868295 p38 = 0.424722 p39 = 0.535151 p40 = 3.45193 p41 = 0.562475 p42 = 1.32052 p43 = 3.24915 p44 = 1.59474 p45 = 1.88482 p46 = 0.771825 p47 = 0.130323
+----------> Iteration 59
+            FVAL = -19744.4275253 Edm = 0.0316345582366 Nfcn = 5968
+            Error matrix change = 0.129374
+            Parameters :  p0 = 2.66135 p1 = 0.015743 p2 = -0.00521742 p3 = 0.0516308 p4 = -0.159499 p5 = 0.0149083 p6 = 0.00318108 p7 = -0.21883 p8 = 0.252614 p9 = -0.0179959 p10 = 0.0455297 p11 = -0.0307574 p12 = -0.0464562 p13 = -0.234893 p14 = -0.0601512 p15 = 0.11127 p16 = -0.144005 p17 = -1.26467 p18 = 1.62819 p19 = -0.234112 p20 = 0.145562 p21 = -0.13805 p22 = 0.120679 p23 = 0.14098 p24 = 0.186166 p25 = 1.48601 p26 = 0.117046 p27 = -0.0149292 p28 = -1.96102 p29 = -32.9881 p30 = -0.531704 p31 = -0.560482 p32 = -1.07585 p33 = -0.438606 p34 = -4.17013 p35 = 0.473661 p36 = -0.457396 p37 = 0.886512 p38 = 0.409185 p39 = 0.535116 p40 = 3.4436 p41 = 0.562838 p42 = 1.25509 p43 = 3.33345 p44 = 1.54821 p45 = 1.88428 p46 = 0.771871 p47 = 0.130499
+----------> Iteration 60
+            FVAL = -19744.5019643 Edm = 0.027000479343 Nfcn = 6066
+            Error matrix change = 0.0997963
+            Parameters :  p0 = 2.69017 p1 = 0.0151186 p2 = -0.00510395 p3 = 0.0518825 p4 = -0.159971 p5 = 0.0133663 p6 = 0.00469214 p7 = -0.215335 p8 = 0.24763 p9 = -0.0176783 p10 = 0.0482573 p11 = -0.0307859 p12 = -0.0454621 p13 = -0.23566 p14 = -0.0595284 p15 = 0.112388 p16 = -0.142689 p17 = -1.25915 p18 = 1.63132 p19 = -0.23137 p20 = 0.14647 p21 = -0.137313 p22 = 0.121143 p23 = 0.141854 p24 = 0.185036 p25 = 1.48033 p26 = 0.117117 p27 = -0.0166536 p28 = -1.95683 p29 = -32.9651 p30 = -0.528988 p31 = -0.561345 p32 = -1.073 p33 = -0.438819 p34 = -4.10993 p35 = 0.482093 p36 = -0.460876 p37 = 0.896256 p38 = 0.405391 p39 = 0.535032 p40 = 3.42587 p41 = 0.562633 p42 = 1.23548 p43 = 3.34467 p44 = 1.53381 p45 = 1.88557 p46 = 0.771983 p47 = 0.13067
+----------> Iteration 61
+            FVAL = -19744.5995594 Edm = 0.0314301466128 Nfcn = 6164
+            Error matrix change = 0.0942023
+            Parameters :  p0 = 2.74095 p1 = 0.0148471 p2 = -0.00601327 p3 = 0.0515092 p4 = -0.160061 p5 = 0.0154341 p6 = 0.00637326 p7 = -0.208778 p8 = 0.24041 p9 = -0.0188235 p10 = 0.0489055 p11 = -0.0306724 p12 = -0.0422487 p13 = -0.237222 p14 = -0.0553297 p15 = 0.112428 p16 = -0.143068 p17 = -1.25336 p18 = 1.63175 p19 = -0.227429 p20 = 0.14704 p21 = -0.137435 p22 = 0.120011 p23 = 0.144271 p24 = 0.175218 p25 = 1.49008 p26 = 0.117359 p27 = -0.0179456 p28 = -1.94939 p29 = -32.9202 p30 = -0.520495 p31 = -0.560815 p32 = -1.07029 p33 = -0.442199 p34 = -4.02688 p35 = 0.463411 p36 = -0.452217 p37 = 0.919124 p38 = 0.393475 p39 = 0.535273 p40 = 3.39742 p41 = 0.564306 p42 = 1.17142 p43 = 3.37763 p44 = 1.49778 p45 = 1.88663 p46 = 0.771909 p47 = 0.130861
+----------> Iteration 62
+            FVAL = -19744.6700785 Edm = 0.0140180530854 Nfcn = 6262
+            Error matrix change = 0.0627398
+            Parameters :  p0 = 2.74955 p1 = 0.0143228 p2 = -0.0059485 p3 = 0.052875 p4 = -0.161198 p5 = 0.0140137 p6 = 0.00785388 p7 = -0.209002 p8 = 0.235889 p9 = -0.020385 p10 = 0.0486258 p11 = -0.0302736 p12 = -0.0395459 p13 = -0.236811 p14 = -0.0594857 p15 = 0.112275 p16 = -0.142675 p17 = -1.25267 p18 = 1.63159 p19 = -0.226785 p20 = 0.150547 p21 = -0.138601 p22 = 0.120445 p23 = 0.144626 p24 = 0.175513 p25 = 1.47452 p26 = 0.117295 p27 = -0.0193016 p28 = -1.95105 p29 = -32.9069 p30 = -0.519393 p31 = -0.560281 p32 = -1.06872 p33 = -0.447171 p34 = -4.0307 p35 = 0.466305 p36 = -0.447703 p37 = 0.916226 p38 = 0.394718 p39 = 0.535901 p40 = 3.38396 p41 = 0.566036 p42 = 1.13835 p43 = 3.36633 p44 = 1.50141 p45 = 1.88579 p46 = 0.772054 p47 = 0.130689
+----------> Iteration 63
+            FVAL = -19744.698029 Edm = 0.014494678275 Nfcn = 6360
+            Error matrix change = 0.0885835
+            Parameters :  p0 = 2.76199 p1 = 0.0142664 p2 = -0.0060545 p3 = 0.0520467 p4 = -0.161853 p5 = 0.0144214 p6 = 0.00878812 p7 = -0.207063 p8 = 0.232625 p9 = -0.0207165 p10 = 0.0487769 p11 = -0.0312647 p12 = -0.0384354 p13 = -0.237022 p14 = -0.055146 p15 = 0.112687 p16 = -0.142288 p17 = -1.25469 p18 = 1.63193 p19 = -0.2243 p20 = 0.149312 p21 = -0.138813 p22 = 0.120917 p23 = 0.145196 p24 = 0.173961 p25 = 1.47543 p26 = 0.117416 p27 = -0.0180048 p28 = -1.94861 p29 = -32.8766 p30 = -0.51394 p31 = -0.559061 p32 = -1.06743 p33 = -0.448885 p34 = -4.00313 p35 = 0.445338 p36 = -0.44195 p37 = 0.926678 p38 = 0.388185 p39 = 0.53623 p40 = 3.37278 p41 = 0.568537 p42 = 1.10364 p43 = 3.39129 p44 = 1.48106 p45 = 1.88541 p46 = 0.772057 p47 = 0.130636
+----------> Iteration 64
+            FVAL = -19744.7402987 Edm = 0.0291827248881 Nfcn = 6459
+            Error matrix change = 0.0984674
+            Parameters :  p0 = 2.71925 p1 = 0.014312 p2 = -0.00586838 p3 = 0.0524892 p4 = -0.162256 p5 = 0.0155571 p6 = 0.00837068 p7 = -0.211751 p8 = 0.238103 p9 = -0.0198963 p10 = 0.0480534 p11 = -0.0327189 p12 = -0.0373109 p13 = -0.237327 p14 = -0.0564196 p15 = 0.111985 p16 = -0.142527 p17 = -1.25745 p18 = 1.63238 p19 = -0.229214 p20 = 0.152919 p21 = -0.138476 p22 = 0.121549 p23 = 0.147657 p24 = 0.176299 p25 = 1.45609 p26 = 0.117487 p27 = -0.0175318 p28 = -1.9554 p29 = -32.8268 p30 = -0.506852 p31 = -0.559321 p32 = -1.06664 p33 = -0.450374 p34 = -4.05867 p35 = 0.447862 p36 = -0.409069 p37 = 0.919481 p38 = 0.378181 p39 = 0.5355 p40 = 3.37979 p41 = 0.573437 p42 = 1.1128 p43 = 3.45947 p44 = 1.45183 p45 = 1.88239 p46 = 0.772133 p47 = 0.130742
+----------> Iteration 65
+            FVAL = -19744.8332651 Edm = 0.0327113075963 Nfcn = 6557
+            Error matrix change = 0.0744617
+            Parameters :  p0 = 2.72832 p1 = 0.0141416 p2 = -0.00580603 p3 = 0.0546216 p4 = -0.162619 p5 = 0.0157019 p6 = 0.0088667 p7 = -0.210557 p8 = 0.23457 p9 = -0.0206517 p10 = 0.0484969 p11 = -0.0358907 p12 = -0.0379482 p13 = -0.236341 p14 = -0.0542973 p15 = 0.110305 p16 = -0.142675 p17 = -1.25708 p18 = 1.63234 p19 = -0.227094 p20 = 0.15608 p21 = -0.137217 p22 = 0.121311 p23 = 0.151345 p24 = 0.172453 p25 = 1.44024 p26 = 0.117551 p27 = -0.0197969 p28 = -1.96517 p29 = -32.7726 p30 = -0.49569 p31 = -0.560998 p32 = -1.06317 p33 = -0.453266 p34 = -4.02846 p35 = 0.440129 p36 = -0.404673 p37 = 0.926507 p38 = 0.370131 p39 = 0.534968 p40 = 3.34667 p41 = 0.57776 p42 = 1.07006 p43 = 3.47072 p44 = 1.41823 p45 = 1.8836 p46 = 0.772194 p47 = 0.131081
+----------> Iteration 66
+            FVAL = -19744.9250038 Edm = 0.046912367575 Nfcn = 6655
+            Error matrix change = 0.0645197
+            Parameters :  p0 = 2.7395 p1 = 0.0141052 p2 = -0.00543207 p3 = 0.0578969 p4 = -0.162332 p5 = 0.0169664 p6 = 0.00882873 p7 = -0.212143 p8 = 0.23173 p9 = -0.0202836 p10 = 0.0476379 p11 = -0.0359547 p12 = -0.0379577 p13 = -0.23962 p14 = -0.0524997 p15 = 0.109829 p16 = -0.142225 p17 = -1.26006 p18 = 1.63016 p19 = -0.226218 p20 = 0.159005 p21 = -0.137439 p22 = 0.121414 p23 = 0.154331 p24 = 0.167745 p25 = 1.41712 p26 = 0.117382 p27 = -0.0178478 p28 = -1.98888 p29 = -32.7338 p30 = -0.490145 p31 = -0.563179 p32 = -1.05919 p33 = -0.452605 p34 = -4.02885 p35 = 0.458595 p36 = -0.404642 p37 = 0.916259 p38 = 0.369141 p39 = 0.534729 p40 = 3.3185 p41 = 0.584328 p42 = 1.06227 p43 = 3.44359 p44 = 1.41002 p45 = 1.88206 p46 = 0.772158 p47 = 0.131101
+----------> Iteration 67
+            FVAL = -19745.1012158 Edm = 0.0535595947097 Nfcn = 6753
+            Error matrix change = 0.10482
+            Parameters :  p0 = 2.82463 p1 = 0.0150528 p2 = -0.00525142 p3 = 0.0612186 p4 = -0.163582 p5 = 0.0158484 p6 = 0.00793342 p7 = -0.202444 p8 = 0.226052 p9 = -0.0212396 p10 = 0.0496174 p11 = -0.0414892 p12 = -0.040599 p13 = -0.23318 p14 = -0.0394869 p15 = 0.111703 p16 = -0.141786 p17 = -1.25787 p18 = 1.63042 p19 = -0.217596 p20 = 0.154487 p21 = -0.137575 p22 = 0.121426 p23 = 0.153617 p24 = 0.165223 p25 = 1.38841 p26 = 0.117347 p27 = -0.019613 p28 = -2.00743 p29 = -32.661 p30 = -0.474548 p31 = -0.56494 p32 = -1.05355 p33 = -0.449986 p34 = -3.95293 p35 = 0.425705 p36 = -0.411101 p37 = 0.915475 p38 = 0.364531 p39 = 0.534277 p40 = 3.25069 p41 = 0.597325 p42 = 0.99159 p43 = 3.43822 p44 = 1.37747 p45 = 1.88455 p46 = 0.772085 p47 = 0.131157
+----------> Iteration 68
+            FVAL = -19745.2131442 Edm = 0.0404171366065 Nfcn = 6851
+            Error matrix change = 0.127244
+            Parameters :  p0 = 2.87147 p1 = 0.0149669 p2 = -0.0056794 p3 = 0.0626341 p4 = -0.163505 p5 = 0.0159238 p6 = 0.00879682 p7 = -0.199047 p8 = 0.220462 p9 = -0.0215355 p10 = 0.0499997 p11 = -0.0430599 p12 = -0.041501 p13 = -0.230517 p14 = -0.0330005 p15 = 0.114191 p16 = -0.141948 p17 = -1.25941 p18 = 1.62644 p19 = -0.215027 p20 = 0.14674 p21 = -0.137776 p22 = 0.119681 p23 = 0.151606 p24 = 0.159231 p25 = 1.38417 p26 = 0.117537 p27 = -0.0179622 p28 = -2.01435 p29 = -32.5746 p30 = -0.456838 p31 = -0.565354 p32 = -1.04789 p33 = -0.451558 p34 = -3.89934 p35 = 0.402338 p36 = -0.396958 p37 = 0.929038 p38 = 0.348658 p39 = 0.533922 p40 = 3.20907 p41 = 0.607108 p42 = 0.927957 p43 = 3.46393 p44 = 1.32249 p45 = 1.88492 p46 = 0.771853 p47 = 0.131167
+----------> Iteration 69
+            FVAL = -19745.302855 Edm = 0.0556978086501 Nfcn = 6949
+            Error matrix change = 0.102632
+            Parameters :  p0 = 2.92579 p1 = 0.0148349 p2 = -0.0058974 p3 = 0.0646974 p4 = -0.163636 p5 = 0.0156095 p6 = 0.0101877 p7 = -0.192478 p8 = 0.217549 p9 = -0.0221233 p10 = 0.0524068 p11 = -0.0425212 p12 = -0.043218 p13 = -0.24093 p14 = -0.0337705 p15 = 0.114078 p16 = -0.142868 p17 = -1.25777 p18 = 1.62511 p19 = -0.20581 p20 = 0.146431 p21 = -0.13761 p22 = 0.119606 p23 = 0.154033 p24 = 0.156858 p25 = 1.37413 p26 = 0.117739 p27 = -0.0187941 p28 = -2.02402 p29 = -32.4774 p30 = -0.436798 p31 = -0.566811 p32 = -1.03995 p33 = -0.452955 p34 = -3.83214 p35 = 0.38325 p36 = -0.386274 p37 = 0.952169 p38 = 0.331667 p39 = 0.533189 p40 = 3.15048 p41 = 0.614372 p42 = 0.820169 p43 = 3.49146 p44 = 1.26323 p45 = 1.88933 p46 = 0.77192 p47 = 0.13139
+----------> Iteration 70
+            FVAL = -19745.3863148 Edm = 0.0309438302402 Nfcn = 7047
+            Error matrix change = 0.0679038
+            Parameters :  p0 = 2.90296 p1 = 0.0153007 p2 = -0.00574222 p3 = 0.0678908 p4 = -0.162557 p5 = 0.0126745 p6 = 0.00931715 p7 = -0.196312 p8 = 0.219324 p9 = -0.0236812 p10 = 0.0502297 p11 = -0.0412713 p12 = -0.0426989 p13 = -0.241191 p14 = -0.0384901 p15 = 0.113814 p16 = -0.142637 p17 = -1.26419 p18 = 1.62463 p19 = -0.210218 p20 = 0.144647 p21 = -0.137198 p22 = 0.120437 p23 = 0.151227 p24 = 0.156282 p25 = 1.36889 p26 = 0.117646 p27 = -0.0194764 p28 = -2.03782 p29 = -32.4657 p30 = -0.431553 p31 = -0.568239 p32 = -1.03686 p33 = -0.453797 p34 = -3.8836 p35 = 0.399118 p36 = -0.382708 p37 = 0.938854 p38 = 0.331449 p39 = 0.532746 p40 = 3.13543 p41 = 0.620883 p42 = 0.835503 p43 = 3.47226 p44 = 1.25766 p45 = 1.88853 p46 = 0.771877 p47 = 0.13153
+----------> Iteration 71
+            FVAL = -19745.4392063 Edm = 0.0377831641671 Nfcn = 7145
+            Error matrix change = 0.0714758
+            Parameters :  p0 = 2.92388 p1 = 0.0156057 p2 = -0.00581333 p3 = 0.069115 p4 = -0.162578 p5 = 0.0107864 p6 = 0.0103461 p7 = -0.192536 p8 = 0.215929 p9 = -0.025233 p10 = 0.0496296 p11 = -0.0405885 p12 = -0.0419143 p13 = -0.239435 p14 = -0.0371506 p15 = 0.113537 p16 = -0.142581 p17 = -1.26732 p18 = 1.62276 p19 = -0.20693 p20 = 0.140896 p21 = -0.13686 p22 = 0.120251 p23 = 0.147924 p24 = 0.155854 p25 = 1.36371 p26 = 0.117664 p27 = -0.0197897 p28 = -2.04041 p29 = -32.4493 p30 = -0.425563 p31 = -0.569633 p32 = -1.03246 p33 = -0.451463 p34 = -3.84566 p35 = 0.383742 p36 = -0.390121 p37 = 0.938919 p38 = 0.330265 p39 = 0.532612 p40 = 3.10343 p41 = 0.62674 p42 = 0.827256 p43 = 3.44398 p44 = 1.24669 p45 = 1.88864 p46 = 0.771726 p47 = 0.131672
+----------> Iteration 72
+            FVAL = -19745.5721642 Edm = 0.096473580466 Nfcn = 7245
+            Error matrix change = 0.132535
+            Parameters :  p0 = 2.83065 p1 = 0.015841 p2 = -0.00571482 p3 = 0.0718839 p4 = -0.161402 p5 = 0.0119887 p6 = 0.0106694 p7 = -0.200165 p8 = 0.229781 p9 = -0.0237222 p10 = 0.0505407 p11 = -0.0359611 p12 = -0.0423176 p13 = -0.252113 p14 = -0.0593122 p15 = 0.112235 p16 = -0.14414 p17 = -1.27023 p18 = 1.61905 p19 = -0.210054 p20 = 0.148337 p21 = -0.136333 p22 = 0.1202 p23 = 0.146172 p24 = 0.169272 p25 = 1.33683 p26 = 0.117774 p27 = -0.0213349 p28 = -2.05697 p29 = -32.3556 p30 = -0.407356 p31 = -0.574858 p32 = -1.02104 p33 = -0.444313 p34 = -3.91829 p35 = 0.411221 p36 = -0.354044 p37 = 0.908007 p38 = 0.312602 p39 = 0.529898 p40 = 3.08061 p41 = 0.639695 p42 = 0.86222 p43 = 3.47714 p44 = 1.18675 p45 = 1.8864 p46 = 0.771767 p47 = 0.131949
+----------> Iteration 73
+            FVAL = -19745.8607488 Edm = 0.178404777964 Nfcn = 7344
+            Error matrix change = 0.144097
+            Parameters :  p0 = 2.73867 p1 = 0.0153674 p2 = -0.00521734 p3 = 0.0792491 p4 = -0.159416 p5 = 0.0116231 p6 = 0.0115502 p7 = -0.207499 p8 = 0.234417 p9 = -0.0209491 p10 = 0.0542263 p11 = -0.0298453 p12 = -0.0395424 p13 = -0.267301 p14 = -0.0896169 p15 = 0.114271 p16 = -0.146365 p17 = -1.27288 p18 = 1.61887 p19 = -0.213575 p20 = 0.158252 p21 = -0.137224 p22 = 0.120173 p23 = 0.140634 p24 = 0.18408 p25 = 1.31707 p26 = 0.117999 p27 = -0.0263995 p28 = -2.091 p29 = -32.1975 p30 = -0.367545 p31 = -0.58299 p32 = -0.99914 p33 = -0.432284 p34 = -3.95746 p35 = 0.414437 p36 = -0.306221 p37 = 0.867479 p38 = 0.284082 p39 = 0.526611 p40 = 2.97288 p41 = 0.673447 p42 = 0.830716 p43 = 3.52503 p44 = 1.0802 p45 = 1.88375 p46 = 0.771875 p47 = 0.131786
+----------> Iteration 74
+            FVAL = -19746.0942592 Edm = 0.108405393195 Nfcn = 7442
+            Error matrix change = 0.114247
+            Parameters :  p0 = 2.74932 p1 = 0.0149206 p2 = -0.00517548 p3 = 0.0772281 p4 = -0.157358 p5 = 0.0123088 p6 = 0.0130158 p7 = -0.203667 p8 = 0.23295 p9 = -0.0196045 p10 = 0.0577707 p11 = -0.0258867 p12 = -0.0388225 p13 = -0.269545 p14 = -0.0952128 p15 = 0.118234 p16 = -0.147191 p17 = -1.27577 p18 = 1.61659 p19 = -0.214754 p20 = 0.155045 p21 = -0.139223 p22 = 0.11912 p23 = 0.131235 p24 = 0.191806 p25 = 1.36346 p26 = 0.11857 p27 = -0.0261011 p28 = -2.08025 p29 = -32.1218 p30 = -0.341474 p31 = -0.583153 p32 = -0.9906 p33 = -0.423 p34 = -3.91369 p35 = 0.339838 p36 = -0.275756 p37 = 0.872189 p38 = 0.258311 p39 = 0.525486 p40 = 2.91948 p41 = 0.692177 p42 = 0.76514 p43 = 3.63772 p44 = 0.995361 p45 = 1.8834 p46 = 0.771665 p47 = 0.131081
+----------> Iteration 75
+            FVAL = -19746.38564 Edm = 0.177541838866 Nfcn = 7540
+            Error matrix change = 0.135906
+            Parameters :  p0 = 2.86084 p1 = 0.015708 p2 = -0.00447622 p3 = 0.0875539 p4 = -0.154236 p5 = 0.0117035 p6 = 0.0132469 p7 = -0.196041 p8 = 0.219257 p9 = -0.0205817 p10 = 0.0590576 p11 = -0.0201775 p12 = -0.0361329 p13 = -0.275366 p14 = -0.108285 p15 = 0.121343 p16 = -0.14989 p17 = -1.29457 p18 = 1.60813 p19 = -0.202517 p20 = 0.150475 p21 = -0.140142 p22 = 0.117443 p23 = 0.119272 p24 = 0.198727 p25 = 1.35451 p26 = 0.118875 p27 = -0.0276956 p28 = -2.13114 p29 = -31.937 p30 = -0.279822 p31 = -0.593736 p32 = -0.956117 p33 = -0.403467 p34 = -3.80849 p35 = 0.252076 p36 = -0.271349 p37 = 0.847652 p38 = 0.228922 p39 = 0.522587 p40 = 2.68886 p41 = 0.747513 p42 = 0.670015 p43 = 3.5808 p44 = 0.859979 p45 = 1.88288 p46 = 0.770979 p47 = 0.130878
+----------> Iteration 76
+            FVAL = -19746.6957246 Edm = 0.081379457219 Nfcn = 7638
+            Error matrix change = 0.0977267
+            Parameters :  p0 = 2.83865 p1 = 0.0151998 p2 = -0.00365084 p3 = 0.0870168 p4 = -0.151242 p5 = 0.0135985 p6 = 0.0136481 p7 = -0.201955 p8 = 0.218587 p9 = -0.0195632 p10 = 0.0577709 p11 = -0.0141134 p12 = -0.0304767 p13 = -0.272371 p14 = -0.128919 p15 = 0.120378 p16 = -0.152586 p17 = -1.31117 p18 = 1.604 p19 = -0.200858 p20 = 0.155959 p21 = -0.139266 p22 = 0.117841 p23 = 0.110578 p24 = 0.212183 p25 = 1.39171 p26 = 0.119322 p27 = -0.0292809 p28 = -2.13007 p29 = -31.9088 p30 = -0.251657 p31 = -0.598042 p32 = -0.938526 p33 = -0.387522 p34 = -3.83338 p35 = 0.15448 p36 = -0.259495 p37 = 0.818335 p38 = 0.213713 p39 = 0.520738 p40 = 2.605 p41 = 0.776919 p42 = 0.717322 p43 = 3.57733 p44 = 0.793714 p45 = 1.87806 p46 = 0.77088 p47 = 0.130878
+----------> Iteration 77
+            FVAL = -19746.7907327 Edm = 0.0332782890181 Nfcn = 7736
+            Error matrix change = 0.0970031
+            Parameters :  p0 = 2.88259 p1 = 0.0144616 p2 = -0.00333964 p3 = 0.0891056 p4 = -0.152043 p5 = 0.0132209 p6 = 0.0148155 p7 = -0.198763 p8 = 0.213578 p9 = -0.0180272 p10 = 0.0594459 p11 = -0.0124241 p12 = -0.0273167 p13 = -0.274846 p14 = -0.137839 p15 = 0.120302 p16 = -0.154294 p17 = -1.31232 p18 = 1.60611 p19 = -0.194853 p20 = 0.159483 p21 = -0.139045 p22 = 0.118199 p23 = 0.109461 p24 = 0.218512 p25 = 1.38282 p26 = 0.119472 p27 = -0.0324292 p28 = -2.13569 p29 = -31.8438 p30 = -0.232436 p31 = -0.602008 p32 = -0.928064 p33 = -0.380434 p34 = -3.78988 p35 = 0.109211 p36 = -0.248127 p37 = 0.819379 p38 = 0.205282 p39 = 0.519796 p40 = 2.52688 p41 = 0.793146 p42 = 0.674764 p43 = 3.57811 p44 = 0.753656 p45 = 1.87814 p46 = 0.771015 p47 = 0.130948
+----------> Iteration 78
+            FVAL = -19746.8425793 Edm = 0.031421233319 Nfcn = 7834
+            Error matrix change = 0.0916393
+            Parameters :  p0 = 2.91162 p1 = 0.0143438 p2 = -0.00296289 p3 = 0.0877214 p4 = -0.152099 p5 = 0.0134311 p6 = 0.0141979 p7 = -0.195111 p8 = 0.213245 p9 = -0.0176123 p10 = 0.0581687 p11 = -0.0123698 p12 = -0.0257533 p13 = -0.263584 p14 = -0.130286 p15 = 0.119567 p16 = -0.153119 p17 = -1.3099 p18 = 1.60643 p19 = -0.194594 p20 = 0.155469 p21 = -0.139184 p22 = 0.118215 p23 = 0.107798 p24 = 0.214476 p25 = 1.39175 p26 = 0.119333 p27 = -0.0332251 p28 = -2.1287 p29 = -31.9146 p30 = -0.242695 p31 = -0.602152 p32 = -0.932683 p33 = -0.375441 p34 = -3.78661 p35 = 0.0790023 p36 = -0.259384 p37 = 0.818647 p38 = 0.221414 p39 = 0.520136 p40 = 2.52744 p41 = 0.792073 p42 = 0.717626 p43 = 3.53431 p44 = 0.800073 p45 = 1.87883 p46 = 0.771037 p47 = 0.131018
+----------> Iteration 79
+            FVAL = -19746.9444534 Edm = 0.0609823024306 Nfcn = 7933
+            Error matrix change = 0.123432
+            Parameters :  p0 = 2.99811 p1 = 0.0145581 p2 = -0.00313576 p3 = 0.0845601 p4 = -0.154614 p5 = 0.0134533 p6 = 0.015465 p7 = -0.187995 p8 = 0.205595 p9 = -0.0190491 p10 = 0.0575239 p11 = -0.0126732 p12 = -0.0239122 p13 = -0.2567 p14 = -0.117867 p15 = 0.116922 p16 = -0.152273 p17 = -1.31142 p18 = 1.60832 p19 = -0.189216 p20 = 0.149904 p21 = -0.139845 p22 = 0.117966 p23 = 0.106488 p24 = 0.21341 p25 = 1.3998 p26 = 0.119603 p27 = -0.0293053 p28 = -2.11544 p29 = -31.8781 p30 = -0.230773 p31 = -0.602964 p32 = -0.925947 p33 = -0.367693 p34 = -3.68806 p35 = 0.0237692 p36 = -0.270791 p37 = 0.837106 p38 = 0.216875 p39 = 0.520512 p40 = 2.47382 p41 = 0.80005 p42 = 0.668806 p43 = 3.5256 p44 = 0.775738 p45 = 1.87879 p46 = 0.770865 p47 = 0.130694
+----------> Iteration 80
+            FVAL = -19747.1696297 Edm = 0.140426400511 Nfcn = 8031
+            Error matrix change = 0.157075
+            Parameters :  p0 = 3.07339 p1 = 0.0146002 p2 = -0.0036575 p3 = 0.080248 p4 = -0.157095 p5 = 0.0133074 p6 = 0.0158372 p7 = -0.182282 p8 = 0.201962 p9 = -0.0220789 p10 = 0.0588275 p11 = -0.014451 p12 = -0.0230512 p13 = -0.25252 p14 = -0.113508 p15 = 0.115798 p16 = -0.150472 p17 = -1.30316 p18 = 1.61707 p19 = -0.186161 p20 = 0.153766 p21 = -0.138646 p22 = 0.118644 p23 = 0.109048 p24 = 0.209696 p25 = 1.43535 p26 = 0.120559 p27 = -0.0268463 p28 = -2.09439 p29 = -31.6809 p30 = -0.180177 p31 = -0.606944 p32 = -0.900057 p33 = -0.354613 p34 = -3.53761 p35 = -0.0386919 p36 = -0.263709 p37 = 0.854219 p38 = 0.177742 p39 = 0.51861 p40 = 2.33166 p41 = 0.826524 p42 = 0.529067 p43 = 3.54504 p44 = 0.630473 p45 = 1.88283 p46 = 0.77113 p47 = 0.130783
+----------> Iteration 81
+            FVAL = -19747.5713704 Edm = 0.296881463083 Nfcn = 8129
+            Error matrix change = 0.143474
+            Parameters :  p0 = 3.0912 p1 = 0.0140116 p2 = -0.00501358 p3 = 0.0736088 p4 = -0.158415 p5 = 0.0163389 p6 = 0.0150218 p7 = -0.18244 p8 = 0.199792 p9 = -0.0232558 p10 = 0.0577114 p11 = -0.0146628 p12 = -0.0196539 p13 = -0.247804 p14 = -0.117095 p15 = 0.120573 p16 = -0.149155 p17 = -1.3022 p18 = 1.62633 p19 = -0.186167 p20 = 0.149486 p21 = -0.13858 p22 = 0.11896 p23 = 0.107657 p24 = 0.201211 p25 = 1.49519 p26 = 0.121799 p27 = -0.0189466 p28 = -2.07308 p29 = -31.4716 p30 = -0.109691 p31 = -0.610476 p32 = -0.863493 p33 = -0.34103 p34 = -3.4275 p35 = -0.143843 p36 = -0.234837 p37 = 0.879955 p38 = 0.134405 p39 = 0.516886 p40 = 2.12246 p41 = 0.868007 p42 = 0.313564 p43 = 3.57043 p44 = 0.467199 p45 = 1.88876 p46 = 0.771301 p47 = 0.130711
+----------> Iteration 82
+            FVAL = -19748.2007918 Edm = 0.391413129176 Nfcn = 8228
+            Error matrix change = 0.189986
+            Parameters :  p0 = 2.79437 p1 = 0.0143843 p2 = -0.00527159 p3 = 0.0770158 p4 = -0.153007 p5 = 0.0143007 p6 = 0.0160692 p7 = -0.203456 p8 = 0.228323 p9 = -0.0208252 p10 = 0.0581248 p11 = -0.000996993 p12 = -0.0188702 p13 = -0.287199 p14 = -0.184092 p15 = 0.122246 p16 = -0.154733 p17 = -1.31427 p18 = 1.63098 p19 = -0.217601 p20 = 0.175701 p21 = -0.139911 p22 = 0.120798 p23 = 0.0975757 p24 = 0.233292 p25 = 1.52471 p26 = 0.12261 p27 = -0.0153899 p28 = -2.10375 p29 = -31.2625 p30 = -0.0376994 p31 = -0.627366 p32 = -0.81015 p33 = -0.32092 p34 = -3.54684 p35 = -0.00932768 p36 = -0.177238 p37 = 0.817957 p38 = 0.0901072 p39 = 0.51114 p40 = 1.92579 p41 = 0.911456 p42 = 0.248486 p43 = 3.49505 p44 = 0.307169 p45 = 1.88993 p46 = 0.771518 p47 = 0.130531
+----------> Iteration 83
+            FVAL = -19748.648334 Edm = 0.387309582473 Nfcn = 8326
+            Error matrix change = 0.162352
+            Parameters :  p0 = 2.65225 p1 = 0.0146984 p2 = -0.00605685 p3 = 0.0718167 p4 = -0.154442 p5 = 0.0156109 p6 = 0.0161745 p7 = -0.211755 p8 = 0.242281 p9 = -0.0222084 p10 = 0.0578182 p11 = 0.00150867 p12 = -0.0164308 p13 = -0.292651 p14 = -0.207993 p15 = 0.122034 p16 = -0.153198 p17 = -1.30298 p18 = 1.63963 p19 = -0.234855 p20 = 0.195096 p21 = -0.139877 p22 = 0.122453 p23 = 0.101347 p24 = 0.235884 p25 = 1.52297 p26 = 0.123384 p27 = -0.00914249 p28 = -2.09166 p29 = -31.0589 p30 = 0.0137651 p31 = -0.64091 p32 = -0.766434 p33 = -0.30201 p34 = -3.47104 p35 = 0.0878786 p36 = -0.159159 p37 = 0.788573 p38 = 0.0621984 p39 = 0.507729 p40 = 1.74649 p41 = 0.937273 p42 = 0.166161 p43 = 3.37157 p44 = 0.194738 p45 = 1.89188 p46 = 0.771943 p47 = 0.130716
+----------> Iteration 84
+            FVAL = -19748.8779235 Edm = 0.229903632177 Nfcn = 8424
+            Error matrix change = 0.137665
+            Parameters :  p0 = 2.73233 p1 = 0.0147855 p2 = -0.00634699 p3 = 0.0695776 p4 = -0.156104 p5 = 0.0164418 p6 = 0.0161709 p7 = -0.204964 p8 = 0.235345 p9 = -0.024785 p10 = 0.0572283 p11 = 0.00175294 p12 = -0.0130032 p13 = -0.284723 p14 = -0.206915 p15 = 0.121366 p16 = -0.151425 p17 = -1.29501 p18 = 1.64537 p19 = -0.230925 p20 = 0.198793 p21 = -0.139592 p22 = 0.122827 p23 = 0.102535 p24 = 0.229227 p25 = 1.53244 p26 = 0.123871 p27 = -0.00647814 p28 = -2.08255 p29 = -30.9504 p30 = 0.0501452 p31 = -0.650086 p32 = -0.736151 p33 = -0.283423 p34 = -3.29731 p35 = 0.0716749 p36 = -0.181626 p37 = 0.785045 p38 = 0.0518545 p39 = 0.50639 p40 = 1.57014 p41 = 0.962485 p42 = 0.0858469 p43 = 3.22818 p44 = 0.130809 p45 = 1.89451 p46 = 0.772075 p47 = 0.130852
+----------> Iteration 85
+            FVAL = -19749.0852722 Edm = 0.0829902805169 Nfcn = 8522
+            Error matrix change = 0.124231
+            Parameters :  p0 = 2.69313 p1 = 0.015006 p2 = -0.00633619 p3 = 0.0742288 p4 = -0.153772 p5 = 0.0173496 p6 = 0.0141071 p7 = -0.209902 p8 = 0.237204 p9 = -0.0256765 p10 = 0.0557907 p11 = 0.00573172 p12 = -0.0101919 p13 = -0.289829 p14 = -0.228225 p15 = 0.122991 p16 = -0.151735 p17 = -1.29078 p18 = 1.64915 p19 = -0.231995 p20 = 0.208394 p21 = -0.139273 p22 = 0.123297 p23 = 0.102246 p24 = 0.230629 p25 = 1.52214 p26 = 0.124015 p27 = -0.00674284 p28 = -2.1066 p29 = -30.8609 p30 = 0.0861718 p31 = -0.664337 p32 = -0.698079 p33 = -0.262213 p34 = -3.22205 p35 = 0.137233 p36 = -0.197748 p37 = 0.735207 p38 = 0.0467624 p39 = 0.503737 p40 = 1.38437 p41 = 0.99422 p42 = 0.0786493 p43 = 3.01705 p44 = 0.0816419 p45 = 1.89425 p46 = 0.772247 p47 = 0.131095
+----------> Iteration 86
+            FVAL = -19749.271555 Edm = 0.114747431549 Nfcn = 8620
+            Error matrix change = 0.0906918
+            Parameters :  p0 = 2.65855 p1 = 0.0146878 p2 = -0.00696504 p3 = 0.0727927 p4 = -0.154292 p5 = 0.0187912 p6 = 0.0134098 p7 = -0.212946 p8 = 0.24248 p9 = -0.025966 p10 = 0.0561205 p11 = 0.00160868 p12 = -0.012107 p13 = -0.297479 p14 = -0.22778 p15 = 0.125943 p16 = -0.1509 p17 = -1.28678 p18 = 1.65674 p19 = -0.237567 p20 = 0.217359 p21 = -0.138516 p22 = 0.123918 p23 = 0.10612 p24 = 0.2314 p25 = 1.51939 p26 = 0.124686 p27 = -0.00457867 p28 = -2.10607 p29 = -30.6617 p30 = 0.131707 p31 = -0.670648 p32 = -0.670207 p33 = -0.25639 p34 = -3.14787 p35 = 0.161138 p36 = -0.154369 p37 = 0.732309 p38 = 0.0129409 p39 = 0.501504 p40 = 1.24548 p41 = 1.01833 p42 = -0.0537714 p43 = 3.03154 p44 = -0.0400435 p45 = 1.8958 p46 = 0.77258 p47 = 0.131258
+----------> Iteration 87
+            FVAL = -19749.6885026 Edm = 0.361296976103 Nfcn = 8719
+            Error matrix change = 0.117455
+            Parameters :  p0 = 2.5592 p1 = 0.0142251 p2 = -0.00768685 p3 = 0.0650574 p4 = -0.157334 p5 = 0.0196547 p6 = 0.0135062 p7 = -0.22276 p8 = 0.256987 p9 = -0.0241348 p10 = 0.0559599 p11 = -0.000923021 p12 = -0.0145503 p13 = -0.322684 p14 = -0.22165 p15 = 0.123852 p16 = -0.151391 p17 = -1.27794 p18 = 1.66889 p19 = -0.249675 p20 = 0.233234 p21 = -0.138571 p22 = 0.125072 p23 = 0.113651 p24 = 0.241739 p25 = 1.5278 p26 = 0.125464 p27 = -0.000697802 p28 = -2.06915 p29 = -30.6073 p30 = 0.162658 p31 = -0.681364 p32 = -0.638007 p33 = -0.23778 p34 = -3.0409 p35 = 0.240539 p36 = -0.130025 p37 = 0.723842 p38 = 0.00610852 p39 = 0.500188 p40 = 1.07648 p41 = 1.03535 p42 = -0.139436 p43 = 2.93399 p44 = -0.0738112 p45 = 1.89515 p46 = 0.772864 p47 = 0.13113
+----------> Iteration 88
+            FVAL = -19750.7040986 Edm = 0.489230513951 Nfcn = 8818
+            Error matrix change = 0.17514
+            Parameters :  p0 = 2.46152 p1 = 0.0127045 p2 = -0.0100606 p3 = 0.0536415 p4 = -0.156432 p5 = 0.0180552 p6 = 0.0208791 p7 = -0.237939 p8 = 0.269477 p9 = -0.0323154 p10 = 0.0612776 p11 = -0.00861603 p12 = -0.0228985 p13 = -0.375655 p14 = -0.214705 p15 = 0.120534 p16 = -0.153187 p17 = -1.29669 p18 = 1.64499 p19 = -0.253565 p20 = 0.252076 p21 = -0.140968 p22 = 0.123159 p23 = 0.110871 p24 = 0.252103 p25 = 1.62008 p26 = 0.128965 p27 = -0.00490354 p28 = -1.99139 p29 = -29.9103 p30 = 0.341933 p31 = -0.698728 p32 = -0.532218 p33 = -0.221806 p34 = -2.64359 p35 = 0.211924 p36 = 0.00596667 p37 = 0.702404 p38 = -0.140873 p39 = 0.493546 p40 = 0.55404 p41 = 1.13187 p42 = -0.625301 p43 = 3.07569 p44 = -0.594025 p45 = 1.88972 p46 = 0.772314 p47 = 0.130452
+----------> Iteration 89
+            FVAL = -19751.0690161 Edm = 0.669125721952 Nfcn = 8916
+            Error matrix change = 0.239445
+            Parameters :  p0 = 2.35834 p1 = 0.0118565 p2 = -0.0107273 p3 = 0.0467578 p4 = -0.154906 p5 = 0.0171672 p6 = 0.0214304 p7 = -0.251819 p8 = 0.280234 p9 = -0.0351058 p10 = 0.0599684 p11 = -0.0123805 p12 = -0.030051 p13 = -0.393795 p14 = -0.212185 p15 = 0.121363 p16 = -0.151223 p17 = -1.3038 p18 = 1.63837 p19 = -0.263454 p20 = 0.261779 p21 = -0.141331 p22 = 0.122194 p23 = 0.111916 p24 = 0.253535 p25 = 1.6823 p26 = 0.129752 p27 = -0.00345741 p28 = -1.9577 p29 = -29.8627 p30 = 0.367864 p31 = -0.702869 p32 = -0.503779 p33 = -0.220112 p34 = -2.56898 p35 = 0.292663 p36 = 0.0016012 p37 = 0.673923 p38 = -0.155365 p39 = 0.492811 p40 = 0.444323 p41 = 1.14259 p42 = -0.684264 p43 = 2.95193 p44 = -0.650298 p45 = 1.88952 p46 = 0.772171 p47 = 0.130111
+----------> Iteration 90
+            FVAL = -19751.2960867 Edm = 0.0830622835666 Nfcn = 9014
+            Error matrix change = 0.204582
+            Parameters :  p0 = 2.37532 p1 = 0.011514 p2 = -0.0101566 p3 = 0.0473115 p4 = -0.152978 p5 = 0.0158381 p6 = 0.0212417 p7 = -0.254529 p8 = 0.277419 p9 = -0.0356851 p10 = 0.058527 p11 = -0.0156715 p12 = -0.0351399 p13 = -0.394569 p14 = -0.198606 p15 = 0.122714 p16 = -0.149832 p17 = -1.31161 p18 = 1.62925 p19 = -0.259732 p20 = 0.257941 p21 = -0.141215 p22 = 0.120626 p23 = 0.111423 p24 = 0.249305 p25 = 1.69654 p26 = 0.129311 p27 = -0.00564496 p28 = -1.95704 p29 = -30.0166 p30 = 0.337125 p31 = -0.699777 p32 = -0.514888 p33 = -0.227312 p34 = -2.5768 p35 = 0.320004 p36 = -0.0386221 p37 = 0.660043 p38 = -0.125995 p39 = 0.494594 p40 = 0.494643 p41 = 1.12764 p42 = -0.606582 p43 = 2.84284 p44 = -0.553437 p45 = 1.88883 p46 = 0.771852 p47 = 0.130011
+----------> Iteration 91
+            FVAL = -19751.3800724 Edm = 0.0342276676897 Nfcn = 9112
+            Error matrix change = 0.138805
+            Parameters :  p0 = 2.36298 p1 = 0.011473 p2 = -0.0101175 p3 = 0.0459323 p4 = -0.151606 p5 = 0.0159945 p6 = 0.0207163 p7 = -0.259279 p8 = 0.280052 p9 = -0.0355181 p10 = 0.0583301 p11 = -0.0164212 p12 = -0.0374065 p13 = -0.405943 p14 = -0.197328 p15 = 0.123778 p16 = -0.150522 p17 = -1.31514 p18 = 1.62983 p19 = -0.25933 p20 = 0.259682 p21 = -0.141027 p22 = 0.119925 p23 = 0.110985 p24 = 0.253667 p25 = 1.73515 p26 = 0.129864 p27 = -0.00417738 p28 = -1.94996 p29 = -29.9172 p30 = 0.373523 p31 = -0.70712 p32 = -0.487116 p33 = -0.210301 p34 = -2.48295 p35 = 0.307926 p36 = -0.0368239 p37 = 0.646809 p38 = -0.141214 p39 = 0.492808 p40 = 0.34014 p41 = 1.15482 p42 = -0.673593 p43 = 2.76 p44 = -0.622667 p45 = 1.89001 p46 = 0.771764 p47 = 0.129918
+----------> Iteration 92
+            FVAL = -19751.3994662 Edm = 0.0179722446733 Nfcn = 9210
+            Error matrix change = 0.102094
+            Parameters :  p0 = 2.34415 p1 = 0.0116221 p2 = -0.0100766 p3 = 0.0467854 p4 = -0.151096 p5 = 0.015814 p6 = 0.0204224 p7 = -0.262122 p8 = 0.28186 p9 = -0.0353117 p10 = 0.058062 p11 = -0.016288 p12 = -0.0378231 p13 = -0.409649 p14 = -0.198479 p15 = 0.123933 p16 = -0.150827 p17 = -1.31659 p18 = 1.62893 p19 = -0.260414 p20 = 0.260528 p21 = -0.140995 p22 = 0.119813 p23 = 0.110994 p24 = 0.255139 p25 = 1.73458 p26 = 0.129879 p27 = -0.00466763 p28 = -1.95246 p29 = -29.9022 p30 = 0.377246 p31 = -0.708571 p32 = -0.483508 p33 = -0.2087 p34 = -2.48435 p35 = 0.31912 p36 = -0.031982 p37 = 0.63957 p38 = -0.142521 p39 = 0.49243 p40 = 0.321876 p41 = 1.15887 p42 = -0.673375 p43 = 2.74622 p44 = -0.628947 p45 = 1.88928 p46 = 0.771725 p47 = 0.129939
+----------> Iteration 93
+            FVAL = -19751.4131804 Edm = 0.0117713563334 Nfcn = 9308
+            Error matrix change = 0.0705213
+            Parameters :  p0 = 2.34329 p1 = 0.0116364 p2 = -0.0101654 p3 = 0.0462659 p4 = -0.151107 p5 = 0.015397 p6 = 0.020353 p7 = -0.263535 p8 = 0.281722 p9 = -0.0355468 p10 = 0.0575916 p11 = -0.0166429 p12 = -0.0379106 p13 = -0.409901 p14 = -0.194686 p15 = 0.123654 p16 = -0.150728 p17 = -1.31709 p18 = 1.62821 p19 = -0.260465 p20 = 0.259321 p21 = -0.141121 p22 = 0.119797 p23 = 0.111054 p24 = 0.253559 p25 = 1.74118 p26 = 0.129884 p27 = -0.00514057 p28 = -1.94757 p29 = -29.917 p30 = 0.373255 p31 = -0.707246 p32 = -0.486131 p33 = -0.211071 p34 = -2.4842 p35 = 0.316629 p36 = -0.0316542 p37 = 0.641893 p38 = -0.140775 p39 = 0.492794 p40 = 0.333245 p41 = 1.1569 p42 = -0.670705 p43 = 2.74951 p44 = -0.620855 p45 = 1.88856 p46 = 0.771685 p47 = 0.129919
+----------> Iteration 94
+            FVAL = -19751.4282638 Edm = 0.0140546198043 Nfcn = 9406
+            Error matrix change = 0.0609223
+            Parameters :  p0 = 2.33194 p1 = 0.0113524 p2 = -0.0099411 p3 = 0.0469035 p4 = -0.150136 p5 = 0.0152252 p6 = 0.0202991 p7 = -0.266027 p8 = 0.282195 p9 = -0.0352374 p10 = 0.0572078 p11 = -0.0146439 p12 = -0.0362793 p13 = -0.409445 p14 = -0.197393 p15 = 0.123882 p16 = -0.15089 p17 = -1.31931 p18 = 1.62659 p19 = -0.261464 p20 = 0.260307 p21 = -0.141455 p22 = 0.119804 p23 = 0.108146 p24 = 0.253538 p25 = 1.7449 p26 = 0.129879 p27 = -0.00615467 p28 = -1.95037 p29 = -29.9185 p30 = 0.374977 p31 = -0.708039 p32 = -0.484189 p33 = -0.209129 p34 = -2.49263 p35 = 0.304672 p36 = -0.0281646 p37 = 0.63242 p38 = -0.140185 p39 = 0.492473 p40 = 0.320278 p41 = 1.16298 p42 = -0.649618 p43 = 2.73869 p44 = -0.621843 p45 = 1.8866 p46 = 0.771619 p47 = 0.129909
+----------> Iteration 95
+            FVAL = -19751.4613269 Edm = 0.0224873727949 Nfcn = 9505
+            Error matrix change = 0.0748364
+            Parameters :  p0 = 2.31938 p1 = 0.0113949 p2 = -0.0095239 p3 = 0.0498612 p4 = -0.149724 p5 = 0.0144713 p6 = 0.0196793 p7 = -0.269983 p8 = 0.282865 p9 = -0.0344389 p10 = 0.056619 p11 = -0.0121472 p12 = -0.0337031 p13 = -0.405883 p14 = -0.205325 p15 = 0.125056 p16 = -0.151327 p17 = -1.32288 p18 = 1.62567 p19 = -0.263208 p20 = 0.262396 p21 = -0.141814 p22 = 0.119574 p23 = 0.103824 p24 = 0.255408 p25 = 1.72609 p26 = 0.129506 p27 = -0.00546986 p28 = -1.96754 p29 = -29.9523 p30 = 0.362578 p31 = -0.708161 p32 = -0.487792 p33 = -0.208328 p34 = -2.53157 p35 = 0.310245 p36 = -0.0411981 p37 = 0.617047 p38 = -0.128263 p39 = 0.492236 p40 = 0.34806 p41 = 1.16327 p42 = -0.583255 p43 = 2.70046 p44 = -0.582903 p45 = 1.88413 p46 = 0.771488 p47 = 0.129795
+----------> Iteration 96
+            FVAL = -19751.5169843 Edm = 0.0273604614068 Nfcn = 9603
+            Error matrix change = 0.0601181
+            Parameters :  p0 = 2.28118 p1 = 0.0119645 p2 = -0.00936103 p3 = 0.0523224 p4 = -0.149038 p5 = 0.0137615 p6 = 0.0198188 p7 = -0.277118 p8 = 0.288639 p9 = -0.0348121 p10 = 0.057515 p11 = -0.0124186 p12 = -0.0339385 p13 = -0.41238 p14 = -0.21614 p15 = 0.127384 p16 = -0.151655 p17 = -1.32812 p18 = 1.62222 p19 = -0.267765 p20 = 0.270573 p21 = -0.141593 p22 = 0.118656 p23 = 0.101341 p24 = 0.261322 p25 = 1.7076 p26 = 0.129368 p27 = -0.00655694 p28 = -1.98241 p29 = -29.935 p30 = 0.361889 p31 = -0.710619 p32 = -0.481586 p33 = -0.20853 p34 = -2.5187 p35 = 0.351331 p36 = -0.053854 p37 = 0.600893 p38 = -0.124985 p39 = 0.491035 p40 = 0.328314 p41 = 1.16801 p42 = -0.582806 p43 = 2.63642 p44 = -0.575032 p45 = 1.88332 p46 = 0.771332 p47 = 0.129778
+----------> Iteration 97
+            FVAL = -19751.5721108 Edm = 0.0219170104993 Nfcn = 9701
+            Error matrix change = 0.0458507
+            Parameters :  p0 = 2.25611 p1 = 0.0115431 p2 = -0.00963811 p3 = 0.0551789 p4 = -0.149017 p5 = 0.0133153 p6 = 0.0210894 p7 = -0.282531 p8 = 0.294444 p9 = -0.0351833 p10 = 0.0595027 p11 = -0.012805 p12 = -0.0343785 p13 = -0.423391 p14 = -0.223005 p15 = 0.128316 p16 = -0.153299 p17 = -1.32926 p18 = 1.62381 p19 = -0.268809 p20 = 0.277155 p21 = -0.141427 p22 = 0.118783 p23 = 0.102178 p24 = 0.265884 p25 = 1.68739 p26 = 0.129349 p27 = -0.00827825 p28 = -1.99805 p29 = -29.8936 p30 = 0.365821 p31 = -0.711043 p32 = -0.478327 p33 = -0.211961 p34 = -2.50232 p35 = 0.360965 p36 = -0.0486126 p37 = 0.602448 p38 = -0.129995 p39 = 0.490051 p40 = 0.311675 p41 = 1.17409 p42 = -0.629081 p43 = 2.64341 p44 = -0.590279 p45 = 1.88228 p46 = 0.771365 p47 = 0.129831
+----------> Iteration 98
+            FVAL = -19751.642354 Edm = 0.0356700258136 Nfcn = 9799
+            Error matrix change = 0.0549696
+            Parameters :  p0 = 2.21978 p1 = 0.0116747 p2 = -0.00963944 p3 = 0.0555416 p4 = -0.147805 p5 = 0.0133497 p6 = 0.0227001 p7 = -0.289071 p8 = 0.305446 p9 = -0.0369832 p10 = 0.0610297 p11 = -0.0130813 p12 = -0.0368551 p13 = -0.433184 p14 = -0.22386 p15 = 0.128037 p16 = -0.152868 p17 = -1.3288 p18 = 1.62396 p19 = -0.271167 p20 = 0.279417 p21 = -0.141702 p22 = 0.119285 p23 = 0.103013 p24 = 0.266486 p25 = 1.68457 p26 = 0.129493 p27 = -0.0084534 p28 = -2.00455 p29 = -29.8516 p30 = 0.372305 p31 = -0.710039 p32 = -0.474769 p33 = -0.216539 p34 = -2.46339 p35 = 0.355428 p36 = -0.0498869 p37 = 0.611355 p38 = -0.138832 p39 = 0.488605 p40 = 0.300725 p41 = 1.17893 p42 = -0.687216 p43 = 2.65841 p44 = -0.618841 p45 = 1.88315 p46 = 0.77133 p47 = 0.129792
+----------> Iteration 99
+            FVAL = -19751.794837 Edm = 0.145070541053 Nfcn = 9898
+            Error matrix change = 0.0883781
+            Parameters :  p0 = 2.11426 p1 = 0.0110206 p2 = -0.00950393 p3 = 0.0543482 p4 = -0.147161 p5 = 0.01419 p6 = 0.0257118 p7 = -0.308199 p8 = 0.331028 p9 = -0.0375989 p10 = 0.0658524 p11 = -0.0129368 p12 = -0.0341255 p13 = -0.44889 p14 = -0.238588 p15 = 0.128821 p16 = -0.153358 p17 = -1.32737 p18 = 1.6247 p19 = -0.279341 p20 = 0.297287 p21 = -0.142462 p22 = 0.11891 p23 = 0.0999909 p24 = 0.279419 p25 = 1.6779 p26 = 0.130108 p27 = -0.0083651 p28 = -2.00504 p29 = -29.6987 p30 = 0.401006 p31 = -0.713288 p32 = -0.444449 p33 = -0.2088 p34 = -2.29321 p35 = 0.309609 p36 = -0.0448584 p37 = 0.606965 p38 = -0.164707 p39 = 0.484166 p40 = 0.186478 p41 = 1.21149 p42 = -0.823853 p43 = 2.65303 p44 = -0.711399 p45 = 1.87682 p46 = 0.771352 p47 = 0.12955
+----------> Iteration 100
+            FVAL = -19751.8989545 Edm = 0.121065925764 Nfcn = 9996
+            Error matrix change = 0.0748721
+            Parameters :  p0 = 2.12132 p1 = 0.0107982 p2 = -0.00986877 p3 = 0.0526909 p4 = -0.14672 p5 = 0.0150129 p6 = 0.0263482 p7 = -0.31002 p8 = 0.334751 p9 = -0.0377938 p10 = 0.0664982 p11 = -0.0127223 p12 = -0.031668 p13 = -0.445017 p14 = -0.238172 p15 = 0.129121 p16 = -0.153379 p17 = -1.32721 p18 = 1.62593 p19 = -0.280873 p20 = 0.298821 p21 = -0.142403 p22 = 0.11854 p23 = 0.0986202 p24 = 0.278564 p25 = 1.69413 p26 = 0.130288 p27 = -0.00691618 p28 = -1.99798 p29 = -29.6906 p30 = 0.402877 p31 = -0.710504 p32 = -0.441596 p33 = -0.21034 p34 = -2.21415 p35 = 0.252591 p36 = -0.0578774 p37 = 0.626666 p38 = -0.168875 p39 = 0.483735 p40 = 0.176558 p41 = 1.21715 p42 = -0.877886 p43 = 2.66341 p44 = -0.724898 p45 = 1.87519 p46 = 0.771315 p47 = 0.129473
+----------> Iteration 101
+            FVAL = -19751.9948185 Edm = 0.0442678145682 Nfcn = 10095
+            Error matrix change = 0.0787337
+            Parameters :  p0 = 2.04707 p1 = 0.0103075 p2 = -0.010306 p3 = 0.0516649 p4 = -0.144862 p5 = 0.0152815 p6 = 0.027323 p7 = -0.325619 p8 = 0.350831 p9 = -0.0383644 p10 = 0.066709 p11 = -0.011611 p12 = -0.0293979 p13 = -0.452325 p14 = -0.246594 p15 = 0.13042 p16 = -0.154357 p17 = -1.33327 p18 = 1.62544 p19 = -0.291846 p20 = 0.311617 p21 = -0.142472 p22 = 0.117915 p23 = 0.0949945 p24 = 0.284153 p25 = 1.70895 p26 = 0.130489 p27 = -0.00570593 p28 = -1.99589 p29 = -29.6756 p30 = 0.405687 p31 = -0.709585 p32 = -0.429179 p33 = -0.211755 p34 = -2.11664 p35 = 0.22473 p36 = -0.0772366 p37 = 0.628415 p38 = -0.170529 p39 = 0.481886 p40 = 0.136953 p41 = 1.23219 p42 = -0.926952 p43 = 2.60251 p44 = -0.732848 p45 = 1.86974 p46 = 0.771119 p47 = 0.129262
+----------> Iteration 102
+            FVAL = -19752.0388029 Edm = 0.0182488563658 Nfcn = 10192
+            Error matrix change = 0.0617361
+            Parameters :  p0 = 2.01906 p1 = 0.0100027 p2 = -0.0100433 p3 = 0.050909 p4 = -0.145003 p5 = 0.0158067 p6 = 0.0282409 p7 = -0.331787 p8 = 0.35968 p9 = -0.0384614 p10 = 0.0671098 p11 = -0.0109499 p12 = -0.0268935 p13 = -0.451338 p14 = -0.250569 p15 = 0.129734 p16 = -0.154893 p17 = -1.33211 p18 = 1.62776 p19 = -0.29716 p20 = 0.319454 p21 = -0.142453 p22 = 0.118318 p23 = 0.094129 p24 = 0.288529 p25 = 1.70149 p26 = 0.130439 p27 = -0.00589436 p28 = -1.99422 p29 = -29.6942 p30 = 0.397371 p31 = -0.708696 p32 = -0.427389 p33 = -0.210809 p34 = -2.06153 p35 = 0.19485 p36 = -0.0930946 p37 = 0.634367 p38 = -0.163989 p39 = 0.480795 p40 = 0.140875 p41 = 1.23522 p42 = -0.93192 p43 = 2.57374 p44 = -0.711733 p45 = 1.86705 p46 = 0.771149 p47 = 0.129221
+----------> Iteration 103
+            FVAL = -19752.0782487 Edm = 0.0191312759194 Nfcn = 10290
+            Error matrix change = 0.0775426
+            Parameters :  p0 = 2.00178 p1 = 0.00979144 p2 = -0.00999952 p3 = 0.0503616 p4 = -0.144751 p5 = 0.0152121 p6 = 0.0292624 p7 = -0.337718 p8 = 0.363281 p9 = -0.040147 p10 = 0.0664916 p11 = -0.0111315 p12 = -0.0259876 p13 = -0.454014 p14 = -0.252598 p15 = 0.129345 p16 = -0.154351 p17 = -1.33346 p18 = 1.62806 p19 = -0.304289 p20 = 0.329063 p21 = -0.142761 p22 = 0.118657 p23 = 0.0939667 p24 = 0.288718 p25 = 1.70269 p26 = 0.13066 p27 = -0.00471575 p28 = -1.99339 p29 = -29.6384 p30 = 0.409497 p31 = -0.709312 p32 = -0.41349 p33 = -0.211416 p34 = -1.98838 p35 = 0.178587 p36 = -0.102916 p37 = 0.63664 p38 = -0.171932 p39 = 0.479675 p40 = 0.0869719 p41 = 1.2469 p42 = -0.993757 p43 = 2.53689 p44 = -0.74334 p45 = 1.86481 p46 = 0.771146 p47 = 0.129096
+----------> Iteration 104
+            FVAL = -19752.1258247 Edm = 0.0397306686752 Nfcn = 10389
+            Error matrix change = 0.119083
+            Parameters :  p0 = 1.9464 p1 = 0.00960374 p2 = -0.010478 p3 = 0.0494605 p4 = -0.143841 p5 = 0.0137842 p6 = 0.0298298 p7 = -0.350741 p8 = 0.374016 p9 = -0.0410187 p10 = 0.0662255 p11 = -0.0116682 p12 = -0.0266064 p13 = -0.46271 p14 = -0.254277 p15 = 0.129535 p16 = -0.153408 p17 = -1.33375 p18 = 1.62677 p19 = -0.31694 p20 = 0.341505 p21 = -0.143038 p22 = 0.118406 p23 = 0.0944109 p24 = 0.289519 p25 = 1.69953 p26 = 0.130857 p27 = -0.00373724 p28 = -1.99248 p29 = -29.5909 p30 = 0.415389 p31 = -0.70799 p32 = -0.402324 p33 = -0.214415 p34 = -1.92686 p35 = 0.154475 p36 = -0.105205 p37 = 0.637472 p38 = -0.178776 p39 = 0.478016 p40 = 0.057655 p41 = 1.25932 p42 = -1.04328 p43 = 2.53421 p44 = -0.766238 p45 = 1.85928 p46 = 0.771139 p47 = 0.128971
+----------> Iteration 105
+            FVAL = -19752.1596567 Edm = 0.0311986137721 Nfcn = 10487
+            Error matrix change = 0.144808
+            Parameters :  p0 = 1.95549 p1 = 0.00970831 p2 = -0.0105176 p3 = 0.0492625 p4 = -0.144184 p5 = 0.0127619 p6 = 0.0286076 p7 = -0.349689 p8 = 0.370084 p9 = -0.0402788 p10 = 0.0646851 p11 = -0.0121241 p12 = -0.0281367 p13 = -0.461713 p14 = -0.249507 p15 = 0.129109 p16 = -0.152571 p17 = -1.33177 p18 = 1.62564 p19 = -0.320084 p20 = 0.340328 p21 = -0.142883 p22 = 0.118448 p23 = 0.0970999 p24 = 0.285286 p25 = 1.69297 p26 = 0.130706 p27 = -0.00357143 p28 = -1.99016 p29 = -29.6227 p30 = 0.40684 p31 = -0.706544 p32 = -0.408156 p33 = -0.217254 p34 = -1.97459 p35 = 0.163324 p36 = -0.100324 p37 = 0.634671 p38 = -0.171976 p39 = 0.478773 p40 = 0.0881338 p41 = 1.25316 p42 = -1.00286 p43 = 2.5452 p44 = -0.740608 p45 = 1.85834 p46 = 0.77122 p47 = 0.129097
+----------> Iteration 106
+            FVAL = -19752.213195 Edm = 0.0318802736786 Nfcn = 10586
+            Error matrix change = 0.117532
+            Parameters :  p0 = 1.90468 p1 = 0.00949117 p2 = -0.0104596 p3 = 0.048455 p4 = -0.143592 p5 = 0.0118967 p6 = 0.0278766 p7 = -0.360933 p8 = 0.379791 p9 = -0.0398451 p10 = 0.0645136 p11 = -0.0123444 p12 = -0.0310543 p13 = -0.477171 p14 = -0.256256 p15 = 0.129301 p16 = -0.152017 p17 = -1.33061 p18 = 1.62324 p19 = -0.333896 p20 = 0.351824 p21 = -0.142784 p22 = 0.118665 p23 = 0.101244 p24 = 0.286638 p25 = 1.68834 p26 = 0.130982 p27 = -0.00329448 p28 = -1.98555 p29 = -29.5536 p30 = 0.420561 p31 = -0.707538 p32 = -0.390263 p33 = -0.219733 p34 = -1.93327 p35 = 0.178171 p36 = -0.0932994 p37 = 0.625779 p38 = -0.181896 p39 = 0.476754 p40 = 0.0286116 p41 = 1.2669 p42 = -1.05365 p43 = 2.5091 p44 = -0.775931 p45 = 1.85506 p46 = 0.771354 p47 = 0.129292
+----------> Iteration 107
+            FVAL = -19752.2712402 Edm = 0.0290203884507 Nfcn = 10684
+            Error matrix change = 0.0718795
+            Parameters :  p0 = 1.87065 p1 = 0.0098644 p2 = -0.0106242 p3 = 0.0490019 p4 = -0.142052 p5 = 0.0125442 p6 = 0.0254155 p7 = -0.368578 p8 = 0.39101 p9 = -0.0384915 p10 = 0.0646585 p11 = -0.00907535 p12 = -0.0332224 p13 = -0.487787 p14 = -0.274994 p15 = 0.12962 p16 = -0.153091 p17 = -1.33164 p18 = 1.62147 p19 = -0.34494 p20 = 0.357524 p21 = -0.142814 p22 = 0.119162 p23 = 0.101067 p24 = 0.295777 p25 = 1.69375 p26 = 0.13106 p27 = -0.00497059 p28 = -1.98651 p29 = -29.5461 p30 = 0.423257 p31 = -0.708014 p32 = -0.380624 p33 = -0.217211 p34 = -1.92904 p35 = 0.160142 p36 = -0.106007 p37 = 0.615488 p38 = -0.184119 p39 = 0.474304 p40 = 0.0141413 p41 = 1.27616 p42 = -1.05151 p43 = 2.4786 p44 = -0.78668 p45 = 1.85244 p46 = 0.771384 p47 = 0.129265
+----------> Iteration 108
+            FVAL = -19752.3144768 Edm = 0.0123870972501 Nfcn = 10782
+            Error matrix change = 0.0460707
+            Parameters :  p0 = 1.84135 p1 = 0.00993099 p2 = -0.0104919 p3 = 0.0480784 p4 = -0.141304 p5 = 0.0149232 p6 = 0.0238143 p7 = -0.373934 p8 = 0.402213 p9 = -0.0373183 p10 = 0.0635175 p11 = -0.00667123 p12 = -0.0330011 p13 = -0.489126 p14 = -0.281406 p15 = 0.129663 p16 = -0.153052 p17 = -1.3315 p18 = 1.61981 p19 = -0.355722 p20 = 0.36126 p21 = -0.142975 p22 = 0.119505 p23 = 0.101713 p24 = 0.298382 p25 = 1.69208 p26 = 0.131058 p27 = -0.00446118 p28 = -1.98684 p29 = -29.552 p30 = 0.418898 p31 = -0.706666 p32 = -0.378128 p33 = -0.216544 p34 = -1.90882 p35 = 0.119665 p36 = -0.107801 p37 = 0.614441 p38 = -0.182052 p39 = 0.47267 p40 = 0.0184353 p41 = 1.28421 p42 = -1.03967 p43 = 2.47841 p44 = -0.779484 p45 = 1.8465 p46 = 0.771421 p47 = 0.129254
+----------> Iteration 109
+            FVAL = -19752.3294329 Edm = 0.00615260253616 Nfcn = 10880
+            Error matrix change = 0.0376952
+            Parameters :  p0 = 1.82684 p1 = 0.0100048 p2 = -0.0105289 p3 = 0.0486682 p4 = -0.140829 p5 = 0.0165466 p6 = 0.0234124 p7 = -0.376254 p8 = 0.409367 p9 = -0.0373649 p10 = 0.0638417 p11 = -0.00603218 p12 = -0.034202 p13 = -0.49256 p14 = -0.285053 p15 = 0.129468 p16 = -0.152822 p17 = -1.33007 p18 = 1.6192 p19 = -0.360802 p20 = 0.36468 p21 = -0.142869 p22 = 0.119453 p23 = 0.102173 p24 = 0.299891 p25 = 1.68322 p26 = 0.131 p27 = -0.00474153 p28 = -1.99345 p29 = -29.543 p30 = 0.416253 p31 = -0.706085 p32 = -0.376284 p33 = -0.218054 p34 = -1.89662 p35 = 0.116042 p36 = -0.109088 p37 = 0.616127 p38 = -0.181803 p39 = 0.471422 p40 = 0.0217241 p41 = 1.2863 p42 = -1.04839 p43 = 2.47272 p44 = -0.777152 p45 = 1.84571 p46 = 0.771483 p47 = 0.129372
+----------> Iteration 110
+            FVAL = -19752.3352349 Edm = 0.00437180985628 Nfcn = 10978
+            Error matrix change = 0.0475672
+            Parameters :  p0 = 1.81145 p1 = 0.0100618 p2 = -0.0103735 p3 = 0.0491891 p4 = -0.140508 p5 = 0.0168929 p6 = 0.0233532 p7 = -0.379848 p8 = 0.414235 p9 = -0.0372686 p10 = 0.0634794 p11 = -0.00565067 p12 = -0.0343368 p13 = -0.494305 p14 = -0.285954 p15 = 0.129311 p16 = -0.15287 p17 = -1.33054 p18 = 1.61841 p19 = -0.364424 p20 = 0.367842 p21 = -0.142958 p22 = 0.119306 p23 = 0.101977 p24 = 0.30114 p25 = 1.67522 p26 = 0.13091 p27 = -0.00478278 p28 = -1.99758 p29 = -29.5474 p30 = 0.412403 p31 = -0.705685 p32 = -0.374711 p33 = -0.218122 p34 = -1.8923 p35 = 0.110105 p36 = -0.115218 p37 = 0.611329 p38 = -0.177941 p39 = 0.470753 p40 = 0.0227268 p41 = 1.28935 p42 = -1.03849 p43 = 2.4524 p44 = -0.765034 p45 = 1.8433 p46 = 0.771468 p47 = 0.129342
+----------> Iteration 111
+            FVAL = -19752.3379603 Edm = 0.00189262231492 Nfcn = 11076
+            Error matrix change = 0.0650807
+            Parameters :  p0 = 1.81463 p1 = 0.0100803 p2 = -0.0103241 p3 = 0.0491257 p4 = -0.140625 p5 = 0.0172714 p6 = 0.0234551 p7 = -0.379094 p8 = 0.41435 p9 = -0.0371251 p10 = 0.0634658 p11 = -0.00597631 p12 = -0.0346062 p13 = -0.494063 p14 = -0.283639 p15 = 0.129015 p16 = -0.152892 p17 = -1.3303 p18 = 1.61824 p19 = -0.363594 p20 = 0.367347 p21 = -0.142968 p22 = 0.119278 p23 = 0.102394 p24 = 0.300888 p25 = 1.6729 p26 = 0.13088 p27 = -0.00490338 p28 = -1.9976 p29 = -29.5512 p30 = 0.410876 p31 = -0.705642 p32 = -0.37598 p33 = -0.217872 p34 = -1.89569 p35 = 0.110652 p36 = -0.114325 p37 = 0.611022 p38 = -0.176834 p39 = 0.470793 p40 = 0.0271712 p41 = 1.28832 p42 = -1.0327 p43 = 2.45561 p44 = -0.760973 p45 = 1.84296 p46 = 0.771466 p47 = 0.129337
+----------> Iteration 112
+            FVAL = -19752.3401575 Edm = 0.00145294436922 Nfcn = 11174
+            Error matrix change = 0.0555148
+            Parameters :  p0 = 1.8048 p1 = 0.0100076 p2 = -0.010366 p3 = 0.0487624 p4 = -0.140529 p5 = 0.0176608 p6 = 0.0237872 p7 = -0.381449 p8 = 0.417687 p9 = -0.0369253 p10 = 0.0637113 p11 = -0.0064134 p12 = -0.0350413 p13 = -0.496621 p14 = -0.282425 p15 = 0.128821 p16 = -0.152824 p17 = -1.32987 p18 = 1.61777 p19 = -0.365603 p20 = 0.369963 p21 = -0.142987 p22 = 0.119363 p23 = 0.103462 p24 = 0.301002 p25 = 1.66977 p26 = 0.130908 p27 = -0.00505095 p28 = -1.99683 p29 = -29.5425 p30 = 0.410683 p31 = -0.705235 p32 = -0.374999 p33 = -0.218902 p34 = -1.88162 p35 = 0.106009 p36 = -0.111981 p37 = 0.612779 p38 = -0.178164 p39 = 0.470285 p40 = 0.0262208 p41 = 1.28978 p42 = -1.04271 p43 = 2.4636 p44 = -0.764273 p45 = 1.84132 p46 = 0.77148 p47 = 0.129347
+----------> Iteration 113
+            FVAL = -19752.3401575 Edm = 0.0171709548423 Nfcn = 12499
+            Error matrix change = 1
+            Parameters :  p0 = 1.8048 p1 = 0.0100076 p2 = -0.010366 p3 = 0.0487624 p4 = -0.140529 p5 = 0.0176608 p6 = 0.0237872 p7 = -0.381449 p8 = 0.417687 p9 = -0.0369253 p10 = 0.0637113 p11 = -0.0064134 p12 = -0.0350413 p13 = -0.496621 p14 = -0.282425 p15 = 0.128821 p16 = -0.152824 p17 = -1.32987 p18 = 1.61777 p19 = -0.365603 p20 = 0.369963 p21 = -0.142987 p22 = 0.119363 p23 = 0.103462 p24 = 0.301002 p25 = 1.66977 p26 = 0.130908 p27 = -0.00505095 p28 = -1.99683 p29 = -29.5425 p30 = 0.410683 p31 = -0.705235 p32 = -0.374999 p33 = -0.218902 p34 = -1.88162 p35 = 0.106009 p36 = -0.111981 p37 = 0.612779 p38 = -0.178164 p39 = 0.470285 p40 = 0.0262208 p41 = 1.28978 p42 = -1.04271 p43 = 2.4636 p44 = -0.764273 p45 = 1.84132 p46 = 0.77148 p47 = 0.129347
+----------> Iteration 114
+            FVAL = -19752.3904183 Edm = 0.018515108579 Nfcn = 12597
+            Error matrix change = 0.725461
+            Parameters :  p0 = 1.77896 p1 = 0.00956834 p2 = -0.0104489 p3 = 0.047579 p4 = -0.139806 p5 = 0.015571 p6 = 0.0269676 p7 = -0.395515 p8 = 0.427449 p9 = -0.0386564 p10 = 0.0650573 p11 = -0.00690674 p12 = -0.0324458 p13 = -0.50127 p14 = -0.289272 p15 = 0.130006 p16 = -0.152993 p17 = -1.33045 p18 = 1.62159 p19 = -0.366326 p20 = 0.383035 p21 = -0.143116 p22 = 0.119239 p23 = 0.100789 p24 = 0.30379 p25 = 1.69044 p26 = 0.130538 p27 = -0.00409171 p28 = -1.98509 p29 = -29.6662 p30 = 0.412227 p31 = -0.701958 p32 = -0.372341 p33 = -0.218334 p34 = -1.92137 p35 = 0.185074 p36 = -0.103217 p37 = 0.608572 p38 = -0.178698 p39 = 0.462615 p40 = 0.0265425 p41 = 1.28634 p42 = -1.06839 p43 = 2.43551 p44 = -0.761657 p45 = 1.81686 p46 = 0.771449 p47 = 0.129221
+----------> Iteration 115
+            FVAL = -19752.4697579 Edm = 0.0376750954392 Nfcn = 12696
+            Error matrix change = 0.590954
+            Parameters :  p0 = 1.7111 p1 = 0.00960133 p2 = -0.0106723 p3 = 0.0454751 p4 = -0.138465 p5 = 0.0152896 p6 = 0.0255188 p7 = -0.415285 p8 = 0.448871 p9 = -0.0392857 p10 = 0.0635414 p11 = -0.0052995 p12 = -0.0357763 p13 = -0.516983 p14 = -0.303836 p15 = 0.129647 p16 = -0.152141 p17 = -1.32984 p18 = 1.6207 p19 = -0.388916 p20 = 0.402684 p21 = -0.143228 p22 = 0.119536 p23 = 0.101876 p24 = 0.310668 p25 = 1.7037 p26 = 0.129341 p27 = -0.00350666 p28 = -1.96556 p29 = -29.9661 p30 = 0.413915 p31 = -0.689276 p32 = -0.36162 p33 = -0.214813 p34 = -1.96849 p35 = 0.285016 p36 = -0.0912279 p37 = 0.60197 p38 = -0.179862 p39 = 0.442806 p40 = 0.0193869 p41 = 1.27084 p42 = -1.09519 p43 = 2.37201 p44 = -0.761586 p45 = 1.75341 p46 = 0.771559 p47 = 0.129232
+----------> Iteration 116
+            FVAL = -19752.554815 Edm = 0.0568347162754 Nfcn = 12794
+            Error matrix change = 0.431647
+            Parameters :  p0 = 1.70339 p1 = 0.0101236 p2 = -0.0107751 p3 = 0.0462088 p4 = -0.138516 p5 = 0.0146347 p6 = 0.0227968 p7 = -0.417229 p8 = 0.451657 p9 = -0.0382316 p10 = 0.0611898 p11 = -0.00233621 p12 = -0.0393505 p13 = -0.523173 p14 = -0.314672 p15 = 0.128801 p16 = -0.151952 p17 = -1.32767 p18 = 1.61601 p19 = -0.399986 p20 = 0.405731 p21 = -0.143221 p22 = 0.119803 p23 = 0.10447 p24 = 0.31385 p25 = 1.69029 p26 = 0.127749 p27 = -0.00449219 p28 = -1.95889 p29 = -30.3177 p30 = 0.415925 p31 = -0.668525 p32 = -0.355357 p33 = -0.205798 p34 = -1.94222 p35 = 0.303246 p36 = -0.0958014 p37 = 0.615701 p38 = -0.179386 p39 = 0.419614 p40 = -0.00304426 p41 = 1.23813 p42 = -1.12943 p43 = 2.30869 p44 = -0.765486 p45 = 1.67626 p46 = 0.771678 p47 = 0.12944
+----------> Iteration 117
+            FVAL = -19752.6654714 Edm = 0.0808558300724 Nfcn = 12894
+            Error matrix change = 0.390519
+            Parameters :  p0 = 1.6301 p1 = 0.0101028 p2 = -0.0107786 p3 = 0.0473322 p4 = -0.137382 p5 = 0.0127843 p6 = 0.0247736 p7 = -0.441717 p8 = 0.478056 p9 = -0.0383784 p10 = 0.0608013 p11 = 0.000628888 p12 = -0.0375576 p13 = -0.532873 p14 = -0.334902 p15 = 0.129285 p16 = -0.152498 p17 = -1.32675 p18 = 1.6153 p19 = -0.42015 p20 = 0.426284 p21 = -0.14333 p22 = 0.120018 p23 = 0.103929 p24 = 0.322369 p25 = 1.66908 p26 = 0.125789 p27 = -0.00513902 p28 = -1.9572 p29 = -30.7556 p30 = 0.417522 p31 = -0.637494 p32 = -0.345714 p33 = -0.193857 p34 = -1.85514 p35 = 0.32056 p36 = -0.100292 p37 = 0.631408 p38 = -0.179062 p39 = 0.390859 p40 = -0.0436665 p41 = 1.18345 p42 = -1.20219 p43 = 2.2102 p44 = -0.770046 p45 = 1.57624 p46 = 0.771741 p47 = 0.129488
+----------> Iteration 118
+            FVAL = -19752.7683371 Edm = 0.0510178247282 Nfcn = 12993
+            Error matrix change = 0.323417
+            Parameters :  p0 = 1.60085 p1 = 0.00996104 p2 = -0.0107514 p3 = 0.0504333 p4 = -0.137135 p5 = 0.00898609 p6 = 0.0299735 p7 = -0.457171 p8 = 0.491086 p9 = -0.0391373 p10 = 0.0617265 p11 = 0.00315008 p12 = -0.0311318 p13 = -0.530175 p14 = -0.350563 p15 = 0.130707 p16 = -0.15391 p17 = -1.32594 p18 = 1.61646 p19 = -0.425015 p20 = 0.43584 p21 = -0.143451 p22 = 0.119917 p23 = 0.100592 p24 = 0.326526 p25 = 1.63998 p26 = 0.123874 p27 = -0.00644045 p28 = -1.96634 p29 = -31.1875 p30 = 0.420923 p31 = -0.596883 p32 = -0.342744 p33 = -0.175952 p34 = -1.6739 p35 = 0.292259 p36 = -0.121411 p37 = 0.669355 p38 = -0.176792 p39 = 0.361528 p40 = -0.109076 p41 = 1.09379 p42 = -1.30526 p43 = 2.08955 p44 = -0.775679 p45 = 1.46764 p46 = 0.771699 p47 = 0.129526
+----------> Iteration 119
+            FVAL = -19752.8248976 Edm = 0.0325402733458 Nfcn = 13091
+            Error matrix change = 0.202457
+            Parameters :  p0 = 1.62548 p1 = 0.00998141 p2 = -0.0109076 p3 = 0.0501815 p4 = -0.137575 p5 = 0.00699984 p6 = 0.0315778 p7 = -0.453103 p8 = 0.482044 p9 = -0.0400455 p10 = 0.061609 p11 = 0.002882 p12 = -0.0304141 p13 = -0.525847 p14 = -0.349433 p15 = 0.130941 p16 = -0.15394 p17 = -1.32548 p18 = 1.61751 p19 = -0.417391 p20 = 0.43112 p21 = -0.143487 p22 = 0.119811 p23 = 0.0994222 p24 = 0.324205 p25 = 1.65195 p26 = 0.123649 p27 = -0.00622552 p28 = -1.95977 p29 = -31.2711 p30 = 0.424351 p31 = -0.587789 p32 = -0.344497 p33 = -0.169614 p34 = -1.64749 p35 = 0.323252 p36 = -0.127287 p37 = 0.679444 p38 = -0.175746 p39 = 0.35651 p40 = -0.127645 p41 = 1.05738 p42 = -1.3162 p43 = 2.04509 p44 = -0.7758 p45 = 1.44609 p46 = 0.771676 p47 = 0.12953
+----------> Iteration 120
+            FVAL = -19752.8709741 Edm = 0.0480625965886 Nfcn = 13190
+            Error matrix change = 0.21824
+            Parameters :  p0 = 1.59044 p1 = 0.0101546 p2 = -0.0111183 p3 = 0.0494676 p4 = -0.136654 p5 = 0.00349689 p6 = 0.0327718 p7 = -0.469046 p8 = 0.492704 p9 = -0.0413311 p10 = 0.0600966 p11 = 0.00469993 p12 = -0.031521 p13 = -0.534195 p14 = -0.363487 p15 = 0.131353 p16 = -0.15378 p17 = -1.32514 p18 = 1.61729 p19 = -0.428545 p20 = 0.443665 p21 = -0.143699 p22 = 0.119898 p23 = 0.0982215 p24 = 0.328951 p25 = 1.66567 p26 = 0.122309 p27 = -0.00607647 p28 = -1.94367 p29 = -31.6238 p30 = 0.430433 p31 = -0.559896 p32 = -0.337397 p33 = -0.153374 p34 = -1.61163 p35 = 0.424883 p36 = -0.126355 p37 = 0.681993 p38 = -0.175146 p39 = 0.334097 p40 = -0.17229 p41 = 0.974454 p42 = -1.3297 p43 = 1.91417 p44 = -0.778869 p45 = 1.36211 p46 = 0.771716 p47 = 0.129537
+----------> Iteration 121
+            FVAL = -19752.8995373 Edm = 0.0192767603015 Nfcn = 13288
+            Error matrix change = 0.152303
+            Parameters :  p0 = 1.57659 p1 = 0.0102814 p2 = -0.0110791 p3 = 0.0492903 p4 = -0.136101 p5 = 0.00216287 p6 = 0.0326961 p7 = -0.474867 p8 = 0.496645 p9 = -0.0414911 p10 = 0.0590999 p11 = 0.005571 p12 = -0.0321905 p13 = -0.537149 p14 = -0.368197 p15 = 0.131487 p16 = -0.153732 p17 = -1.32574 p18 = 1.61717 p19 = -0.432882 p20 = 0.447608 p21 = -0.143779 p22 = 0.119956 p23 = 0.0975927 p24 = 0.331187 p25 = 1.66968 p26 = 0.122451 p27 = -0.00602028 p28 = -1.94255 p29 = -31.614 p30 = 0.433353 p31 = -0.551687 p32 = -0.336037 p33 = -0.14501 p34 = -1.60761 p35 = 0.463353 p36 = -0.120736 p37 = 0.672054 p38 = -0.175161 p39 = 0.330977 p40 = -0.189699 p41 = 0.936011 p42 = -1.29533 p43 = 1.86762 p44 = -0.781607 p45 = 1.34552 p46 = 0.771726 p47 = 0.129514
+----------> Iteration 122
+            FVAL = -19752.9214753 Edm = 0.00466516333712 Nfcn = 13386
+            Error matrix change = 0.142991
+            Parameters :  p0 = 1.56741 p1 = 0.0104304 p2 = -0.0108773 p3 = 0.0499964 p4 = -0.135964 p5 = 0.000625121 p6 = 0.0321358 p7 = -0.479529 p8 = 0.500089 p9 = -0.0408132 p10 = 0.0575325 p11 = 0.00778948 p12 = -0.0315395 p13 = -0.537584 p14 = -0.375684 p15 = 0.131516 p16 = -0.154287 p17 = -1.32609 p18 = 1.6169 p19 = -0.437348 p20 = 0.451082 p21 = -0.143816 p22 = 0.120144 p23 = 0.0970189 p24 = 0.334724 p25 = 1.6636 p26 = 0.121845 p27 = -0.00635762 p28 = -1.94368 p29 = -31.7541 p30 = 0.437535 p31 = -0.53702 p32 = -0.336046 p33 = -0.131371 p34 = -1.59277 p35 = 0.487354 p36 = -0.111491 p37 = 0.665295 p38 = -0.175333 p39 = 0.322351 p40 = -0.21397 p41 = 0.885283 p42 = -1.26111 p43 = 1.81901 p44 = -0.788099 p45 = 1.3087 p46 = 0.771766 p47 = 0.12954
+----------> Iteration 123
+            FVAL = -19752.9313963 Edm = 0.0030750927846 Nfcn = 13484
+            Error matrix change = 0.104464
+            Parameters :  p0 = 1.55525 p1 = 0.010301 p2 = -0.0107151 p3 = 0.0503641 p4 = -0.135292 p5 = 0.00103735 p6 = 0.0319895 p7 = -0.484536 p8 = 0.504435 p9 = -0.0401177 p10 = 0.0574583 p11 = 0.00971775 p12 = -0.0294665 p13 = -0.537432 p14 = -0.383913 p15 = 0.131936 p16 = -0.154304 p17 = -1.32789 p18 = 1.61696 p19 = -0.442785 p20 = 0.457676 p21 = -0.143856 p22 = 0.12018 p23 = 0.0951689 p24 = 0.337497 p25 = 1.66266 p26 = 0.121852 p27 = -0.00632488 p28 = -1.94769 p29 = -31.7487 p30 = 0.440157 p31 = -0.533032 p32 = -0.336225 p33 = -0.127394 p34 = -1.61294 p35 = 0.49677 p36 = -0.0984495 p37 = 0.657462 p38 = -0.17755 p39 = 0.321625 p40 = -0.21694 p41 = 0.866809 p42 = -1.23487 p43 = 1.82365 p44 = -0.795227 p45 = 1.30231 p46 = 0.771752 p47 = 0.129547
+----------> Iteration 124
+            FVAL = -19752.9370809 Edm = 0.00261802266613 Nfcn = 13582
+            Error matrix change = 0.0918631
+            Parameters :  p0 = 1.55103 p1 = 0.0104709 p2 = -0.0106225 p3 = 0.0512053 p4 = -0.134903 p5 = 0.00172565 p6 = 0.0320178 p7 = -0.486128 p8 = 0.507109 p9 = -0.0397762 p10 = 0.0578063 p11 = 0.0104421 p12 = -0.0290667 p13 = -0.536891 p14 = -0.388087 p15 = 0.132249 p16 = -0.154373 p17 = -1.32935 p18 = 1.61568 p19 = -0.445058 p20 = 0.45912 p21 = -0.143858 p22 = 0.12017 p23 = 0.0940769 p24 = 0.339111 p25 = 1.65553 p26 = 0.12196 p27 = -0.00663938 p28 = -1.95494 p29 = -31.6992 p30 = 0.441115 p31 = -0.532756 p32 = -0.336603 p33 = -0.127188 p34 = -1.62144 p35 = 0.483419 p36 = -0.0931047 p37 = 0.653258 p38 = -0.180017 p39 = 0.322788 p40 = -0.213083 p41 = 0.864685 p42 = -1.21964 p43 = 1.83986 p44 = -0.803083 p45 = 1.30582 p46 = 0.77173 p47 = 0.12957
+----------> Iteration 125
+            FVAL = -19752.9430156 Edm = 0.00533295944771 Nfcn = 13681
+            Error matrix change = 0.130642
+            Parameters :  p0 = 1.52871 p1 = 0.0104572 p2 = -0.0106026 p3 = 0.0513201 p4 = -0.134024 p5 = 0.00140858 p6 = 0.0334025 p7 = -0.495671 p8 = 0.516821 p9 = -0.0400993 p10 = 0.0583796 p11 = 0.0108789 p12 = -0.0292807 p13 = -0.542075 p14 = -0.394287 p15 = 0.132853 p16 = -0.154594 p17 = -1.33054 p18 = 1.61468 p19 = -0.451043 p20 = 0.466085 p21 = -0.143989 p22 = 0.120124 p23 = 0.0929614 p24 = 0.342165 p25 = 1.65582 p26 = 0.121931 p27 = -0.00684041 p28 = -1.95631 p29 = -31.7001 p30 = 0.44289 p31 = -0.52642 p32 = -0.333707 p33 = -0.125048 p34 = -1.60538 p35 = 0.496161 p36 = -0.0893933 p37 = 0.651118 p38 = -0.183567 p39 = 0.318195 p40 = -0.219519 p41 = 0.850051 p42 = -1.22701 p43 = 1.82732 p44 = -0.813572 p45 = 1.28882 p46 = 0.771713 p47 = 0.129547
+----------> Iteration 126
+            FVAL = -19752.9508515 Edm = 0.00456316261302 Nfcn = 13779
+            Error matrix change = 0.188863
+            Parameters :  p0 = 1.52044 p1 = 0.0102677 p2 = -0.0106381 p3 = 0.0506864 p4 = -0.133484 p5 = 0.00149232 p6 = 0.0348277 p7 = -0.500778 p8 = 0.522448 p9 = -0.0406384 p10 = 0.059321 p11 = 0.0101319 p12 = -0.0301299 p13 = -0.546836 p14 = -0.394349 p15 = 0.133142 p16 = -0.154599 p17 = -1.3308 p18 = 1.61443 p19 = -0.453164 p20 = 0.469665 p21 = -0.144057 p22 = 0.12006 p23 = 0.0929272 p24 = 0.342699 p25 = 1.6622 p26 = 0.122418 p27 = -0.00687409 p28 = -1.95542 p29 = -31.5866 p30 = 0.444034 p31 = -0.52741 p32 = -0.331703 p33 = -0.127888 p34 = -1.59192 p35 = 0.498316 p36 = -0.0880602 p37 = 0.651737 p38 = -0.187847 p39 = 0.318833 p40 = -0.21802 p41 = 0.856332 p42 = -1.24614 p43 = 1.84207 p44 = -0.824385 p45 = 1.29223 p46 = 0.771708 p47 = 0.129514
+----------> Iteration 127
+            FVAL = -19752.9616585 Edm = 0.00596444766453 Nfcn = 13878
+            Error matrix change = 0.206042
+            Parameters :  p0 = 1.48442 p1 = 0.0100822 p2 = -0.0106806 p3 = 0.0498168 p4 = -0.132185 p5 = 0.000748138 p6 = 0.0359492 p7 = -0.517267 p8 = 0.540095 p9 = -0.0413189 p10 = 0.0594348 p11 = 0.0110398 p12 = -0.0307738 p13 = -0.556435 p14 = -0.403671 p15 = 0.133134 p16 = -0.15413 p17 = -1.33062 p18 = 1.61405 p19 = -0.468142 p20 = 0.485073 p21 = -0.144085 p22 = 0.120198 p23 = 0.0931263 p24 = 0.34644 p25 = 1.66438 p26 = 0.122819 p27 = -0.00694144 p28 = -1.9537 p29 = -31.4882 p30 = 0.449234 p31 = -0.516542 p32 = -0.324109 p33 = -0.124085 p34 = -1.54974 p35 = 0.514868 p36 = -0.0822551 p37 = 0.651653 p38 = -0.194 p39 = 0.310714 p40 = -0.242735 p41 = 0.831385 p42 = -1.27157 p43 = 1.81431 p44 = -0.844691 p45 = 1.26311 p46 = 0.771767 p47 = 0.129517
+----------> Iteration 128
+            FVAL = -19752.9750217 Edm = 0.00716941955498 Nfcn = 13976
+            Error matrix change = 0.318436
+            Parameters :  p0 = 1.46827 p1 = 0.0100027 p2 = -0.0107789 p3 = 0.0484865 p4 = -0.131368 p5 = 0.000333013 p6 = 0.0348926 p7 = -0.52618 p8 = 0.549709 p9 = -0.0418658 p10 = 0.0587622 p11 = 0.0112755 p12 = -0.0306577 p13 = -0.559913 p14 = -0.404463 p15 = 0.132782 p16 = -0.153482 p17 = -1.33053 p18 = 1.61496 p19 = -0.47969 p20 = 0.494665 p21 = -0.144119 p22 = 0.120288 p23 = 0.0934665 p24 = 0.3469 p25 = 1.67316 p26 = 0.123634 p27 = -0.00616765 p28 = -1.95103 p29 = -31.2942 p30 = 0.454508 p31 = -0.514901 p32 = -0.316804 p33 = -0.122128 p34 = -1.52557 p35 = 0.503983 p36 = -0.0802858 p37 = 0.65041 p38 = -0.196869 p39 = 0.308399 p40 = -0.269769 p41 = 0.835385 p42 = -1.28916 p43 = 1.79579 p44 = -0.856152 p45 = 1.25565 p46 = 0.771791 p47 = 0.129448
+----------> Iteration 129
+            FVAL = -19752.9831293 Edm = 0.0135216191209 Nfcn = 14073
+            Error matrix change = 0.221082
+            Parameters :  p0 = 1.43058 p1 = 0.00983491 p2 = -0.0107202 p3 = 0.047639 p4 = -0.129469 p5 = -9.58031e-05 p6 = 0.0355895 p7 = -0.54423 p8 = 0.568459 p9 = -0.0425676 p10 = 0.05901 p11 = 0.0122934 p12 = -0.0302764 p13 = -0.56784 p14 = -0.413582 p15 = 0.133435 p16 = -0.15325 p17 = -1.33242 p18 = 1.61448 p19 = -0.495924 p20 = 0.511722 p21 = -0.144352 p22 = 0.120269 p23 = 0.0913331 p24 = 0.351116 p25 = 1.68127 p26 = 0.124476 p27 = -0.00570838 p28 = -1.95325 p29 = -31.0858 p30 = 0.461457 p31 = -0.508588 p32 = -0.306846 p33 = -0.117702 p34 = -1.49421 p35 = 0.510743 p36 = -0.0730559 p37 = 0.642351 p38 = -0.202932 p39 = 0.302701 p40 = -0.302627 p41 = 0.826444 p42 = -1.30502 p43 = 1.76473 p44 = -0.87708 p45 = 1.23568 p46 = 0.771775 p47 = 0.129376
+----------> Iteration 130
+            FVAL = -19752.9959548 Edm = 0.00746405999598 Nfcn = 14171
+            Error matrix change = 0.218893
+            Parameters :  p0 = 1.43169 p1 = 0.00982907 p2 = -0.0105003 p3 = 0.0486933 p4 = -0.128866 p5 = -0.000227774 p6 = 0.035699 p7 = -0.545277 p8 = 0.568212 p9 = -0.042597 p10 = 0.0591792 p11 = 0.0131208 p12 = -0.0291952 p13 = -0.566039 p14 = -0.417696 p15 = 0.134384 p16 = -0.153529 p17 = -1.33458 p18 = 1.61351 p19 = -0.496042 p20 = 0.513944 p21 = -0.144531 p22 = 0.120096 p23 = 0.0881048 p24 = 0.351972 p25 = 1.67903 p26 = 0.124818 p27 = -0.0057777 p28 = -1.9627 p29 = -30.9876 p30 = 0.463906 p31 = -0.510488 p32 = -0.303437 p33 = -0.114964 p34 = -1.49235 p35 = 0.511319 p36 = -0.0759335 p37 = 0.633287 p38 = -0.201488 p39 = 0.302526 p40 = -0.32201 p41 = 0.83266 p42 = -1.29623 p43 = 1.7361 p44 = -0.87672 p45 = 1.23637 p46 = 0.771707 p47 = 0.129383
+----------> Iteration 131
+            FVAL = -19753.0070296 Edm = 0.00265156758873 Nfcn = 14270
+            Error matrix change = 0.176979
+            Parameters :  p0 = 1.39678 p1 = 0.00970652 p2 = -0.0103601 p3 = 0.0486207 p4 = -0.126668 p5 = -0.00112584 p6 = 0.0365451 p7 = -0.563981 p8 = 0.585969 p9 = -0.0434952 p10 = 0.0591149 p11 = 0.0149394 p12 = -0.0287303 p13 = -0.573894 p14 = -0.43026 p15 = 0.135582 p16 = -0.153275 p17 = -1.33756 p18 = 1.61217 p19 = -0.512215 p20 = 0.531894 p21 = -0.14476 p22 = 0.119994 p23 = 0.0845098 p24 = 0.35632 p25 = 1.68347 p26 = 0.125956 p27 = -0.00571515 p28 = -1.97174 p29 = -30.6968 p30 = 0.472609 p31 = -0.505694 p32 = -0.289829 p33 = -0.109517 p34 = -1.45013 p35 = 0.5182 p36 = -0.0753084 p37 = 0.620902 p38 = -0.206113 p39 = 0.295933 p40 = -0.372686 p41 = 0.830463 p42 = -1.31141 p43 = 1.67736 p44 = -0.897102 p45 = 1.21535 p46 = 0.771669 p47 = 0.129337
+----------> Iteration 132
+            FVAL = -19753.0106108 Edm = 0.000642339179712 Nfcn = 14368
+            Error matrix change = 0.145141
+            Parameters :  p0 = 1.38784 p1 = 0.00979357 p2 = -0.0103315 p3 = 0.0489672 p4 = -0.125921 p5 = -0.00177875 p6 = 0.0368649 p7 = -0.57004 p8 = 0.590936 p9 = -0.0437463 p10 = 0.0587581 p11 = 0.0162981 p12 = -0.028575 p13 = -0.576906 p14 = -0.436939 p15 = 0.136154 p16 = -0.153309 p17 = -1.33872 p18 = 1.61169 p19 = -0.516219 p20 = 0.536963 p21 = -0.144782 p22 = 0.119947 p23 = 0.0831248 p24 = 0.35851 p25 = 1.68342 p26 = 0.126353 p27 = -0.00600432 p28 = -1.97715 p29 = -30.5972 p30 = 0.47621 p31 = -0.503207 p32 = -0.284515 p33 = -0.105792 p34 = -1.43085 p35 = 0.521838 p36 = -0.0783845 p37 = 0.61698 p38 = -0.206682 p39 = 0.292311 p40 = -0.397148 p41 = 0.827211 p42 = -1.31569 p43 = 1.64149 p44 = -0.902696 p45 = 1.20403 p46 = 0.771652 p47 = 0.129326
+----------> Iteration 133
+            FVAL = -19753.0106108 Edm = 0.000928603451411 Nfcn = 15695
+            Error matrix change = 1
+            Parameters :  p0 = 1.38784 p1 = 0.00979357 p2 = -0.0103315 p3 = 0.0489672 p4 = -0.125921 p5 = -0.00177875 p6 = 0.0368649 p7 = -0.57004 p8 = 0.590936 p9 = -0.0437463 p10 = 0.0587581 p11 = 0.0162981 p12 = -0.028575 p13 = -0.576906 p14 = -0.436939 p15 = 0.136154 p16 = -0.153309 p17 = -1.33872 p18 = 1.61169 p19 = -0.516219 p20 = 0.536963 p21 = -0.144782 p22 = 0.119947 p23 = 0.0831248 p24 = 0.35851 p25 = 1.68342 p26 = 0.126353 p27 = -0.00600432 p28 = -1.97715 p29 = -30.5972 p30 = 0.47621 p31 = -0.503207 p32 = -0.284515 p33 = -0.105792 p34 = -1.43085 p35 = 0.521838 p36 = -0.0783845 p37 = 0.61698 p38 = -0.206682 p39 = 0.292311 p40 = -0.397148 p41 = 0.827211 p42 = -1.31569 p43 = 1.64149 p44 = -0.902696 p45 = 1.20403 p46 = 0.771652 p47 = 0.129326
+Minuit2Minimizer : Valid minimum - status = 1
+FVAL  = -19753.0106108205582
+Edm   = 0.000928603451411413416
+Nfcn  = 15695
+D0_radius	  = 1.38784	 +/-  0.217823
+D0{K(0)*(1430)+[GLASS]{K0S0,pi+},pi-}_Re	  = 0.00979357	 +/-  0.00525512
+D0{K(0)*(1430)+[GLASS]{K0S0,pi+},pi-}_Im	  = -0.0103315	 +/-  0.00499125
+D0{K(0)*(1430)bar-[GLASS]{K0S0,pi-},pi+}_Re	  = 0.0489672	 +/-  0.0191164
+D0{K(0)*(1430)bar-[GLASS]{K0S0,pi-},pi+}_Im	  = -0.125921	 +/-  0.0141326
+D0{K(2)*(1430)+{K0S0,pi+},pi-}_Re	  = -0.00177875	 +/-  0.0670635
+D0{K(2)*(1430)+{K0S0,pi+},pi-}_Im	  = 0.0368649	 +/-  0.0647191
+D0{K(2)*(1430)bar-{K0S0,pi-},pi+}_Re	  = -0.57004	 +/-  0.142894
+D0{K(2)*(1430)bar-{K0S0,pi-},pi+}_Im	  = 0.590936	 +/-  0.158753
+D0{K*(1410)+{K0S0,pi+},pi-}_Re	  = -0.0437463	 +/-  0.0308766
+D0{K*(1410)+{K0S0,pi+},pi-}_Im	  = 0.0587581	 +/-  0.0322062
+D0{K*(1410)bar-{K0S0,pi-},pi+}_Re	  = 0.0162981	 +/-  0.0411155
+D0{K*(1410)bar-{K0S0,pi-},pi+}_Im	  = -0.028575	 +/-  0.046917
+D0{K*(1680)bar-{K0S0,pi-},pi+}_Re	  = -0.576906	 +/-  0.107815
+D0{K*(1680)bar-{K0S0,pi-},pi+}_Im	  = -0.436939	 +/-  0.13871
+D0{K*(892)+{K0S0,pi+},pi-}_Re	  = 0.136154	 +/-  0.0283246
+D0{K*(892)+{K0S0,pi+},pi-}_Im	  = -0.153309	 +/-  0.0243856
+D0{K*(892)bar-{K0S0,pi-},pi+}_Re	  = -1.33872	 +/-  0.0815283
+D0{K*(892)bar-{K0S0,pi-},pi+}_Im	  = 1.61169	 +/-  0.0721161
+D0{K0S0,f(2)(1270)0{pi+,pi-}}_Re	  = -0.516219	 +/-  0.149053
+D0{K0S0,f(2)(1270)0{pi+,pi-}}_Im	  = 0.536963	 +/-  0.162003
+D0{K0S0,omega(782)0{pi+,pi-}}_Re	  = -0.144782	 +/-  0.021378
+D0{K0S0,omega(782)0{pi+,pi-}}_Im	  = 0.119947	 +/-  0.0188322
+D0{K0S0,rho(1450)0{pi+,pi-}}_Re	  = 0.0831248	 +/-  0.068027
+D0{K0S0,rho(1450)0{pi+,pi-}}_Im	  = 0.35851	 +/-  0.0892539
+K(0)*(1430)bar-::GLASS::F	  = 1.68342	 +/-  0.256071
+K(0)*(1430)bar-::GLASS::a	  = 0.126353	 +/-  0.00505209
+K(0)*(1430)bar-::GLASS::phiF	  = -0.00600432	 +/-  0.0245152
+K(0)*(1430)bar-::GLASS::phiR	  = -1.97715	 +/-  0.148923
+K(0)*(1430)bar-::GLASS::r	  = -30.5972	 +/-  1.22411
+PiPi00[kMatrix.pole.0]{pi+,pi-}_Re	  = 0.47621	 +/-  0.0368008
+PiPi00[kMatrix.pole.0]{pi+,pi-}_Im	  = -0.503207	 +/-  0.0369052
+PiPi00[kMatrix.pole.1]{pi+,pi-}_Re	  = -0.284515	 +/-  0.0526
+PiPi00[kMatrix.pole.1]{pi+,pi-}_Im	  = -0.105792	 +/-  0.0556025
+PiPi00[kMatrix.pole.2]{pi+,pi-}_Re	  = -1.43085	 +/-  0.426914
+PiPi00[kMatrix.pole.2]{pi+,pi-}_Im	  = 0.521838	 +/-  0.422175
+PiPi00[kMatrix.pole.3]{pi+,pi-}_Re	  = -0.0783845	 +/-  0.162074
+PiPi00[kMatrix.pole.3]{pi+,pi-}_Im	  = 0.61698	 +/-  0.15033
+PiPi00[kMatrix.prod.0]{pi+,pi-}_Re	  = -0.206682	 +/-  0.032743
+PiPi00[kMatrix.prod.0]{pi+,pi-}_Im	  = 0.292311	 +/-  0.0268362
+PiPi00[kMatrix.prod.1]{pi+,pi-}_Re	  = -0.397148	 +/-  0.157364
+PiPi00[kMatrix.prod.1]{pi+,pi-}_Im	  = 0.827211	 +/-  0.144838
+PiPi00[kMatrix.prod.2]{pi+,pi-}_Re	  = -1.31569	 +/-  0.405671
+PiPi00[kMatrix.prod.2]{pi+,pi-}_Im	  = 1.64149	 +/-  0.417316
+PiPi00[kMatrix.prod.3]{pi+,pi-}_Re	  = -0.902696	 +/-  0.0967339
+PiPi00[kMatrix.prod.3]{pi+,pi-}_Im	  = 1.20403	 +/-  0.0855516
+rho(770)0_mass	  = 0.771652	 +/-  0.00322959
+rho(770)0_width	  = 0.129326	 +/-  0.00595171
+[2;34mBinDT::BinDT                                   INFO         [0mMaking nodes
+[2;34mshared_ptr<BinDT::INode> BinDT::makeNodes      INFO         [0mMaking nodes
+[2;34mshared_ptr<BinDT::INode> BinDT::makeNodes      INFO         [0mTime taken = 7.01596 number of nodes = 512
+[2;34mvoid Chi2Estimator::doChi2                     INFO         [0mSplitting: 10000 data 100000 amongst 512 bins
+[2;34mFitResult* doFit                               INFO         [0mWall time = 644.163
+[2;34mFitResult* doFit                               INFO         [0mCPU  time = 2503.28
+[2;34mvoid FitResult::print                          INFO         [0mChi2 per bin = 1.00711
+[2;34mvoid FitResult::print                          INFO         [0mChi2 per dof = 1.1137
+[2;34mvoid FitResult::print                          INFO         [0m-2LL         = -19753
+[2;34mvoid FitResult::print                          INFO         [0mFit Status   = 1
+[2;34mvector<FitFraction> CoherentSum::fitFractions  INFO         [0mD0{K*(892)bar-{K0S0,pi-},pi+}                                =    62.46 ± 1.79     %
+[2;34mvector<FitFraction> CoherentSum::fitFractions  INFO         [0mD0{K0S0,rho(770)0{pi+,pi-}}                                  =    20.59 ± 0.93     %
+[2;34mvector<FitFraction> CoherentSum::fitFractions  INFO         [0mD0{K(0)*(1430)bar-[GLASS]{K0S0,pi-},pi+}                     =     9.91 ± 1.95     %
+[2;34mvector<FitFraction> CoherentSum::fitFractions  INFO         [0mD0{K0S0,PiPi00}                                              =     8.85 ± 1.44     %
+[2;34mvector<FitFraction> CoherentSum::fitFractions  INFO         [0mD0{K*(1680)bar-{K0S0,pi-},pi+}                               =     3.40 ± 1.24     %
+[2;34mvector<FitFraction> CoherentSum::fitFractions  INFO         [0mD0{K(2)*(1430)bar-{K0S0,pi-},pi+}                            =     1.51 ± 0.73     %
+[2;34mvector<FitFraction> CoherentSum::fitFractions  INFO         [0mD0{K0S0,rho(1450)0{pi+,pi-}}                                 =     0.91 ± 0.40     %
+[2;34mvector<FitFraction> CoherentSum::fitFractions  INFO         [0mD0{K0S0,omega(782)0{pi+,pi-}}                                =     0.89 ± 0.20     %
+[2;34mvector<FitFraction> CoherentSum::fitFractions  INFO         [0mD0{K0S0,f(2)(1270)0{pi+,pi-}}                                =     0.70 ± 0.36     %
+[2;34mvector<FitFraction> CoherentSum::fitFractions  INFO         [0mD0{K*(892)+{K0S0,pi+},pi-}                                   =     0.59 ± 0.16     %
+[2;34mvector<FitFraction> CoherentSum::fitFractions  INFO         [0mD0{K(0)*(1430)+[GLASS]{K0S0,pi+},pi-}                        =     0.10 ± 0.07     %
+[2;34mvector<FitFraction> CoherentSum::fitFractions  INFO         [0mD0{K*(1410)+{K0S0,pi+},pi-}                                  =     0.10 ± 0.08     %
+[2;34mvector<FitFraction> CoherentSum::fitFractions  INFO         [0mD0{K*(1410)bar-{K0S0,pi-},pi+}                               =     0.02 ± 0.05     %
+[2;34mvector<FitFraction> CoherentSum::fitFractions  INFO         [0mD0{K(2)*(1430)+{K0S0,pi+},pi-}                               =     0.00 ± 0.01     %
+[2;34mvector<FitFraction> CoherentSum::fitFractions  INFO         [0mSum_D0                                                       =   110.10 ± 2.21     %
+[2;34mvector<FitFraction> CoherentSum::fitFractions  INFO         [0mPiPi00[kMatrix.pole.0]{pi+,pi-}                              =  1051.71 ± 177.13   %
+[2;34mvector<FitFraction> CoherentSum::fitFractions  INFO         [0mPiPi00[kMatrix.prod.3]{pi+,pi-}                              =   681.15 ± 143.16   %
+[2;34mvector<FitFraction> CoherentSum::fitFractions  INFO         [0mPiPi00[kMatrix.prod.0]{pi+,pi-}                              =   570.60 ± 143.03   %
+[2;34mvector<FitFraction> CoherentSum::fitFractions  INFO         [0mPiPi00[kMatrix.prod.1]{pi+,pi-}                              =   157.33 ± 57.77    %
+[2;34mvector<FitFraction> CoherentSum::fitFractions  INFO         [0mPiPi00[kMatrix.pole.1]{pi+,pi-}                              =    59.39 ± 17.25    %
+[2;34mvector<FitFraction> CoherentSum::fitFractions  INFO         [0mPiPi00[kMatrix.pole.2]{pi+,pi-}                              =    31.24 ± 17.95    %
+[2;34mvector<FitFraction> CoherentSum::fitFractions  INFO         [0mPiPi00[kMatrix.pole.3]{pi+,pi-}                              =    23.76 ± 10.45    %
+[2;34mvector<FitFraction> CoherentSum::fitFractions  INFO         [0mPiPi00[kMatrix.prod.2]{pi+,pi-}                              =    22.32 ± 10.10    %
+[2;34mvector<FitFraction> CoherentSum::fitFractions  INFO         [0mSum_PiPi00                                                   =  2597.54 ± 476.12   %
+[2;34mvector<FitFraction> CoherentSum::fitFractions  INFO         [0mD0{K*(892)bar-{K0S0,pi-},pi+}xD0{K0S0,rho(770)0{pi+,pi-}}    =    -4.33 ± 0.13     %
+[2;34mvector<FitFraction> CoherentSum::fitFractions  INFO         [0mD0{K*(1680)bar-{K0S0,pi-},pi+}xD0{K*(892)bar-{K0S0,pi-},pi+} =     3.13 ± 0.82     %
+[2;34mvector<FitFraction> CoherentSum::fitFractions  INFO         [0mD0{K0S0,rho(1450)0{pi+,pi-}}xD0{K0S0,rho(770)0{pi+,pi-}}     =     1.95 ± 0.49     %
+[2;34mvector<FitFraction> CoherentSum::fitFractions  INFO         [0mD0{K0S0,omega(782)0{pi+,pi-}}xD0{K0S0,rho(770)0{pi+,pi-}}    =    -1.33 ± 0.24     %
+[2;34mvector<FitFraction> CoherentSum::fitFractions  INFO         [0mD0{K*(1680)bar-{K0S0,pi-},pi+}xD0{K0S0,rho(770)0{pi+,pi-}}   =    -1.21 ± 0.36     %
+[2;34mvector<FitFraction> CoherentSum::fitFractions  INFO         [0mD0{K*(892)bar-{K0S0,pi-},pi+}xD0{K0S0,rho(1450)0{pi+,pi-}}   =    -1.20 ± 0.33     %
+[2;34mvector<FitFraction> CoherentSum::fitFractions  INFO         [0mD0{K*(1680)bar-{K0S0,pi-},pi+}xD0{K0S0,rho(1450)0{pi+,pi-}}  =    -0.52 ± 0.20     %
+[2;34mvector<FitFraction> CoherentSum::fitFractions  INFO         [0mD0{K(2)*(1430)bar-{K0S0,pi-},pi+}xD0{K0S0,rho(770)0{pi+,pi-}} =     0.52 ± 0.12     %
+[2;34mvector<FitFraction> CoherentSum::fitFractions  INFO         [0mD0{K(2)*(1430)bar-{K0S0,pi-},pi+}xD0{K0S0,PiPi00}            =    -0.50 ± 0.12     %
+[2;34mvector<FitFraction> CoherentSum::fitFractions  INFO         [0mD0{K*(892)+{K0S0,pi+},pi-}xD0{K*(892)bar-{K0S0,pi-},pi+}     =    -0.47 ± 0.06     %
+[2;34mvector<FitFraction> CoherentSum::fitFractions  INFO         [0mD0{K(0)*(1430)bar-[GLASS]{K0S0,pi-},pi+}xD0{K0S0,PiPi00}     =    -0.44 ± 0.37     %
+[2;34mvector<FitFraction> CoherentSum::fitFractions  INFO         [0mD0{K(0)*(1430)bar-[GLASS]{K0S0,pi-},pi+}xD0{K0S0,rho(1450)0{pi+,pi-}} =    -0.43 ± 0.22     %
+[2;34mvector<FitFraction> CoherentSum::fitFractions  INFO         [0mD0{K*(892)+{K0S0,pi+},pi-}xD0{K0S0,rho(770)0{pi+,pi-}}       =    -0.42 ± 0.06     %
+[2;34mvector<FitFraction> CoherentSum::fitFractions  INFO         [0mD0{K*(1680)bar-{K0S0,pi-},pi+}xD0{K*(892)+{K0S0,pi+},pi-}    =    -0.34 ± 0.09     %
+[2;34mvector<FitFraction> CoherentSum::fitFractions  INFO         [0mD0{K(2)*(1430)bar-{K0S0,pi-},pi+}xD0{K0S0,f(2)(1270)0{pi+,pi-}} =     0.25 ± 0.11     %
+[2;34mvector<FitFraction> CoherentSum::fitFractions  INFO         [0mD0{K*(892)bar-{K0S0,pi-},pi+}xD0{K0S0,PiPi00}                =     0.23 ± 0.66     %
+[2;34mvector<FitFraction> CoherentSum::fitFractions  INFO         [0mD0{K*(892)bar-{K0S0,pi-},pi+}xD0{K0S0,omega(782)0{pi+,pi-}}  =     0.23 ± 0.03     %
+[2;34mvector<FitFraction> CoherentSum::fitFractions  INFO         [0mD0{K*(1410)bar-{K0S0,pi-},pi+}xD0{K*(892)bar-{K0S0,pi-},pi+} =     0.17 ± 0.43     %
+[2;34mvector<FitFraction> CoherentSum::fitFractions  INFO         [0mD0{K(0)*(1430)+[GLASS]{K0S0,pi+},pi-}xD0{K*(892)bar-{K0S0,pi-},pi+} =     0.17 ± 0.07     %
+[2;34mvector<FitFraction> CoherentSum::fitFractions  INFO         [0mD0{K(0)*(1430)bar-[GLASS]{K0S0,pi-},pi+}xD0{K0S0,f(2)(1270)0{pi+,pi-}} =    -0.16 ± 0.08     %
+[2;34mvector<FitFraction> CoherentSum::fitFractions  INFO         [0mD0{K(0)*(1430)bar-[GLASS]{K0S0,pi-},pi+}xD0{K0S0,rho(770)0{pi+,pi-}} =    -0.15 ± 0.29     %
+[2;34mvector<FitFraction> CoherentSum::fitFractions  INFO         [0mD0{K(0)*(1430)bar-[GLASS]{K0S0,pi-},pi+}xD0{K*(1410)+{K0S0,pi+},pi-} =     0.13 ± 0.05     %
+[2;34mvector<FitFraction> CoherentSum::fitFractions  INFO         [0mD0{K*(1410)+{K0S0,pi+},pi-}xD0{K*(892)bar-{K0S0,pi-},pi+}    =     0.12 ± 0.18     %
+[2;34mvector<FitFraction> CoherentSum::fitFractions  INFO         [0mD0{K0S0,omega(782)0{pi+,pi-}}xD0{K0S0,rho(1450)0{pi+,pi-}}   =    -0.12 ± 0.03     %
+[2;34mvector<FitFraction> CoherentSum::fitFractions  INFO         [0mD0{K*(1410)bar-{K0S0,pi-},pi+}xD0{K*(1680)bar-{K0S0,pi-},pi+} =    -0.12 ± 0.25     %
+[2;34mvector<FitFraction> CoherentSum::fitFractions  INFO         [0mD0{K*(1680)bar-{K0S0,pi-},pi+}xD0{K0S0,PiPi00}               =     0.11 ± 0.39     %
+[2;34mvector<FitFraction> CoherentSum::fitFractions  INFO         [0mD0{K*(892)+{K0S0,pi+},pi-}xD0{K0S0,rho(1450)0{pi+,pi-}}      =    -0.11 ± 0.03     %
+[2;34mvector<FitFraction> CoherentSum::fitFractions  INFO         [0mD0{K*(1410)+{K0S0,pi+},pi-}xD0{K*(1680)bar-{K0S0,pi-},pi+}   =     0.11 ± 0.11     %
+[2;34mvector<FitFraction> CoherentSum::fitFractions  INFO         [0mD0{K*(1680)bar-{K0S0,pi-},pi+}xD0{K0S0,omega(782)0{pi+,pi-}} =     0.10 ± 0.02     %
+[2;34mvector<FitFraction> CoherentSum::fitFractions  INFO         [0mD0{K(0)*(1430)bar-[GLASS]{K0S0,pi-},pi+}xD0{K*(892)+{K0S0,pi+},pi-} =    -0.10 ± 0.03     %
+[2;34mvector<FitFraction> CoherentSum::fitFractions  INFO         [0mD0{K(2)*(1430)bar-{K0S0,pi-},pi+}xD0{K0S0,rho(1450)0{pi+,pi-}} =     0.10 ± 0.05     %
+[2;34mvector<FitFraction> CoherentSum::fitFractions  INFO         [0mD0{K*(1410)+{K0S0,pi+},pi-}xD0{K0S0,PiPi00}                  =    -0.10 ± 0.08     %
+[2;34mvector<FitFraction> CoherentSum::fitFractions  INFO         [0mD0{K(0)*(1430)+[GLASS]{K0S0,pi+},pi-}xD0{K0S0,PiPi00}        =    -0.09 ± 0.06     %
+[2;34mvector<FitFraction> CoherentSum::fitFractions  INFO         [0mD0{K*(1680)bar-{K0S0,pi-},pi+}xD0{K0S0,f(2)(1270)0{pi+,pi-}} =    -0.09 ± 0.09     %
+[2;34mvector<FitFraction> CoherentSum::fitFractions  INFO         [0mD0{K(2)*(1430)bar-{K0S0,pi-},pi+}xD0{K*(892)+{K0S0,pi+},pi-} =    -0.08 ± 0.02     %
+[2;34mvector<FitFraction> CoherentSum::fitFractions  INFO         [0mD0{K(0)*(1430)+[GLASS]{K0S0,pi+},pi-}xD0{K0S0,rho(770)0{pi+,pi-}} =    -0.07 ± 0.08     %
+[2;34mvector<FitFraction> CoherentSum::fitFractions  INFO         [0mD0{K(0)*(1430)+[GLASS]{K0S0,pi+},pi-}xD0{K*(1680)bar-{K0S0,pi-},pi+} =     0.07 ± 0.04     %
+[2;34mvector<FitFraction> CoherentSum::fitFractions  INFO         [0mD0{K(0)*(1430)+[GLASS]{K0S0,pi+},pi-}xD0{K(0)*(1430)bar-[GLASS]{K0S0,pi-},pi+} =     0.07 ± 0.03     %
+[2;34mvector<FitFraction> CoherentSum::fitFractions  INFO         [0mD0{K(0)*(1430)bar-[GLASS]{K0S0,pi-},pi+}xD0{K0S0,omega(782)0{pi+,pi-}} =    -0.06 ± 0.01     %
+[2;34mvector<FitFraction> CoherentSum::fitFractions  INFO         [0mD0{K*(1410)+{K0S0,pi+},pi-}xD0{K0S0,rho(770)0{pi+,pi-}}      =    -0.06 ± 0.12     %
+[2;34mvector<FitFraction> CoherentSum::fitFractions  INFO         [0mD0{K*(1410)bar-{K0S0,pi-},pi+}xD0{K0S0,rho(770)0{pi+,pi-}}   =    -0.04 ± 0.18     %
+[2;34mvector<FitFraction> CoherentSum::fitFractions  INFO         [0mD0{K*(1410)bar-{K0S0,pi-},pi+}xD0{K0S0,PiPi00}               =     0.04 ± 0.06     %
+[2;34mvector<FitFraction> CoherentSum::fitFractions  INFO         [0mD0{K*(892)+{K0S0,pi+},pi-}xD0{K0S0,PiPi00}                   =    -0.03 ± 0.06     %
+[2;34mvector<FitFraction> CoherentSum::fitFractions  INFO         [0mD0{K(2)*(1430)bar-{K0S0,pi-},pi+}xD0{K0S0,omega(782)0{pi+,pi-}} =    -0.03 ± 0.01     %
+[2;34mvector<FitFraction> CoherentSum::fitFractions  INFO         [0mD0{K*(1410)+{K0S0,pi+},pi-}xD0{K*(892)+{K0S0,pi+},pi-}       =     0.03 ± 0.03     %
+[2;34mvector<FitFraction> CoherentSum::fitFractions  INFO         [0mD0{K*(892)+{K0S0,pi+},pi-}xD0{K0S0,omega(782)0{pi+,pi-}}     =     0.02 ± 0.00     %
+[2;34mvector<FitFraction> CoherentSum::fitFractions  INFO         [0mD0{K(0)*(1430)bar-[GLASS]{K0S0,pi-},pi+}xD0{K*(892)bar-{K0S0,pi-},pi+} =     0.02 ± 0.00     %
+[2;34mvector<FitFraction> CoherentSum::fitFractions  INFO         [0mD0{K(2)*(1430)+{K0S0,pi+},pi-}xD0{K0S0,PiPi00}               =    -0.02 ± 0.03     %
+[2;34mvector<FitFraction> CoherentSum::fitFractions  INFO         [0mD0{K(2)*(1430)+{K0S0,pi+},pi-}xD0{K*(892)bar-{K0S0,pi-},pi+} =     0.01 ± 0.07     %
+[2;34mvector<FitFraction> CoherentSum::fitFractions  INFO         [0mD0{K*(892)bar-{K0S0,pi-},pi+}xD0{K0S0,f(2)(1270)0{pi+,pi-}}  =     0.01 ± 0.12     %
+[2;34mvector<FitFraction> CoherentSum::fitFractions  INFO         [0mD0{K(2)*(1430)bar-{K0S0,pi-},pi+}xD0{K*(1410)+{K0S0,pi+},pi-} =    -0.01 ± 0.02     %
+[2;34mvector<FitFraction> CoherentSum::fitFractions  INFO         [0mD0{K*(1410)+{K0S0,pi+},pi-}xD0{K0S0,f(2)(1270)0{pi+,pi-}}    =     0.01 ± 0.02     %
+[2;34mvector<FitFraction> CoherentSum::fitFractions  INFO         [0mD0{K*(1410)+{K0S0,pi+},pi-}xD0{K*(1410)bar-{K0S0,pi-},pi+}   =    -0.01 ± 0.01     %
+[2;34mvector<FitFraction> CoherentSum::fitFractions  INFO         [0mD0{K(2)*(1430)+{K0S0,pi+},pi-}xD0{K0S0,f(2)(1270)0{pi+,pi-}} =     0.01 ± 0.02     %
+[2;34mvector<FitFraction> CoherentSum::fitFractions  INFO         [0mD0{K(0)*(1430)+[GLASS]{K0S0,pi+},pi-}xD0{K0S0,omega(782)0{pi+,pi-}} =     0.01 ± 0.00     %
+[2;34mvector<FitFraction> CoherentSum::fitFractions  INFO         [0mD0{K(2)*(1430)+{K0S0,pi+},pi-}xD0{K(2)*(1430)bar-{K0S0,pi-},pi+} =     0.01 ± 0.02     %
+[2;34mvector<FitFraction> CoherentSum::fitFractions  INFO         [0mD0{K(0)*(1430)bar-[GLASS]{K0S0,pi-},pi+}xD0{K*(1680)bar-{K0S0,pi-},pi+} =     0.01 ± 0.00     %
+[2;34mvector<FitFraction> CoherentSum::fitFractions  INFO         [0mD0{K(2)*(1430)+{K0S0,pi+},pi-}xD0{K0S0,rho(770)0{pi+,pi-}}   =    -0.01 ± 0.04     %
+[2;34mvector<FitFraction> CoherentSum::fitFractions  INFO         [0mD0{K*(1410)bar-{K0S0,pi-},pi+}xD0{K0S0,f(2)(1270)0{pi+,pi-}} =    -0.01 ± 0.03     %
+[2;34mvector<FitFraction> CoherentSum::fitFractions  INFO         [0mD0{K0S0,PiPi00}xD0{K0S0,rho(770)0{pi+,pi-}}                  =    -0.01 ± 0.00     %
+[2;34mvector<FitFraction> CoherentSum::fitFractions  INFO         [0mD0{K(2)*(1430)+{K0S0,pi+},pi-}xD0{K*(1680)bar-{K0S0,pi-},pi+} =     0.00 ± 0.02     %
+[2;34mvector<FitFraction> CoherentSum::fitFractions  INFO         [0mD0{K(0)*(1430)+[GLASS]{K0S0,pi+},pi-}xD0{K0S0,rho(1450)0{pi+,pi-}} =     0.00 ± 0.04     %
+[2;34mvector<FitFraction> CoherentSum::fitFractions  INFO         [0mD0{K(2)*(1430)bar-{K0S0,pi-},pi+}xD0{K*(892)bar-{K0S0,pi-},pi+} =    -0.00 ± 0.00     %
+[2;34mvector<FitFraction> CoherentSum::fitFractions  INFO         [0mD0{K(2)*(1430)+{K0S0,pi+},pi-}xD0{K0S0,rho(1450)0{pi+,pi-}}  =    -0.00 ± 0.01     %
+[2;34mvector<FitFraction> CoherentSum::fitFractions  INFO         [0mD0{K0S0,PiPi00}xD0{K0S0,rho(1450)0{pi+,pi-}}                 =     0.00 ± 0.00     %
+[2;34mvector<FitFraction> CoherentSum::fitFractions  INFO         [0mD0{K*(1410)+{K0S0,pi+},pi-}xD0{K0S0,omega(782)0{pi+,pi-}}    =    -0.00 ± 0.00     %
+[2;34mvector<FitFraction> CoherentSum::fitFractions  INFO         [0mD0{K0S0,PiPi00}xD0{K0S0,f(2)(1270)0{pi+,pi-}}                =    -0.00 ± 0.00     %
+[2;34mvector<FitFraction> CoherentSum::fitFractions  INFO         [0mD0{K(0)*(1430)+[GLASS]{K0S0,pi+},pi-}xD0{K*(1410)bar-{K0S0,pi-},pi+} =    -0.00 ± 0.00     %
+[2;34mvector<FitFraction> CoherentSum::fitFractions  INFO         [0mD0{K*(1410)bar-{K0S0,pi-},pi+}xD0{K0S0,rho(1450)0{pi+,pi-}}  =    -0.00 ± 0.06     %
+[2;34mvector<FitFraction> CoherentSum::fitFractions  INFO         [0mD0{K*(892)+{K0S0,pi+},pi-}xD0{K0S0,f(2)(1270)0{pi+,pi-}}     =    -0.00 ± 0.01     %
+[2;34mvector<FitFraction> CoherentSum::fitFractions  INFO         [0mD0{K0S0,PiPi00}xD0{K0S0,omega(782)0{pi+,pi-}}                =     0.00 ± 0.00     %
+[2;34mvector<FitFraction> CoherentSum::fitFractions  INFO         [0mD0{K(0)*(1430)+[GLASS]{K0S0,pi+},pi-}xD0{K(2)*(1430)bar-{K0S0,pi-},pi+} =    -0.00 ± 0.00     %
+[2;34mvector<FitFraction> CoherentSum::fitFractions  INFO         [0mD0{K(2)*(1430)bar-{K0S0,pi-},pi+}xD0{K*(1680)bar-{K0S0,pi-},pi+} =     0.00 ± 0.00     %
+[2;34mvector<FitFraction> CoherentSum::fitFractions  INFO         [0mD0{K0S0,f(2)(1270)0{pi+,pi-}}xD0{K0S0,rho(1450)0{pi+,pi-}}   =     0.00 ± 0.00     %
+[2;34mvector<FitFraction> CoherentSum::fitFractions  INFO         [0mD0{K0S0,f(2)(1270)0{pi+,pi-}}xD0{K0S0,omega(782)0{pi+,pi-}}  =     0.00 ± 0.00     %
+[2;34mvector<FitFraction> CoherentSum::fitFractions  INFO         [0mD0{K(0)*(1430)bar-[GLASS]{K0S0,pi-},pi+}xD0{K(2)*(1430)bar-{K0S0,pi-},pi+} =    -0.00 ± 0.00     %
+[2;34mvector<FitFraction> CoherentSum::fitFractions  INFO         [0mD0{K*(1410)bar-{K0S0,pi-},pi+}xD0{K*(892)+{K0S0,pi+},pi-}    =     0.00 ± 0.02     %
+[2;34mvector<FitFraction> CoherentSum::fitFractions  INFO         [0mD0{K*(1410)+{K0S0,pi+},pi-}xD0{K0S0,rho(1450)0{pi+,pi-}}     =    -0.00 ± 0.04     %
+[2;34mvector<FitFraction> CoherentSum::fitFractions  INFO         [0mD0{K(0)*(1430)bar-[GLASS]{K0S0,pi-},pi+}xD0{K(2)*(1430)+{K0S0,pi+},pi-} =     0.00 ± 0.01     %
+[2;34mvector<FitFraction> CoherentSum::fitFractions  INFO         [0mD0{K*(1410)bar-{K0S0,pi-},pi+}xD0{K0S0,omega(782)0{pi+,pi-}} =    -0.00 ± 0.00     %
+[2;34mvector<FitFraction> CoherentSum::fitFractions  INFO         [0mD0{K(2)*(1430)+{K0S0,pi+},pi-}xD0{K0S0,omega(782)0{pi+,pi-}} =     0.00 ± 0.00     %
+[2;34mvector<FitFraction> CoherentSum::fitFractions  INFO         [0mD0{K(2)*(1430)bar-{K0S0,pi-},pi+}xD0{K*(1410)bar-{K0S0,pi-},pi+} =    -0.00 ± 0.00     %
+[2;34mvector<FitFraction> CoherentSum::fitFractions  INFO         [0mD0{K(0)*(1430)+[GLASS]{K0S0,pi+},pi-}xD0{K0S0,f(2)(1270)0{pi+,pi-}} =     0.00 ± 0.01     %
+[2;34mvector<FitFraction> CoherentSum::fitFractions  INFO         [0mD0{K(2)*(1430)+{K0S0,pi+},pi-}xD0{K*(1410)bar-{K0S0,pi-},pi+} =    -0.00 ± 0.00     %
+[2;34mvector<FitFraction> CoherentSum::fitFractions  INFO         [0mD0{K(0)*(1430)+[GLASS]{K0S0,pi+},pi-}xD0{K*(892)+{K0S0,pi+},pi-} =     0.00 ± 0.00     %
+[2;34mvector<FitFraction> CoherentSum::fitFractions  INFO         [0mD0{K0S0,f(2)(1270)0{pi+,pi-}}xD0{K0S0,rho(770)0{pi+,pi-}}    =     0.00 ± 0.00     %
+[2;34mvector<FitFraction> CoherentSum::fitFractions  INFO         [0mD0{K(0)*(1430)bar-[GLASS]{K0S0,pi-},pi+}xD0{K*(1410)bar-{K0S0,pi-},pi+} =    -0.00 ± 0.00     %
+[2;34mvector<FitFraction> CoherentSum::fitFractions  INFO         [0mD0{K(0)*(1430)+[GLASS]{K0S0,pi+},pi-}xD0{K*(1410)+{K0S0,pi+},pi-} =     0.00 ± 0.00     %
+[2;34mvector<FitFraction> CoherentSum::fitFractions  INFO         [0mD0{K(0)*(1430)+[GLASS]{K0S0,pi+},pi-}xD0{K(2)*(1430)+{K0S0,pi+},pi-} =    -0.00 ± 0.00     %
+[2;34mvector<FitFraction> CoherentSum::fitFractions  INFO         [0mD0{K(2)*(1430)+{K0S0,pi+},pi-}xD0{K*(1410)+{K0S0,pi+},pi-}   =    -0.00 ± 0.00     %
+[2;34mvector<FitFraction> CoherentSum::fitFractions  INFO         [0mD0{K(2)*(1430)+{K0S0,pi+},pi-}xD0{K*(892)+{K0S0,pi+},pi-}    =    -0.00 ± 0.00     %
+[2;34mvector<FitFraction> CoherentSum::fitFractions  INFO         [0mSum_D0_interference                                          =    -5.05 ± 1.10     %
+output/belleTim/Cart/D0/fit.log
+y = 0.00601207
+y = 0.00601207
+y = -0.194327
+y = -0.194327
+y = 0.0170886
+y = 0.0170886
+y = 0.104979
+y = 0.104979
+y = 0.014186
+y = 0.014186
+y = 0.0613357
+y = 0.0613357
+y = 0.0272353
+y = 0.0272353
+y = -0.140858
+y = -0.140858
+y = 1.49371
+y = 1.49371
+y = 0
+y = 0
+y = 0.0943573
+y = 0.0943573
+y = 0.12832
+y = 0.12832
+y = 0.0886014
+y = 0.0886014
+y = 0
+y = 0
+y = -0.564193
+y = -0.564193
+y = -0.387498
+y = -0.387498
+y = -0.302991
+y = -0.302991
+y = 0.779454
+y = 0.779454
+y = 0.555636
+y = 0.555636
+y = 0.614543
+y = 0.614543
+y = 2.7479
+y = 2.7479
+y = 1.81536
+y = 1.81536

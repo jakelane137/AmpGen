@@ -1,0 +1,15 @@
+#EventType D0 K0S0 pi+ pi-
+
+CouplingConstant::Coordinates  cartesian
+CouplingConstant::AngularUnits deg
+ 
+Import $AMPGENROOT/options/kMatrix.opt
+Import $AMPGENROOT/kspipi/opts/LASS.opt
+Import $AMPGENROOT/kspipi/opts/particleProperties.opt
+
+Particle::DefaultModifier BL
+Particle::SpinFormalism   Canonical
+
+
+
+D0{K0S0,rho(770)0{pi+,pi-}}                                                     2              1              0              2              0              0              

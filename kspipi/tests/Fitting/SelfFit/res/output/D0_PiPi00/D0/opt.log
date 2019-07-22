@@ -1,0 +1,54 @@
+D0{K0S0,PiPi00}_Re
+Fitted Value = 1.0 ± 0.0 
+Initial Value = 1.0 ± 0.0 
+D0{K0S0,PiPi00}_Im
+Fitted Value = 0.0 ± 0.0 
+Initial Value = 0.0 ± 0.0 
+PiPi00[kMatrix.pole.0]{pi+,pi-}_Re
+Fitted Value = -0.695924 ± 0.00476737 
+Initial Value = -0.696212 ± 0.0249041 
+PiPi00[kMatrix.pole.0]{pi+,pi-}_Im
+Fitted Value = -0.551402 ± 0.00854174 
+Initial Value = -0.564193 ± 0.0150433 
+PiPi00[kMatrix.pole.1]{pi+,pi-}_Re
+Fitted Value = -1.14069 ± 0.0297348 
+Initial Value = -1.1781 ± 0.0163188 
+PiPi00[kMatrix.pole.1]{pi+,pi-}_Im
+Fitted Value = -0.432151 ± 0.0343163 
+Initial Value = -0.387498 ± 0.0128765 
+PiPi00[kMatrix.pole.2]{pi+,pi-}_Re
+Fitted Value = -3.59828 ± 0.0394582 
+Initial Value = -3.56439 ± 0.100848 
+PiPi00[kMatrix.pole.2]{pi+,pi-}_Im
+Fitted Value = -0.339019 ± 0.0349259 
+Initial Value = -0.302991 ± 0.0769034 
+PiPi00[kMatrix.pole.3]{pi+,pi-}_Re
+Fitted Value = -0.659099 ± 0.0391442 
+Initial Value = -0.654174 ± 0.0322988 
+PiPi00[kMatrix.pole.3]{pi+,pi-}_Im
+Fitted Value = 0.678431 ± 0.0671704 
+Initial Value = 0.779454 ± 0.0257366 
+PiPi00[kMatrix.prod.0]{pi+,pi-}_Re
+Fitted Value = 0.727146 ± 0.00425445 
+Initial Value = 0.722348 ± 0.0181052 
+PiPi00[kMatrix.prod.0]{pi+,pi-}_Im
+Fitted Value = 0.577561 ± 0.0100811 
+Initial Value = 0.555636 ± 0.011945 
+PiPi00[kMatrix.prod.1]{pi+,pi-}_Re
+Fitted Value = 3.16189 ± 0.0422473 
+Initial Value = 3.23771 ± 0.0874993 
+PiPi00[kMatrix.prod.1]{pi+,pi-}_Im
+Fitted Value = 0.618455 ± 0.0156581 
+Initial Value = 0.614543 ± 0.0497138 
+PiPi00[kMatrix.prod.2]{pi+,pi-}_Re
+Fitted Value = 1.55555 ± 0.0597258 
+Initial Value = 1.67044 ± 0.0909612 
+PiPi00[kMatrix.prod.2]{pi+,pi-}_Im
+Fitted Value = 2.15472 ± 0.305197 
+Initial Value = 2.7479 ± 0.0945962 
+PiPi00[kMatrix.prod.3]{pi+,pi-}_Re
+Fitted Value = 2.41375 ± 0.023068 
+Initial Value = 2.36804 ± 0.0672284 
+PiPi00[kMatrix.prod.3]{pi+,pi-}_Im
+Fitted Value = 1.82248 ± 0.043982 
+Initial Value = 1.81536 ± 0.0420283 

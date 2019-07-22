@@ -1,0 +1,4 @@
+CouplingConstant::Coordinates "polar"
+CouplingConstant::AngularUnits "rad"
+Particle::DefaultModifier BL
+Particle::SpinFormalism Canonical 

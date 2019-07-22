@@ -1,0 +1,7 @@
+Parameter D0{K0S0,f(2)(1270)0{pi+,pi-}}_Im 0 0.0943573 1.35773e+11 1.84343e+22 1.42233e+23 0 0 
+Parameter D0{K0S0,f(2)(1270)0{pi+,pi-}}_Re 0 -0.125526 1.04967e+12 1.42233e+23 1.10181e+24 0 0 
+Parameter f(2)(1270)_mass 2 1.2751 0 0 0 0 0 
+Parameter f(2)(1270)_width 2 0.1842 0 0 0 0 0 
+FitQuality 490.92227 512 2 -27399.848 1
+FitFraction Sum_D0_interference 0 0
+End Log

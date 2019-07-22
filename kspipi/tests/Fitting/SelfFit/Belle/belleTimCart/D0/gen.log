@@ -7,7 +7,7 @@
    ╚═╝  ╚═╝╚═╝     ╚═╝╚═╝      ╚═════╝ ╚══════╝╚═╝  ╚═══╝
 [0m
 [1m                      version 1.2
-        build: gcc 9.1.1  Jul  8 2019 15:13:44[0m
+        build: gcc 8.2.0  Jul  9 2019 12:00:04[0m
 
 [1m Release notes (v1r2)[0m
  - Improved thread support for CoherentSum
@@ -16,10 +16,10 @@
  - Removed unused / untested lineshapes AxialKaon and ObelixRho 
 
 [2;34mvoid OptionsParser::import                     INFO         [0mImporting: opts/belleTimCart.opt
-[2;34mvoid OptionsParser::import                     INFO         [0mImporting: /home/jlane/Documents/ampGen/options/kMatrix.opt
-[2;34mint main                                       INFO         [0mUsing: 4 / 4 threads
-[2;34mbool ParticlePropertiesList::readFile          INFO         [0mReading file: /home/jlane/Documents/ampGen//options/mass_width.csv
-[2;34mbool ParticlePropertiesList::readFile          INFO         [0mReading file: /home/jlane/Documents/ampGen//options/MintDalitzSpecialParticles.csv
+[2;34mvoid OptionsParser::import                     INFO         [0mImporting: /afs/cern.ch/user/j/jolane/work/ampGen/options/kMatrix.opt
+[2;34mint main                                       INFO         [0mUsing: 10 / 10 threads
+[2;34mbool ParticlePropertiesList::readFile          INFO         [0mReading file: /afs/cern.ch/user/j/jolane/work/ampGen//options/mass_width.csv
+[2;34mbool ParticlePropertiesList::readFile          INFO         [0mReading file: /afs/cern.ch/user/j/jolane/work/ampGen//options/MintDalitzSpecialParticles.csv
 [2;34mint main                                       INFO         [0mGenerating events with type = D0 → [K0S0, pi+, pi-]
 [2;34mCoherentSum::CoherentSum                       INFO         [0mD0{K(0)*(1430)+[GLASS.BL]{K0S0,pi+},pi-}
 [2;34mCoherentSum::CoherentSum                       INFO         [0mD0{K(0)*(1430)bar-[GLASS.BL]{K0S0,pi-},pi+}
@@ -43,10 +43,10 @@
 [2;34mCoherentSum::CoherentSum                       INFO         [0mD0{rho(1450)0{pi+,pi-},K0S0}
 [2;34mCoherentSum::CoherentSum                       INFO         [0mD0{rho(770)0{pi+,pi-},K0S0}
 [2;34mvoid Generator<PHASESPACE>::fillEventList      INFO         [0mSetting normalisation constant = 51.7941
-[2;34mvoid Generator<PHASESPACE>::fillEventList      INFO         [0mCompleted: 100% [||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||] ε[gen] = 0.10% , 0 seconds
-[2;34mvoid Generator<PHASESPACE>::fillEventList      INFO         [0mGenerated 100 events in 492.76 ms
-[2;34mvoid Generator<PHASESPACE>::fillEventList      INFO         [0mGenerating phase space : 62.2636 ms
-[2;34mvoid Generator<PHASESPACE>::fillEventList      INFO         [0mEvaluating PDF         : 395.502 ms
-[2;34mvoid Generator<PHASESPACE>::fillEventList      INFO         [0mDoing accept/reject    : 10.8278 ms
+[2;34mvoid Generator<PHASESPACE>::fillEventList      INFO         [0mCompleted:  24% [||||||||||||||                                              ] ε[gen] = 2.44% , 0 seconds[2;34mvoid Generator<PHASESPACE>::fillEventList      INFO         [0mCompleted:  47% [||||||||||||||||||||||||||||                                ] ε[gen] = 2.36% , 0 seconds[2;34mvoid Generator<PHASESPACE>::fillEventList      INFO         [0mCompleted:  71% [||||||||||||||||||||||||||||||||||||||||||                  ] ε[gen] = 2.34% , 0 seconds[2;34mvoid Generator<PHASESPACE>::fillEventList      INFO         [0mCompleted:  96% [|||||||||||||||||||||||||||||||||||||||||||||||||||||||||   ] ε[gen] = 2.48% , 1 seconds[2;34mvoid Generator<PHASESPACE>::fillEventList      INFO         [0mCompleted: 100% [||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||] ε[gen] = 0.39% , 1 seconds
+[2;34mvoid Generator<PHASESPACE>::fillEventList      INFO         [0mGenerated 10000 events in 1527.12 ms
+[2;34mvoid Generator<PHASESPACE>::fillEventList      INFO         [0mGenerating phase space : 532.568 ms
+[2;34mvoid Generator<PHASESPACE>::fillEventList      INFO         [0mEvaluating PDF         : 870.837 ms
+[2;34mvoid Generator<PHASESPACE>::fillEventList      INFO         [0mDoing accept/reject    : 29.3256 ms
 [2;34mint main                                       INFO         [0mMaking 2D projections...
 [2;34mint main                                       INFO         [0mWriting output file 

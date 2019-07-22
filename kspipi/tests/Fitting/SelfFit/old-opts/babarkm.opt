@@ -1,0 +1,55 @@
+#Import "$AMPGEN"/kspipi/tests/testBaBar/opts/babar.opt
+#EventType D0 K0S0 pi+ pi- 
+CouplingConstant::Coordinates  polar
+CouplingConstant::AngularUnits deg 
+Import "$AMPGEN"/kspipi/kMatrix.opt
+
+D0{K*(892)+{K0S0,pi+},pi-}  0   0   0   0   0   0
+D0{K(0)*(1430)+[GLASS]{K0S0,pi+},pi-} 0   0   0   0   0   0
+D0{K(2)*(1430)+{K0S0,pi+},pi-} 0   0   0   0   0   0
+D0{K0S0,rho(770)0{pi+,pi-}} 0   0   0   0   0   0
+D0{K0S0,omega(782)0{pi+,pi-}} 0   0   0   0   0   0
+D0{K0S0,f(2)(1270)0{pi+,pi-}} 0   0   0   0   0   0
+D0{K0S0,PiPi00} 0   0   0   0   0   0
+Dbar0{K*(892)bar-{K0S0,pi-},pi+} 0   0   0   0   0   0
+Dbar0{K(0)*(1430)bar-[GLASS]{K0S0,pi-},pi+} 0   0   0   0   0   0
+Dbar0{K(2)*(1430)bar-{K0S0,pi-},pi+} 0   0   0   0   0   0
+Dbar0{K0S0,rho(770)0{pi+,pi-}} 0   0   0   0   0   0
+Dbar0{K0S0,omega(782)0{pi+,pi-}} 0   0   0   0   0   0
+Dbar0{K0S0,f(2)(1270)0{pi+,pi-}} 0   0   0   0   0   0
+Dbar0{K0S0,PiPi00} 0   0   0   0   0   0
+
+
+
+D0{K*(892)bar-{K0S0,pi-},pi+}   0   1.74   0.01   0   139   0.3
+D0{K(0)*(1430)bar-[GLASS]{K0S0,pi-},pi+}   0   8.2   0.7   0   153   8
+D0{K(2)*(1430)bar-{K0S0,pi-},pi+}   0   1.41   0.022   0   138.4   1
+D0{K*(1680)bar-{K0S0,pi-},pi+}   0   1.46   0.1   0   -174   4
+
+Dbar0{K*(892)+{K0S0,pi+},pi-}   0   1.74   0.01   0   139   0.3
+Dbar0{K(0)*(1430)+[GLASS]{K0S0,pi+},pi-}   0   8.2   0.7   0   153   8
+Dbar0{K(2)*(1430)+{K0S0,pi+},pi-}   0   1.41   0.022   0   138.4   1
+Dbar0{K*(1680)+{K0S0,pi+},pi-}   0   1.46   0.1   0   -174   4
+
+
+
+PiPi00[kMatrix.pole.0]{pi+,pi-}   0   9.3   0.4   0   -78.7   1.6
+PiPi00[kMatrix.pole.1]{pi+,pi-}   0   10.89   0.26   0   -159.1    2.6
+PiPi00[kMatrix.pole.2]{pi+,pi-}   0   24.2   2   0   168   4
+PiPi00[kMatrix.pole.3]{pi+,pi-}   0   9.16   0.24   0   90.5   2.6
+PiPi00[kMatrix.prod.0]{pi+,pi-}   0   7.94   0.26   0   73.9   1.1
+PiPi00[kMatrix.prod.1]{pi+,pi-}   0   2   0.3   0   -18    9
+PiPi00[kMatrix.prod.2]{pi+,pi-}   0   5.1   0.3   0   33   3
+PiPi00[kMatrix.prod.3]{pi+,pi-}   0   3.23   0.18   0   4.8   2.5
+PiPi00_s0_prod 2 -0.07  0.00   0   -0.07    0.03   0      
+K(0)*(1430)bar-_mass   0   1.463   0.002   0      
+K(0)*(1430)bar-_width   0   0.233   0.005   0      
+K(0)*(1430)+::GLASS::F   0   0.8   0.09   0      
+K(0)*(1430)+::GLASS::phiF   0   2.33   0.13   0      
+K(0)*(1430)+::GLASS::R   0   1      0      
+K(0)*(1430)+::GLASS::phiR   0   -5.31    0.04   0      
+K(0)*(1430)+::GLASS::a   0   1.07   0.11   0      
+K(0)*(1430)+::GLASS::r   0   -1.8    0.3   0      
+K(0)*(1430)+_mass       =K(0)*(1430)bar-_mass   
+K(0)*(1430)+_width      = K(0)*(1430)bar-_width
+
