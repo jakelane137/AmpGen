@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
-NCORES=$(ls /sys/class/cpuid | wc -l)
+#NCORES=$(ls /sys/class/cpuid | wc -l)
+NCORES=$(cat /proc/cpuinfo | awk '/^processor/{print $3}')
 #source $PWD/setup.sh
 INSTALL_DIR=$PWD/install
 if [ -d $INSTALL_DIR ]
