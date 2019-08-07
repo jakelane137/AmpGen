@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 #NCORES=$(ls /sys/class/cpuid | wc -l)
-NCORES=$(cat /proc/cpuinfo | awk '/^processor/{print $3}')
+NCORES=$(cat /proc/cpuinfo | awk '/^processor/{print $3}'| wc -l )
 #source $PWD/setup.sh
 INSTALL_DIR=$PWD/install
 if [ -d $INSTALL_DIR ]
@@ -15,7 +15,7 @@ then
         rm -rf $INSTALL_DIR
         mkdir -p $INSTALL_DIR
         cd $INSTALL_DIR
-        cmake -DCMAKE_CXX_STANDARD=17 ..
+        cmake -DCMAKE_CXX_STANDARD=14 ..
         make -j$NCORES
         cd -
     else
@@ -26,7 +26,7 @@ else
     echo "Installing ampGen to $INSTALL_DIR using $NCORES cores"
     mkdir -p $INSTALL_DIR
     cd $INSTALL_DIR
-    cmake -DCMAKE_CXX_STANDARD=17 ..
+    cmake -DCMAKE_CXX_STANDARD=14 ..
     make -j$NCORES
     cd -
 fi

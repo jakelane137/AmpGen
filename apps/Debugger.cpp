@@ -87,7 +87,7 @@ template <class MatrixElements> void print( const Event& event, const MatrixElem
       for ( auto& term : terms ) {
         INFO( "--> " << term.first->name() << " = (" << term.first->mean() * cos( term.second->mean() ) << " + i " << term.first->mean() * sin( term.second->mean() ) << ")" );
       }
-      mE.pdf.debug( event );
+      mE.pdf.debug( event.address() );
     }
   }
 }
@@ -113,7 +113,8 @@ int main( int argc, char** argv )
   int seed = NamedParameter<int>( "Seed", 156 );
   TRandom3* rndm = new TRandom3( seed );
 
-  EventType eventType( NamedParameter<std::string>( "EventType" ).getVector() );
+  EventType eventType( NamedParameter<std::string>( "EventType" , "", "EventType to generate, in the format: \033[3m parent daughter1 daughter2 ... \033[0m" ).getVector(),
+                       NamedParameter<bool>( "GenerateTimeDependent", false , "Flag to include possible time dependence of the amplitude") );
 
   bool verbose = NamedParameter<bool>("CoherentSum::Debug", 0 ) || 
                  NamedParameter<bool>("PolarisedSum::Debug", 0 );
