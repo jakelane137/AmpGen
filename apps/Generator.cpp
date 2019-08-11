@@ -97,13 +97,13 @@ int main( int argc, char** argv )
   
   EventType eventType( NamedParameter<std::string>( "EventType" , "", "EventType to generate, in the format: \033[3m parent daughter1 daughter2 ... \033[0m" ).getVector(),
                        NamedParameter<bool>( "GenerateTimeDependent", false , "Flag to include possible time dependence of the amplitude") );
-<<<<<<< HEAD
+
 //  EventType eventType2( NamedParameter<std::string>( "EventType2" , "", "EventType to generate second lot of events, in the format: \033[3m parent daughter1 daughter2 ... \033[0m" ).getVector(),
 //                       NamedParameter<bool>( "GenerateTimeDependent", false , "Flag to include possible time dependence of the amplitude") );
-=======
+
 
   INFO("Generating time-dependence? " << eventType.isTimeDependent() );
->>>>>>> 5936ae967bb49a30d05ff9a3285395a773693c54
+
   EventList accepted( eventType );
 
   INFO("Generating events with type = " << eventType );
@@ -182,10 +182,10 @@ int main( int argc, char** argv )
       }
     }
   } 
-<<<<<<< HEAD
-   
-=======
->>>>>>> 5936ae967bb49a30d05ff9a3285395a773693c54
+
+
+
+
   INFO( "Writing output file " );
 
   f->Close();

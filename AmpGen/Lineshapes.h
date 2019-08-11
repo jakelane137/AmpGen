@@ -382,10 +382,10 @@ namespace AmpGen
         Multiplied by an arbitrary gaussian lineshape to account for the mass distribution in @f$s_{\pi^{+}\pi^{-}\pi^{0}}@f$.
       */   
     DECLARE_LINESHAPE( EtaDalitz );
-<<<<<<< HEAD
+
     DECLARE_LINESHAPE( PhasePoly );
     DECLARE_LINESHAPE( MagPoly );
-=======
+
 
     /** @ingroup Lineshapes class TD
         @brief (Linear) time dependence
@@ -399,7 +399,7 @@ namespace AmpGen
       */
     DECLARE_LINESHAPE( TD );
 
->>>>>>> 5936ae967bb49a30d05ff9a3285395a773693c54
+
     DECLARE_LINESHAPE( Photon );
   } // namespace Lineshape
   
