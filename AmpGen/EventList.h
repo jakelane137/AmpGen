@@ -7,6 +7,7 @@
 #include "AmpGen/Event.h"
 #include "AmpGen/Projection.h"
 #include "AmpGen/Utilities.h"
+#include "AmpGen/MetaUtils.h"
 
 #include <chrono>
 #include <functional>
@@ -24,6 +25,7 @@
 
 namespace AmpGen
 {
+
   DECLARE_ARGUMENT(Bins, size_t);
 
   class CompiledExpressionBase; 
@@ -127,41 +129,44 @@ namespace AmpGen
       }
     }
     void reserveCache(const size_t& index);
-    TH1D* makeProjection(const Projection& projection  , const ArgumentPack& args) const; 
-    TH2D* makeProjection(const Projection2D& projection, const ArgumentPack& args) const;
+    TH1D* makeProjection(const Projection& projection  , const ArgumentPack& args = ArgumentPack()) const; 
+    TH2D* makeProjection(const Projection2D& projection, const ArgumentPack& args = ArgumentPack()) const;
     std::vector<TH1D*> makeProjections( const std::vector<Projection>& projections, const ArgumentPack& args );
 
-    template <class... ARGS>
-    std::vector<TH1D*> makeDefaultProjections( const ARGS&... args )
+    template <class... ARGS> std::vector<TH1D*> makeDefaultProjections( const ARGS&... args )
     {
       auto argPack = ArgumentPack( args... );
       size_t nBins = argPack.getArg<Bins>(100);
       auto proj = eventType().defaultProjections(nBins); 
       return makeProjections( proj , argPack );
     }
-    template <class... ARGS> 
-    std::vector<TH1D*> makeProjections( const std::vector<Projection>& projections, const ARGS&... args )
+
+    template <typename... ARGS> std::vector<TH1D*> makeProjections( const std::vector<Projection>& projections, const ARGS&... args )
     {
       return makeProjections( projections, ArgumentPack( args... ) );
     }
-    template <class... ARGS>
+    
+    template <typename... ARGS, 
+              typename = std::enable_if_t< ! std::is_same<zeroType<ARGS...>, ArgumentPack>::value > > 
     TH1D* makeProjection( const Projection& projection, const ARGS&... args ) const
     {
       return makeProjection( projection, ArgumentPack(args...) );
     }
-    template <class... ARGS>
+
+    template <typename... ARGS, 
+              typename = std::enable_if_t< ! std::is_same<zeroType<ARGS...>, ArgumentPack>::value > > 
     TH2D* makeProjection( const Projection2D& projection, const ARGS&... args )
     {
       return makeProjection( projection, ArgumentPack(args...) );
     }
-    template <class FCN>
-    EventList& transform( FCN&& fcn )
+
+    template <class FCN> EventList& transform( FCN&& fcn )
     {
       for ( auto& event : m_data ) fcn( event );
       return *this;
     }
-    template <class FCN>
-    void filter( FCN&& fcn ){
+    
+    template <class FCN> void filter( FCN&& fcn ){
       size_t currentSize = size();
       m_data.erase( std::remove_if( m_data.begin(), m_data.end(), fcn ) , m_data.end() );
       INFO("Filter removes: " << currentSize - size() << " / " << currentSize << " events");
