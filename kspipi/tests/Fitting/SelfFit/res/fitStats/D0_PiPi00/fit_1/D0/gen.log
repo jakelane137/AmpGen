@@ -1,0 +1,80 @@
+
+[2;31m    █████╗ ███╗   ███╗██████╗  ██████╗ ███████╗███╗   ██╗
+   ██╔══██╗████╗ ████║██╔══██╗██╔════╝ ██╔════╝████╗  ██║
+   ███████║██╔████╔██║██████╔╝██║  ███╗█████╗  ██╔██╗ ██║
+   ██╔══██║██║╚██╔╝██║██╔═══╝ ██║   ██║██╔══╝  ██║╚██╗██║
+   ██║  ██║██║ ╚═╝ ██║██║     ╚██████╔╝███████╗██║ ╚████║
+   ╚═╝  ╚═╝╚═╝     ╚═╝╚═╝      ╚═════╝ ╚══════╝╚═╝  ╚═══╝
+[0m
+[1m                      version 1.2
+        build: gcc 8.2.0  Jul 11 2019 12:28:01[0m
+
+[1m Release notes (v1r2)[0m
+ - Improved thread support for CoherentSum
+ - Add examples/QcGenerator for Ψ(3770) decays 
+ - Updated ExpressionParser with improved stability.
+ - Removed unused / untested lineshapes AxialKaon and ObelixRho 
+
+[2;34mvoid OptionsParser::import                     INFO         [0mImporting: opts/D0_PiPi00.opt
+[2;34mvoid OptionsParser::import                     INFO         [0mImporting: /afs/cern.ch/user/j/jolane/work/ampGen/options/kMatrix.opt
+[2;34mvoid OptionsParser::import                     INFO         [0mImporting: /afs/cern.ch/user/j/jolane/work/ampGen/kspipi/opts/kMatrix.opt
+[1;35mOptionsParser::import                          WARNING      [0mOverwriting parameter: IS_p1_4pi
+[1;35mOptionsParser::import                          WARNING      [0mOverwriting parameter: IS_p1_EtaEta
+[1;35mOptionsParser::import                          WARNING      [0mOverwriting parameter: IS_p1_EtapEta
+[1;35mOptionsParser::import                          WARNING      [0mOverwriting parameter: IS_p1_KK
+[1;35mOptionsParser::import                          WARNING      [0mOverwriting parameter: IS_p1_mass
+[1;35mOptionsParser::import                          WARNING      [0mOverwriting parameter: IS_p1_pipi
+[1;35mOptionsParser::import                          WARNING      [0mOverwriting parameter: IS_p2_4pi
+[1;35mOptionsParser::import                          WARNING      [0mOverwriting parameter: IS_p2_EtaEta
+[1;35mOptionsParser::import                          WARNING      [0mOverwriting parameter: IS_p2_EtapEta
+[1;35mOptionsParser::import                          WARNING      [0mOverwriting parameter: IS_p2_KK
+[1;35mOptionsParser::import                          WARNING      [0mOverwriting parameter: IS_p2_mass
+[1;35mOptionsParser::import                          WARNING      [0mOverwriting parameter: IS_p2_pipi
+[1;35mOptionsParser::import                          WARNING      [0mOverwriting parameter: IS_p3_4pi
+[1;35mOptionsParser::import                          WARNING      [0mOverwriting parameter: IS_p3_EtaEta
+[1;35mOptionsParser::import                          WARNING      [0mOverwriting parameter: IS_p3_EtapEta
+[1;35mOptionsParser::import                          WARNING      [0mOverwriting parameter: IS_p3_KK
+[1;35mOptionsParser::import                          WARNING      [0mOverwriting parameter: IS_p3_mass
+[1;35mOptionsParser::import                          WARNING      [0mOverwriting parameter: IS_p3_pipi
+[1;35mOptionsParser::import                          WARNING      [0mOverwriting parameter: IS_p4_4pi
+[1;35mOptionsParser::import                          WARNING      [0mOverwriting parameter: IS_p4_EtaEta
+[1;35mOptionsParser::import                          WARNING      [0mOverwriting parameter: IS_p4_EtapEta
+[1;35mOptionsParser::import                          WARNING      [0mOverwriting parameter: IS_p4_KK
+[1;35mOptionsParser::import                          WARNING      [0mOverwriting parameter: IS_p4_mass
+[1;35mOptionsParser::import                          WARNING      [0mOverwriting parameter: IS_p4_pipi
+[1;35mOptionsParser::import                          WARNING      [0mOverwriting parameter: IS_p5_4pi
+[1;35mOptionsParser::import                          WARNING      [0mOverwriting parameter: IS_p5_EtaEta
+[1;35mOptionsParser::import                          WARNING      [0mOverwriting parameter: IS_p5_EtapEta
+[1;35mOptionsParser::import                          WARNING      [0mOverwriting parameter: IS_p5_KK
+[1;35mOptionsParser::import                          WARNING      [0mOverwriting parameter: IS_p5_mass
+[1;35mOptionsParser::import                          WARNING      [0mOverwriting parameter: IS_p5_pipi
+[1;35mOptionsParser::import                          WARNING      [0mOverwriting parameter: f_scatt0
+[1;35mOptionsParser::import                          WARNING      [0mOverwriting parameter: f_scatt1
+[1;35mOptionsParser::import                          WARNING      [0mOverwriting parameter: f_scatt2
+[1;35mOptionsParser::import                          WARNING      [0mOverwriting parameter: f_scatt3
+[1;35mOptionsParser::import                          WARNING      [0mOverwriting parameter: f_scatt4
+[1;35mOptionsParser::import                          WARNING      [0mOverwriting parameter: s0_prod
+[1;35mOptionsParser::import                          WARNING      [0mOverwriting parameter: s0_scatt
+[1;35mOptionsParser::import                          WARNING      [0mOverwriting parameter: sA
+[2;34mvoid OptionsParser::import                     INFO         [0mImporting: /afs/cern.ch/user/j/jolane/work/ampGen/kspipi/opts/LASS.opt
+[2;34mvoid OptionsParser::import                     INFO         [0mImporting: /afs/cern.ch/user/j/jolane/work/ampGen/kspipi/opts/particleProperties.opt
+[2;34mint main                                       INFO         [0mUsing: 10 / 10 threads
+[2;34mbool ParticlePropertiesList::readFile          INFO         [0mReading file: /afs/cern.ch/user/j/jolane/work/ampGen//options/mass_width.csv
+[2;34mbool ParticlePropertiesList::readFile          INFO         [0mReading file: /afs/cern.ch/user/j/jolane/work/ampGen//options/MintDalitzSpecialParticles.csv
+[2;34mint main                                       INFO         [0mGenerating events with type = D0 → [K0S0, pi+, pi-]
+[2;34mCoherentSum::CoherentSum                       INFO         [0mD0{PiPi00[kMatrix.pole.0]{pi+,pi-},K0S0}
+[2;34mCoherentSum::CoherentSum                       INFO         [0mD0{PiPi00[kMatrix.pole.1]{pi+,pi-},K0S0}
+[2;34mCoherentSum::CoherentSum                       INFO         [0mD0{PiPi00[kMatrix.pole.2]{pi+,pi-},K0S0}
+[2;34mCoherentSum::CoherentSum                       INFO         [0mD0{PiPi00[kMatrix.pole.3]{pi+,pi-},K0S0}
+[2;34mCoherentSum::CoherentSum                       INFO         [0mD0{PiPi00[kMatrix.prod.0]{pi+,pi-},K0S0}
+[2;34mCoherentSum::CoherentSum                       INFO         [0mD0{PiPi00[kMatrix.prod.1]{pi+,pi-},K0S0}
+[2;34mCoherentSum::CoherentSum                       INFO         [0mD0{PiPi00[kMatrix.prod.2]{pi+,pi-},K0S0}
+[2;34mCoherentSum::CoherentSum                       INFO         [0mD0{PiPi00[kMatrix.prod.3]{pi+,pi-},K0S0}
+[2;34mvoid Generator<PHASESPACE>::fillEventList      INFO         [0mSetting normalisation constant = 0.997202
+[2;34mvoid Generator<PHASESPACE>::fillEventList      INFO         [0mCompleted: 100% [||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||] ε[gen] = 10.00% , 0 seconds
+[2;34mvoid Generator<PHASESPACE>::fillEventList      INFO         [0mGenerated 10000 events in 225.265 ms
+[2;34mvoid Generator<PHASESPACE>::fillEventList      INFO         [0mGenerating phase space : 110.789 ms
+[2;34mvoid Generator<PHASESPACE>::fillEventList      INFO         [0mEvaluating PDF         : 93.3146 ms
+[2;34mvoid Generator<PHASESPACE>::fillEventList      INFO         [0mDoing accept/reject    : 9.43618 ms
+[2;34mint main                                       INFO         [0mMaking 2D projections...
+[2;34mint main                                       INFO         [0mWriting output file 

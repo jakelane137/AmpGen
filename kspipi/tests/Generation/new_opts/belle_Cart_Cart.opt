@@ -1,0 +1,4 @@
+CouplingConstant::Coordinates "cartesian" 
+CouplingConstant::AngularUnits "rad" 
+Particle::DefaultModifier BL
+Particle::SpinFormalism   Canonical 

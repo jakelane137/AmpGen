@@ -1,0 +1,54 @@
+CouplingConstant::Coordinates "polar" 
+CouplingConstant::AngularUnits "deg" 
+Particle::DefaultModifier BL
+Particle::SpinFormalism   Canonical 
+Import $AMPGENROOT/options/kMatrix.opt
+Import $AMPGENROOT/kspipi/opts/LASS.opt
+Import $AMPGENROOT/kspipi/opts/particleProperties.opt
+
+D0{K*(892)bar-{K0S0,pi-},pi+}               2   1.590   0   2   131.8   0
+D0{K(0)*(1430)bar-[GLASS]{K0S0,pi-},pi+}    2   2.059   0   2   -194.6  0
+D0{K(2)*(1430)bar-{K0S0,pi-},pi+}           2   1.150   0   2   -41.5   0   
+D0{K*(1410)bar-{K0S0,pi-},pi+}              2   0.496   0   2   83.4    0
+D0{K*(1680)bar-{K0S0,pi-},pi+}              2   1.556   0   2   -23.2   0
+D0{K*(892)+{K0S0,pi+},pi-}                  2   0.139   0   2   -42.1   0
+#D0{K(0)*(1430)+[GLASS]{K0S0,pi+},pi-}       2   0.176   0   2   -102.3  0
+#D0{K(2)*(1430)+{K0S0,pi+},pi-}              2   0.077   0   2   -32.2   0
+#D0{K*(1410)+{K0S0,pi+},pi-}                 2   0.248   0   2   -145.7  0
+#D0{K0S0,rho(770)0{pi+,pi-}}                 2   1       0   2   0       0
+#D0{K0S0,omega(782)0{pi+,pi-}}               2   0.0370  0   2   114.9   0
+#D0{K0S0,f(2)(1270)0{pi+,pi-}}               2   1.300   0   2   -31.6   0
+#D0{K0S0,rho(1450)0{pi+,pi-}}                2   0.532   0   2   80.8    0
+D0{K0S0,PiPi00}                             2   0.1       0   2   0       0
+PiPi00[kMatrix.pole.0]{pi+,pi-}             2   4.23    0   2   164.0   0
+PiPi00[kMatrix.pole.1]{pi+,pi-}             2   10.90   0   2   15.6    0
+PiPi00[kMatrix.pole.2]{pi+,pi-}             2   37.4    0   2   3.3     0
+PiPi00[kMatrix.pole.3]{pi+,pi-}             2   14.7    0   2   -8.9    0
+
+PiPi00[kMatrix.prod.0]{pi+,pi-}             2   12.76   0   2   -161.1  0
+PiPi00[kMatrix.prod.1]{pi+,pi-}             2   14.2    0   2   -176.2  0
+PiPi00[kMatrix.prod.2]{pi+,pi-}             2   10.0    0   2   -124.7  0
+PiPi00[kMatrix.prod.3]{pi+,pi-}
+PiPi00_s0_prod                              2   -0.07
+#K(0)*(1430)bar-_mass
+#K(0)*(1430)bar-_width
+K(0)*(1430)+_mass                           2   1.4617  0
+K(0)*(1430)+_width                          2   0.2683   0
+K(0)*(1430)+::GLASS::F                      2   0.4524   0
+K(0)*(1430)+::GLASS::phiF                   2   0.248   0
+K(0)*(1430)+::GLASS::R                      2   1       0
+K(0)*(1430)+::GLASS::phiR                   2   2.495   0
+K(0)*(1430)+::GLASS::a                      2   0.172   0
+K(0)*(1430)+::GLASS::r                      2   -20.6   0
+
+K(0)*(1430)bar-_mass                           2   1.4617  0
+K(0)*(1430)bar-_width                          2   0.2683   0
+K(0)*(1430)bar-::GLASS::F                      2   0.4524   0
+K(0)*(1430)bar-::GLASS::phiF                   2   0.248   0
+K(0)*(1430)bar-::GLASS::R                      2   1       0
+K(0)*(1430)bar-::GLASS::phiR                   2   2.495   0
+K(0)*(1430)bar-::GLASS::a                      2   0.172   0
+K(0)*(1430)bar-::GLASS::r                      2   -20.6   0
+
+K(0)*(892)bar-_mass                             2
+

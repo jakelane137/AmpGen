@@ -57,7 +57,7 @@ int main( int argc, char* argv[] )
   auto pNames = NamedParameter<std::string>("EventType" , ""    
               , "EventType to fit, in the format: \033[3m parent daughter1 daughter2 ... \033[0m" ).getVector(); 
   
-  [[maybe_unused]]
+
   size_t      nThreads = NamedParameter<size_t>     ("nCores"    , 8           , "Number of threads to use" );
   size_t      seed     = NamedParameter<size_t>     ("Seed"      , 0           , "Random seed used" );
   size_t      nEvents  = NamedParameter<size_t>     ("nEvents"   , 10000       , "Number of events to fill in") ;
@@ -146,6 +146,7 @@ FitResult* doFit( PDF&& pdf, EventList& data, EventList& mc, MinuitParameterSet&
   /* Make the plots for the different components in the PDF, i.e. the signal and backgrounds. 
      The structure assumed the PDF is some SumPDF<T1,T2,...>. */
   unsigned int counter = 1;
+  /*
   for_each(pdf.m_pdfs, [&]( auto& f ){
     std::function<double(const Event&)> FCN_sig = [&](const Event& evt){ return f.prob_unnormalised(evt) ; };
     auto mc_plot3 = mc.makeDefaultProjections(WeightFunction(f), Prefix("Model_cat"+std::to_string(counter)));
@@ -156,13 +157,14 @@ FitResult* doFit( PDF&& pdf, EventList& data, EventList& mc, MinuitParameterSet&
     }
     counter++;
   } );
-
+   */
   /* Estimate the chi2 using an adaptive / decision tree based binning, 
      down to a minimum bin population of 15, and add it to the output. */
+  /*
   Chi2Estimator chi2( data, mc, pdf, 15 );
   chi2.writeBinningToFile("chi2_binning.txt");
   fr->addChi2( chi2.chi2(), chi2.nBins() );
-  
+  */
   auto twall_end  = std::chrono::high_resolution_clock::now();
   double time_cpu = ( std::clock() - time ) / (double)CLOCKS_PER_SEC;
   double tWall    = std::chrono::duration<double, std::milli>( twall_end - time_wall ).count();

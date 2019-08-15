@@ -1,0 +1,84 @@
+D0{K(0)*(1430)+[GLASS]{K0S0,pi+},pi-}_Re
+Fitted Value = 0.0166291 ± 0.0132812 
+Initial Value = 0.0095653 ± 0.000827718 
+D0{K(0)*(1430)+[GLASS]{K0S0,pi+},pi-}_Im
+Fitted Value = 0.00542807 ± 0.0107489 
+Initial Value = 0.00601207 ± 0.000843968 
+D0{K(0)*(1430)bar-[GLASS]{K0S0,pi-},pi+}_Re
+Fitted Value = -0.000484009 ± 0.0195647 
+Initial Value = 0.0255993 ± 0.00122597 
+D0{K(0)*(1430)bar-[GLASS]{K0S0,pi-},pi+}_Im
+Fitted Value = -0.18319 ± 0.0132436 
+Initial Value = -0.194327 ± 0.00105316 
+D0{K(2)*(1430)+{K0S0,pi+},pi-}_Re
+Fitted Value = 0.00182942 ± 0.0168455 
+Initial Value = 0.0133101 ± 0.00135651 
+D0{K(2)*(1430)+{K0S0,pi+},pi-}_Im
+Fitted Value = -0.0118298 ± 0.0178769 
+Initial Value = 0.0170886 ± 0.00123279 
+D0{K(2)*(1430)bar-{K0S0,pi-},pi+}_Re
+Fitted Value = -0.135932 ± 0.0382953 
+Initial Value = -0.107163 ± 0.00146194 
+D0{K(2)*(1430)bar-{K0S0,pi-},pi+}_Im
+Fitted Value = 0.189122 ± 0.0582268 
+Initial Value = 0.104979 ± 0.00164431 
+D0{K*(1410)+{K0S0,pi+},pi-}_Re
+Fitted Value = -0.0170059 ± 0.0178197 
+Initial Value = 0.00296544 ± 0.00225542 
+D0{K*(1410)+{K0S0,pi+},pi-}_Im
+Fitted Value = 0.0201052 ± 0.0190668 
+Initial Value = 0.014186 ± 0.00247679 
+D0{K*(1410)bar-{K0S0,pi-},pi+}_Re
+Fitted Value = -0.034338 ± 0.027891 
+Initial Value = -0.0339155 ± 0.00309512 
+D0{K*(1410)bar-{K0S0,pi-},pi+}_Im
+Fitted Value = 0.0138848 ± 0.029437 
+Initial Value = 0.0613357 ± 0.0037167 
+D0{K*(1680)bar-{K0S0,pi-},pi+}_Re
+Fitted Value = -0.0398423 ± 0.0604944 
+Initial Value = -0.0535469 ± 0.00651378 
+D0{K*(1680)bar-{K0S0,pi-},pi+}_Im
+Fitted Value = 0.0551103 ± 0.055434 
+Initial Value = 0.0272353 ± 0.0073212 
+D0{K*(892)+{K0S0,pi+},pi-}_Re
+Fitted Value = 0.130969 ± 0.0217979 
+Initial Value = 0.126313 ± 0.00245399 
+D0{K*(892)+{K0S0,pi+},pi-}_Im
+Fitted Value = -0.165709 ± 0.0210241 
+Initial Value = -0.140858 ± 0.00235595 
+D0{K*(892)bar-{K0S0,pi-},pi+}_Re
+Fitted Value = -1.17444 ± 0.0734517 
+Initial Value = -1.37962 ± 0.00769138 
+D0{K*(892)bar-{K0S0,pi-},pi+}_Im
+Fitted Value = 1.65977 ± 0.0615827 
+Initial Value = 1.49371 ± 0.00800201 
+D0{K0S0,PiPi00}_Re
+Fitted Value = 1.0 ± 0.0 
+Initial Value = 1.0 ± 0.0 
+D0{K0S0,PiPi00}_Im
+Fitted Value = 0.0 ± 0.0 
+Initial Value = 0.0 ± 0.0 
+D0{K0S0,f(2)(1270)0{pi+,pi-}}_Re
+Fitted Value = -0.177262 ± 0.0581675 
+Initial Value = -0.125526 ± 0.00221442 
+D0{K0S0,f(2)(1270)0{pi+,pi-}}_Im
+Fitted Value = 0.118592 ± 0.0390062 
+Initial Value = 0.0943573 ± 0.00286431 
+D0{K0S0,omega(782)0{pi+,pi-}}_Re
+Fitted Value = -0.0929587 ± 0.0180837 
+Initial Value = -0.0640864 ± 0.00196373 
+D0{K0S0,omega(782)0{pi+,pi-}}_Im
+Fitted Value = 0.124597 ± 0.0162405 
+Initial Value = 0.12832 ± 0.00170606 
+D0{K0S0,rho(1450)0{pi+,pi-}}_Re
+Fitted Value = 0.190313 ± 0.0451113 
+Initial Value = 0.160532 ± 0.00460311 
+D0{K0S0,rho(1450)0{pi+,pi-}}_Im
+Fitted Value = 0.107059 ± 0.0516548 
+Initial Value = 0.0886014 ± 0.00646564 
+D0{K0S0,rho(770)0{pi+,pi-}}_Re
+Fitted Value = 1.0 ± 0.0 
+Initial Value = 1.0 ± 0.0 
+D0{K0S0,rho(770)0{pi+,pi-}}_Im
+Fitted Value = 0.0 ± 0.0 
+Initial Value = 0.0 ± 0.0 

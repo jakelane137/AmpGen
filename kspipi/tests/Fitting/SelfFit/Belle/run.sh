@@ -1,8 +1,8 @@
 #!/bin/bash
-N=${1:-10000}
-opt=${2:-"opts/belle.opt"}  
-f=${opt%.*}
+  
+f=${1%.*}
 O=${f##*/}
+
 #echo $O
-diff.py --generate --output $O --nEvents $N $f $f
+toyfit --opt $1 --output $O "$@"
 

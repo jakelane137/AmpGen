@@ -7,7 +7,7 @@
    ╚═╝  ╚═╝╚═╝     ╚═╝╚═╝      ╚═════╝ ╚══════╝╚═╝  ╚═══╝
 [0m
 [1m                      version 1.2
-        build: gcc 9.1.1  Jul  8 2019 15:13:44[0m
+        build: gcc 8.2.0  Jul  9 2019 12:00:04[0m
 
 [1m Release notes (v1r2)[0m
  - Improved thread support for CoherentSum
@@ -16,16 +16,37 @@
  - Removed unused / untested lineshapes AxialKaon and ObelixRho 
 
 [2;34mvoid OptionsParser::import                     INFO         [0mImporting: opts/belleTimPolar.opt
-[2;34mint main                                       INFO         [0mUsing: 4 / 4 threads
-[2;34mbool ParticlePropertiesList::readFile          INFO         [0mReading file: /home/jlane/Documents/ampGen//options/mass_width.csv
-[2;34mbool ParticlePropertiesList::readFile          INFO         [0mReading file: /home/jlane/Documents/ampGen//options/MintDalitzSpecialParticles.csv
+[2;34mvoid OptionsParser::import                     INFO         [0mImporting: /afs/cern.ch/user/j/jolane/work/ampGen/options/kMatrix.opt
+[2;34mint main                                       INFO         [0mUsing: 10 / 10 threads
+[2;34mbool ParticlePropertiesList::readFile          INFO         [0mReading file: /afs/cern.ch/user/j/jolane/work/ampGen//options/mass_width.csv
+[2;34mbool ParticlePropertiesList::readFile          INFO         [0mReading file: /afs/cern.ch/user/j/jolane/work/ampGen//options/MintDalitzSpecialParticles.csv
 [2;34mint main                                       INFO         [0mGenerating events with type = D0 → [K0S0, pi+, pi-]
+[2;34mCoherentSum::CoherentSum                       INFO         [0mD0{K(0)*(1430)+[GLASS.BL]{K0S0,pi+},pi-}
+[2;34mCoherentSum::CoherentSum                       INFO         [0mD0{K(0)*(1430)bar-[GLASS.BL]{K0S0,pi-},pi+}
+[2;34mCoherentSum::CoherentSum                       INFO         [0mD0{K(2)*(1430)+{K0S0,pi+},pi-}
+[2;34mCoherentSum::CoherentSum                       INFO         [0mD0{K(2)*(1430)bar-{K0S0,pi-},pi+}
+[2;34mCoherentSum::CoherentSum                       INFO         [0mD0{K*(1410)+{K0S0,pi+},pi-}
+[2;34mCoherentSum::CoherentSum                       INFO         [0mD0{K*(1410)bar-{K0S0,pi-},pi+}
+[2;34mCoherentSum::CoherentSum                       INFO         [0mD0{K*(1680)bar-{K0S0,pi-},pi+}
+[2;34mCoherentSum::CoherentSum                       INFO         [0mD0{K*(892)+{K0S0,pi+},pi-}
+[2;34mCoherentSum::CoherentSum                       INFO         [0mD0{K*(892)bar-{K0S0,pi-},pi+}
+[2;34mCoherentSum::CoherentSum                       INFO         [0mD0{PiPi00[kMatrix.pole.0]{pi+,pi-},K0S0}
+[2;34mCoherentSum::CoherentSum                       INFO         [0mD0{PiPi00[kMatrix.pole.1]{pi+,pi-},K0S0}
+[2;34mCoherentSum::CoherentSum                       INFO         [0mD0{PiPi00[kMatrix.pole.2]{pi+,pi-},K0S0}
+[2;34mCoherentSum::CoherentSum                       INFO         [0mD0{PiPi00[kMatrix.pole.3]{pi+,pi-},K0S0}
+[2;34mCoherentSum::CoherentSum                       INFO         [0mD0{PiPi00[kMatrix.prod.0]{pi+,pi-},K0S0}
+[2;34mCoherentSum::CoherentSum                       INFO         [0mD0{PiPi00[kMatrix.prod.1]{pi+,pi-},K0S0}
+[2;34mCoherentSum::CoherentSum                       INFO         [0mD0{PiPi00[kMatrix.prod.2]{pi+,pi-},K0S0}
+[2;34mCoherentSum::CoherentSum                       INFO         [0mD0{PiPi00[kMatrix.prod.3]{pi+,pi-},K0S0}
+[2;34mCoherentSum::CoherentSum                       INFO         [0mD0{f(2)(1270)0{pi+,pi-},K0S0}
+[2;34mCoherentSum::CoherentSum                       INFO         [0mD0{omega(782)0{pi+,pi-},K0S0}
+[2;34mCoherentSum::CoherentSum                       INFO         [0mD0{rho(1450)0{pi+,pi-},K0S0}
 [2;34mCoherentSum::CoherentSum                       INFO         [0mD0{rho(770)0{pi+,pi-},K0S0}
-[2;34mvoid Generator<PHASESPACE>::fillEventList      INFO         [0mSetting normalisation constant = 0.692198
-[2;34mvoid Generator<PHASESPACE>::fillEventList      INFO         [0mCompleted: 100% [||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||] ε[gen] = 0.10% , 0 seconds
-[2;34mvoid Generator<PHASESPACE>::fillEventList      INFO         [0mGenerated 100 events in 117.173 ms
-[2;34mvoid Generator<PHASESPACE>::fillEventList      INFO         [0mGenerating phase space : 74.0441 ms
-[2;34mvoid Generator<PHASESPACE>::fillEventList      INFO         [0mEvaluating PDF         : 7.71766 ms
-[2;34mvoid Generator<PHASESPACE>::fillEventList      INFO         [0mDoing accept/reject    : 15.7954 ms
+[2;34mvoid Generator<PHASESPACE>::fillEventList      INFO         [0mSetting normalisation constant = 51.508
+[2;34mvoid Generator<PHASESPACE>::fillEventList      INFO         [0mCompleted:  24% [||||||||||||||                                              ] ε[gen] = 2.46% , 0 seconds[2;34mvoid Generator<PHASESPACE>::fillEventList      INFO         [0mCompleted:  48% [||||||||||||||||||||||||||||                                ] ε[gen] = 2.37% , 0 seconds[2;34mvoid Generator<PHASESPACE>::fillEventList      INFO         [0mCompleted:  71% [|||||||||||||||||||||||||||||||||||||||||||                 ] ε[gen] = 2.35% , 1 seconds[2;34mvoid Generator<PHASESPACE>::fillEventList      INFO         [0mCompleted:  96% [||||||||||||||||||||||||||||||||||||||||||||||||||||||||||  ] ε[gen] = 2.50% , 1 seconds[2;34mvoid Generator<PHASESPACE>::fillEventList      INFO         [0mCompleted: 100% [||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||] ε[gen] = 0.33% , 1 seconds
+[2;34mvoid Generator<PHASESPACE>::fillEventList      INFO         [0mGenerated 10000 events in 1774.67 ms
+[2;34mvoid Generator<PHASESPACE>::fillEventList      INFO         [0mGenerating phase space : 541.803 ms
+[2;34mvoid Generator<PHASESPACE>::fillEventList      INFO         [0mEvaluating PDF         : 1045.86 ms
+[2;34mvoid Generator<PHASESPACE>::fillEventList      INFO         [0mDoing accept/reject    : 42.9038 ms
 [2;34mint main                                       INFO         [0mMaking 2D projections...
 [2;34mint main                                       INFO         [0mWriting output file 

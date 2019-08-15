@@ -1,0 +1,17 @@
+CouplingConstant::Coordinates cartesian
+CouplingConstant::AngularUnits deg
+#BaBar Model from https://arxiv.org/pdf/1804.06153v1.pdf
+
+#EventType D0 K0S0 pi+ pi- 
+Import "$AMPGEN"/kspipi/kMatrix.opt
+
+
+
+Particle::DefaultModifier BL
+Particle::SpinFormalism   Canonical
+
+
+D0{K0S0,f(2)(1270)0{pi+,pi-}}_Re                                                   0              -0.125526      0.00221442
+D0{K0S0,f(2)(1270)0{pi+,pi-}}_Im                                                   0              0.0943573      0.00286431     
+f(2)(1270)_mass                                   2              1.2751         0              
+f(2)(1270)_width                                  2              0.1842         0     

@@ -1,0 +1,23 @@
+#EventType D0 K0S0 pi+ pi-
+
+CouplingConstant::Coordinates  cartesian
+CouplingConstant::AngularUnits deg
+ 
+Import $AMPGENROOT/options/kMatrix.opt
+Import $AMPGENROOT/kspipi/opts/kMatrix.opt
+Import $AMPGENROOT/kspipi/opts/LASS.opt
+Import $AMPGENROOT/kspipi/opts/particleProperties.opt
+Particle::DefaultModifier BL
+Particle::SpinFormalism   Canonical
+
+D0{K0S0,PiPi00}                                                                 2              1              0              2              0              0              
+
+PiPi00[kMatrix.pole.0]{pi+,pi-}                                                 0              -0.696212      0.0249041      0              -0.564193      0.0150433      
+PiPi00[kMatrix.pole.1]{pi+,pi-}                                                 0              -1.1781        0.0163188      0              -0.387498      0.0128765      
+PiPi00[kMatrix.pole.2]{pi+,pi-}                                                 0              -3.56439       0.100848       0              -0.302991      0.0769034      
+PiPi00[kMatrix.pole.3]{pi+,pi-}                                                 0              -0.654174      0.0322988      0              0.779454       0.0257366      
+PiPi00[kMatrix.prod.0]{pi+,pi-}                                                 0              0.722348       0.0181052      0              0.555636       0.011945       
+PiPi00[kMatrix.prod.1]{pi+,pi-}                                                 0              3.23771        0.0874993      0              0.614543       0.0497138      
+PiPi00[kMatrix.prod.2]{pi+,pi-}                                                 0              1.67044        0.0909612      0              2.7479         0.0945962      
+PiPi00[kMatrix.prod.3]{pi+,pi-}                                                 0              2.36804        0.0672284      0              1.81536        0.0420283      
+

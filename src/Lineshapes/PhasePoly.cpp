@@ -37,14 +37,34 @@ DEFINE_GENERIC_SHAPE( PhasePoly )
    auto pp = *p.daughter("pi+");
    auto pm = *p.daughter("pi+");
    auto ks = *p.daughter("K0S0");
+   auto pD = ks.P() + pp.P() + pm.P();
+    auto mD = sqrt(dot(pD,pD));
+    auto mp = sqrt(dot(pp.P(), pp.P()));
+    auto mm = sqrt(dot(pm.P(), pm.P()));
+    auto mK = sqrt(dot(ks.P(), ks.P()));
 
 
     //Tensor P (Tensor::dim(4));
     //for ( auto& ip : p ) P = P + ip;
     //For simplicity we will use x and y as the input for the polynomial not m^2_+, m^2_-!
 
-    Expression x = dot(ks.P() + pp.P(), ks.P() + pp.P());
-    Expression y = dot(ks.P() + pm.P(), ks.P() + pm.P());
+    Expression xmin = pow(mp + mK, 2);
+    Expression xmax = pow(mD - mm, 2);
+    Expression x0 = (xmax + xmin)/2;
+    Expression ymin = pow(mp + mK, 2);
+    Expression ymax = pow(mD - mp, 2);
+    Expression y0 = (ymax + ymin)/2;
+    Expression x = dot(ks.P() + pp.P(), ks.P() + pp.P())/x0;
+    Expression y = dot(ks.P() + pm.P(), ks.P() + pm.P())/y0;
+   
+
+    //Tensor P (Tensor::dim(4));
+    //for ( auto& ip : p ) P = P + ip;
+    //For simplicity we will use x and y as the input for the polynomial not m^2_+, m^2_-!
+
+   
+   
+
   //      Expression x = dot(p[0], p[0]);
 //        Expression y = dot(p[0], p[0]);
 //    Expression x = dot(p[0], p[0]);

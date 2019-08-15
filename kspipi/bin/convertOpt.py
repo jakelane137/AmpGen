@@ -1,5 +1,6 @@
 #!/bin/python3
 import multiprocessing
+import decimal
 from ROOT import TGraph2D, TFile, TCanvas, gPad, TH1D, gStyle, TLegend
 import numpy as np
 from matplotlib import pyplot as plt
@@ -15,150 +16,154 @@ class convertOpt:
         self.convertType = convertType
         self.angleType = angleType
         self.ndp = ndp
-        self.D0Params = self.getParams("D0{")
-        self.Dbar0Params = self.getParams("Dbar0{")
-        self.PiPiParams = self.getParams("PiPi00[")
-        self.allParams = []
-        for params in [self.D0Params, self.Dbar0Params, self.PiPiParams]:
-            for param in params:
-                self.allParams.append(param)
+        self.couplingType=""
+        _file = open(self.file).read()
+        if "cartesian" in _file:
+            self.couplingType = "cartesian"
+        elif "polar" in _file:
+            self.couplingType = "polar"
+        if "deg" in _file:
+            self.angleType = "deg"
+        elif "rad" in _file:
+            self.angleType = "rad"
 
 
+        self.params = self.getParams()
+        self.names = self.params["names"]
+        self.fix = self.params["fix"]
+        self.real = self.params["real"]
+        self.imag = self.params["imag"]
+        self.abs = self.params["abs"]
+        self.phase = self.params["phase"]
+        self.dreal = self.params["dreal"]
+        self.dimag = self.params["dimag"]
+        self.dabs = self.params["dabs"]
+        self.dphase = self.params["dphase"]
+
+        self.nComp = len(self.names)
     
-    def getParams(self, delim):
+    def getParams(self):
         f = open(self.file)
         f.seek(0)
-        params=[]
+       
+        _names = []
+        _fix=[]
+        _real = []
+        _imag = []
+        _abs = []
+        _phase = []
+        _dreal = []
+        _dimag = []
+        _dabs = []
+        _dphase = []
+        _err = 5 * 10**(-float(self.ndp))
         for line in f.readlines():
-            if delim in line:
-                params.append(line.split())
+           lineArr = line.split()
+           #print(lineArr)
+           nP = len(lineArr)
+           if (nP == 7):
+                _names.append(lineArr[0])
+                if self.couplingType=="cartesian":
+                    fix = int(lineArr[1])
+                    x = float(lineArr[2])
+                    dx = float(lineArr[3])
+                    y = float(lineArr[5])
+                    dy = float(lineArr[6])
+                    r = x**2 + y**2
+                    dr = _err * r
+                    phi=0
+                   
+                    if abs(x)>0:
+                        phi = atan(y/x)
+                    else:
+                        if abs(y)>0:
+                            phi = (y/abs(y)) * pi/2
+                        else:
+                            phi=0
+                    dphi = _err * phi
+
+                    if (dr == 0):
+                        dr = _err
+                    if (dphi==0):
+                        dphi = _err
+
+
+                    _fix.append(f"{fix}")
+                    _real.append(f"%.{self.ndp}f" % x)
+                    _imag.append(f"%.{self.ndp}f" % y)
+                    _abs.append(f"%.{self.ndp}f" % r)
+                    _phase.append(f"%.{self.ndp}f" % phi)
+                    _dreal.append(f"%.{self.ndp}f" % dx)
+                    _dimag.append(f"%.{self.ndp}f" % dy)
+                    _dabs.append(f"%.{self.ndp}f" % dr)
+                    _dphase.append(f"%.{self.ndp}f" % dphi)
+
+                    
+                elif self.couplingType == "polar":
+                    fix = int(lineArr[1])
+                    r = float(lineArr[2])
+                    dr = float(lineArr[3])
+                    phi = float(lineArr[5])
+                    dphi = float(lineArr[6])
+                    if self.angleType=="deg":
+                        phi = radians(phi)
+                        dphi = radians(dphi)
+                    x = r * cos(phi)
+                    dx = _err * abs(x)
+                    if (dx ==0):
+                        dx = _err
+                    y = r * sin(phi)
+                    dy = _err * abs(y)
+                    if (dy==0):
+                        dy = _err
+
+                    
+
+                    _fix.append(f"{fix}")
+                    _real.append(f"%.{self.ndp}f" % x)
+                    _imag.append(f"%.{self.ndp}f" % y)
+                    _abs.append(f"%.{self.ndp}f" % r)
+                    _phase.append(f"%.{self.ndp}f" % phi)
+                    _dreal.append(f"%.{self.ndp}f" % dx)
+                    _dimag.append(f"%.{self.ndp}f" % dy)
+                    _dabs.append(f"%.{self.ndp}f" % dr)
+                    _dphase.append(f"%.{self.ndp}f" % dphi)
+
+
+
+        params = {"names" : _names, "real": _real, "imag" : _imag, "abs" : _abs, "phase" : _phase, "dreal" : _dreal, "dimag" : _dimag, "dabs" : _dabs, "dphase" : _dphase, "fix" : _fix}
         return params
 
+    def printOpts(self):
+        _N = len(self.real)
+        print(f"Using {self.couplingType} with {self.angleType}") 
+        print("{:<50} {:<20} {:<20} {:<20} {:<20}".format('Name', "Real", "Imag", "Abs", "Phase"))
+
+        for i in range(_N):
+            print("{:<50} {:<20} {:<20} {:<20} {:<20}".format(self.names[i], self.real[i], self.imag[i], self.abs[i], self.phase[i]))
     
-    def convert(self, param):
-        sum2 = lambda x : sqrt(sum([i**2 for i in x]))
-        cos2 = lambda x : cos(x)**2
-        tan2 = lambda x : tan(x)**2
-        X = lambda r,phi : r * cos(phi)
-        Y = lambda r,phi : r * sin(phi)
-        R = lambda x,y   : sum2([x,y])
-        Phi = lambda x,y : atan(y/x)
+    def makeOpts(self):
+        nPolar = f"{self.target}_Polar.opt"
+        nCart = f"{self.target}_Cart.opt"
+        _fPolar = open(nPolar, "w")
+        _fCart = open(nCart, "w")
+
+        _fPolar.write(f"CouplingConstant::Coordinates \"polar\"\nCouplingConstant::AngularUnits \"rad\"\nParticle::DefaultModifier BL\nParticle::SpinFormalism Canonical \n")
+        _fCart.write(f"CouplingConstant::Coordinates \"cartesian\" \nCouplingConstant::AngularUnits \"rad\" \nParticle::DefaultModifier BL\nParticle::SpinFormalism   Canonical \n")
+        for i in range(self.nComp):
+
+            _fPolar.write(f"{self.names[i]}\t {self.fix[i]}\t {self.abs[i]} \t {self.dabs[i]} \t {self.fix[i]} \t {self.phase[i]} \t {self.dphase[i]} \n")           
+            _fCart.write(f"{self.names[i]}_Re \t {self.fix[i]} \t {self.real[i]} \t {self.dreal[i]}\n")
+            _fCart.write(f"{self.names[i]}_Im \t {self.fix[i]} \t {self.imag[i]} \t {self.dimag[i]} \n")
         
-        newParam=[]
-        if self.convertType=="cartesian":
-            r = float(param[2])
-            dr = float(param[3])
-            phi = float(param[5])
-            dphi = float(param[6])
-            #print(dphi)
-
-            if (self.angleType=="deg"):
-                phi = radians(phi)
-                dphi = radians(dphi)
-
-
-            x = X(r, phi)
-            y = Y(r, phi)
-            dxr = x*dr/r
-            dxphi = y*dphi
-            dx = sum2([dxr,dxphi])
-            dyr = y *dr / r
-            dyphi = x * dphi
-            dy = sum2([dyr, dyphi])
-          
-
-           
-
-
-            x = ("{:.%if}" % self.ndp).format(x)
-            y = ("{:.%if}" % self.ndp).format(y)
-            dx = ("{:.%if}" % self.ndp).format(dx)
-            dy = ("{:.%if}" % self.ndp).format(dy)
-
-            newParam = [param[0], param[1], x, dx, param[4], y, dy]    
-        elif self.convertType=="polar":
-            #print(param)
-            x = float(param[2])
-            dx = float(param[3])
-            y = float(param[5])
-            dy = float(param[6])
-            #print(dy)
-
-            r = R(x,y)
-            phi=0
-            if (x!=0):
-                phi = abs(Phi(x,y)) % (2 * pi)
-            else:
-                if (y>0):
-                    phi = pi/2 
-                else:
-                    phi = -pi/2
+        _fCart.close()
+        _fPolar.close()
+        print(f"Made options files {nPolar} and {nCart}")
             
-            if (x>0 and y > 0):
-                phi = phi
-            elif (x>0 and y<0):
-                phi = -phi
-            elif (x<0 and y>0):
-                phi = pi - phi
-            elif (x<0 and y<0):
-                phi = -pi + phi
-            
-            dr = sum2([dx*x/r, dy*y/r])
-            
-            if (sin(phi)!=0):
-                dphix = (dx/r)/abs(sin(phi))
-                dphiy = (x*dr/r**2)/abs(sin(phi))
-            else:
-                dphix = (dy/r)/abs(cos(phi))
-                dphiy = (y*dr/r**2)/abs(cos(phi))
 
-
-            dphi = sum2([dphix,dphiy]) 
-
-
-
-            
-            
-            if (self.angleType=="deg"):
-                phi = degrees(phi)
-                dphi = degrees(dphi)
-
-            r = ("{:.%if}" % self.ndp).format(r)
-            phi = ("{:.%if}" % self.ndp).format(phi)
-            dr = ("{:.%if}" % self.ndp).format(dr)
-            dphi = ("{:.%if}" % self.ndp).format(dphi)
-
-
-            newParam = [param[0], param[1], r, dr, param[4], phi, dphi]    
         
-        return newParam
-
-    def convertAll(self):
-        newParams=[]
-        newParam=[]
-        for params in self.allParams:
-            newParam = self.convert(params)
-            newParams.append(newParam)
-            #print(newParam)
         
-        self.allParams = newParams
-    
-    def writeOpt(self):
-
-        f = open(self.target, "w")
-        f.write(f"CouplingConstant::Coordinates {self.convertType}\n")
-        f.write(f"CouplingConstant::AngularUnits {self.angleType}\n")
-            
-        for param in self.allParams:
-            line = " ".join(param) + "\n"
-            f.write(line)
-        f.close()
-
-    def printParam(self):
-        for param  in self.allParams:
-            print(" ".join(param))
-
-
+   
 def main():
     defaultOpt= os.environ['AMPGEN'] + "/kspipi/opts/belle.opt"
     defaultTarget = defaultOpt.split(".")[0] + "_polar.opt"
@@ -175,10 +180,9 @@ def main():
     ndp = args.ndp
     target = args.target
     co = convertOpt(file, target, convertType, angleType, ndp)
- #   co.printParam()
-    co.convertAll()
-#    co.printParam()
-    co.writeOpt()
+    co.printOpts()
+    co.makeOpts()
+
 
 if __name__=="__main__":
     main()

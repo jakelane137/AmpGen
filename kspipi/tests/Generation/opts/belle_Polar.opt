@@ -1,0 +1,26 @@
+CouplingConstant::Coordinates "polar"
+CouplingConstant::AngularUnits "rad"
+Particle::DefaultModifier BL
+Particle::SpinFormalism Canonical 
+D0{K*(892)bar-{K0S0,pi-},pi+}	 0	 1.030 	 0.0036 	 0 	 2.388 	 0.0035 
+D0{K(0)*(1430)bar-[GLASS]{K0S0,pi-},pi+}	 0	 0.165 	 0.0042 	 0 	 1.735 	 0.0297 
+D0{K(2)*(1430)bar-{K0S0,pi-},pi+}	 0	 0.017 	 0.0003 	 0 	 -0.770 	 0.0140 
+D0{K*(1410)bar-{K0S0,pi-},pi+}	 0	 0.000 	 0.0000 	 0 	 1.735 	 0.0960 
+D0{K*(1680)bar-{K0S0,pi-},pi+}	 0	 0.017 	 0.0010 	 0 	 -2.063 	 0.0541 
+D0{K*(892)+{K0S0,pi+},pi-}	 0	 0.001 	 0.0000 	 0 	 -0.737 	 0.0157 
+D0{K*(1410)+{K0S0,pi+},pi-}	 0	 0.000 	 0.0000 	 0 	 2.621 	 0.0925 
+D0{K(0)*(1430)+[GLASS]{K0S0,pi+},pi-}	 0	 0.000 	 0.0000 	 0 	 2.833 	 0.1152 
+D0{K(2)*(1430)+{K0S0,pi+},pi-}	 0	 0.000 	 0.0000 	 0 	 -1.564 	 0.1326 
+D0{K0S0,rho(770)0{pi+,pi-}}	 0	 0.204 	 0.0000 	 0 	 0.000 	 0.0000 
+D0{K0S0,omega(782)0{pi+,pi-}}	 0	 0.000 	 0.0000 	 0 	 2.107 	 0.0122 
+D0{K0S0,f(2)(1270)0{pi+,pi-}}	 0	 0.011 	 0.0002 	 0 	 -0.634 	 0.0192 
+D0{K0S0,rho(1450)0{pi+,pi-}}	 0	 0.017 	 0.0006 	 0 	 1.782 	 0.0332 
+D0{K0S0,PiPi00}	 2	 1.000 	 0.0000 	 2 	 0.000 	 0.0000 
+PiPi00[kMatrix.pole.0]{pi+,pi-}	 0	 8.500 	 0.5000 	 0 	 1.196 	 0.0593 
+PiPi00[kMatrix.pole.1]{pi+,pi-}	 0	 12.200 	 0.3000 	 0 	 0.419 	 0.0244 
+PiPi00[kMatrix.pole.2]{pi+,pi-}	 0	 29.200 	 1.6000 	 0 	 -0.002 	 0.0436 
+PiPi00[kMatrix.pole.3]{pi+,pi-}	 0	 10.800 	 0.5000 	 0 	 -0.906 	 0.0419 
+PiPi00[kMatrix.prod.0]{pi+,pi-}	 0	 8.000 	 0.4000 	 0 	 -2.199 	 0.0436 
+PiPi00[kMatrix.prod.1]{pi+,pi-}	 0	 26.300 	 1.6000 	 0 	 -2.658 	 0.0524 
+PiPi00[kMatrix.prod.2]{pi+,pi-}	 0	 33.000 	 1.8000 	 0 	 -1.627 	 0.0541 
+PiPi00[kMatrix.prod.3]{pi+,pi-}	 0	 26.200 	 1.3000 	 0 	 -2.119 	 0.0471 
