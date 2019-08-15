@@ -52,6 +52,125 @@ void split5(const std::string& str, Container& cont,
     boost::split(cont, str, boost::is_any_of(delims));
 }
 */
+
+class FixedLibPdf 
+{
+  public: 
+    FixedLibPdf() = default; 
+    FixedLibPdf(const EventType& type, MinuitParameterSet& mps) : 
+      FixedLibPdf(NamedParameter<std::string>(type.decayDescriptor()+"::lib").getVal()) 
+    {
+      INFO("Constructing: " << type << " flib = " <<type.decayDescriptor()+"::lib" );
+    }
+    FixedLibPdf(const std::string& lib)
+    {
+      void* handle = dlopen( lib.c_str(), RTLD_NOW );
+      if ( handle == nullptr ) ERROR( dlerror() );
+      INFO("Constructing from " << lib );
+      amp = AmpGen::DynamicFCN<complex_t( const double*, const int& )>( handle, "AMP" );
+    }
+    void prepare(){};
+    void setEvents( AmpGen::EventList& evts ){};
+    double prob_unnormalised( const AmpGen::Event& evt ) const { return std::norm(getValNoCache(evt)); }
+    complex_t getValNoCache( const AmpGen::Event& evt ) const { return amp(evt,+1); }
+    size_t size() { return 0; }
+    void reset( const bool& flag = false ){};
+  private:
+    AmpGen::DynamicFCN<complex_t( const double*, const int& )> amp;
+};
+
+struct DTEvent 
+{
+  AmpGen::Event signal;
+  AmpGen::Event    tag;
+  double prob;
+  DTEvent() : signal(0,0,0), tag(0,0,0) {};
+  DTEvent( const AmpGen::Event& signal, const AmpGen::Event& tag ) : signal(signal), tag(tag) {};
+  void set( const AmpGen::Event& s1, const AmpGen::Event& s2 ) { signal.set(s1); tag.set(s2); };
+  void invertParity(){
+    for( size_t i = 0 ; i < signal.size(); ++i ) if( i % 4 != 3 ) signal[i] *= -1;
+    for( size_t i = 0 ; i < tag.size(); ++i )    if( i % 4 != 3 ) tag[i] *= -1;
+  }
+};
+
+struct DTEventList : public std::vector<DTEvent> 
+{
+  AmpGen::EventType m_sigType; 
+  AmpGen::EventType m_tagType;
+  DTEventList( const AmpGen::EventType& signal, const AmpGen::EventType& tag ) : m_sigType(signal), m_tagType(tag) {}
+  std::string particleName(const AmpGen::EventType& type, const size_t& j);
+  TTree* tree(const std::string& name);
+};
+class DTYieldCalculator {
+  public:
+    DTYieldCalculator(const double& productionCrossSection = 3260) : 
+      productionCrossSection(productionCrossSection){}
+
+    double operator()(const double& lumi, 
+        const AmpGen::EventType& t_signal, 
+        const AmpGen::EventType& t_tag, 
+        const bool& print = false);
+    double bf( const AmpGen::EventType& type ) const;
+  private: 
+    double productionCrossSection;
+    std::map<std::string, double> getKeyed( const std::string& name );
+    std::map<std::string, double> branchingRatios = {getKeyed("BranchingRatios")};
+    std::map<std::string, double> efficiencies    = {getKeyed("Efficiencies")};
+};
+void add_CP_conjugate( MinuitParameterSet& mps );
+
+template <class PDF> struct normalised_pdf {
+  PDF       pdf; 
+  complex_t norm;
+  normalised_pdf() = default; 
+  normalised_pdf(const EventType& type, MinuitParameterSet& mps, const DTYieldCalculator& yc) : pdf(type, mps)
+  {
+    ProfileClock pc; 
+    auto normEvents = Generator<PhaseSpace>(type).generate(1e6);
+    double n =0;
+    pdf.prepare();
+    #pragma omp parallel for reduction(+:n)
+    for(size_t i =0; i<normEvents.size(); ++i) 
+      n += std::norm(pdf.getValNoCache(normEvents[i]));
+    auto it = mps.find( type.decayDescriptor() + "::strongPhase");
+    norm = sqrt(yc.bf(type)/n);
+    if( it != nullptr ) norm *= exp( 1i * it->mean() * M_PI/180. );
+    pc.stop();
+    INFO(type << " Time to construct: " << pc << "[ms], norm = " << norm  << " " << typeof<PDF>() );
+  }
+  complex_t operator()(const Event& event){ return norm * pdf.getValNoCache(event); }
+};
+
+struct ModelStore {
+  MinuitParameterSet*                                 mps;
+  DTYieldCalculator                                   yieldCalculator;
+  std::map<std::string, normalised_pdf<CoherentSum>>  genericModels;
+  std::map<std::string, normalised_pdf<FixedLibPdf>>  flibModels;
+  ModelStore(MinuitParameterSet* mps, const DTYieldCalculator& yc) : mps(mps), yieldCalculator(yc) {}
+  template <class T> normalised_pdf<T>& get(const EventType& type, std::map<std::string, normalised_pdf<T>>& container)
+  {
+    auto key = type.decayDescriptor();
+    if( container.count(key) == 0 ) 
+      container[key] = normalised_pdf<T>(type, *mps, yieldCalculator);
+    return container[key]; 
+  }
+  template <class T>    normalised_pdf<T>& find(const EventType& type);
+};
+template <class T1, class T2> class Psi3770 {
+  private:
+    EventType           m_signalType;
+    EventType           m_tagType;
+    normalised_pdf<T1>& m_signal; 
+    normalised_pdf<T1>& m_signalBar; 
+    normalised_pdf<T2>& m_tag; 
+    normalised_pdf<T2>& m_tagBar; 
+    PhaseSpace          m_signalPhsp;
+    PhaseSpace          m_tagPhsp;
+    PhaseSpace          m_headPhsp;
+    bool                m_printed     = {false};
+    bool                m_ignoreQc    = {NamedParameter<bool>("IgnoreQC",false)};
+    size_t              m_blockSize   = {1000000};
+};
 int main( int argc, char* argv[] )
 {
   /* The user specified options must be loaded at the beginning of the programme, 
@@ -101,9 +220,12 @@ int main( int argc, char* argv[] )
   TFile * data = TFile::Open(dataFile.c_str());
   TFile * mc = TFile::Open(intFile.c_str());
   std::vector<std::string> varNames = {"E", "PX", "PY", "PZ"};
+  auto yc = DTYieldCalculator(crossSection);
+  MinuitParameterSet MPS;
+  MPS.loadFromStream();
+  ModelStore models(&MPS, yc);
  for( auto& tag : tags ){
-    MinuitParameterSet MPS;
-    MPS.loadFromStream();
+
     EventType signalType( pNames );
 
     auto tokens       = split(tag, ' ');
@@ -135,8 +257,11 @@ int main( int argc, char* argv[] )
     sigPDF.setMC(sigMCEvents);
     tagPDF.setMC(tagMCEvents);
     //FitResult * fr = doFit(make_pdf(tagPDF), tagEvents, MPS);
-    //FitResult * frSig = doFit(make_pdf(sigPDF), sigEvents, MPS);
-    FitResult * frTag = doFit(make_pdf(tagPDF), tagEvents, tagMCEvents , MPS);
+    FitResult * frSig = doFit(make_pdf(sigPDF), sigEvents, sigMCEvents, MPS);
+    //FitResult * frTag = doFit(make_pdf(tagPDF), tagEvents, tagMCEvents , MPS);
+    std::ostringstream stringStream;
+    stringStream<<logFile<<tokens[0];
+    frSig->writeToFile(stringStream.str());
 
    }
   
@@ -193,7 +318,7 @@ FitResult* doFit( PDF&& pdf, EventList& data, EventList& mc, MinuitParameterSet&
   */
   /* Estimate the chi2 using an adaptive / decision tree based binning, 
      down to a minimum bin population of 15, and add it to the output. */
- /* 
+  
   Chi2Estimator chi2( data, mc, pdf, 15 );
   chi2.writeBinningToFile("chi2_binning.txt");
   fr->addChi2( chi2.chi2(), chi2.nBins() );
@@ -203,7 +328,7 @@ FitResult* doFit( PDF&& pdf, EventList& data, EventList& mc, MinuitParameterSet&
   double tWall    = std::chrono::duration<double, std::milli>( twall_end - time_wall ).count();
   INFO( "Wall time = " << tWall / 1000. );
   INFO( "CPU  time = " << time_cpu );
-  */
+  
   fr->print();
   return fr;
 }
