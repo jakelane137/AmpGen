@@ -1,4 +1,7 @@
 install/*
+*.pyc
+*.so
+*.pdf
 *.eps
 *.png
 *.root
