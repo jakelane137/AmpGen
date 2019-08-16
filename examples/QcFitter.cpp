@@ -52,7 +52,6 @@ void split5(const std::string& str, Container& cont,
     boost::split(cont, str, boost::is_any_of(delims));
 }
 */
-
 class FixedLibPdf 
 {
   public: 
@@ -78,6 +77,7 @@ class FixedLibPdf
   private:
     AmpGen::DynamicFCN<complex_t( const double*, const int& )> amp;
 };
+
 
 struct DTEvent 
 {
@@ -220,10 +220,10 @@ int main( int argc, char* argv[] )
   TFile * data = TFile::Open(dataFile.c_str());
   TFile * mc = TFile::Open(intFile.c_str());
   std::vector<std::string> varNames = {"E", "PX", "PY", "PZ"};
-  auto yc = DTYieldCalculator(crossSection);
+//  auto yc = DTYieldCalculator(crossSection);
   MinuitParameterSet MPS;
   MPS.loadFromStream();
-  ModelStore models(&MPS, yc);
+  //ModelStore models(&MPS, yc);
  for( auto& tag : tags ){
 
     EventType signalType( pNames );
