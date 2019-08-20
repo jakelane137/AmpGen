@@ -20,9 +20,9 @@ def plot1D(obj, name, output):
 
 def plot2D(obj1, obj2, xname, yname, output):
     fig = plt.figure(figsize=(10,10))
-    nbins = int(len(obj1)/100)
-    counts, xedges, yedges, im = plt.hist2d(obj1, obj2, nbins)
-    plt.colorbar(im)
+    nbins = int(len(obj1)/1000)
+    counts, xedges, yedges, im = plt.hist2d(obj1, obj2, nbins, density=True)
+    fig.colorbar(im)
     plt.xlabel(f"{xname}")
     plt.ylabel(f"{yname}")
     fig.savefig(f"{output}")
@@ -47,10 +47,11 @@ class qcPlot:
         for tag in self.file:
             tagName = tag.decode().split(";")
             tagName = tagName[0]
-            os.system(f"mkdir -p {self.output}/{tag.decode()}/")
+            #print(f"{self.output}/{tagName}")
+            os.system(f"mkdir -p {self.output}/{tagName}/")
             EventType = self.EventType.replace("+", "p")
             EventType = EventType.replace("-", "m")
-            print(EventType)
+            #print(EventType)
             particles = EventType.split()[1:]
             p1 = self.getP(tag, particles[0])
             p2 = self.getP(tag, particles[1])
@@ -74,7 +75,7 @@ def main():
     parser = argparse.ArgumentParser("Plotting utility for QcGenerator")
     parser.add_argument("file", metavar="file", nargs="?", type=str, default="ToyMC.root", help="input root file")
     parser.add_argument("--output", metavar="output", nargs="?", type=str, default="output", help="output directory")
-    parser.add_argument("--EventType", metavar="EventType", nargs="?", type=str, default="D0 K0S0 pi+ pi-", help="EventType (in ampGen format) default: D0 K0S0 pi+ pi-")
+    parser.add_argument("--EventType", metavar="EventType", nargs="?", type=str, default="D0 K0S0 pi- pi+", help="EventType (in ampGen format) default: D0 K0S0 pi+ pi-")
     args = parser.parse_args()
     q = qcPlot(args.file, args.output, args.EventType)
     q.plot()

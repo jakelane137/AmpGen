@@ -1,12 +1,12 @@
-EventType D0 K0S0 pi+ pi-
+EventType D0 K0S0 pi- pi+
 nCores 4
-nEvents 10000
+nEvents 100000
 
 TagTypes { "KK       D0{K+,K-}"
            "KPi      D0{K-,pi+}"
            "KsPi0    D0{K0S0,pi0}" 
            "PiK      D0{K+,pi-}"
-	   "KsPiPi   D0{K0S0,pi+,pi-}"
+	   "KsPiPi   D0{K0S0,pi-,pi+}"
          }
 
 Efficiencies {
