@@ -20,7 +20,7 @@ def plot1D(obj, name, output):
     fig.savefig(f"{output}")
     plt.close()
 
-def plot2D(obj1, obj2, obj3, proj="XY", xname, yname, output):
+def plot2D(obj1, obj2, obj3,  xname, yname, output, proj="XY"):
     fig = plt.figure(figsize=(10,10))
     nbins = int(len(obj1)/1000)
     b = bound(obj1, obj2, obj3)
