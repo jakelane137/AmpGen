@@ -1,6 +1,8 @@
 install/*
 *.pyc
 *.so
+*.swp
+*.csv
 *.pdf
 *.eps
 *.png
