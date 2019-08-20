@@ -1,41 +1,4 @@
-#include "AmpGen/CoherentSum.h"
-#include "AmpGen/Generator.h"
-#include "AmpGen/EventType.h"
-#include "AmpGen/NamedParameter.h"
-#include "AmpGen/Kinematics.h"
-#include "AmpGen/OptionsParser.h"
-#include "AmpGen/ProfileClock.h"
-#include "AmpGen/ParticlePropertiesList.h"
-#include "AmpGen/MinuitParameterSet.h"
-#include <chrono>
-#include <ctime>
-#include <iostream>
-#include <map>
-#include <ratio>
-#include <string>
-#include <tuple>
-#include <utility>
-#include <vector>
-
-#include "AmpGen/Chi2Estimator.h"
-#include "AmpGen/EventList.h"
-#include "AmpGen/EventType.h"
-#include "AmpGen/IncoherentSum.h"
-#include "AmpGen/FitResult.h"
-#include "AmpGen/Minimiser.h"
-#include "AmpGen/MsgService.h"
-#include "AmpGen/SumPDF.h"
-#include "AmpGen/Utilities.h"
-#include "AmpGen/ErrorPropagator.h"
-
-#include <TFile.h>
-#include <TGraph2D.h>
-#include <TRandom3.h>
-#include <TRandom.h>
-#ifdef _OPENMP
-#include <omp.h>
-#include <thread>
-#endif
+#include "AmpGen/Psi3770.h"
 //#include <boost/algorithm/string.hpp>
 using namespace AmpGen;
 using namespace std::complex_literals;
@@ -44,6 +7,7 @@ std::vector<std::string> makeBranches(EventType Type, std::string prefix);
 template <typename PDF>
 FitResult* doFit( PDF&& pdf, EventList& data, EventList& mc, MinuitParameterSet& MPS );
 
+void add_CP_conjugate( MinuitParameterSet& mps );
 
 /*template <class Container>
 void split5(const std::string& str, Container& cont,
@@ -52,125 +16,9 @@ void split5(const std::string& str, Container& cont,
     boost::split(cont, str, boost::is_any_of(delims));
 }
 */
-class FixedLibPdf 
-{
-  public: 
-    FixedLibPdf() = default; 
-    FixedLibPdf(const EventType& type, MinuitParameterSet& mps) : 
-      FixedLibPdf(NamedParameter<std::string>(type.decayDescriptor()+"::lib").getVal()) 
-    {
-      INFO("Constructing: " << type << " flib = " <<type.decayDescriptor()+"::lib" );
-    }
-    FixedLibPdf(const std::string& lib)
-    {
-      void* handle = dlopen( lib.c_str(), RTLD_NOW );
-      if ( handle == nullptr ) ERROR( dlerror() );
-      INFO("Constructing from " << lib );
-      amp = AmpGen::DynamicFCN<complex_t( const double*, const int& )>( handle, "AMP" );
-    }
-    void prepare(){};
-    void setEvents( AmpGen::EventList& evts ){};
-    double prob_unnormalised( const AmpGen::Event& evt ) const { return std::norm(getValNoCache(evt)); }
-    complex_t getValNoCache( const AmpGen::Event& evt ) const { return amp(evt,+1); }
-    size_t size() { return 0; }
-    void reset( const bool& flag = false ){};
-  private:
-    AmpGen::DynamicFCN<complex_t( const double*, const int& )> amp;
-};
 
-
-struct DTEvent 
-{
-  AmpGen::Event signal;
-  AmpGen::Event    tag;
-  double prob;
-  DTEvent() : signal(0,0,0), tag(0,0,0) {};
-  DTEvent( const AmpGen::Event& signal, const AmpGen::Event& tag ) : signal(signal), tag(tag) {};
-  void set( const AmpGen::Event& s1, const AmpGen::Event& s2 ) { signal.set(s1); tag.set(s2); };
-  void invertParity(){
-    for( size_t i = 0 ; i < signal.size(); ++i ) if( i % 4 != 3 ) signal[i] *= -1;
-    for( size_t i = 0 ; i < tag.size(); ++i )    if( i % 4 != 3 ) tag[i] *= -1;
-  }
-};
-
-struct DTEventList : public std::vector<DTEvent> 
-{
-  AmpGen::EventType m_sigType; 
-  AmpGen::EventType m_tagType;
-  DTEventList( const AmpGen::EventType& signal, const AmpGen::EventType& tag ) : m_sigType(signal), m_tagType(tag) {}
-  std::string particleName(const AmpGen::EventType& type, const size_t& j);
-  TTree* tree(const std::string& name);
-};
-class DTYieldCalculator {
-  public:
-    DTYieldCalculator(const double& productionCrossSection = 3260) : 
-      productionCrossSection(productionCrossSection){}
-
-    double operator()(const double& lumi, 
-        const AmpGen::EventType& t_signal, 
-        const AmpGen::EventType& t_tag, 
-        const bool& print = false);
-    double bf( const AmpGen::EventType& type ) const;
-  private: 
-    double productionCrossSection;
-    std::map<std::string, double> getKeyed( const std::string& name );
-    std::map<std::string, double> branchingRatios = {getKeyed("BranchingRatios")};
-    std::map<std::string, double> efficiencies    = {getKeyed("Efficiencies")};
-};
 void add_CP_conjugate( MinuitParameterSet& mps );
 
-template <class PDF> struct normalised_pdf {
-  PDF       pdf; 
-  complex_t norm;
-  normalised_pdf() = default; 
-  normalised_pdf(const EventType& type, MinuitParameterSet& mps, const DTYieldCalculator& yc) : pdf(type, mps)
-  {
-    ProfileClock pc; 
-    auto normEvents = Generator<PhaseSpace>(type).generate(1e6);
-    double n =0;
-    pdf.prepare();
-    #pragma omp parallel for reduction(+:n)
-    for(size_t i =0; i<normEvents.size(); ++i) 
-      n += std::norm(pdf.getValNoCache(normEvents[i]));
-    auto it = mps.find( type.decayDescriptor() + "::strongPhase");
-    norm = sqrt(yc.bf(type)/n);
-    if( it != nullptr ) norm *= exp( 1i * it->mean() * M_PI/180. );
-    pc.stop();
-    INFO(type << " Time to construct: " << pc << "[ms], norm = " << norm  << " " << typeof<PDF>() );
-  }
-  complex_t operator()(const Event& event){ return norm * pdf.getValNoCache(event); }
-};
-
-struct ModelStore {
-  MinuitParameterSet*                                 mps;
-  DTYieldCalculator                                   yieldCalculator;
-  std::map<std::string, normalised_pdf<CoherentSum>>  genericModels;
-  std::map<std::string, normalised_pdf<FixedLibPdf>>  flibModels;
-  ModelStore(MinuitParameterSet* mps, const DTYieldCalculator& yc) : mps(mps), yieldCalculator(yc) {}
-  template <class T> normalised_pdf<T>& get(const EventType& type, std::map<std::string, normalised_pdf<T>>& container)
-  {
-    auto key = type.decayDescriptor();
-    if( container.count(key) == 0 ) 
-      container[key] = normalised_pdf<T>(type, *mps, yieldCalculator);
-    return container[key]; 
-  }
-  template <class T>    normalised_pdf<T>& find(const EventType& type);
-};
-template <class T1, class T2> class Psi3770 {
-  private:
-    EventType           m_signalType;
-    EventType           m_tagType;
-    normalised_pdf<T1>& m_signal; 
-    normalised_pdf<T1>& m_signalBar; 
-    normalised_pdf<T2>& m_tag; 
-    normalised_pdf<T2>& m_tagBar; 
-    PhaseSpace          m_signalPhsp;
-    PhaseSpace          m_tagPhsp;
-    PhaseSpace          m_headPhsp;
-    bool                m_printed     = {false};
-    bool                m_ignoreQc    = {NamedParameter<bool>("IgnoreQC",false)};
-    size_t              m_blockSize   = {1000000};
-};
 int main( int argc, char* argv[] )
 {
   /* The user specified options must be loaded at the beginning of the programme, 
@@ -201,7 +49,6 @@ int main( int argc, char* argv[] )
   std::string intFile  = NamedParameter<std::string>("IntegrationSample",""    , "Name of file containing events to use for MC integration.");
   std::string logFile  = NamedParameter<std::string>("LogFile"   , "Fitter.log", "Name of the output log file");
   std::string plotFile = NamedParameter<std::string>("Plots"     , "plots.root", "Name of the output plot file");
-  
   if( dataFile == "" ) FATAL("Must specify input with option " << italic_on << "DataSample" << italic_off );
   if( pNames.size() == 0 ) FATAL("Must specify event type with option " << italic_on << " EventType" << italic_off);
 
@@ -220,7 +67,7 @@ int main( int argc, char* argv[] )
   TFile * data = TFile::Open(dataFile.c_str());
   TFile * mc = TFile::Open(intFile.c_str());
   std::vector<std::string> varNames = {"E", "PX", "PY", "PZ"};
-//  auto yc = DTYieldCalculator(crossSection);
+  auto yc = DTYieldCalculator(crossSection);
   MinuitParameterSet MPS;
   MPS.loadFromStream();
   //ModelStore models(&MPS, yc);
@@ -332,3 +179,38 @@ FitResult* doFit( PDF&& pdf, EventList& data, EventList& mc, MinuitParameterSet&
   fr->print();
   return fr;
 }
+
+void add_CP_conjugate( MinuitParameterSet& mps )
+{
+  std::vector<MinuitParameter*> tmp;
+  for( auto& param : mps ){
+    const std::string name = param->name();
+    size_t pos=0;
+    std::string new_name = name; 
+    int sgn=1;
+    if( name.find("::") != std::string::npos ){
+      pos = name.find("::");
+      auto props = AmpGen::ParticlePropertiesList::get( name.substr(0,pos), true );
+      if( props != 0 ) new_name = props->anti().name() + name.substr(pos); 
+    }
+    else { 
+      auto tokens=split(name,'_');
+      std::string reOrIm = *tokens.rbegin();
+      std::string name   = tokens[0];
+      if ( reOrIm == "Re" || reOrIm == "Im" ){
+        auto p = Particle( name ).conj();
+        sgn = reOrIm == "Re" ? p.quasiCP() : 1; 
+        new_name = p.uniqueString() +"_"+reOrIm;
+      }
+      else if( tokens.size() == 2 ) {
+        auto props = AmpGen::ParticlePropertiesList::get( name );
+        if( props != 0  ) new_name = props->anti().name() + "_" + tokens[1]; 
+      }
+    }
+    if( mps.find( new_name ) == nullptr ){
+      tmp.push_back( new MinuitParameter(new_name, Flag::Free, sgn * param->mean(), param->err(), 0, 0));
+    }
+  }
+  for( auto& p : tmp ) mps.add( p );
+}
+

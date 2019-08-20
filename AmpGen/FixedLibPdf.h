@@ -41,7 +41,7 @@ using namespace AmpGen;
 using namespace std::complex_literals;
 
 //#include <boost/algorithm/string.hpp>
-using namespace AmpGen;
+
 class FixedLibPdf 
 {
   public: 
