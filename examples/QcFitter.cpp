@@ -1,4 +1,5 @@
 #include "AmpGen/Psi3770.h"
+//#include "AmpGen/CorrelatedSum.h"
 //#include <boost/algorithm/string.hpp>
 using namespace AmpGen;
 using namespace std::complex_literals;
@@ -21,10 +22,14 @@ void add_CP_conjugate( MinuitParameterSet& mps );
 
 int main( int argc, char* argv[] )
 {
+  //CorrelatedSum cs = CorrelatedSum();
+  //cs.prepare();
+  //return 0;
   /* The user specified options must be loaded at the beginning of the programme, 
      and these can be specified either at the command line or in an options file. */   
   OptionsParser::setArgs( argc, argv );
   OptionsParser::setArgs( argc, argv, "Toy simulation for Quantum Correlated Ψ(3770) decays");
+  /* */
   auto time_wall = std::chrono::high_resolution_clock::now();
   auto time      = std::clock();
   size_t hwt = std::thread::hardware_concurrency();

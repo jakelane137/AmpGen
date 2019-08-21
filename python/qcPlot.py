@@ -1,3 +1,5 @@
+from random import random 
+from scipy.spatial import ConvexHull
 import uproot, os, subprocess, argparse
 import matplotlib as mpl
 mpl.use('Agg')
@@ -25,42 +27,30 @@ def plot2D(obj1, obj2, obj3,  xname, yname, output, proj="XY"):
     nbins = int(len(obj1)/1000)
     b = bound(obj1, obj2, obj3)
     if proj=="XY" or proj=="YX":
-        plt.plot(b[0], b[1])
-        plt.hold()
-        counts, xedges, yedges, im = plt.hist2d(obj1, obj2, nbins)
+        #plt.plot(b[0], b[1], "*")
+        #plt.hold()
+        #counts, xedges, yedges, im = plt.hist2d(obj1, obj2, nbins)
+        plt.plot(b[0])
+        plt.scatter(obj1, obj2)
     elif proj=="YZ" or proj=="ZY": 
-        plt.plot(b[1], b[2])
-        plt.hold()
-        counts, xedges, yedges, im = plt.hist2d(obj2, obj3, nbins)       
+        #plt.plot(b[1], b[2], "*")
+        #plt.hold()
+        #counts, xedges, yedges, im = plt.hist2d(obj2, obj3, nbins)       
+        plt.scatter(obj2, obj3)
     elif proj=="ZX" or proj=="XZ":
-        plt.plot(b[2], b[0])
-        plt.hold()
-        counts, xedges, yedges, im = plt.hist2d(obj3, obj1, nbins)       
+        #plt.plot(b[2], b[0], "*")
+        #plt.hold()
+        #counts, xedges, yedges, im = plt.hist2d(obj3, obj1, nbins)       
+        plt.scatter(obj3, obj1)
     
 
 
-    fig.colorbar(im)
+    #fig.colorbar(im)
     plt.xlabel(f"{xname}")
     plt.ylabel(f"{yname}")
     fig.savefig(f"{output}")
     plt.close()
-
-def bound(obj1, obj2, obj3,N=10000, lim=0.01):
-    X = np.linspace(min(obj1), max(obj1), N)
-    Y = np.linspace(min(obj2), max(obj2), N)
-    Z = np.linspace(min(obj3), max(obj3), N)
-    Xp=[]
-    Yp=[]
-    Zp=[]
-    for x in X:
-        for y in Y:
-            for z in Z:
-                c = x+y+z - mD**2 - mK**2 - mpi**2 - mpi**2
-                if abs(c)>lim:
-                    Xp.append(x)
-                    Yp.append(y)
-                    Zp.append(z)
-    return [Xp,Yp,Zp]
+ 
     
     
 class qcPlot:
