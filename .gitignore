@@ -6,6 +6,7 @@ install/*
 *.pdf
 *.eps
 *.png
+*.log
 *.root
 /*build*/
 /AmpGen/Version.h
